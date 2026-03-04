@@ -3,6 +3,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "./useAuth";
 import type { Menu, MealType } from "@/lib/types";
 
+export type MenuWithProfile = Menu & {
+  creator_name?: string | null;
+};
+
 export function useMenus(mealType?: MealType) {
   const { user } = useAuth();
 
@@ -20,8 +24,40 @@ export function useMenus(mealType?: MealType) {
 
       const { data, error } = await query;
       if (error) throw error;
-      return data as Menu[];
+
+      // Fetch creator names for shared/default menus
+      const userIds = [...new Set((data || []).map(m => m.user_id).filter(Boolean))] as string[];
+      let profileMap: Record<string, string> = {};
+      if (userIds.length > 0) {
+        const { data: profiles } = await supabase
+          .from("profiles")
+          .select("user_id, display_name")
+          .in("user_id", userIds);
+        if (profiles) {
+          profileMap = Object.fromEntries(profiles.map(p => [p.user_id, p.display_name || ""]));
+        }
+      }
+
+      return (data || []).map(m => ({
+        ...m,
+        creator_name: m.user_id ? profileMap[m.user_id] || null : null,
+      })) as MenuWithProfile[];
     },
+  });
+}
+
+export function useToggleShared() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({ menuId, isShared }: { menuId: string; isShared: boolean }) => {
+      const { error } = await supabase
+        .from("menus")
+        .update({ is_shared: isShared })
+        .eq("id", menuId);
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["menus"] }),
   });
 }
 
