@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMenus, useCreateMenu, useDeleteMenu, useToggleShared, type MenuWithProfile } from "@/hooks/useMenus";
+import { useMenus, useCreateMenu, useDeleteMenu, useToggleShared, useUpdateMenu, type MenuWithProfile } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Plus, Trash2, ChefHat, X, Share2 } from "lucide-react";
+import { Plus, Trash2, ChefHat, X, Share2, Pencil } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
@@ -42,7 +42,7 @@ export default function MenusPage() {
             <DialogHeader>
               <DialogTitle>Créer un menu</DialogTitle>
             </DialogHeader>
-            <CreateMenuForm onSuccess={() => setDialogOpen(false)} />
+            <MenuForm mode="create" onSuccess={() => setDialogOpen(false)} />
           </DialogContent>
         </Dialog>
       </div>
@@ -99,6 +99,7 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
   const { toast } = useToast();
   const { user } = useAuth();
   const isOwner = menu.user_id === user?.id;
+  const [editOpen, setEditOpen] = useState(false);
 
   return (
     <motion.div
@@ -125,23 +126,34 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
             </div>
             <div className="flex gap-1">
               {isOwner && !menu.is_default && (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  title={menu.is_shared ? "Rendre privé" : "Partager"}
-                  onClick={() => {
-                    toggleShared.mutate(
-                      { menuId: menu.id, isShared: !menu.is_shared },
-                      {
-                        onSuccess: () =>
-                          toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }),
-                      }
-                    );
-                  }}
-                >
-                  <Share2 className={`h-4 w-4 ${menu.is_shared ? "text-primary" : "text-muted-foreground"}`} />
-                </Button>
+                <>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                    title="Modifier"
+                    onClick={() => setEditOpen(true)}
+                  >
+                    <Pencil className="h-4 w-4 text-muted-foreground" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                    title={menu.is_shared ? "Rendre privé" : "Partager"}
+                    onClick={() => {
+                      toggleShared.mutate(
+                        { menuId: menu.id, isShared: !menu.is_shared },
+                        {
+                          onSuccess: () =>
+                            toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }),
+                        }
+                      );
+                    }}
+                  >
+                    <Share2 className={`h-4 w-4 ${menu.is_shared ? "text-primary" : "text-muted-foreground"}`} />
+                  </Button>
+                </>
               )}
               {canDelete && (
                 <Button
@@ -186,20 +198,60 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
           )}
         </CardContent>
       </Card>
+
+      <Dialog open={editOpen} onOpenChange={setEditOpen}>
+        <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Modifier le menu</DialogTitle>
+          </DialogHeader>
+          <MenuForm
+            mode="edit"
+            menuId={menu.id}
+            initialName={menu.name}
+            initialDescription={menu.description || ""}
+            initialMealType={menu.meal_type as MealType}
+            initialIngredients={menu.menu_ingredients?.map((ing: any) => ({
+              name: ing.name,
+              quantity: Number(ing.quantity),
+              unit: ing.unit,
+            })) || []}
+            onSuccess={() => setEditOpen(false)}
+          />
+        </DialogContent>
+      </Dialog>
     </motion.div>
   );
 }
 
-function CreateMenuForm({ onSuccess }: { onSuccess: () => void }) {
+function MenuForm({
+  mode,
+  menuId,
+  initialName = "",
+  initialDescription = "",
+  initialMealType = "dejeuner",
+  initialIngredients = [],
+  onSuccess,
+}: {
+  mode: "create" | "edit";
+  menuId?: string;
+  initialName?: string;
+  initialDescription?: string;
+  initialMealType?: MealType;
+  initialIngredients?: { name: string; quantity: number; unit: string }[];
+  onSuccess: () => void;
+}) {
   const createMenu = useCreateMenu();
+  const updateMenu = useUpdateMenu();
   const { toast } = useToast();
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [mealType, setMealType] = useState<MealType>("dejeuner");
-  const [ingredients, setIngredients] = useState<{ name: string; quantity: number; unit: string }[]>([]);
+  const [name, setName] = useState(initialName);
+  const [description, setDescription] = useState(initialDescription);
+  const [mealType, setMealType] = useState<MealType>(initialMealType);
+  const [ingredients, setIngredients] = useState<{ name: string; quantity: number; unit: string }[]>(initialIngredients);
   const [ingName, setIngName] = useState("");
   const [ingQty, setIngQty] = useState("");
   const [ingUnit, setIngUnit] = useState("g");
+
+  const isPending = mode === "create" ? createMenu.isPending : updateMenu.isPending;
 
   const addIngredient = () => {
     if (!ingName || !ingQty) return;
@@ -211,8 +263,13 @@ function CreateMenuForm({ onSuccess }: { onSuccess: () => void }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await createMenu.mutateAsync({ name, description, mealType, ingredients });
-      toast({ title: "Menu créé !" });
+      if (mode === "edit" && menuId) {
+        await updateMenu.mutateAsync({ menuId, name, description, mealType, ingredients });
+        toast({ title: "Menu modifié !" });
+      } else {
+        await createMenu.mutateAsync({ name, description, mealType, ingredients });
+        toast({ title: "Menu créé !" });
+      }
       onSuccess();
     } catch (err: any) {
       toast({ title: "Erreur", description: err.message, variant: "destructive" });
@@ -272,8 +329,8 @@ function CreateMenuForm({ onSuccess }: { onSuccess: () => void }) {
         )}
       </div>
 
-      <Button type="submit" className="w-full" disabled={createMenu.isPending}>
-        {createMenu.isPending ? "Création..." : "Créer le menu"}
+      <Button type="submit" className="w-full" disabled={isPending}>
+        {isPending ? (mode === "edit" ? "Modification..." : "Création...") : (mode === "edit" ? "Modifier le menu" : "Créer le menu")}
       </Button>
     </form>
   );
