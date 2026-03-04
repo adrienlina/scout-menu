@@ -11,7 +11,7 @@ export function useCamps() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("camps")
-        .select("*, camp_meals(*, menus(*, menu_ingredients(*)))")
+        .select("*, camp_meals(*, menus(*, menu_ingredients(*))), camp_days(*)")
         .order("start_date", { ascending: false });
 
       if (error) throw error;
@@ -27,7 +27,7 @@ export function useCamp(campId: string) {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("camps")
-        .select("*, camp_meals(*, menus(*, menu_ingredients(*)))")
+        .select("*, camp_meals(*, menus(*, menu_ingredients(*))), camp_days(*)")
         .eq("id", campId)
         .single();
 
@@ -123,14 +123,6 @@ export function useAssignMeal() {
       mealDate: string;
       mealType: string;
     }) => {
-      // Remove existing meal for this slot
-      await supabase
-        .from("camp_meals")
-        .delete()
-        .eq("camp_id", campId)
-        .eq("meal_date", mealDate)
-        .eq("meal_type", mealType);
-
       const { error } = await supabase
         .from("camp_meals")
         .insert({ camp_id: campId, menu_id: menuId, meal_date: mealDate, meal_type: mealType });
@@ -145,21 +137,37 @@ export function useRemoveMeal() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async ({
-      campId,
-      mealDate,
-      mealType,
-    }: {
-      campId: string;
-      mealDate: string;
-      mealType: string;
-    }) => {
+    mutationFn: async (mealId: string) => {
       const { error } = await supabase
         .from("camp_meals")
         .delete()
-        .eq("camp_id", campId)
-        .eq("meal_date", mealDate)
-        .eq("meal_type", mealType);
+        .eq("id", mealId);
+
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["camps"] }),
+  });
+}
+
+export function useUpsertCampDay() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      campId,
+      dayDate,
+      participantCount,
+    }: {
+      campId: string;
+      dayDate: string;
+      participantCount: number;
+    }) => {
+      const { error } = await supabase
+        .from("camp_days")
+        .upsert(
+          { camp_id: campId, day_date: dayDate, participant_count: participantCount },
+          { onConflict: "camp_id,day_date" }
+        );
 
       if (error) throw error;
     },

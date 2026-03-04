@@ -14,6 +14,38 @@ export type Database = {
   }
   public: {
     Tables: {
+      camp_days: {
+        Row: {
+          camp_id: string
+          created_at: string
+          day_date: string
+          id: string
+          participant_count: number
+        }
+        Insert: {
+          camp_id: string
+          created_at?: string
+          day_date: string
+          id?: string
+          participant_count?: number
+        }
+        Update: {
+          camp_id?: string
+          created_at?: string
+          day_date?: string
+          id?: string
+          participant_count?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "camp_days_camp_id_fkey"
+            columns: ["camp_id"]
+            isOneToOne: false
+            referencedRelation: "camps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       camp_meals: {
         Row: {
           camp_id: string
