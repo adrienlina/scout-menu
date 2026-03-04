@@ -6,8 +6,11 @@ export type Menu = Tables<"menus"> & {
 
 export type Ingredient = Tables<"menu_ingredients">;
 
+export type CampDay = Tables<"camp_days">;
+
 export type Camp = Tables<"camps"> & {
   camp_meals?: CampMeal[];
+  camp_days?: CampDay[];
 };
 
 export type CampMeal = Tables<"camp_meals"> & {

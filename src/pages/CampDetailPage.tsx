@@ -1,15 +1,13 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useCamp, useAssignMeal, useRemoveMeal, useUpdateCamp } from "@/hooks/useCamps";
+import { useCamp, useAssignMeal, useRemoveMeal, useUpdateCamp, useUpsertCampDay } from "@/hooks/useCamps";
 import { useMenus } from "@/hooks/useMenus";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowLeft, Users, Download, X, Plus } from "lucide-react";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu } from "@/lib/types";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type CampDay, type Menu } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useState } from "react";
@@ -22,7 +20,7 @@ export default function CampDetailPage() {
   const { campId } = useParams<{ campId: string }>();
   const navigate = useNavigate();
   const { data: camp, isLoading } = useCamp(campId!);
-  const updateCamp = useUpdateCamp();
+  const upsertCampDay = useUpsertCampDay();
   const { toast } = useToast();
 
   if (isLoading) {
@@ -38,10 +36,15 @@ export default function CampDetailPage() {
     end: parseISO(camp.end_date),
   });
 
-  const getMealForSlot = (date: string, mealType: MealType): CampMeal | undefined => {
-    return camp.camp_meals?.find(
+  const getMealsForSlot = (date: string, mealType: MealType): CampMeal[] => {
+    return camp.camp_meals?.filter(
       (m) => m.meal_date === date && m.meal_type === mealType
-    );
+    ) || [];
+  };
+
+  const getDayParticipants = (date: string): number => {
+    const campDay = camp.camp_days?.find((d) => d.day_date === date);
+    return campDay?.participant_count ?? camp.participant_count;
   };
 
   const handleExport = () => {
@@ -49,18 +52,21 @@ export default function CampDetailPage() {
     days.forEach((day) => {
       const dateStr = format(day, "yyyy-MM-dd");
       const dateLabel = format(day, "dd/MM/yyyy");
+      const participants = getDayParticipants(dateStr);
       MEAL_TYPES.forEach((type) => {
-        const meal = getMealForSlot(dateStr, type);
-        if (meal?.menus) {
-          const menu = meal.menus as Menu;
-          if (menu.menu_ingredients && menu.menu_ingredients.length > 0) {
-            menu.menu_ingredients.forEach((ing) => {
-              csv += `${dateLabel},${MEAL_TYPE_LABELS[type]},${menu.name},${ing.name},${ing.quantity} ${ing.unit},${(ing.quantity * camp.participant_count).toFixed(1)} ${ing.unit},${ing.unit}\n`;
-            });
-          } else {
-            csv += `${dateLabel},${MEAL_TYPE_LABELS[type]},${menu.name},,,\n`;
+        const meals = getMealsForSlot(dateStr, type);
+        meals.forEach((meal) => {
+          if (meal?.menus) {
+            const menu = meal.menus as Menu;
+            if (menu.menu_ingredients && menu.menu_ingredients.length > 0) {
+              menu.menu_ingredients.forEach((ing) => {
+                csv += `${dateLabel},${MEAL_TYPE_LABELS[type]},${menu.name},${ing.name},${ing.quantity} ${ing.unit},${(ing.quantity * participants).toFixed(1)} ${ing.unit},${ing.unit}\n`;
+              });
+            } else {
+              csv += `${dateLabel},${MEAL_TYPE_LABELS[type]},${menu.name},,,\n`;
+            }
           }
-        }
+        });
       });
     });
 
@@ -86,31 +92,16 @@ export default function CampDetailPage() {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-2 rounded-lg border bg-card px-3 py-2">
-            <Users className="h-4 w-4 text-muted-foreground" />
-            <Input
-              type="number"
-              value={camp.participant_count}
-              onChange={(e) => {
-                const val = parseInt(e.target.value);
-                if (val > 0) updateCamp.mutate({ id: camp.id, participant_count: val });
-              }}
-              className="h-7 w-16 border-0 bg-transparent p-0 text-center font-semibold"
-              min="1"
-            />
-            <span className="text-sm text-muted-foreground">pers.</span>
-          </div>
-          <Button variant="outline" className="gap-2" onClick={handleExport}>
-            <Download className="h-4 w-4" />
-            Exporter CSV
-          </Button>
-        </div>
+        <Button variant="outline" className="gap-2" onClick={handleExport}>
+          <Download className="h-4 w-4" />
+          Exporter CSV
+        </Button>
       </div>
 
       <div className="space-y-4">
         {days.map((day, i) => {
           const dateStr = format(day, "yyyy-MM-dd");
+          const dayParticipants = getDayParticipants(dateStr);
           return (
             <motion.div
               key={dateStr}
@@ -120,9 +111,24 @@ export default function CampDetailPage() {
             >
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base font-semibold capitalize">
-                    {format(day, "EEEE d MMMM", { locale: fr })}
-                  </CardTitle>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base font-semibold capitalize">
+                      {format(day, "EEEE d MMMM", { locale: fr })}
+                    </CardTitle>
+                    <div className="flex items-center gap-2 rounded-lg border bg-card px-3 py-1.5">
+                      <Users className="h-3.5 w-3.5 text-muted-foreground" />
+                      <Input
+                        type="number"
+                        value={dayParticipants}
+                        onChange={(e) => {
+                          const val = parseInt(e.target.value);
+                          if (val > 0) upsertCampDay.mutate({ campId: camp.id, dayDate: dateStr, participantCount: val });
+                        }}
+                        className="h-6 w-14 border-0 bg-transparent p-0 text-center text-sm font-semibold"
+                        min="1"
+                      />
+                    </div>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
@@ -132,8 +138,8 @@ export default function CampDetailPage() {
                         campId={camp.id}
                         date={dateStr}
                         mealType={type}
-                        meal={getMealForSlot(dateStr, type)}
-                        participantCount={camp.participant_count}
+                        meals={getMealsForSlot(dateStr, type)}
+                        participantCount={dayParticipants}
                       />
                     ))}
                   </div>
@@ -151,13 +157,13 @@ function MealSlot({
   campId,
   date,
   mealType,
-  meal,
+  meals,
   participantCount,
 }: {
   campId: string;
   date: string;
   mealType: MealType;
-  meal?: CampMeal;
+  meals: CampMeal[];
   participantCount: number;
 }) {
   const assignMeal = useAssignMeal();
@@ -165,71 +171,73 @@ function MealSlot({
   const { data: menus } = useMenus(mealType);
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const menu = meal?.menus as Menu | undefined;
-
   return (
     <div className="rounded-lg border bg-card/50 p-3 space-y-2">
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium text-muted-foreground">
           {MEAL_TYPE_ICONS[mealType]} {MEAL_TYPE_LABELS[mealType]}
         </span>
-        {menu && (
-          <button
-            onClick={() => removeMeal.mutate({ campId, mealDate: date, mealType })}
-            className="text-muted-foreground hover:text-destructive transition-colors"
-          >
-            <X className="h-3 w-3" />
-          </button>
-        )}
       </div>
 
-      {menu ? (
-        <div className="space-y-1">
-          <p className="text-sm font-medium leading-tight">{menu.name}</p>
-          {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
-            <div className="space-y-0.5">
-              {menu.menu_ingredients.map((ing) => (
-                <p key={ing.id} className="text-xs text-muted-foreground">
-                  {ing.name}: <span className="font-medium">{(ing.quantity * participantCount).toFixed(0)}{ing.unit}</span>
-                </p>
-              ))}
+      {meals.map((meal) => {
+        const menu = meal.menus as Menu | undefined;
+        if (!menu) return null;
+        return (
+          <div key={meal.id} className="space-y-1 rounded border bg-background p-2">
+            <div className="flex items-center justify-between">
+              <p className="text-sm font-medium leading-tight">{menu.name}</p>
+              <button
+                onClick={() => removeMeal.mutate(meal.id)}
+                className="text-muted-foreground hover:text-destructive transition-colors"
+              >
+                <X className="h-3 w-3" />
+              </button>
             </div>
-          )}
-        </div>
-      ) : (
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <button className="flex w-full items-center justify-center rounded border border-dashed border-border py-3 text-xs text-muted-foreground hover:border-primary hover:text-primary transition-colors">
-              <Plus className="mr-1 h-3 w-3" />
-              Ajouter
-            </button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Choisir un menu — {MEAL_TYPE_LABELS[mealType]}</DialogTitle>
-            </DialogHeader>
-            <div className="space-y-2 max-h-[60vh] overflow-y-auto">
-              {menus?.map((m) => (
-                <button
-                  key={m.id}
-                  className="w-full rounded-lg border p-3 text-left hover:bg-accent transition-colors"
-                  onClick={() => {
-                    assignMeal.mutate({ campId, menuId: m.id, mealDate: date, mealType });
-                    setDialogOpen(false);
-                  }}
-                >
-                  <p className="font-medium text-sm">{m.name}</p>
-                  {m.description && <p className="text-xs text-muted-foreground">{m.description}</p>}
-                  {m.is_default && <Badge className="mt-1 text-xs gradient-campfire border-0 text-primary-foreground">Standard</Badge>}
-                </button>
-              ))}
-              {menus?.length === 0 && (
-                <p className="text-sm text-muted-foreground text-center py-4">Aucun menu disponible pour ce repas</p>
-              )}
-            </div>
-          </DialogContent>
-        </Dialog>
-      )}
+            {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
+              <div className="space-y-0.5">
+                {menu.menu_ingredients.map((ing) => (
+                  <p key={ing.id} className="text-xs text-muted-foreground">
+                    {ing.name}: <span className="font-medium">{(ing.quantity * participantCount).toFixed(0)}{ing.unit}</span>
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogTrigger asChild>
+          <button className="flex w-full items-center justify-center rounded border border-dashed border-border py-2 text-xs text-muted-foreground hover:border-primary hover:text-primary transition-colors">
+            <Plus className="mr-1 h-3 w-3" />
+            Ajouter
+          </button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Choisir un menu — {MEAL_TYPE_LABELS[mealType]}</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-2 max-h-[60vh] overflow-y-auto">
+            {menus?.map((m) => (
+              <button
+                key={m.id}
+                className="w-full rounded-lg border p-3 text-left hover:bg-accent transition-colors"
+                onClick={() => {
+                  assignMeal.mutate({ campId, menuId: m.id, mealDate: date, mealType });
+                  setDialogOpen(false);
+                }}
+              >
+                <p className="font-medium text-sm">{m.name}</p>
+                {m.description && <p className="text-xs text-muted-foreground">{m.description}</p>}
+                {m.is_default && <Badge className="mt-1 text-xs gradient-campfire border-0 text-primary-foreground">Standard</Badge>}
+              </button>
+            ))}
+            {menus?.length === 0 && (
+              <p className="text-sm text-muted-foreground text-center py-4">Aucun menu disponible pour ce repas</p>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
