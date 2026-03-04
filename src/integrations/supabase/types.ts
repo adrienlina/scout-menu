@@ -162,6 +162,7 @@ export type Database = {
           description: string | null
           id: string
           is_default: boolean
+          is_shared: boolean
           meal_type: string
           name: string
           updated_at: string
@@ -172,6 +173,7 @@ export type Database = {
           description?: string | null
           id?: string
           is_default?: boolean
+          is_shared?: boolean
           meal_type: string
           name: string
           updated_at?: string
@@ -182,6 +184,7 @@ export type Database = {
           description?: string | null
           id?: string
           is_default?: boolean
+          is_shared?: boolean
           meal_type?: string
           name?: string
           updated_at?: string
