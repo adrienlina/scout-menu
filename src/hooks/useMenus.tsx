@@ -111,3 +111,44 @@ export function useDeleteMenu() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["menus"] }),
   });
 }
+
+export function useUpdateMenu() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      menuId,
+      name,
+      description,
+      mealType,
+      ingredients,
+    }: {
+      menuId: string;
+      name: string;
+      description: string;
+      mealType: MealType;
+      ingredients: { name: string; quantity: number; unit: string }[];
+    }) => {
+      const { error: menuError } = await supabase
+        .from("menus")
+        .update({ name, description, meal_type: mealType })
+        .eq("id", menuId);
+      if (menuError) throw menuError;
+
+      // Replace all ingredients
+      const { error: delError } = await supabase
+        .from("menu_ingredients")
+        .delete()
+        .eq("menu_id", menuId);
+      if (delError) throw delError;
+
+      if (ingredients.length > 0) {
+        const { error: ingError } = await supabase
+          .from("menu_ingredients")
+          .insert(ingredients.map((i) => ({ ...i, menu_id: menuId })));
+        if (ingError) throw ingError;
+      }
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["menus"] }),
+  });
+}
