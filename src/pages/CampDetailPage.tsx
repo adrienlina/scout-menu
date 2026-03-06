@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowLeft, Users, Download, X, Plus } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type CampDay, type Menu } from "@/lib/types";
+import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
+import { useShoppingLists } from "@/hooks/useShoppingLists";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useState } from "react";
@@ -21,6 +23,7 @@ export default function CampDetailPage() {
   const navigate = useNavigate();
   const { data: camp, isLoading } = useCamp(campId!);
   const upsertCampDay = useUpsertCampDay();
+  const { data: shoppingLists } = useShoppingLists(campId!);
   const { toast } = useToast();
 
   if (isLoading) {
@@ -92,10 +95,28 @@ export default function CampDetailPage() {
             </p>
           </div>
         </div>
-        <Button variant="outline" className="gap-2" onClick={handleExport}>
-          <Download className="h-4 w-4" />
-          Exporter CSV
-        </Button>
+        <div className="flex gap-2">
+          <CreateShoppingListDialog camp={camp} />
+          {shoppingLists && shoppingLists.length > 0 && (
+            <div className="flex gap-1">
+              {shoppingLists.map((sl) => (
+                <Button
+                  key={sl.id}
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate(`/camps/${camp.id}/liste/${sl.id}`)}
+                  className="text-xs"
+                >
+                  📋 {sl.name}
+                </Button>
+              ))}
+            </div>
+          )}
+          <Button variant="outline" className="gap-2" onClick={handleExport}>
+            <Download className="h-4 w-4" />
+            Exporter CSV
+          </Button>
+        </div>
       </div>
 
       <div className="space-y-4">

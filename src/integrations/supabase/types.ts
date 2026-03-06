@@ -219,6 +219,100 @@ export type Database = {
         }
         Relationships: []
       }
+      shopping_list_checks: {
+        Row: {
+          id: string
+          ingredient_key: string
+          is_checked: boolean
+          shopping_list_id: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          ingredient_key: string
+          is_checked?: boolean
+          shopping_list_id: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          ingredient_key?: string
+          is_checked?: boolean
+          shopping_list_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shopping_list_checks_shopping_list_id_fkey"
+            columns: ["shopping_list_id"]
+            isOneToOne: false
+            referencedRelation: "shopping_lists"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      shopping_list_meals: {
+        Row: {
+          camp_meal_id: string
+          id: string
+          shopping_list_id: string
+        }
+        Insert: {
+          camp_meal_id: string
+          id?: string
+          shopping_list_id: string
+        }
+        Update: {
+          camp_meal_id?: string
+          id?: string
+          shopping_list_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shopping_list_meals_camp_meal_id_fkey"
+            columns: ["camp_meal_id"]
+            isOneToOne: false
+            referencedRelation: "camp_meals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "shopping_list_meals_shopping_list_id_fkey"
+            columns: ["shopping_list_id"]
+            isOneToOne: false
+            referencedRelation: "shopping_lists"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      shopping_lists: {
+        Row: {
+          camp_id: string
+          created_at: string
+          id: string
+          name: string
+        }
+        Insert: {
+          camp_id: string
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Update: {
+          camp_id?: string
+          created_at?: string
+          id?: string
+          name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "shopping_lists_camp_id_fkey"
+            columns: ["camp_id"]
+            isOneToOne: false
+            referencedRelation: "camps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
