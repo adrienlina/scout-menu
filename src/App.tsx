@@ -10,6 +10,7 @@ import AuthPage from "./pages/AuthPage";
 import MenusPage from "./pages/MenusPage";
 import CampsPage from "./pages/CampsPage";
 import CampDetailPage from "./pages/CampDetailPage";
+import ShoppingListPage from "./pages/ShoppingListPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ function AppRoutes() {
       <Route path="/menus" element={<ProtectedRoute><AppLayout><MenusPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps" element={<ProtectedRoute><AppLayout><CampsPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId" element={<ProtectedRoute><AppLayout><CampDetailPage /></AppLayout></ProtectedRoute>} />
+      <Route path="/camps/:campId/liste/:listId" element={<ProtectedRoute><AppLayout><ShoppingListPage /></AppLayout></ProtectedRoute>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
