@@ -18,11 +18,19 @@ export default function MenusPage() {
   const { data: menus, isLoading } = useMenus();
   const { user } = useAuth();
   const [filterType, setFilterType] = useState<MealType | "all">("all");
+  const [ownerFilter, setOwnerFilter] = useState<"all" | "mine" | "standard" | "others">("all");
+  const [searchCreator, setSearchCreator] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const filtered = menus?.filter(
-    (m) => filterType === "all" || m.meal_type === filterType
-  );
+  const filtered = menus?.filter((m) => {
+    if (filterType !== "all" && m.meal_type !== filterType) return false;
+    if (ownerFilter === "mine" && m.user_id !== user?.id) return false;
+    if (ownerFilter === "standard" && !m.is_default) return false;
+    if (ownerFilter === "others" && (m.user_id === user?.id || m.is_default)) return false;
+    if (ownerFilter === "others" && searchCreator && m.creator_name && !m.creator_name.toLowerCase().includes(searchCreator.toLowerCase())) return false;
+    if (ownerFilter === "others" && searchCreator && !m.creator_name) return false;
+    return true;
+  });
 
   return (
     <div className="space-y-6">
@@ -65,6 +73,30 @@ export default function MenusPage() {
             {MEAL_TYPE_ICONS[type]} {MEAL_TYPE_LABELS[type]}
           </Button>
         ))}
+      </div>
+
+      <div className="flex gap-2 flex-wrap items-center">
+        {(["all", "mine", "standard", "others"] as const).map((f) => (
+          <Button
+            key={f}
+            variant={ownerFilter === f ? "default" : "outline"}
+            size="sm"
+            onClick={() => { setOwnerFilter(f); if (f !== "others") setSearchCreator(""); }}
+          >
+            {f === "all" && "👥 Tous"}
+            {f === "mine" && "🙋 Mes menus"}
+            {f === "standard" && "⭐ Standards"}
+            {f === "others" && "🌍 Partagés"}
+          </Button>
+        ))}
+        {ownerFilter === "others" && (
+          <Input
+            placeholder="Rechercher par pseudo…"
+            value={searchCreator}
+            onChange={(e) => setSearchCreator(e.target.value)}
+            className="w-48 h-8 text-sm"
+          />
+        )}
       </div>
 
       {isLoading ? (
