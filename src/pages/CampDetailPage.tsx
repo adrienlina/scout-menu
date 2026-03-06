@@ -168,7 +168,9 @@ function MealSlot({
 }) {
   const assignMeal = useAssignMeal();
   const removeMeal = useRemoveMeal();
-  const { data: menus } = useMenus(mealType);
+  // For dejeuner and diner slots, show menus from the merged "repas" category
+  const menuFilter = (mealType === "dejeuner" || mealType === "diner") ? "repas" as const : mealType;
+  const { data: menus } = useMenus(menuFilter);
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (

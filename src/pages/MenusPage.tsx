@@ -10,20 +10,23 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Plus, Trash2, ChefHat, X, Share2, Pencil } from "lucide-react";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, MENU_FILTER_TYPES, MEAL_FILTER_LABELS, MEAL_FILTER_ICONS, type MealType, type MealTypeFilter } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 
 export default function MenusPage() {
   const { data: menus, isLoading } = useMenus();
   const { user } = useAuth();
-  const [filterType, setFilterType] = useState<MealType | "all">("all");
+  const [filterType, setFilterType] = useState<MealTypeFilter | "all">("all");
   const [ownerFilter, setOwnerFilter] = useState<"all" | "mine" | "standard" | "others">("all");
   const [searchCreator, setSearchCreator] = useState("");
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const filtered = menus?.filter((m) => {
-    if (filterType !== "all" && m.meal_type !== filterType) return false;
+    if (filterType !== "all") {
+      const types = filterType === "repas" ? ["dejeuner", "diner"] : [filterType];
+      if (!types.includes(m.meal_type)) return false;
+    }
     if (ownerFilter === "mine" && m.user_id !== user?.id) return false;
     if (ownerFilter === "standard" && !m.is_default) return false;
     if (ownerFilter === "others" && (m.user_id === user?.id || m.is_default)) return false;
@@ -63,14 +66,14 @@ export default function MenusPage() {
         >
           Tous
         </Button>
-        {(Object.keys(MEAL_TYPE_LABELS) as MealType[]).map((type) => (
+        {MENU_FILTER_TYPES.map((type) => (
           <Button
             key={type}
             variant={filterType === type ? "default" : "outline"}
             size="sm"
             onClick={() => setFilterType(type)}
           >
-            {MEAL_TYPE_ICONS[type]} {MEAL_TYPE_LABELS[type]}
+            {MEAL_FILTER_ICONS[type]} {MEAL_FILTER_LABELS[type]}
           </Button>
         ))}
       </div>
@@ -146,7 +149,7 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
               <CardTitle className="text-lg">{menu.name}</CardTitle>
               <div className="flex flex-wrap gap-1">
                 <Badge variant="secondary" className="text-xs">
-                  {MEAL_TYPE_ICONS[menu.meal_type as MealType]} {MEAL_TYPE_LABELS[menu.meal_type as MealType]}
+                  {(menu.meal_type === "dejeuner" || menu.meal_type === "diner") ? "🍽️ Repas" : `${MEAL_TYPE_ICONS[menu.meal_type as MealType]} ${MEAL_TYPE_LABELS[menu.meal_type as MealType]}`}
                 </Badge>
                 {menu.is_shared && !isOwner && menu.creator_name && (
                   <Badge variant="outline" className="text-xs gap-1">
@@ -323,9 +326,9 @@ function MenuForm({
         <Select value={mealType} onValueChange={(v) => setMealType(v as MealType)}>
           <SelectTrigger><SelectValue /></SelectTrigger>
           <SelectContent>
-            {(Object.keys(MEAL_TYPE_LABELS) as MealType[]).map((t) => (
-              <SelectItem key={t} value={t}>{MEAL_TYPE_ICONS[t]} {MEAL_TYPE_LABELS[t]}</SelectItem>
-            ))}
+            <SelectItem value="petit-dejeuner">☀️ Petit-déjeuner</SelectItem>
+            <SelectItem value="dejeuner">🍽️ Repas (déjeuner/dîner)</SelectItem>
+            <SelectItem value="gouter">🍪 Goûter</SelectItem>
           </SelectContent>
         </Select>
       </div>

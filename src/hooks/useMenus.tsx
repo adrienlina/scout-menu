@@ -1,25 +1,27 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "./useAuth";
-import type { Menu, MealType } from "@/lib/types";
+import type { Menu, MealType, MealTypeFilter } from "@/lib/types";
+import { resolveMealTypes } from "@/lib/types";
 
 export type MenuWithProfile = Menu & {
   creator_name?: string | null;
 };
 
-export function useMenus(mealType?: MealType) {
+export function useMenus(mealTypeFilter?: MealTypeFilter) {
   const { user } = useAuth();
 
   return useQuery({
-    queryKey: ["menus", mealType, user?.id],
+    queryKey: ["menus", mealTypeFilter, user?.id],
     queryFn: async () => {
       let query = supabase
         .from("menus")
         .select("*, menu_ingredients(*)")
         .order("name");
 
-      if (mealType) {
-        query = query.eq("meal_type", mealType);
+      if (mealTypeFilter) {
+        const types = resolveMealTypes(mealTypeFilter);
+        query = query.in("meal_type", types);
       }
 
       const { data, error } = await query;
