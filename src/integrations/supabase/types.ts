@@ -58,6 +58,51 @@ export type Database = {
           },
         ]
       }
+      camp_ingredient_usage: {
+        Row: {
+          camp_id: string
+          camp_meal_id: string | null
+          created_at: string
+          id: string
+          ingredient_name: string
+          quantity_used: number
+          unit: string
+        }
+        Insert: {
+          camp_id: string
+          camp_meal_id?: string | null
+          created_at?: string
+          id?: string
+          ingredient_name: string
+          quantity_used?: number
+          unit: string
+        }
+        Update: {
+          camp_id?: string
+          camp_meal_id?: string | null
+          created_at?: string
+          id?: string
+          ingredient_name?: string
+          quantity_used?: number
+          unit?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "camp_ingredient_usage_camp_id_fkey"
+            columns: ["camp_id"]
+            isOneToOne: false
+            referencedRelation: "camps"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "camp_ingredient_usage_camp_meal_id_fkey"
+            columns: ["camp_meal_id"]
+            isOneToOne: false
+            referencedRelation: "camp_meals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       camp_meals: {
         Row: {
           camp_id: string
