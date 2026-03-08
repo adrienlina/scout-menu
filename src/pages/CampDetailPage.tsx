@@ -111,6 +111,24 @@ export default function CampDetailPage() {
       dayDate: dateStr,
       ...current,
     });
+
+    // If editing the first day, propagate to all other days that have 0 for this group
+    const firstDayStr = format(days[0], "yyyy-MM-dd");
+    if (dateStr === firstDayStr && value > 0) {
+      days.slice(1).forEach((otherDay) => {
+        const otherDateStr = format(otherDay, "yyyy-MM-dd");
+        const otherCampDay = getCampDay(otherDateStr);
+        const otherCounts = getAgeGroupCounts(otherCampDay);
+        if ((otherCounts[groupKey] ?? 0) === 0) {
+          otherCounts[groupKey] = value;
+          upsertCampDay.mutate({
+            campId: camp.id,
+            dayDate: otherDateStr,
+            ...otherCounts,
+          });
+        }
+      });
+    }
   };
 
   return (
