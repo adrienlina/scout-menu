@@ -11,7 +11,10 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft } from "lucide-react";
-import { MEAL_TYPE_LABELS, type MealType, type CampMeal, type Menu, getWeightedParticipants } from "@/lib/types";
+import { MEAL_TYPE_LABELS, type MealType, type Menu, getWeightedParticipants } from "@/lib/types";
+import { format, parseISO } from "date-fns";
+import { fr } from "date-fns/locale";
+import { useMemo } from "react";
 
 interface IngredientItem {
   key: string;
