@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { UtensilsCrossed, Tent, LogOut, BookOpen } from "lucide-react";
+import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
