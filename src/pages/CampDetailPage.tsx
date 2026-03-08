@@ -6,8 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ArrowLeft, Users, Download, X, Plus, GripVertical } from "lucide-react";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type CampDay, type Menu } from "@/lib/types";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info } from "lucide-react";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts } from "@/lib/types";
 import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
@@ -47,22 +48,20 @@ export default function CampDetailPage() {
     ) || [];
   };
 
+  const getCampDay = (date: string) => camp.camp_days?.find((d) => d.day_date === date);
+
   const getDayParticipants = (date: string): number => {
-    const campDay = camp.camp_days?.find((d) => d.day_date === date);
-    return campDay?.participant_count ?? camp.participant_count;
+    const campDay = getCampDay(date);
+    return getWeightedParticipants(campDay, camp.participant_count);
   };
 
   const handleDragEnd = (result: DropResult) => {
     if (!result.destination) return;
     const { draggableId, destination } = result;
-    // droppableId format: "slot:date:mealType"
     const [, destDate, destMealType] = destination.droppableId.split(":");
-    
-    // Find the meal to check if it's actually moving
     const meal = camp.camp_meals?.find((m) => m.id === draggableId);
     if (!meal) return;
     if (meal.meal_date === destDate && meal.meal_type === destMealType) return;
-
     moveMeal.mutate(
       { mealId: draggableId, mealDate: destDate, mealType: destMealType },
       {
@@ -103,98 +102,137 @@ export default function CampDetailPage() {
     toast({ title: "Export réussi !" });
   };
 
+  const handleAgeGroupChange = (dateStr: string, groupKey: string, value: number) => {
+    const campDay = getCampDay(dateStr);
+    const current = getAgeGroupCounts(campDay);
+    current[groupKey] = value;
+    upsertCampDay.mutate({
+      campId: camp.id,
+      dayDate: dateStr,
+      ...current,
+    });
+  };
+
   return (
-    <div className="space-y-6">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-3">
-          <Button variant="ghost" size="icon" onClick={() => navigate("/camps")}>
-            <ArrowLeft className="h-5 w-5" />
-          </Button>
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight">{camp.name}</h1>
-            <p className="text-muted-foreground">
-              {format(parseISO(camp.start_date), "d MMMM", { locale: fr })} → {format(parseISO(camp.end_date), "d MMMM yyyy", { locale: fr })}
-            </p>
+    <TooltipProvider>
+      <div className="space-y-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" size="icon" onClick={() => navigate("/camps")}>
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight">{camp.name}</h1>
+              <p className="text-muted-foreground">
+                {format(parseISO(camp.start_date), "d MMMM", { locale: fr })} → {format(parseISO(camp.end_date), "d MMMM yyyy", { locale: fr })}
+              </p>
+            </div>
+          </div>
+          <div className="flex gap-2">
+            <CreateShoppingListDialog camp={camp} />
+            {shoppingLists && shoppingLists.length > 0 && (
+              <div className="flex gap-1">
+                {shoppingLists.map((sl) => (
+                  <Button
+                    key={sl.id}
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => navigate(`/camps/${camp.id}/liste/${sl.id}`)}
+                    className="text-xs"
+                  >
+                    📋 {sl.name}
+                  </Button>
+                ))}
+              </div>
+            )}
+            <Button variant="outline" className="gap-2" onClick={handleExport}>
+              <Download className="h-4 w-4" />
+              Exporter CSV
+            </Button>
           </div>
         </div>
-        <div className="flex gap-2">
-          <CreateShoppingListDialog camp={camp} />
-          {shoppingLists && shoppingLists.length > 0 && (
-            <div className="flex gap-1">
-              {shoppingLists.map((sl) => (
-                <Button
-                  key={sl.id}
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => navigate(`/camps/${camp.id}/liste/${sl.id}`)}
-                  className="text-xs"
-                >
-                  📋 {sl.name}
-                </Button>
-              ))}
-            </div>
-          )}
-          <Button variant="outline" className="gap-2" onClick={handleExport}>
-            <Download className="h-4 w-4" />
-            Exporter CSV
-          </Button>
-        </div>
-      </div>
 
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <div className="space-y-4">
-          {days.map((day, i) => {
-            const dateStr = format(day, "yyyy-MM-dd");
-            const dayParticipants = getDayParticipants(dateStr);
-            return (
-              <motion.div
-                key={dateStr}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.03 }}
-              >
-                <Card>
-                  <CardHeader className="pb-3">
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-base font-semibold capitalize">
-                        {format(day, "EEEE d MMMM", { locale: fr })}
-                      </CardTitle>
-                      <div className="flex items-center gap-2 rounded-lg border bg-card px-3 py-1.5">
-                        <Users className="h-3.5 w-3.5 text-muted-foreground" />
-                        <Input
-                          type="number"
-                          value={dayParticipants}
-                          onChange={(e) => {
-                            const val = parseInt(e.target.value);
-                            if (val > 0) upsertCampDay.mutate({ campId: camp.id, dayDate: dateStr, participantCount: val });
-                          }}
-                          className="h-6 w-14 border-0 bg-transparent p-0 text-center text-sm font-semibold"
-                          min="1"
-                        />
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <div className="space-y-4">
+            {days.map((day, i) => {
+              const dateStr = format(day, "yyyy-MM-dd");
+              const campDay = getCampDay(dateStr);
+              const ageCounts = getAgeGroupCounts(campDay);
+              const weightedParticipants = getDayParticipants(dateStr);
+              return (
+                <motion.div
+                  key={dateStr}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.03 }}
+                >
+                  <Card>
+                    <CardHeader className="pb-3">
+                      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                        <CardTitle className="text-base font-semibold capitalize">
+                          {format(day, "EEEE d MMMM", { locale: fr })}
+                        </CardTitle>
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {AGE_GROUPS.map((g) => (
+                            <div key={g.key} className="flex items-center gap-1 rounded-lg border bg-card px-2 py-1">
+                              <span className={`text-xs font-semibold ${g.color}`} title={`${g.label} (${g.ageRange})`}>
+                                {g.label.charAt(0)}
+                              </span>
+                              <Input
+                                type="number"
+                                value={ageCounts[g.key]}
+                                onChange={(e) => {
+                                  const val = parseInt(e.target.value) || 0;
+                                  if (val >= 0) handleAgeGroupChange(dateStr, g.key, val);
+                                }}
+                                className="h-5 w-10 border-0 bg-transparent p-0 text-center text-xs font-semibold"
+                                min="0"
+                              />
+                            </div>
+                          ))}
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <div className="flex items-center gap-1 rounded-lg border bg-primary/10 px-2 py-1 cursor-help">
+                                <Users className="h-3 w-3 text-primary" />
+                                <span className="text-xs font-bold text-primary">{weightedParticipants.toFixed(1)}</span>
+                                <Info className="h-3 w-3 text-muted-foreground" />
+                              </div>
+                            </TooltipTrigger>
+                            <TooltipContent side="bottom" className="max-w-xs text-xs space-y-1">
+                              <p className="font-semibold">Équivalent portions</p>
+                              <p>Les quantités d'ingrédients sont multipliées par un facteur selon la tranche d'âge :</p>
+                              {AGE_GROUPS.map((g) => (
+                                <p key={g.key}>
+                                  <span className={`font-semibold ${g.color}`}>{g.label}</span> ({g.ageRange}) : ×{g.multiplier}
+                                </p>
+                              ))}
+                            </TooltipContent>
+                          </Tooltip>
+                        </div>
                       </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-                      {MEAL_TYPES.map((type) => (
-                        <MealSlot
-                          key={type}
-                          campId={camp.id}
-                          date={dateStr}
-                          mealType={type}
-                          meals={getMealsForSlot(dateStr, type)}
-                          participantCount={dayParticipants}
-                        />
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </div>
-      </DragDropContext>
-    </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                        {MEAL_TYPES.map((type) => (
+                          <MealSlot
+                            key={type}
+                            campId={camp.id}
+                            date={dateStr}
+                            mealType={type}
+                            meals={getMealsForSlot(dateStr, type)}
+                            participantCount={weightedParticipants}
+                          />
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </DragDropContext>
+      </div>
+    </TooltipProvider>
   );
 }
 
@@ -216,7 +254,6 @@ function MealSlot({
   const menuFilter = (mealType === "dejeuner" || mealType === "diner") ? "repas" as const : mealType;
   const { data: menus } = useMenus(menuFilter);
   const [dialogOpen, setDialogOpen] = useState(false);
-
   const droppableId = `slot:${date}:${mealType}`;
 
   return (
@@ -245,25 +282,17 @@ function MealSlot({
                     ref={dragProvided.innerRef}
                     {...dragProvided.draggableProps}
                     className={`space-y-1 rounded border p-2 transition-shadow ${
-                      dragSnapshot.isDragging
-                        ? "shadow-lg border-primary bg-background"
-                        : "bg-background"
+                      dragSnapshot.isDragging ? "shadow-lg border-primary bg-background" : "bg-background"
                     }`}
                   >
                     <div className="flex items-center justify-between gap-1">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <span
-                          {...dragProvided.dragHandleProps}
-                          className="cursor-grab text-muted-foreground hover:text-foreground shrink-0"
-                        >
+                        <span {...dragProvided.dragHandleProps} className="cursor-grab text-muted-foreground hover:text-foreground shrink-0">
                           <GripVertical className="h-3.5 w-3.5" />
                         </span>
                         <p className="text-sm font-medium leading-tight truncate">{menu.name}</p>
                       </div>
-                      <button
-                        onClick={() => removeMeal.mutate(meal.id)}
-                        className="text-muted-foreground hover:text-destructive transition-colors shrink-0"
-                      >
+                      <button onClick={() => removeMeal.mutate(meal.id)} className="text-muted-foreground hover:text-destructive transition-colors shrink-0">
                         <X className="h-3 w-3" />
                       </button>
                     </div>

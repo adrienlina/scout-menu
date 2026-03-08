@@ -11,7 +11,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft } from "lucide-react";
-import { MEAL_TYPE_LABELS, type MealType, type CampMeal, type Menu } from "@/lib/types";
+import { MEAL_TYPE_LABELS, type MealType, type Menu, getWeightedParticipants } from "@/lib/types";
 import { format, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useMemo } from "react";
@@ -113,7 +113,7 @@ export default function ShoppingListPage() {
 
 function getDayParticipants(camp: any, date: string): number {
   const campDay = camp.camp_days?.find((d: any) => d.day_date === date);
-  return campDay?.participant_count ?? camp.participant_count;
+  return getWeightedParticipants(campDay, camp.participant_count);
 }
 
 function ByDayView({
