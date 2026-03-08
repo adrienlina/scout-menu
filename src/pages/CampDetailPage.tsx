@@ -268,7 +268,6 @@ function MealSlot({
   participantCount: number;
 }) {
   const assignMeal = useAssignMeal();
-  const removeMeal = useRemoveMeal();
   const menuFilter = (mealType === "dejeuner" || mealType === "diner") ? "repas" as const : mealType;
   const { data: menus } = useMenus(menuFilter);
   const [dialogOpen, setDialogOpen] = useState(false);
