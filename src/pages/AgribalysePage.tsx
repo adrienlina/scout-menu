@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
-import { useAgribalyseFoods, useImportAgribalyse, AgribalyseFood } from "@/hooks/useAgribalyse";
-import { IMPACT_COLUMNS, DEFAULT_VISIBLE_IMPACTS, ImpactKey } from "@/lib/agribalyse";
+import { useAgribalyseFoods, useImportAgribalyse } from "@/hooks/useAgribalyse";
+import { IMPACT_COLUMNS, DEFAULT_VISIBLE_IMPACTS } from "@/lib/agribalyse";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
