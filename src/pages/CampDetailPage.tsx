@@ -148,7 +148,7 @@ export default function CampDetailPage() {
               </p>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <CreateShoppingListDialog camp={camp} />
             {shoppingLists && shoppingLists.length > 0 && (
               <div className="flex gap-1">
@@ -165,6 +165,10 @@ export default function CampDetailPage() {
                 ))}
               </div>
             )}
+            <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/stock`)}>
+              <Package className="h-4 w-4" />
+              Stock
+            </Button>
             <Button variant="outline" className="gap-2" onClick={handleExport}>
               <Download className="h-4 w-4" />
               Exporter CSV
