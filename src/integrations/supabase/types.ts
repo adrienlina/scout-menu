@@ -17,6 +17,10 @@ export type Database = {
       camp_days: {
         Row: {
           camp_id: string
+          count_adulte: number
+          count_bleu: number
+          count_orange: number
+          count_rouge: number
           created_at: string
           day_date: string
           id: string
@@ -24,6 +28,10 @@ export type Database = {
         }
         Insert: {
           camp_id: string
+          count_adulte?: number
+          count_bleu?: number
+          count_orange?: number
+          count_rouge?: number
           created_at?: string
           day_date: string
           id?: string
@@ -31,6 +39,10 @@ export type Database = {
         }
         Update: {
           camp_id?: string
+          count_adulte?: number
+          count_bleu?: number
+          count_orange?: number
+          count_rouge?: number
           created_at?: string
           day_date?: string
           id?: string
