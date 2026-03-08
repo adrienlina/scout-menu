@@ -113,7 +113,7 @@ export default function ShoppingListPage() {
 
 function getDayParticipants(camp: any, date: string): number {
   const campDay = camp.camp_days?.find((d: any) => d.day_date === date);
-  return campDay?.participant_count ?? camp.participant_count;
+  return getWeightedParticipants(campDay, camp.participant_count);
 }
 
 function ByDayView({
