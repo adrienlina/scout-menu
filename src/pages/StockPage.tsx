@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Package, TrendingDown, TrendingUp } from "lucide-react";
-import { getWeightedParticipants, type Menu, type MealType } from "@/lib/types";
+import { getWeightedParticipants, type Menu } from "@/lib/types";
 import { useMemo } from "react";
 
 interface StockItem {
