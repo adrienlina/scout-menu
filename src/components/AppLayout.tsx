@@ -11,6 +11,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
   const navItems = [
     { to: "/menus", label: "Menus", icon: BookOpen },
     { to: "/camps", label: "Camps", icon: Tent },
+    { to: "/agribalyse", label: "Agribalyse", icon: Leaf },
   ];
 
   return (
