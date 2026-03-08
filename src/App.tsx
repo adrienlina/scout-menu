@@ -11,6 +11,7 @@ import MenusPage from "./pages/MenusPage";
 import CampsPage from "./pages/CampsPage";
 import CampDetailPage from "./pages/CampDetailPage";
 import ShoppingListPage from "./pages/ShoppingListPage";
+import StockPage from "./pages/StockPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
