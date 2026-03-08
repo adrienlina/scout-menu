@@ -14,6 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
+      agribalyse_foods: {
+        Row: {
+          acidification: number | null
+          cc_affectation_sols: number | null
+          cc_biogenique: number | null
+          cc_fossile: number | null
+          changement_climatique: number | null
+          created_at: string
+          ecotoxicite_eau_douce: number | null
+          epuisement_eau: number | null
+          epuisement_energie: number | null
+          epuisement_mineraux: number | null
+          eutrophisation_eaux_douces: number | null
+          eutrophisation_marine: number | null
+          eutrophisation_terrestre: number | null
+          formation_ozone: number | null
+          id: string
+          is_bio: boolean
+          name: string
+          ozone: number | null
+          particules: number | null
+          production_type: string | null
+          rayonnements_ionisants: number | null
+          score_unique_ef: number | null
+          toxicite_cancerogene: number | null
+          toxicite_non_cancerogene: number | null
+          utilisation_sol: number | null
+        }
+        Insert: {
+          acidification?: number | null
+          cc_affectation_sols?: number | null
+          cc_biogenique?: number | null
+          cc_fossile?: number | null
+          changement_climatique?: number | null
+          created_at?: string
+          ecotoxicite_eau_douce?: number | null
+          epuisement_eau?: number | null
+          epuisement_energie?: number | null
+          epuisement_mineraux?: number | null
+          eutrophisation_eaux_douces?: number | null
+          eutrophisation_marine?: number | null
+          eutrophisation_terrestre?: number | null
+          formation_ozone?: number | null
+          id?: string
+          is_bio?: boolean
+          name: string
+          ozone?: number | null
+          particules?: number | null
+          production_type?: string | null
+          rayonnements_ionisants?: number | null
+          score_unique_ef?: number | null
+          toxicite_cancerogene?: number | null
+          toxicite_non_cancerogene?: number | null
+          utilisation_sol?: number | null
+        }
+        Update: {
+          acidification?: number | null
+          cc_affectation_sols?: number | null
+          cc_biogenique?: number | null
+          cc_fossile?: number | null
+          changement_climatique?: number | null
+          created_at?: string
+          ecotoxicite_eau_douce?: number | null
+          epuisement_eau?: number | null
+          epuisement_energie?: number | null
+          epuisement_mineraux?: number | null
+          eutrophisation_eaux_douces?: number | null
+          eutrophisation_marine?: number | null
+          eutrophisation_terrestre?: number | null
+          formation_ozone?: number | null
+          id?: string
+          is_bio?: boolean
+          name?: string
+          ozone?: number | null
+          particules?: number | null
+          production_type?: string | null
+          rayonnements_ionisants?: number | null
+          score_unique_ef?: number | null
+          toxicite_cancerogene?: number | null
+          toxicite_non_cancerogene?: number | null
+          utilisation_sol?: number | null
+        }
+        Relationships: []
+      }
       camp_days: {
         Row: {
           camp_id: string
