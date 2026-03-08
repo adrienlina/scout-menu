@@ -10,7 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Download, Leaf, Factory, Info, BarChart3, X, Plus } from "lucide-react";
+import { Search, Leaf, Factory, Info, BarChart3, X } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 function formatScientific(val: number | null): string {
