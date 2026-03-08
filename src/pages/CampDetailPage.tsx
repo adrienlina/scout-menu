@@ -15,6 +15,7 @@ import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { NumberInput } from "@/components/NumberInput";
 import { motion } from "framer-motion";
 import { DragDropContext, Droppable, Draggable, type DropResult } from "@hello-pangea/dnd";
 
@@ -196,15 +197,9 @@ export default function CampDetailPage() {
                               <span className={`text-xs font-semibold ${g.color}`} title={`${g.label} (${g.ageRange})`}>
                                 {g.label.charAt(0)}
                               </span>
-                              <Input
-                                type="number"
+                              <NumberInput
                                 value={ageCounts[g.key]}
-                                onChange={(e) => {
-                                  const val = parseInt(e.target.value) || 0;
-                                  if (val >= 0) handleAgeGroupChange(dateStr, g.key, val);
-                                }}
-                                className="h-5 w-10 border-0 bg-transparent p-0 text-center text-xs font-semibold"
-                                min="0"
+                                onChange={(val) => handleAgeGroupChange(dateStr, g.key, val)}
                               />
                             </div>
                           ))}
