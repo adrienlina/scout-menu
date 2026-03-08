@@ -1,12 +1,12 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useCamp, useAssignMeal, useRemoveMeal, useUpdateCamp, useUpsertCampDay } from "@/hooks/useCamps";
+import { useCamp, useAssignMeal, useRemoveMeal, useUpdateCamp, useUpsertCampDay, useMoveMeal } from "@/hooks/useCamps";
 import { useMenus } from "@/hooks/useMenus";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ArrowLeft, Users, Download, X, Plus } from "lucide-react";
+import { ArrowLeft, Users, Download, X, Plus, GripVertical } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type CampDay, type Menu } from "@/lib/types";
 import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
@@ -15,6 +15,7 @@ import { fr } from "date-fns/locale";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
+import { DragDropContext, Droppable, Draggable, type DropResult } from "@hello-pangea/dnd";
 
 const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
 
@@ -23,6 +24,7 @@ export default function CampDetailPage() {
   const navigate = useNavigate();
   const { data: camp, isLoading } = useCamp(campId!);
   const upsertCampDay = useUpsertCampDay();
+  const moveMeal = useMoveMeal();
   const { data: shoppingLists } = useShoppingLists(campId!);
   const { toast } = useToast();
 
@@ -48,6 +50,26 @@ export default function CampDetailPage() {
   const getDayParticipants = (date: string): number => {
     const campDay = camp.camp_days?.find((d) => d.day_date === date);
     return campDay?.participant_count ?? camp.participant_count;
+  };
+
+  const handleDragEnd = (result: DropResult) => {
+    if (!result.destination) return;
+    const { draggableId, destination } = result;
+    // droppableId format: "slot:date:mealType"
+    const [, destDate, destMealType] = destination.droppableId.split(":");
+    
+    // Find the meal to check if it's actually moving
+    const meal = camp.camp_meals?.find((m) => m.id === draggableId);
+    if (!meal) return;
+    if (meal.meal_date === destDate && meal.meal_type === destMealType) return;
+
+    moveMeal.mutate(
+      { mealId: draggableId, mealDate: destDate, mealType: destMealType },
+      {
+        onSuccess: () => toast({ title: "Menu déplacé !" }),
+        onError: () => toast({ title: "Erreur lors du déplacement", variant: "destructive" }),
+      }
+    );
   };
 
   const handleExport = () => {
@@ -119,57 +141,59 @@ export default function CampDetailPage() {
         </div>
       </div>
 
-      <div className="space-y-4">
-        {days.map((day, i) => {
-          const dateStr = format(day, "yyyy-MM-dd");
-          const dayParticipants = getDayParticipants(dateStr);
-          return (
-            <motion.div
-              key={dateStr}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.03 }}
-            >
-              <Card>
-                <CardHeader className="pb-3">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-base font-semibold capitalize">
-                      {format(day, "EEEE d MMMM", { locale: fr })}
-                    </CardTitle>
-                    <div className="flex items-center gap-2 rounded-lg border bg-card px-3 py-1.5">
-                      <Users className="h-3.5 w-3.5 text-muted-foreground" />
-                      <Input
-                        type="number"
-                        value={dayParticipants}
-                        onChange={(e) => {
-                          const val = parseInt(e.target.value);
-                          if (val > 0) upsertCampDay.mutate({ campId: camp.id, dayDate: dateStr, participantCount: val });
-                        }}
-                        className="h-6 w-14 border-0 bg-transparent p-0 text-center text-sm font-semibold"
-                        min="1"
-                      />
+      <DragDropContext onDragEnd={handleDragEnd}>
+        <div className="space-y-4">
+          {days.map((day, i) => {
+            const dateStr = format(day, "yyyy-MM-dd");
+            const dayParticipants = getDayParticipants(dateStr);
+            return (
+              <motion.div
+                key={dateStr}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.03 }}
+              >
+                <Card>
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-base font-semibold capitalize">
+                        {format(day, "EEEE d MMMM", { locale: fr })}
+                      </CardTitle>
+                      <div className="flex items-center gap-2 rounded-lg border bg-card px-3 py-1.5">
+                        <Users className="h-3.5 w-3.5 text-muted-foreground" />
+                        <Input
+                          type="number"
+                          value={dayParticipants}
+                          onChange={(e) => {
+                            const val = parseInt(e.target.value);
+                            if (val > 0) upsertCampDay.mutate({ campId: camp.id, dayDate: dateStr, participantCount: val });
+                          }}
+                          className="h-6 w-14 border-0 bg-transparent p-0 text-center text-sm font-semibold"
+                          min="1"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-                    {MEAL_TYPES.map((type) => (
-                      <MealSlot
-                        key={type}
-                        campId={camp.id}
-                        date={dateStr}
-                        mealType={type}
-                        meals={getMealsForSlot(dateStr, type)}
-                        participantCount={dayParticipants}
-                      />
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                      {MEAL_TYPES.map((type) => (
+                        <MealSlot
+                          key={type}
+                          campId={camp.id}
+                          date={dateStr}
+                          mealType={type}
+                          meals={getMealsForSlot(dateStr, type)}
+                          participantCount={dayParticipants}
+                        />
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </div>
+      </DragDropContext>
     </div>
   );
 }
@@ -189,78 +213,111 @@ function MealSlot({
 }) {
   const assignMeal = useAssignMeal();
   const removeMeal = useRemoveMeal();
-  // For dejeuner and diner slots, show menus from the merged "repas" category
   const menuFilter = (mealType === "dejeuner" || mealType === "diner") ? "repas" as const : mealType;
   const { data: menus } = useMenus(menuFilter);
   const [dialogOpen, setDialogOpen] = useState(false);
 
+  const droppableId = `slot:${date}:${mealType}`;
+
   return (
-    <div className="rounded-lg border bg-card/50 p-3 space-y-2">
-      <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-muted-foreground">
-          {MEAL_TYPE_ICONS[mealType]} {MEAL_TYPE_LABELS[mealType]}
-        </span>
-      </div>
+    <Droppable droppableId={droppableId}>
+      {(provided, snapshot) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.droppableProps}
+          className={`rounded-lg border p-3 space-y-2 transition-colors ${
+            snapshot.isDraggingOver ? "border-primary bg-primary/5" : "bg-card/50"
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-medium text-muted-foreground">
+              {MEAL_TYPE_ICONS[mealType]} {MEAL_TYPE_LABELS[mealType]}
+            </span>
+          </div>
 
-      {meals.map((meal) => {
-        const menu = meal.menus as Menu | undefined;
-        if (!menu) return null;
-        return (
-          <div key={meal.id} className="space-y-1 rounded border bg-background p-2">
-            <div className="flex items-center justify-between">
-              <p className="text-sm font-medium leading-tight">{menu.name}</p>
-              <button
-                onClick={() => removeMeal.mutate(meal.id)}
-                className="text-muted-foreground hover:text-destructive transition-colors"
-              >
-                <X className="h-3 w-3" />
+          {meals.map((meal, index) => {
+            const menu = meal.menus as Menu | undefined;
+            if (!menu) return null;
+            return (
+              <Draggable key={meal.id} draggableId={meal.id} index={index}>
+                {(dragProvided, dragSnapshot) => (
+                  <div
+                    ref={dragProvided.innerRef}
+                    {...dragProvided.draggableProps}
+                    className={`space-y-1 rounded border p-2 transition-shadow ${
+                      dragSnapshot.isDragging
+                        ? "shadow-lg border-primary bg-background"
+                        : "bg-background"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-1">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <span
+                          {...dragProvided.dragHandleProps}
+                          className="cursor-grab text-muted-foreground hover:text-foreground shrink-0"
+                        >
+                          <GripVertical className="h-3.5 w-3.5" />
+                        </span>
+                        <p className="text-sm font-medium leading-tight truncate">{menu.name}</p>
+                      </div>
+                      <button
+                        onClick={() => removeMeal.mutate(meal.id)}
+                        className="text-muted-foreground hover:text-destructive transition-colors shrink-0"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </div>
+                    {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
+                      <div className="space-y-0.5 pl-5">
+                        {menu.menu_ingredients.map((ing) => (
+                          <p key={ing.id} className="text-xs text-muted-foreground">
+                            {ing.name}: <span className="font-medium">{(ing.quantity * participantCount).toFixed(0)}{ing.unit}</span>
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </Draggable>
+            );
+          })}
+
+          {provided.placeholder}
+
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogTrigger asChild>
+              <button className="flex w-full items-center justify-center rounded border border-dashed border-border py-2 text-xs text-muted-foreground hover:border-primary hover:text-primary transition-colors">
+                <Plus className="mr-1 h-3 w-3" />
+                Ajouter
               </button>
-            </div>
-            {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
-              <div className="space-y-0.5">
-                {menu.menu_ingredients.map((ing) => (
-                  <p key={ing.id} className="text-xs text-muted-foreground">
-                    {ing.name}: <span className="font-medium">{(ing.quantity * participantCount).toFixed(0)}{ing.unit}</span>
-                  </p>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Choisir un menu — {MEAL_TYPE_LABELS[mealType]}</DialogTitle>
+              </DialogHeader>
+              <div className="space-y-2 max-h-[60vh] overflow-y-auto">
+                {menus?.map((m) => (
+                  <button
+                    key={m.id}
+                    className="w-full rounded-lg border p-3 text-left hover:bg-accent transition-colors"
+                    onClick={() => {
+                      assignMeal.mutate({ campId, menuId: m.id, mealDate: date, mealType });
+                      setDialogOpen(false);
+                    }}
+                  >
+                    <p className="font-medium text-sm">{m.name}</p>
+                    {m.description && <p className="text-xs text-muted-foreground">{m.description}</p>}
+                    {m.is_default && <Badge className="mt-1 text-xs gradient-campfire border-0 text-primary-foreground">Standard</Badge>}
+                  </button>
                 ))}
+                {menus?.length === 0 && (
+                  <p className="text-sm text-muted-foreground text-center py-4">Aucun menu disponible pour ce repas</p>
+                )}
               </div>
-            )}
-          </div>
-        );
-      })}
-
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogTrigger asChild>
-          <button className="flex w-full items-center justify-center rounded border border-dashed border-border py-2 text-xs text-muted-foreground hover:border-primary hover:text-primary transition-colors">
-            <Plus className="mr-1 h-3 w-3" />
-            Ajouter
-          </button>
-        </DialogTrigger>
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Choisir un menu — {MEAL_TYPE_LABELS[mealType]}</DialogTitle>
-          </DialogHeader>
-          <div className="space-y-2 max-h-[60vh] overflow-y-auto">
-            {menus?.map((m) => (
-              <button
-                key={m.id}
-                className="w-full rounded-lg border p-3 text-left hover:bg-accent transition-colors"
-                onClick={() => {
-                  assignMeal.mutate({ campId, menuId: m.id, mealDate: date, mealType });
-                  setDialogOpen(false);
-                }}
-              >
-                <p className="font-medium text-sm">{m.name}</p>
-                {m.description && <p className="text-xs text-muted-foreground">{m.description}</p>}
-                {m.is_default && <Badge className="mt-1 text-xs gradient-campfire border-0 text-primary-foreground">Standard</Badge>}
-              </button>
-            ))}
-            {menus?.length === 0 && (
-              <p className="text-sm text-muted-foreground text-center py-4">Aucun menu disponible pour ce repas</p>
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
-    </div>
+            </DialogContent>
+          </Dialog>
+        </div>
+      )}
+    </Droppable>
   );
 }
