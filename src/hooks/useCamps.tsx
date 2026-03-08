@@ -149,6 +149,30 @@ export function useRemoveMeal() {
   });
 }
 
+export function useMoveMeal() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({
+      mealId,
+      mealDate,
+      mealType,
+    }: {
+      mealId: string;
+      mealDate: string;
+      mealType: string;
+    }) => {
+      const { error } = await supabase
+        .from("camp_meals")
+        .update({ meal_date: mealDate, meal_type: mealType })
+        .eq("id", mealId);
+
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["camps"] }),
+  });
+}
+
 export function useUpsertCampDay() {
   const queryClient = useQueryClient();
 
