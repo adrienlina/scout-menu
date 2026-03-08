@@ -294,38 +294,14 @@ function MealSlot({
             const menu = meal.menus as Menu | undefined;
             if (!menu) return null;
             return (
-              <Draggable key={meal.id} draggableId={meal.id} index={index}>
-                {(dragProvided, dragSnapshot) => (
-                  <div
-                    ref={dragProvided.innerRef}
-                    {...dragProvided.draggableProps}
-                    className={`space-y-1 rounded border p-2 transition-shadow ${
-                      dragSnapshot.isDragging ? "shadow-lg border-primary bg-background" : "bg-background"
-                    }`}
-                  >
-                    <div className="flex items-center justify-between gap-1">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <span {...dragProvided.dragHandleProps} className="cursor-grab text-muted-foreground hover:text-foreground shrink-0">
-                          <GripVertical className="h-3.5 w-3.5" />
-                        </span>
-                        <p className="text-sm font-medium leading-tight truncate">{menu.name}</p>
-                      </div>
-                      <button onClick={() => removeMeal.mutate(meal.id)} className="text-muted-foreground hover:text-destructive transition-colors shrink-0">
-                        <X className="h-3 w-3" />
-                      </button>
-                    </div>
-                    {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
-                      <div className="space-y-0.5 pl-5">
-                        {menu.menu_ingredients.map((ing) => (
-                          <p key={ing.id} className="text-xs text-muted-foreground">
-                            {ing.name}: <span className="font-medium">{(ing.quantity * participantCount).toFixed(0)}{ing.unit}</span>
-                          </p>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </Draggable>
+              <MealCard
+                key={meal.id}
+                meal={meal}
+                menu={menu}
+                index={index}
+                campId={campId}
+                participantCount={participantCount}
+              />
             );
           })}
 
