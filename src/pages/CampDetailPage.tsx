@@ -11,6 +11,7 @@ import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, Clipb
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts } from "@/lib/types";
 import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
+import { MealUsageDialog } from "@/components/MealUsageDialog";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useState } from "react";
