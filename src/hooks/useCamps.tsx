@@ -181,17 +181,29 @@ export function useUpsertCampDay() {
       campId,
       dayDate,
       participantCount,
+      count_orange,
+      count_bleu,
+      count_rouge,
+      count_adulte,
     }: {
       campId: string;
       dayDate: string;
-      participantCount: number;
+      participantCount?: number;
+      count_orange?: number;
+      count_bleu?: number;
+      count_rouge?: number;
+      count_adulte?: number;
     }) => {
+      const payload: any = { camp_id: campId, day_date: dayDate };
+      if (participantCount !== undefined) payload.participant_count = participantCount;
+      if (count_orange !== undefined) payload.count_orange = count_orange;
+      if (count_bleu !== undefined) payload.count_bleu = count_bleu;
+      if (count_rouge !== undefined) payload.count_rouge = count_rouge;
+      if (count_adulte !== undefined) payload.count_adulte = count_adulte;
+
       const { error } = await supabase
         .from("camp_days")
-        .upsert(
-          { camp_id: campId, day_date: dayDate, participant_count: participantCount },
-          { onConflict: "camp_id,day_date" }
-        );
+        .upsert(payload, { onConflict: "camp_id,day_date" });
 
       if (error) throw error;
     },
