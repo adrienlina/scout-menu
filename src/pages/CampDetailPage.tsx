@@ -15,6 +15,7 @@ import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { NumberInput } from "@/components/NumberInput";
 import { motion } from "framer-motion";
 import { DragDropContext, Droppable, Draggable, type DropResult } from "@hello-pangea/dnd";
 
