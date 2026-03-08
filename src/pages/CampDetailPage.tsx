@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useCamp, useAssignMeal, useRemoveMeal, useUpdateCamp, useUpsertCampDay, useMoveMeal } from "@/hooks/useCamps";
+import { useCamp, useAssignMeal, useRemoveMeal, useUpsertCampDay, useMoveMeal } from "@/hooks/useCamps";
 import { useMenus } from "@/hooks/useMenus";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
