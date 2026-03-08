@@ -170,10 +170,10 @@ function ShoppingListStock({
                 <span className="truncate">
                   {item.name} <span className="text-muted-foreground text-xs">({item.unit})</span>
                 </span>
-                <span className="w-20 text-right text-emerald-600 font-medium">
+                <span className="w-20 text-right font-medium text-primary">
                   {item.purchased.toFixed(0)}
                 </span>
-                <span className="w-20 text-right text-orange-600 font-medium">
+                <span className="w-20 text-right font-medium text-destructive">
                   {item.used.toFixed(0)}
                 </span>
                 <span className="w-20 text-right">
