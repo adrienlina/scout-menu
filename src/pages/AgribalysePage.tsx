@@ -99,12 +99,16 @@ export default function AgribalysePage() {
   });
 
   const filteredFoods = useMemo(() => {
-    if (selectedFoods.size > 0) {
+    if (selectedFoods.size > 0 && !search.trim()) {
       return foods.filter((f: any) => selectedFoods.has(f.id));
     }
     if (!search.trim()) return foods.slice(0, 50);
     const q = search.toLowerCase();
-    return foods.filter((f: any) => f.name.toLowerCase().includes(q)).slice(0, 50);
+    const results = foods.filter((f: any) => f.name.toLowerCase().includes(q));
+    // Put selected items first, then others
+    const selected = results.filter((f: any) => selectedFoods.has(f.id));
+    const others = results.filter((f: any) => !selectedFoods.has(f.id));
+    return [...selected, ...others].slice(0, 50);
   }, [foods, search, selectedFoods]);
 
   const searchResults = useMemo(() => {
