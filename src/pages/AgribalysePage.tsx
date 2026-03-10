@@ -11,6 +11,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Upload, Search, X, Info, Leaf, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
 import * as XLSX from "xlsx";
+import AgribalyseComparisonChart from "@/components/AgribalyseComparisonChart";
 
 const IMPACT_COLUMNS = [
   { key: "score_unique_ef", label: "Score unique EF 3.1", unit: "mPt/kg", tooltip: "Score agrégé unique selon la méthode Environmental Footprint 3.1. Plus le score est élevé, plus l'impact environnemental global est important." },
@@ -364,7 +365,7 @@ export default function AgribalysePage() {
                         <TooltipTrigger asChild>
                           <Info className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
                         </TooltipTrigger>
-                        <TooltipContent className="max-w-xs">{col.tooltip}</TooltipContent>
+                        <TooltipContent className="max-w-xs text-left">{col.tooltip}</TooltipContent>
                       </Tooltip>
                     </label>
                   ))}
@@ -391,9 +392,9 @@ export default function AgribalysePage() {
                                 <Info className="h-3 w-3 text-muted-foreground" />
                               </span>
                             </TooltipTrigger>
-                            <TooltipContent className="max-w-xs">
-                              <p>{col.tooltip}</p>
-                              <p className="text-xs text-muted-foreground mt-1">Unité : {col.unit}</p>
+                            <TooltipContent className="max-w-xs text-left">
+                              <p className="text-left">{col.tooltip}</p>
+                              <p className="text-xs text-muted-foreground mt-1 text-left">Unité : {col.unit}</p>
                             </TooltipContent>
                           </Tooltip>
                         </TableHead>
@@ -430,7 +431,8 @@ export default function AgribalysePage() {
                           </TableCell>
                           {selectedImpactCols.map((col) => (
                             <TableCell key={col.key} className="text-right tabular-nums">
-                              {formatScientific(food[col.key])}
+                              <span>{formatScientific(food[col.key])}</span>
+                              <span className="text-xs text-muted-foreground ml-1">{food[col.key] != null ? col.unit : ""}</span>
                             </TableCell>
                           ))}
                         </TableRow>
@@ -448,6 +450,13 @@ export default function AgribalysePage() {
               )}
             </CardContent>
           </Card>
+          {/* Comparison chart */}
+          {selectedFoods.size >= 2 && (
+            <AgribalyseComparisonChart
+              selectedFoods={foods.filter((f: any) => selectedFoods.has(f.id))}
+              selectedImpactCols={selectedImpactCols}
+            />
+          )}
         </>
       )}
 
