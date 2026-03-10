@@ -458,6 +458,7 @@ export default function AgribalysePage() {
             />
           )}
         </>
+      )}
 
       {foods.length === 0 && !isLoading && (
         <Card>
