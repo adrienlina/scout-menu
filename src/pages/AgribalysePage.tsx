@@ -158,23 +158,33 @@ export default function AgribalysePage() {
       let nameCol = -1;
       const colMap: Record<number, ImpactKey> = {};
 
-      for (let i = 0; i < Math.min(json.length, 10); i++) {
+      // Find the row with "Nom du Produit en Français"
+      for (let i = 0; i < Math.min(json.length, 15); i++) {
         const row = json[i];
         if (!row) continue;
         const ni = row.findIndex((c: any) => typeof c === "string" && c.includes("Nom du Produit en Fran"));
         if (ni >= 0) {
           headerIdx = i;
           nameCol = ni;
-          // Map impact columns
+          break;
+        }
+      }
+
+      // Search for impact column headers in ALL rows up to and including headerIdx
+      // (they may be on a different row due to merged cells)
+      if (headerIdx >= 0) {
+        for (let i = 0; i <= headerIdx; i++) {
+          const row = json[i];
+          if (!row) continue;
           for (let j = 0; j < row.length; j++) {
             const header = String(row[j] || "").trim();
+            if (!header) continue;
             for (const [excelName, dbKey] of Object.entries(EXCEL_COL_MAP)) {
               if (header.includes(excelName) || excelName.includes(header)) {
                 colMap[j] = dbKey;
               }
             }
           }
-          break;
         }
       }
 
