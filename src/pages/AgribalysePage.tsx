@@ -450,8 +450,14 @@ export default function AgribalysePage() {
               )}
             </CardContent>
           </Card>
+          {/* Comparison chart */}
+          {selectedFoods.size >= 2 && (
+            <AgribalyseComparisonChart
+              selectedFoods={foods.filter((f: any) => selectedFoods.has(f.id))}
+              selectedImpactCols={selectedImpactCols}
+            />
+          )}
         </>
-      )}
 
       {foods.length === 0 && !isLoading && (
         <Card>
