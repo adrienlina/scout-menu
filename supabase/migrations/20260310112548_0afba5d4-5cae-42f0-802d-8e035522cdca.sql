@@ -1,0 +1,1 @@
+DELETE FROM agribalyse_foods;
