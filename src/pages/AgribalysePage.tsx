@@ -364,7 +364,7 @@ export default function AgribalysePage() {
                         <TooltipTrigger asChild>
                           <Info className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
                         </TooltipTrigger>
-                        <TooltipContent className="max-w-xs">{col.tooltip}</TooltipContent>
+                        <TooltipContent className="max-w-xs text-left">{col.tooltip}</TooltipContent>
                       </Tooltip>
                     </label>
                   ))}
