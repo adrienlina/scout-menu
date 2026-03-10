@@ -11,6 +11,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Upload, Search, X, Info, Leaf, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
 import * as XLSX from "xlsx";
+import AgribalyseComparisonChart from "@/components/AgribalyseComparisonChart";
 
 const IMPACT_COLUMNS = [
   { key: "score_unique_ef", label: "Score unique EF 3.1", unit: "mPt/kg", tooltip: "Score agrégé unique selon la méthode Environmental Footprint 3.1. Plus le score est élevé, plus l'impact environnemental global est important." },
