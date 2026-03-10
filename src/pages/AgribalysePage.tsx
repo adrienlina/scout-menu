@@ -391,9 +391,9 @@ export default function AgribalysePage() {
                                 <Info className="h-3 w-3 text-muted-foreground" />
                               </span>
                             </TooltipTrigger>
-                            <TooltipContent className="max-w-xs">
-                              <p>{col.tooltip}</p>
-                              <p className="text-xs text-muted-foreground mt-1">Unité : {col.unit}</p>
+                            <TooltipContent className="max-w-xs text-left">
+                              <p className="text-left">{col.tooltip}</p>
+                              <p className="text-xs text-muted-foreground mt-1 text-left">Unité : {col.unit}</p>
                             </TooltipContent>
                           </Tooltip>
                         </TableHead>
