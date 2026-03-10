@@ -430,7 +430,8 @@ export default function AgribalysePage() {
                           </TableCell>
                           {selectedImpactCols.map((col) => (
                             <TableCell key={col.key} className="text-right tabular-nums">
-                              {formatScientific(food[col.key])}
+                              <span>{formatScientific(food[col.key])}</span>
+                              <span className="text-xs text-muted-foreground ml-1">{food[col.key] != null ? col.unit : ""}</span>
                             </TableCell>
                           ))}
                         </TableRow>
