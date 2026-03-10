@@ -179,10 +179,18 @@ export default function AgribalysePage() {
           for (let j = 0; j < row.length; j++) {
             const header = String(row[j] || "").trim();
             if (!header) continue;
+            // Find the longest matching excelName to avoid "Changement climatique"
+            // matching "Changement climatique - émissions biogéniques"
+            let bestMatch: { name: string; key: ImpactKey } | null = null;
             for (const [excelName, dbKey] of Object.entries(EXCEL_COL_MAP)) {
-              if (header.includes(excelName) || excelName.includes(header)) {
-                colMap[j] = dbKey;
+              if (header === excelName || header.includes(excelName) || excelName.includes(header)) {
+                if (!bestMatch || excelName.length > bestMatch.name.length) {
+                  bestMatch = { name: excelName, key: dbKey };
+                }
               }
+            }
+            if (bestMatch) {
+              colMap[j] = bestMatch.key;
             }
           }
         }
