@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useMenus, useCreateMenu, useDeleteMenu, useToggleShared, useUpdateMenu, type MenuWithProfile } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
