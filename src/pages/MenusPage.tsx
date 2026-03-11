@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useMenus, useCreateMenu, useDeleteMenu, useToggleShared, useUpdateMenu, type MenuWithProfile } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
@@ -129,6 +130,7 @@ export default function MenusPage() {
 }
 
 function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDelete: boolean }) {
+  const navigate = useNavigate();
   const deleteMenu = useDeleteMenu();
   const toggleShared = useToggleShared();
   const { toast } = useToast();
@@ -142,7 +144,7 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
     >
-      <Card className="group relative overflow-hidden transition-shadow hover:shadow-lg">
+      <Card className="group relative overflow-hidden transition-shadow hover:shadow-lg cursor-pointer" onClick={() => navigate(`/menus/${menu.id}`)}>
         <CardHeader className="pb-2">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
@@ -167,7 +169,7 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
                     size="icon"
                     className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
                     title="Modifier"
-                    onClick={() => setEditOpen(true)}
+                    onClick={(e) => { e.stopPropagation(); setEditOpen(true); }}
                   >
                     <Pencil className="h-4 w-4 text-muted-foreground" />
                   </Button>
@@ -176,7 +178,8 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
                     size="icon"
                     className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
                     title={menu.is_shared ? "Rendre privé" : "Partager"}
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       toggleShared.mutate(
                         { menuId: menu.id, isShared: !menu.is_shared },
                         {
@@ -195,7 +198,8 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
                   variant="ghost"
                   size="icon"
                   className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     deleteMenu.mutate(menu.id, {
                       onSuccess: () => toast({ title: "Menu supprimé" }),
                     });
