@@ -1,0 +1,1 @@
+ALTER TABLE public.menu_ingredients ADD COLUMN agribalyse_food_id uuid REFERENCES public.agribalyse_foods(id) ON DELETE SET NULL;

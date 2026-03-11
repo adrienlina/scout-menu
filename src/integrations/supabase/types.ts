@@ -264,6 +264,7 @@ export type Database = {
       }
       menu_ingredients: {
         Row: {
+          agribalyse_food_id: string | null
           created_at: string
           id: string
           menu_id: string
@@ -272,6 +273,7 @@ export type Database = {
           unit: string
         }
         Insert: {
+          agribalyse_food_id?: string | null
           created_at?: string
           id?: string
           menu_id: string
@@ -280,6 +282,7 @@ export type Database = {
           unit: string
         }
         Update: {
+          agribalyse_food_id?: string | null
           created_at?: string
           id?: string
           menu_id?: string
@@ -288,6 +291,13 @@ export type Database = {
           unit?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "menu_ingredients_agribalyse_food_id_fkey"
+            columns: ["agribalyse_food_id"]
+            isOneToOne: false
+            referencedRelation: "agribalyse_foods"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "menu_ingredients_menu_id_fkey"
             columns: ["menu_id"]
