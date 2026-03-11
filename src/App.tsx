@@ -33,6 +33,7 @@ function AppRoutes() {
       <Route path="/" element={<AppLayout><Index /></AppLayout>} />
       <Route path="/auth" element={user ? <Navigate to="/menus" replace /> : <AuthPage />} />
       <Route path="/menus" element={<ProtectedRoute><AppLayout><MenusPage /></AppLayout></ProtectedRoute>} />
+      <Route path="/menus/:menuId" element={<ProtectedRoute><AppLayout><MenuDetailPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps" element={<ProtectedRoute><AppLayout><CampsPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId" element={<ProtectedRoute><AppLayout><CampDetailPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId/liste/:listId" element={<ProtectedRoute><AppLayout><ShoppingListPage /></AppLayout></ProtectedRoute>} />
