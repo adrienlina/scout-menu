@@ -198,7 +198,8 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
                   variant="ghost"
                   size="icon"
                   className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     deleteMenu.mutate(menu.id, {
                       onSuccess: () => toast({ title: "Menu supprimé" }),
                     });
