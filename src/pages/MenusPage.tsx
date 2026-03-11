@@ -178,7 +178,8 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
                     size="icon"
                     className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
                     title={menu.is_shared ? "Rendre privé" : "Partager"}
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       toggleShared.mutate(
                         { menuId: menu.id, isShared: !menu.is_shared },
                         {
