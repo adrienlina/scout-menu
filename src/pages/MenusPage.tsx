@@ -169,7 +169,7 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
                     size="icon"
                     className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
                     title="Modifier"
-                    onClick={() => setEditOpen(true)}
+                    onClick={(e) => { e.stopPropagation(); setEditOpen(true); }}
                   >
                     <Pencil className="h-4 w-4 text-muted-foreground" />
                   </Button>
