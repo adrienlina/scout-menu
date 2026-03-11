@@ -130,6 +130,7 @@ export default function MenusPage() {
 }
 
 function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDelete: boolean }) {
+  const navigate = useNavigate();
   const deleteMenu = useDeleteMenu();
   const toggleShared = useToggleShared();
   const { toast } = useToast();
