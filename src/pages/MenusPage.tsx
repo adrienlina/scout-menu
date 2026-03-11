@@ -144,7 +144,7 @@ function MenuCard({ menu, index, canDelete }: { menu: any; index: number; canDel
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
     >
-      <Card className="group relative overflow-hidden transition-shadow hover:shadow-lg">
+      <Card className="group relative overflow-hidden transition-shadow hover:shadow-lg cursor-pointer" onClick={() => navigate(`/menus/${menu.id}`)}>
         <CardHeader className="pb-2">
           <div className="flex items-start justify-between">
             <div className="space-y-1">
