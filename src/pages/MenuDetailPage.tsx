@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -9,11 +9,11 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { ArrowLeft, Plus, X, Trash2, Leaf, Save, Search } from "lucide-react";
+import { ArrowLeft, Plus, X, Trash2, Leaf, Search, Share2, Check, Pencil } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { motion } from "framer-motion";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
 import {
   Command,
   CommandEmpty,
@@ -45,6 +45,36 @@ export default function MenuDetailPage() {
   const { user } = useAuth();
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const isNew = menuId === "new";
+
+  // Create new menu and redirect
+  const createMenu = useMutation({
+    mutationFn: async () => {
+      if (!user) throw new Error("Not authenticated");
+      const { data, error } = await supabase
+        .from("menus")
+        .insert({ name: "Nouveau menu", meal_type: "dejeuner", user_id: user.id })
+        .select()
+        .single();
+      if (error) throw error;
+      return data;
+    },
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: ["menus"] });
+      navigate(`/menus/${data.id}`, { replace: true });
+    },
+    onError: (err: any) => {
+      toast({ title: "Erreur", description: err.message, variant: "destructive" });
+      navigate("/menus");
+    },
+  });
+
+  useEffect(() => {
+    if (isNew) {
+      createMenu.mutate();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isNew]);
 
   // Fetch menu
   const { data: menu, isLoading: menuLoading } = useQuery({
@@ -58,7 +88,7 @@ export default function MenuDetailPage() {
       if (error) throw error;
       return data;
     },
-    enabled: !!menuId,
+    enabled: !!menuId && !isNew,
   });
 
   // Fetch ingredients with agribalyse data
@@ -72,7 +102,6 @@ export default function MenuDetailPage() {
         .order("name");
       if (error) throw error;
 
-      // Fetch agribalyse data for linked ingredients
       const agriIds = (data || []).map((i: any) => i.agribalyse_food_id).filter(Boolean) as string[];
       let agriMap: Record<string, { name: string; changement_climatique: number | null }> = {};
       if (agriIds.length > 0) {
@@ -91,7 +120,7 @@ export default function MenuDetailPage() {
         changement_climatique: i.agribalyse_food_id ? agriMap[i.agribalyse_food_id]?.changement_climatique || null : null,
       })) as IngredientRow[];
     },
-    enabled: !!menuId,
+    enabled: !!menuId && !isNew,
   });
 
   const isOwner = menu?.user_id === user?.id;
@@ -101,25 +130,18 @@ export default function MenuDetailPage() {
     return ingredients
       .filter(i => i.changement_climatique !== null && i.changement_climatique !== undefined)
       .map(i => {
-        // Convert quantity to kg for calculation
         let qtyKg = i.quantity;
         if (i.unit === "g") qtyKg = i.quantity / 1000;
         else if (i.unit === "ml") qtyKg = i.quantity / 1000;
         else if (i.unit === "L") qtyKg = i.quantity;
-        else if (i.unit === "pièce") qtyKg = i.quantity * 0.15; // rough estimate
-        // kg stays as is
-
-        return {
-          name: i.name,
-          co2: (i.changement_climatique! * qtyKg),
-          unit: "kg CO₂ eq",
-        };
+        else if (i.unit === "pièce") qtyKg = i.quantity * 0.15;
+        return { name: i.name, co2: (i.changement_climatique! * qtyKg), unit: "kg CO₂ eq" };
       });
   }, [ingredients]);
 
   const totalCO2 = useMemo(() => co2Data.reduce((sum, d) => sum + d.co2, 0), [co2Data]);
 
-  if (menuLoading || ingredientsLoading) {
+  if (isNew || menuLoading || ingredientsLoading) {
     return (
       <div className="flex min-h-[50vh] items-center justify-center text-muted-foreground">
         Chargement...
@@ -144,9 +166,8 @@ export default function MenuDetailPage() {
         <Button variant="ghost" size="icon" onClick={() => navigate("/menus")}>
           <ArrowLeft className="h-4 w-4" />
         </Button>
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">{menu.name}</h1>
-          {menu.description && <p className="text-sm text-muted-foreground">{menu.description}</p>}
+        <div className="flex-1">
+          <MenuHeader menu={menu} isOwner={isOwner} />
         </div>
       </div>
 
@@ -217,22 +238,10 @@ export default function MenuDetailPage() {
                   <ResponsiveContainer width="100%" height={Math.max(150, co2Data.length * 36 + 20)}>
                     <BarChart data={co2Data} layout="vertical" margin={{ top: 0, right: 10, left: 0, bottom: 0 }}>
                       <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
-                      <XAxis
-                        type="number"
-                        tick={{ fontSize: 10 }}
-                        tickFormatter={(v) => v.toLocaleString("fr-FR", { maximumFractionDigits: 3 })}
-                      />
-                      <YAxis
-                        type="category"
-                        dataKey="name"
-                        width={100}
-                        tick={{ fontSize: 10 }}
-                      />
+                      <XAxis type="number" tick={{ fontSize: 10 }} tickFormatter={(v) => v.toLocaleString("fr-FR", { maximumFractionDigits: 3 })} />
+                      <YAxis type="category" dataKey="name" width={100} tick={{ fontSize: 10 }} />
                       <RechartsTooltip
-                        formatter={(value: number) => [
-                          value.toLocaleString("fr-FR", { maximumFractionDigits: 4 }) + " kg CO₂ eq",
-                          "Impact",
-                        ]}
+                        formatter={(value: number) => [value.toLocaleString("fr-FR", { maximumFractionDigits: 4 }) + " kg CO₂ eq", "Impact"]}
                         contentStyle={{ fontSize: "12px", borderRadius: "8px", textAlign: "left" }}
                       />
                       <Bar dataKey="co2" radius={[0, 4, 4, 0]} barSize={20}>
@@ -265,6 +274,143 @@ export default function MenuDetailPage() {
           </Card>
         </div>
       </div>
+    </div>
+  );
+}
+
+// -- Editable Menu Header --
+function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
+  const queryClient = useQueryClient();
+  const { toast } = useToast();
+  const [editingName, setEditingName] = useState(false);
+  const [editingDesc, setEditingDesc] = useState(false);
+  const [name, setName] = useState(menu.name);
+  const [description, setDescription] = useState(menu.description || "");
+
+  useEffect(() => {
+    setName(menu.name);
+    setDescription(menu.description || "");
+  }, [menu.name, menu.description]);
+
+  const updateField = useMutation({
+    mutationFn: async (fields: Record<string, any>) => {
+      const { error } = await supabase
+        .from("menus")
+        .update(fields)
+        .eq("id", menu.id);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["menu-detail", menu.id] });
+      queryClient.invalidateQueries({ queryKey: ["menus"] });
+    },
+  });
+
+  const saveName = () => {
+    if (name.trim() && name !== menu.name) {
+      updateField.mutate({ name: name.trim() });
+    }
+    setEditingName(false);
+  };
+
+  const saveDescription = () => {
+    if (description !== (menu.description || "")) {
+      updateField.mutate({ description: description.trim() || null });
+    }
+    setEditingDesc(false);
+  };
+
+  const toggleShared = () => {
+    updateField.mutate(
+      { is_shared: !menu.is_shared },
+      { onSuccess: () => toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }) }
+    );
+  };
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center gap-3 flex-wrap">
+        {/* Title */}
+        {isOwner && editingName ? (
+          <div className="flex items-center gap-2">
+            <Input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="text-2xl font-bold h-10"
+              autoFocus
+              onKeyDown={(e) => { if (e.key === "Enter") saveName(); if (e.key === "Escape") { setName(menu.name); setEditingName(false); } }}
+              onBlur={saveName}
+            />
+          </div>
+        ) : (
+          <h1
+            className={`text-2xl font-bold tracking-tight ${isOwner ? "cursor-pointer hover:text-primary transition-colors" : ""}`}
+            onClick={() => isOwner && setEditingName(true)}
+            title={isOwner ? "Cliquer pour modifier" : undefined}
+          >
+            {menu.name}
+            {isOwner && <Pencil className="inline ml-2 h-4 w-4 text-muted-foreground" />}
+          </h1>
+        )}
+
+        {/* Meal type */}
+        {isOwner ? (
+          <Select
+            value={menu.meal_type}
+            onValueChange={(v) => updateField.mutate({ meal_type: v })}
+          >
+            <SelectTrigger className="w-auto h-7 text-xs">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="petit-dejeuner">☀️ Petit-déjeuner</SelectItem>
+              <SelectItem value="dejeuner">🍽️ Déjeuner/Dîner</SelectItem>
+              <SelectItem value="gouter">🍪 Goûter</SelectItem>
+            </SelectContent>
+          </Select>
+        ) : (
+          <Badge variant="secondary" className="text-xs">
+            {MEAL_TYPE_ICONS[menu.meal_type as MealType]} {MEAL_TYPE_LABELS[menu.meal_type as MealType]}
+          </Badge>
+        )}
+
+        {/* Share toggle */}
+        {isOwner && !menu.is_default && (
+          <div className="flex items-center gap-2 ml-auto">
+            <Share2 className={`h-4 w-4 ${menu.is_shared ? "text-primary" : "text-muted-foreground"}`} />
+            <Label htmlFor="share-toggle" className="text-sm text-muted-foreground cursor-pointer">
+              {menu.is_shared ? "Partagé" : "Privé"}
+            </Label>
+            <Switch
+              id="share-toggle"
+              checked={menu.is_shared}
+              onCheckedChange={toggleShared}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Description */}
+      {isOwner && editingDesc ? (
+        <Input
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          placeholder="Ajouter une description…"
+          className="text-sm"
+          autoFocus
+          onKeyDown={(e) => { if (e.key === "Enter") saveDescription(); if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); } }}
+          onBlur={saveDescription}
+        />
+      ) : (
+        <p
+          className={`text-sm text-muted-foreground ${isOwner ? "cursor-pointer hover:text-foreground transition-colors" : ""}`}
+          onClick={() => isOwner && setEditingDesc(true)}
+          title={isOwner ? "Cliquer pour modifier" : undefined}
+        >
+          {menu.description || (isOwner ? "Ajouter une description…" : "")}
+          {isOwner && <Pencil className="inline ml-1 h-3 w-3" />}
+        </p>
+      )}
     </div>
   );
 }
@@ -307,7 +453,6 @@ function IngredientTableRow({
     },
   });
 
-  // CO2 for this ingredient
   let co2 = null;
   if (ingredient.changement_climatique !== null && ingredient.changement_climatique !== undefined) {
     let qtyKg = ingredient.quantity;
@@ -520,7 +665,6 @@ function AddIngredientForm({ menuId }: { menuId: string }) {
             currentName={agriName}
             onSelect={(id) => {
               setAgriId(id);
-              // We'll fetch the name on selection
               if (!id) setAgriName(null);
             }}
             searchHint={name}
