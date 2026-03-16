@@ -451,13 +451,22 @@ function IngredientTableRow({
     },
   });
 
+  const updateMultiplier = useMutation({
+    mutationFn: async (multiplier: number) => {
+      const { error } = await supabase
+        .from("menu_ingredients")
+        .update({ unit_multiplier: multiplier } as any)
+        .eq("id", ingredient.id!);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["menu-ingredients-detail", menuId] });
+    },
+  });
+
   let co2 = null;
   if (ingredient.changement_climatique !== null && ingredient.changement_climatique !== undefined) {
-    let qtyKg = ingredient.quantity;
-    if (ingredient.unit === "g") qtyKg = ingredient.quantity / 1000;
-    else if (ingredient.unit === "ml") qtyKg = ingredient.quantity / 1000;
-    else if (ingredient.unit === "L") qtyKg = ingredient.quantity;
-    else if (ingredient.unit === "pièce") qtyKg = ingredient.quantity * 0.15;
+    const qtyKg = ingredient.quantity * ingredient.unit_multiplier;
     co2 = ingredient.changement_climatique * qtyKg;
   }
 
