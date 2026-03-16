@@ -131,11 +131,7 @@ export default function MenuDetailPage() {
     return ingredients
       .filter(i => i.changement_climatique !== null && i.changement_climatique !== undefined)
       .map(i => {
-        let qtyKg = i.quantity;
-        if (i.unit === "g") qtyKg = i.quantity / 1000;
-        else if (i.unit === "ml") qtyKg = i.quantity / 1000;
-        else if (i.unit === "L") qtyKg = i.quantity;
-        else if (i.unit === "pièce") qtyKg = i.quantity * 0.15;
+        const qtyKg = i.quantity * i.unit_multiplier;
         return { name: i.name, co2: (i.changement_climatique! * qtyKg), unit: "kg CO₂ eq" };
       });
   }, [ingredients]);
