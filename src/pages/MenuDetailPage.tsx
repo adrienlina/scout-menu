@@ -199,7 +199,7 @@ export default function MenuDetailPage() {
                   ))}
                   {ingredients.length === 0 && (
                     <TableRow>
-                      <TableCell colSpan={isOwner ? 6 : 5} className="text-center text-muted-foreground py-8">
+                      <TableCell colSpan={isOwner ? 7 : 6} className="text-center text-muted-foreground py-8">
                         Aucun ingrédient
                       </TableCell>
                     </TableRow>
