@@ -271,6 +271,7 @@ export type Database = {
           name: string
           quantity: number
           unit: string
+          unit_multiplier: number
         }
         Insert: {
           agribalyse_food_id?: string | null
@@ -280,6 +281,7 @@ export type Database = {
           name: string
           quantity: number
           unit: string
+          unit_multiplier?: number
         }
         Update: {
           agribalyse_food_id?: string | null
@@ -289,6 +291,7 @@ export type Database = {
           name?: string
           quantity?: number
           unit?: string
+          unit_multiplier?: number
         }
         Relationships: [
           {
