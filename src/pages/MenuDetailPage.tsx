@@ -34,6 +34,7 @@ type IngredientRow = {
   name: string;
   quantity: number;
   unit: string;
+  unit_multiplier: number;
   agribalyse_food_id: string | null;
   agribalyse_name?: string | null;
   changement_climatique?: number | null;
@@ -130,11 +131,7 @@ export default function MenuDetailPage() {
     return ingredients
       .filter(i => i.changement_climatique !== null && i.changement_climatique !== undefined)
       .map(i => {
-        let qtyKg = i.quantity;
-        if (i.unit === "g") qtyKg = i.quantity / 1000;
-        else if (i.unit === "ml") qtyKg = i.quantity / 1000;
-        else if (i.unit === "L") qtyKg = i.quantity;
-        else if (i.unit === "pièce") qtyKg = i.quantity * 0.15;
+        const qtyKg = i.quantity * i.unit_multiplier;
         return { name: i.name, co2: (i.changement_climatique! * qtyKg), unit: "kg CO₂ eq" };
       });
   }, [ingredients]);
@@ -186,6 +183,7 @@ export default function MenuDetailPage() {
                     <TableHead className="w-20">Quantité</TableHead>
                     <TableHead className="w-16">Unité</TableHead>
                     <TableHead>Aliment Agribalyse</TableHead>
+                    <TableHead className="w-24">Multiplicateur</TableHead>
                     <TableHead className="w-28 text-right">CO₂ (kg eq)</TableHead>
                     {isOwner && <TableHead className="w-10" />}
                   </TableRow>
@@ -201,7 +199,7 @@ export default function MenuDetailPage() {
                   ))}
                   {ingredients.length === 0 && (
                     <TableRow>
-                      <TableCell colSpan={isOwner ? 6 : 5} className="text-center text-muted-foreground py-8">
+                      <TableCell colSpan={isOwner ? 7 : 6} className="text-center text-muted-foreground py-8">
                         Aucun ingrédient
                       </TableCell>
                     </TableRow>
@@ -453,13 +451,22 @@ function IngredientTableRow({
     },
   });
 
+  const updateMultiplier = useMutation({
+    mutationFn: async (multiplier: number) => {
+      const { error } = await supabase
+        .from("menu_ingredients")
+        .update({ unit_multiplier: multiplier } as any)
+        .eq("id", ingredient.id!);
+      if (error) throw error;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["menu-ingredients-detail", menuId] });
+    },
+  });
+
   let co2 = null;
   if (ingredient.changement_climatique !== null && ingredient.changement_climatique !== undefined) {
-    let qtyKg = ingredient.quantity;
-    if (ingredient.unit === "g") qtyKg = ingredient.quantity / 1000;
-    else if (ingredient.unit === "ml") qtyKg = ingredient.quantity / 1000;
-    else if (ingredient.unit === "L") qtyKg = ingredient.quantity;
-    else if (ingredient.unit === "pièce") qtyKg = ingredient.quantity * 0.15;
+    const qtyKg = ingredient.quantity * ingredient.unit_multiplier;
     co2 = ingredient.changement_climatique * qtyKg;
   }
 
@@ -480,6 +487,22 @@ function IngredientTableRow({
           <span className="text-xs text-muted-foreground">
             {ingredient.agribalyse_name || "—"}
           </span>
+        )}
+      </TableCell>
+      <TableCell>
+        {isOwner ? (
+          <Input
+            type="number"
+            step="0.001"
+            value={ingredient.unit_multiplier}
+            onChange={(e) => {
+              const val = parseFloat(e.target.value);
+              if (!isNaN(val) && val > 0) updateMultiplier.mutate(val);
+            }}
+            className="h-7 w-20 text-xs"
+          />
+        ) : (
+          <span className="text-xs tabular-nums">{ingredient.unit_multiplier}</span>
         )}
       </TableCell>
       <TableCell className="text-right tabular-nums text-sm">

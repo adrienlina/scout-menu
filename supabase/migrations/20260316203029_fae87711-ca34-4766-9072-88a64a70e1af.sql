@@ -1,0 +1,1 @@
+ALTER TABLE public.menu_ingredients ADD COLUMN unit_multiplier numeric NOT NULL DEFAULT 1.0;
