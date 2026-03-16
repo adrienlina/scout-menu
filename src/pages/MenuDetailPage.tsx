@@ -489,6 +489,22 @@ function IngredientTableRow({
           </span>
         )}
       </TableCell>
+      <TableCell>
+        {isOwner ? (
+          <Input
+            type="number"
+            step="0.001"
+            value={ingredient.unit_multiplier}
+            onChange={(e) => {
+              const val = parseFloat(e.target.value);
+              if (!isNaN(val) && val > 0) updateMultiplier.mutate(val);
+            }}
+            className="h-7 w-20 text-xs"
+          />
+        ) : (
+          <span className="text-xs tabular-nums">{ingredient.unit_multiplier}</span>
+        )}
+      </TableCell>
       <TableCell className="text-right tabular-nums text-sm">
         {co2 !== null ? co2.toLocaleString("fr-FR", { maximumFractionDigits: 3 }) : "—"}
       </TableCell>
