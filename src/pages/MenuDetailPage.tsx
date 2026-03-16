@@ -183,6 +183,7 @@ export default function MenuDetailPage() {
                     <TableHead className="w-20">Quantité</TableHead>
                     <TableHead className="w-16">Unité</TableHead>
                     <TableHead>Aliment Agribalyse</TableHead>
+                    <TableHead className="w-24">Multiplicateur</TableHead>
                     <TableHead className="w-28 text-right">CO₂ (kg eq)</TableHead>
                     {isOwner && <TableHead className="w-10" />}
                   </TableRow>
