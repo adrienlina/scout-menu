@@ -11,7 +11,7 @@ export function useCamps() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("camps")
-        .select("*, camp_meals(*, menus(*, menu_ingredients(*))), camp_days(*)")
+        .select("*, camp_meals(*, menus(*, menu_ingredients(*, agribalyse_foods(*)))), camp_days(*)")
         .order("start_date", { ascending: false });
 
       if (error) throw error;
@@ -27,7 +27,7 @@ export function useCamp(campId: string) {
     queryFn: async () => {
       const { data, error } = await supabase
         .from("camps")
-        .select("*, camp_meals(*, menus(*, menu_ingredients(*))), camp_days(*)")
+        .select("*, camp_meals(*, menus(*, menu_ingredients(*, agribalyse_foods(*)))), camp_days(*)")
         .eq("id", campId)
         .single();
 

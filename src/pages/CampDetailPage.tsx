@@ -7,8 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck } from "lucide-react";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts } from "@/lib/types";
+import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck, Leaf } from "lucide-react";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts, getMenuCO2 } from "@/lib/types";
 import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
@@ -165,6 +165,10 @@ export default function CampDetailPage() {
                 ))}
               </div>
             )}
+            <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/emissions`)}>
+              <Leaf className="h-4 w-4" />
+              Émissions CO₂
+            </Button>
             <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/stock`)}>
               <Package className="h-4 w-4" />
               Stock
@@ -400,6 +404,15 @@ function MealCard({
                 ))}
               </div>
             )}
+            {(() => {
+              const co2 = getMenuCO2(menu, participantCount);
+              return co2 > 0 ? (
+                <div className="flex items-center gap-1 pl-5 pt-0.5">
+                  <Leaf className="h-3 w-3 text-emerald-500" />
+                  <span className="text-xs text-muted-foreground">{co2.toFixed(2)} kg CO₂</span>
+                </div>
+              ) : null;
+            })()}
           </div>
         )}
       </Draggable>
