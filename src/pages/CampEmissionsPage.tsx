@@ -168,8 +168,8 @@ export default function CampEmissionsPage() {
                     <div className="w-40 shrink-0 truncate font-medium">{item.name}</div>
                     <div className="flex-1 h-5 bg-muted rounded overflow-hidden">
                       <div
-                        className="h-full bg-emerald-500/70 rounded transition-all"
-                        style={{ width: `${barWidth}%` }}
+                        className="h-full rounded transition-all"
+                        style={{ width: `${barWidth}%`, backgroundColor: getEmissionColor(item.co2, maxIngCO2) }}
                       />
                     </div>
                     <span className="w-28 text-right text-xs text-muted-foreground shrink-0">
