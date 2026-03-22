@@ -54,7 +54,7 @@ export default function CampsPage() {
       ) : camps && camps.length > 0 ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {camps.map((camp, i) => (
-            <CampCard key={camp.id} camp={camp} index={i} />
+            <CampCard key={camp.id} camp={camp} index={i} isShared={camp.user_id !== user?.id} />
           ))}
         </div>
       ) : (
