@@ -184,8 +184,22 @@ export default function MenuDetailPage() {
                     <TableHead className="w-20">Quantité</TableHead>
                     <TableHead className="w-16">Unité</TableHead>
                     <TableHead>Aliment Agribalyse</TableHead>
-                    <TableHead className="w-24">Multiplicateur</TableHead>
-                    <TableHead className="w-28 text-right">CO₂ (kg eq)</TableHead>
+                    <TableHead className="w-44">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="flex items-center gap-1 cursor-help">
+                              Multiplicateur ingrédient → kg de produit
+                              <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs text-xs">
+                            <p>Facteur de conversion entre l'unité de l'ingrédient et le kg utilisé par Agribalyse.</p>
+                            <p className="mt-1">Exemples : pour des grammes → 0.001, pour des kg → 1, pour des litres → 1 (approximation eau).</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </TableHead>
                     {isOwner && <TableHead className="w-10" />}
                   </TableRow>
                 </TableHeader>
