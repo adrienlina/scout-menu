@@ -13,8 +13,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
 
-export function CreateShoppingListDialog({ camp }: { camp: Camp }) {
-  const [open, setOpen] = useState(false);
+export function CreateShoppingListDialog({ camp, open: controlledOpen, onOpenChange: controlledOnOpenChange }: { camp: Camp; open?: boolean; onOpenChange?: (open: boolean) => void }) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen ?? internalOpen;
+  const setOpen = controlledOnOpenChange ?? setInternalOpen;
   const [name, setName] = useState("Liste de courses");
   const [selectedMealIds, setSelectedMealIds] = useState<Set<string>>(new Set());
   const createList = useCreateShoppingList();
@@ -75,12 +77,14 @@ export function CreateShoppingListDialog({ camp }: { camp: Camp }) {
 
   return (
     <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (v) setSelectedMealIds(new Set()); }}>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="gap-2">
-          <ShoppingCart className="h-4 w-4" />
-          Liste de courses
-        </Button>
-      </DialogTrigger>
+      {controlledOpen === undefined && (
+        <DialogTrigger asChild>
+          <Button variant="outline" className="gap-2">
+            <ShoppingCart className="h-4 w-4" />
+            Liste de courses
+          </Button>
+        </DialogTrigger>
+      )}
       <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Créer une liste de courses</DialogTitle>

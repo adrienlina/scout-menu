@@ -9,7 +9,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck, Leaf } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts, getMenuCO2 } from "@/lib/types";
-import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
+import { ShoppingListDropdown } from "@/components/ShoppingListDropdown";
 import { CampShareDialog } from "@/components/CampShareDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
@@ -153,22 +153,7 @@ export default function CampDetailPage() {
           </div>
           <div className="flex gap-2 flex-wrap">
             <CampShareDialog campId={camp.id} isOwner={camp.user_id === user?.id} />
-            <CreateShoppingListDialog camp={camp} />
-            {shoppingLists && shoppingLists.length > 0 && (
-              <div className="flex gap-1">
-                {shoppingLists.map((sl) => (
-                  <Button
-                    key={sl.id}
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => navigate(`/camps/${camp.id}/liste/${sl.id}`)}
-                    className="text-xs"
-                  >
-                    📋 {sl.name}
-                  </Button>
-                ))}
-              </div>
-            )}
+            <ShoppingListDropdown camp={camp} shoppingLists={shoppingLists || []} />
             <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/emissions`)}>
               <Leaf className="h-4 w-4" />
               Émissions CO₂
