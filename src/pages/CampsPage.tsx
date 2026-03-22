@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCamps, useCreateCamp, useDeleteCamp } from "@/hooks/useCamps";
+import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
