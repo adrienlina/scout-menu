@@ -1,10 +1,14 @@
 import type { Tables } from "@/integrations/supabase/types";
 
+export type AgribalyseFood = Tables<"agribalyse_foods">;
+
+export type Ingredient = Tables<"menu_ingredients"> & {
+  agribalyse_foods?: AgribalyseFood | null;
+};
+
 export type Menu = Tables<"menus"> & {
   menu_ingredients?: Ingredient[];
 };
-
-export type Ingredient = Tables<"menu_ingredients">;
 
 export type CampDay = Tables<"camp_days">;
 
@@ -16,6 +20,16 @@ export type Camp = Tables<"camps"> & {
 export type CampMeal = Tables<"camp_meals"> & {
   menus?: Menu;
 };
+
+/** Compute CO2 (kg) for a single menu given a participant count */
+export function getMenuCO2(menu: Menu | undefined, participantCount: number): number {
+  if (!menu?.menu_ingredients) return 0;
+  return menu.menu_ingredients.reduce((sum, ing) => {
+    const cc = ing.agribalyse_foods?.changement_climatique;
+    if (!cc) return sum;
+    return sum + ing.quantity * ing.unit_multiplier * cc * participantCount;
+  }, 0);
+}
 
 export type MealType = "petit-dejeuner" | "dejeuner" | "gouter" | "diner";
 

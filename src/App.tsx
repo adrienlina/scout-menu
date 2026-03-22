@@ -38,6 +38,7 @@ function AppRoutes() {
       <Route path="/camps" element={<ProtectedRoute><AppLayout><CampsPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId" element={<ProtectedRoute><AppLayout><CampDetailPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId/liste/:listId" element={<ProtectedRoute><AppLayout><ShoppingListPage /></AppLayout></ProtectedRoute>} />
+      <Route path="/camps/:campId/emissions" element={<ProtectedRoute><AppLayout><CampEmissionsPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId/stock" element={<ProtectedRoute><AppLayout><StockPage /></AppLayout></ProtectedRoute>} />
       <Route path="/agribalyse" element={<ProtectedRoute><AppLayout><AgribalysePage /></AppLayout></ProtectedRoute>} />
       <Route path="*" element={<NotFound />} />

@@ -165,6 +165,10 @@ export default function CampDetailPage() {
                 ))}
               </div>
             )}
+            <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/emissions`)}>
+              <Leaf className="h-4 w-4" />
+              Émissions CO₂
+            </Button>
             <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/stock`)}>
               <Package className="h-4 w-4" />
               Stock
