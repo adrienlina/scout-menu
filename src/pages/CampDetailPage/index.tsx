@@ -1,26 +1,21 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useCamp, useAssignMeal, useRemoveMeal, useUpsertCampDay, useMoveMeal } from "@/hooks/useCamps";
-import { useMenus } from "@/hooks/useMenus";
+import { useCamp, useUpsertCampDay, useMoveMeal } from "@/hooks/useCamps";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck, Leaf } from "lucide-react";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts, getMenuCO2 } from "@/lib/types";
+import { ArrowLeft, Users, Download, Info, Package, Leaf } from "lucide-react";
+import { MEAL_TYPE_LABELS, type MealType, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts } from "@/lib/types";
 import { ShoppingListDropdown } from "@/components/ShoppingListDropdown";
 import { CampShareDialog } from "@/components/CampShareDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
-import { MealUsageDialog } from "@/components/MealUsageDialog";
 import { useAuth } from "@/hooks/useAuth";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
-import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { NumberInput } from "@/components/NumberInput";
 import { motion } from "framer-motion";
-import { DragDropContext, Droppable, Draggable, type DropResult } from "@hello-pangea/dnd";
+import { DragDropContext, type DropResult } from "@hello-pangea/dnd";
+import { MealSlot } from "./MealSlot";
 
 const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
 
@@ -47,7 +42,7 @@ export default function CampDetailPage() {
     end: parseISO(camp.end_date),
   });
 
-  const getMealsForSlot = (date: string, mealType: MealType): CampMeal[] => {
+  const getMealsForSlot = (date: string, mealType: MealType) => {
     return camp.camp_meals?.filter(
       (m) => m.meal_date === date && m.meal_type === mealType
     ) || [];
@@ -245,175 +240,5 @@ export default function CampDetailPage() {
         </DragDropContext>
       </div>
     </TooltipProvider>
-  );
-}
-
-function MealSlot({
-  campId,
-  date,
-  mealType,
-  meals,
-  participantCount,
-}: {
-  campId: string;
-  date: string;
-  mealType: MealType;
-  meals: CampMeal[];
-  participantCount: number;
-}) {
-  const assignMeal = useAssignMeal();
-  const menuFilter = (mealType === "dejeuner" || mealType === "diner") ? "repas" as const : mealType;
-  const { data: menus } = useMenus(menuFilter);
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const droppableId = `slot:${date}:${mealType}`;
-
-  return (
-    <Droppable droppableId={droppableId}>
-      {(provided, snapshot) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.droppableProps}
-          className={`rounded-lg border p-3 space-y-2 transition-colors ${
-            snapshot.isDraggingOver ? "border-primary bg-primary/5" : "bg-card/50"
-          }`}
-        >
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-medium text-muted-foreground">
-              {MEAL_TYPE_ICONS[mealType]} {MEAL_TYPE_LABELS[mealType]}
-            </span>
-          </div>
-
-          {meals.map((meal, index) => {
-            const menu = meal.menus as Menu | undefined;
-            if (!menu) return null;
-            return (
-              <MealCard
-                key={meal.id}
-                meal={meal}
-                menu={menu}
-                index={index}
-                campId={campId}
-                participantCount={participantCount}
-              />
-            );
-          })}
-
-          {provided.placeholder}
-
-          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogTrigger asChild>
-              <button className="flex w-full items-center justify-center rounded border border-dashed border-border py-2 text-xs text-muted-foreground hover:border-primary hover:text-primary transition-colors">
-                <Plus className="mr-1 h-3 w-3" />
-                Ajouter
-              </button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Choisir un menu — {MEAL_TYPE_LABELS[mealType]}</DialogTitle>
-              </DialogHeader>
-              <div className="space-y-2 max-h-[60vh] overflow-y-auto">
-                {menus?.map((m) => (
-                  <button
-                    key={m.id}
-                    className="w-full rounded-lg border p-3 text-left hover:bg-accent transition-colors"
-                    onClick={() => {
-                      assignMeal.mutate({ campId, menuId: m.id, mealDate: date, mealType });
-                      setDialogOpen(false);
-                    }}
-                  >
-                    <p className="font-medium text-sm">{m.name}</p>
-                    {m.description && <p className="text-xs text-muted-foreground">{m.description}</p>}
-                    {m.is_default && <Badge className="mt-1 text-xs gradient-campfire border-0 text-primary-foreground">Standard</Badge>}
-                  </button>
-                ))}
-                {menus?.length === 0 && (
-                  <p className="text-sm text-muted-foreground text-center py-4">Aucun menu disponible pour ce repas</p>
-                )}
-              </div>
-            </DialogContent>
-          </Dialog>
-        </div>
-      )}
-    </Droppable>
-  );
-}
-
-function MealCard({
-  meal,
-  menu,
-  index,
-  campId,
-  participantCount,
-}: {
-  meal: CampMeal;
-  menu: Menu;
-  index: number;
-  campId: string;
-  participantCount: number;
-}) {
-  const removeMeal = useRemoveMeal();
-  const [usageOpen, setUsageOpen] = useState(false);
-
-  return (
-    <>
-      <Draggable key={meal.id} draggableId={meal.id} index={index}>
-        {(dragProvided, dragSnapshot) => (
-          <div
-            ref={dragProvided.innerRef}
-            {...dragProvided.draggableProps}
-            className={`space-y-1 rounded border p-2 transition-shadow ${
-              dragSnapshot.isDragging ? "shadow-lg border-primary bg-background" : "bg-background"
-            }`}
-          >
-            <div className="flex items-center justify-between gap-1">
-              <div className="flex items-center gap-1.5 min-w-0">
-                <span {...dragProvided.dragHandleProps} className="cursor-grab text-muted-foreground hover:text-foreground shrink-0">
-                  <GripVertical className="h-3.5 w-3.5" />
-                </span>
-                <p className="text-sm font-medium leading-tight truncate">{menu.name}</p>
-              </div>
-              <div className="flex items-center gap-1 shrink-0">
-                <button
-                  onClick={() => setUsageOpen(true)}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                  title="Consommation"
-                >
-                  <ClipboardCheck className="h-3.5 w-3.5" />
-                </button>
-                <button onClick={() => removeMeal.mutate(meal.id)} className="text-muted-foreground hover:text-destructive transition-colors">
-                  <X className="h-3 w-3" />
-                </button>
-              </div>
-            </div>
-            {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
-              <div className="space-y-0.5 pl-5">
-                {menu.menu_ingredients.map((ing) => (
-                  <p key={ing.id} className="text-xs text-muted-foreground">
-                    {ing.name}: <span className="font-medium">{(ing.quantity * participantCount).toFixed(0)}{ing.unit}</span>
-                  </p>
-                ))}
-              </div>
-            )}
-            {(() => {
-              const co2 = getMenuCO2(menu, participantCount);
-              return co2 > 0 ? (
-                <div className="flex items-center gap-1 pl-5 pt-0.5">
-                  <Leaf className="h-3 w-3 text-emerald-500" />
-                  <span className="text-xs text-muted-foreground">{co2.toFixed(2)} kg CO₂</span>
-                </div>
-              ) : null;
-            })()}
-          </div>
-        )}
-      </Draggable>
-      <MealUsageDialog
-        open={usageOpen}
-        onOpenChange={setUsageOpen}
-        campId={campId}
-        campMealId={meal.id}
-        menu={menu}
-        participantCount={participantCount}
-      />
-    </>
   );
 }
