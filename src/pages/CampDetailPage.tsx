@@ -400,6 +400,15 @@ function MealCard({
                 ))}
               </div>
             )}
+            {(() => {
+              const co2 = getMenuCO2(menu, participantCount);
+              return co2 > 0 ? (
+                <div className="flex items-center gap-1 pl-5 pt-0.5">
+                  <Leaf className="h-3 w-3 text-emerald-500" />
+                  <span className="text-xs text-muted-foreground">{co2.toFixed(2)} kg CO₂</span>
+                </div>
+              ) : null;
+            })()}
           </div>
         )}
       </Draggable>
