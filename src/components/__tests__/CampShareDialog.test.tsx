@@ -90,10 +90,9 @@ describe("CampShareDialog", () => {
     await waitFor(() => {
       expect(screen.getByText("alice@test.com")).toBeInTheDocument();
     });
-    // The X button should not be present
-    const removeButtons = screen.queryAllByRole("button").filter(
-      (btn) => btn.querySelector("svg.lucide-x")
-    );
-    expect(removeButtons).toHaveLength(0);
+    // The shared email row should not have a remove button
+    const emailRow = screen.getByText("alice@test.com").closest("div");
+    const removeBtn = emailRow?.querySelector("button");
+    expect(removeBtn).toBeNull();
   });
 });
