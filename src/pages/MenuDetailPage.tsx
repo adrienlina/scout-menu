@@ -655,6 +655,12 @@ function AddIngredientForm({ menuId }: { menuId: string }) {
   const [agriId, setAgriId] = useState<string | null>(null);
   const [agriName, setAgriName] = useState<string | null>(null);
 
+  const getMultiplierForUnit = (u: string) => {
+    if (u === "g") return 0.001;
+    if (u === "kg") return 1;
+    return 1;
+  };
+
   const addIng = useMutation({
     mutationFn: async () => {
       const insertData: any = {
@@ -662,6 +668,7 @@ function AddIngredientForm({ menuId }: { menuId: string }) {
         name,
         quantity: parseFloat(qty),
         unit,
+        unit_multiplier: getMultiplierForUnit(unit),
       };
       if (agriId) insertData.agribalyse_food_id = agriId;
 
