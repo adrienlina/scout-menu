@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck } from "lucide-react";
+import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck, Leaf } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts, getMenuCO2 } from "@/lib/types";
 import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
