@@ -3,11 +3,9 @@ import { useCamp } from "@/hooks/useCamps";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Leaf, ArrowUpDown } from "lucide-react";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
+import { MEAL_TYPE_ICONS, type MealType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
-import { fr } from "date-fns/locale";
 import { useMemo, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from "recharts";
 
 const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
 
