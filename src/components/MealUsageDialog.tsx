@@ -7,7 +7,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { NumberInput } from "@/components/NumberInput";
 import { useLogUsage, useIngredientUsage } from "@/hooks/useStock";
 import { useToast } from "@/hooks/use-toast";
 import type { Menu } from "@/lib/types";
