@@ -200,6 +200,7 @@ export default function MenuDetailPage() {
                         </Tooltip>
                       </TooltipProvider>
                     </TableHead>
+                    <TableHead className="w-28 text-right">CO₂ (kg eq)</TableHead>
                     {isOwner && <TableHead className="w-10" />}
                   </TableRow>
                 </TableHeader>
