@@ -50,19 +50,21 @@ This project is built with:
 # Task todo
 
 ### Bilan carbone
+- [x] Importer Agribalyse
+- [x] Permettre d'associer un ingrédient à une entrée Agribalyse, et le multiplicateur 
 - [ ] Ajouter un test E2E
 - [ ] Améliorer les graphes de visualisation d'un camp
 - [ ] Ajouter un graphe "Total du camp"
 - [ ] Utiliser les familles d'ingrédient Agribalyse pour pouvoir regrouper les aliments
 - [ ] Faire l'import Agribalyse dans une commande dédiée, et pas dans le front.
 
-### Courses / Stock
-- [ ] Permettre de rassembler les ingrédients d'une commande
-[ ]
+### Courses / Stock (commencé)
+- [ ] Permettre de rassembler les ingrédients de plusieurs menus, notamment dans le stock
+- [ ] Permettre d'indiquer la quantité de gâchis d'un repas dans un camp
 
-### Budget intendance
+### Budget intendance (pas commencé)
 - [ ] Intégrer une base de données d'ingrédients ?
 - [ ] Trouver / mettre des ordres de grandeur de coûts par ingrédient
 - [ ] Afficher le coût approximatif d'un menu par portion
-- [ ] Afficher le coût approximatif d'un menu dans un camp (côut menu x nombre de portions)
+- [ ] Afficher le coût approximatif d'un repas dans un camp (côut menu x nombre de portions)
 - 
