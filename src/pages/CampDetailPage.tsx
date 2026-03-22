@@ -154,22 +154,7 @@ export default function CampDetailPage() {
           </div>
           <div className="flex gap-2 flex-wrap">
             <CampShareDialog campId={camp.id} isOwner={camp.user_id === user?.id} />
-            <CreateShoppingListDialog camp={camp} />
-            {shoppingLists && shoppingLists.length > 0 && (
-              <div className="flex gap-1">
-                {shoppingLists.map((sl) => (
-                  <Button
-                    key={sl.id}
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => navigate(`/camps/${camp.id}/liste/${sl.id}`)}
-                    className="text-xs"
-                  >
-                    📋 {sl.name}
-                  </Button>
-                ))}
-              </div>
-            )}
+            <ShoppingListDropdown camp={camp} shoppingLists={shoppingLists || []} />
             <Button variant="outline" className="gap-2" onClick={() => navigate(`/camps/${camp.id}/emissions`)}>
               <Leaf className="h-4 w-4" />
               Émissions CO₂
