@@ -68,7 +68,7 @@ export default function CampsPage() {
   );
 }
 
-function CampCard({ camp, index }: { camp: any; index: number }) {
+function CampCard({ camp, index, isShared }: { camp: any; index: number; isShared: boolean }) {
   const deleteCamp = useDeleteCamp();
   const { toast } = useToast();
   const mealCount = camp.camp_meals?.length || 0;
