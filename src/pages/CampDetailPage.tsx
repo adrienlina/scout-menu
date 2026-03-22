@@ -209,7 +209,7 @@ export default function CampDetailPage() {
                               <NumberInput
                                 value={ageCounts[g.key]}
                                 onChange={(val) => handleAgeGroupChange(dateStr, g.key, val)}
-                                className="w-12 text-center"
+                                className="w-24 text-center"
                               />
                             </div>
                           ))}
