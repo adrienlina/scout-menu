@@ -51,4 +51,18 @@ This project is built with:
 
 ### Bilan carbone
 - [ ] Ajouter un test E2E
-- [ ] Ajouter un test unitaire
+- [ ] Améliorer les graphes de visualisation d'un camp
+- [ ] Ajouter un graphe "Total du camp"
+- [ ] Utiliser les familles d'ingrédient Agribalyse pour pouvoir regrouper les aliments
+- [ ] Faire l'import Agribalyse dans une commande dédiée, et pas dans le front.
+
+### Courses / Stock
+- [ ] Permettre de rassembler les ingrédients d'une commande
+[ ]
+
+### Budget intendance
+- [ ] Intégrer une base de données d'ingrédients ?
+- [ ] Trouver / mettre des ordres de grandeur de coûts par ingrédient
+- [ ] Afficher le coût approximatif d'un menu par portion
+- [ ] Afficher le coût approximatif d'un menu dans un camp (côut menu x nombre de portions)
+- 

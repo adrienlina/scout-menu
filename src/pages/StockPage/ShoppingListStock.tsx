@@ -1,72 +1,12 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useCamp } from "@/hooks/useCamps";
-import { useIngredientUsage } from "@/hooks/useStock";
-import { useShoppingLists, useShoppingListChecks, useShoppingListMealIds } from "@/hooks/useShoppingLists";
-import { Button } from "@/components/ui/button";
+import { useMemo } from "react";
+import { useShoppingListChecks, useShoppingListMealIds } from "@/hooks/useShoppingLists";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Package, TrendingDown, TrendingUp } from "lucide-react";
+import { TrendingDown, TrendingUp } from "lucide-react";
 import { getWeightedParticipants, type Menu } from "@/lib/types";
-import { useMemo } from "react";
+import type { StockItem } from "./types";
 
-interface StockItem {
-  name: string;
-  unit: string;
-  purchased: number;
-  used: number;
-  remaining: number;
-}
-
-export default function StockPage() {
-  const { campId } = useParams<{ campId: string }>();
-  const navigate = useNavigate();
-  const { data: camp } = useCamp(campId!);
-  const { data: usage } = useIngredientUsage(campId!);
-  const { data: shoppingLists } = useShoppingLists(campId!);
-
-  if (!camp) {
-    return <div className="py-12 text-center text-muted-foreground">Chargement...</div>;
-  }
-
-  return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-3">
-        <Button variant="ghost" size="icon" onClick={() => navigate(`/camps/${campId}`)}>
-          <ArrowLeft className="h-5 w-5" />
-        </Button>
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
-            <Package className="h-6 w-6" />
-            Stock — {camp.name}
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Suivi des ingrédients achetés et consommés
-          </p>
-        </div>
-      </div>
-
-      {shoppingLists?.map((sl) => (
-        <ShoppingListStock
-          key={sl.id}
-          listId={sl.id}
-          listName={sl.name}
-          camp={camp}
-          usage={usage || []}
-        />
-      ))}
-
-      {(!shoppingLists || shoppingLists.length === 0) && (
-        <Card>
-          <CardContent className="py-8 text-center text-muted-foreground">
-            Aucune liste de courses. Créez-en une depuis la page du camp.
-          </CardContent>
-        </Card>
-      )}
-    </div>
-  );
-}
-
-function ShoppingListStock({
+export function ShoppingListStock({
   listId,
   listName,
   camp,
@@ -89,7 +29,6 @@ function ShoppingListStock({
 
     const selectedMeals = camp.camp_meals.filter((m: any) => mealIds.includes(m.id));
 
-    // Build purchased map from checked items
     const purchasedMap = new Map<string, { name: string; unit: string; qty: number }>();
 
     selectedMeals.forEach((meal: any) => {
@@ -109,14 +48,12 @@ function ShoppingListStock({
       });
     });
 
-    // Build used map
     const usedMap = new Map<string, number>();
     usage.forEach((u) => {
       const aggKey = `${u.ingredient_name.toLowerCase()}:${u.unit}`;
       usedMap.set(aggKey, (usedMap.get(aggKey) || 0) + u.quantity_used);
     });
 
-    // Merge
     const items: StockItem[] = [];
     purchasedMap.forEach((val, aggKey) => {
       const usedQty = usedMap.get(aggKey) || 0;
@@ -129,7 +66,6 @@ function ShoppingListStock({
       });
     });
 
-    // Also add used items not in purchased
     usedMap.forEach((usedQty, aggKey) => {
       if (!purchasedMap.has(aggKey)) {
         const [name, unit] = aggKey.split(":");
