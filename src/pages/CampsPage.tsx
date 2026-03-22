@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 
 export default function CampsPage() {
   const { data: camps, isLoading } = useCamps();
+  const { user } = useAuth();
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
