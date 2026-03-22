@@ -83,7 +83,15 @@ function CampCard({ camp, index, isShared }: { camp: any; index: number; isShare
         <Card className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5">
           <CardHeader className="pb-2">
             <div className="flex items-start justify-between">
-              <CardTitle className="text-lg">{camp.name}</CardTitle>
+              <div className="flex items-center gap-2">
+                <CardTitle className="text-lg">{camp.name}</CardTitle>
+                {isShared && (
+                  <Badge variant="secondary" className="gap-1 text-xs">
+                    <Share2 className="h-3 w-3" />
+                    Partagé
+                  </Badge>
+                )}
+              </div>
               <Button
                 variant="ghost"
                 size="icon"
