@@ -77,12 +77,14 @@ export function CreateShoppingListDialog({ camp, open: controlledOpen, onOpenCha
 
   return (
     <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (v) setSelectedMealIds(new Set()); }}>
-      <DialogTrigger asChild>
-        <Button variant="outline" className="gap-2">
-          <ShoppingCart className="h-4 w-4" />
-          Liste de courses
-        </Button>
-      </DialogTrigger>
+      {controlledOpen === undefined && (
+        <DialogTrigger asChild>
+          <Button variant="outline" className="gap-2">
+            <ShoppingCart className="h-4 w-4" />
+            Liste de courses
+          </Button>
+        </DialogTrigger>
+      )}
       <DialogContent className="max-w-lg max-h-[80vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Créer une liste de courses</DialogTitle>
