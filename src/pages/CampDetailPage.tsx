@@ -31,6 +31,7 @@ export default function CampDetailPage() {
   const upsertCampDay = useUpsertCampDay();
   const moveMeal = useMoveMeal();
   const { data: shoppingLists } = useShoppingLists(campId!);
+  const { user } = useAuth();
   const { toast } = useToast();
 
   if (isLoading) {
