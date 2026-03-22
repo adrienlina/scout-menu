@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { NumberInput } from "@/components/NumberInput";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -507,21 +508,15 @@ function IngredientTableRow({
       </TableCell>
       <TableCell>
         {isOwner ? (
-          <div className="flex items-center gap-1">
-            <Input
-              type="number"
-              step="0.001"
-              value={ingredient.unit_multiplier}
-              onChange={(e) => {
-                const val = parseFloat(e.target.value);
-                if (!isNaN(val) && val > 0) updateMultiplier.mutate(val);
-              }}
-              className="h-7 w-24 text-xs"
-            />
-            <span className="text-[10px] text-muted-foreground whitespace-nowrap">
-              {ingredient.unit} / kg
-            </span>
-          </div>
+          <NumberInput
+            value={ingredient.unit_multiplier}
+            onChange={(val) => updateMultiplier.mutate(val)}
+            min={0}
+            step="0.001"
+            allowDecimals
+            suffix={`${ingredient.unit} / kg`}
+            className="w-32"
+          />
         ) : (
           <span className="text-xs tabular-nums">{ingredient.unit_multiplier} {ingredient.unit} / kg</span>
         )}

@@ -7,7 +7,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { NumberInput } from "@/components/NumberInput";
 import { useLogUsage, useIngredientUsage } from "@/hooks/useStock";
 import { useToast } from "@/hooks/use-toast";
 import type { Menu } from "@/lib/types";
@@ -111,17 +111,17 @@ export function MealUsageDialog({
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 shrink-0">
-                  <Input
-                    type="number"
-                    value={quantities[key] || ""}
-                    onChange={(e) =>
-                      setQuantities((prev) => ({ ...prev, [key]: e.target.value }))
+                  <NumberInput
+                    value={parseFloat(quantities[key] || "0") || 0}
+                    onChange={(val) =>
+                      setQuantities((prev) => ({ ...prev, [key]: String(val) }))
                     }
-                    className="w-20 h-8 text-sm text-right"
                     min={0}
                     step="0.1"
+                    allowDecimals
+                    suffix={ing.unit}
+                    className="w-24"
                   />
-                  <span className="text-xs text-muted-foreground w-6">{ing.unit}</span>
                 </div>
               </div>
             );
