@@ -11,7 +11,8 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowLeft, Plus, X, Trash2, Leaf, Search, Share2, Check, Pencil } from "lucide-react";
+import { ArrowLeft, Plus, X, Trash2, Leaf, Search, Share2, Check, Pencil, Info } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useToast } from "@/hooks/use-toast";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
 import {
@@ -183,7 +184,22 @@ export default function MenuDetailPage() {
                     <TableHead className="w-20">Quantité</TableHead>
                     <TableHead className="w-16">Unité</TableHead>
                     <TableHead>Aliment Agribalyse</TableHead>
-                    <TableHead className="w-24">Multiplicateur</TableHead>
+                    <TableHead className="w-44">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <span className="flex items-center gap-1 cursor-help">
+                              Multiplicateur ingrédient → kg de produit
+                              <Info className="h-3.5 w-3.5 text-muted-foreground" />
+                            </span>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs text-xs">
+                            <p>Facteur de conversion entre l'unité de l'ingrédient et le kg utilisé par Agribalyse.</p>
+                            <p className="mt-1">Exemples : pour des grammes → 0.001, pour des kg → 1, pour des litres → 1 (approximation eau).</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </TableHead>
                     <TableHead className="w-28 text-right">CO₂ (kg eq)</TableHead>
                     {isOwner && <TableHead className="w-10" />}
                   </TableRow>
@@ -491,18 +507,23 @@ function IngredientTableRow({
       </TableCell>
       <TableCell>
         {isOwner ? (
-          <Input
-            type="number"
-            step="0.001"
-            value={ingredient.unit_multiplier}
-            onChange={(e) => {
-              const val = parseFloat(e.target.value);
-              if (!isNaN(val) && val > 0) updateMultiplier.mutate(val);
-            }}
-            className="h-7 w-20 text-xs"
-          />
+          <div className="flex items-center gap-1">
+            <Input
+              type="number"
+              step="0.001"
+              value={ingredient.unit_multiplier}
+              onChange={(e) => {
+                const val = parseFloat(e.target.value);
+                if (!isNaN(val) && val > 0) updateMultiplier.mutate(val);
+              }}
+              className="h-7 w-24 text-xs"
+            />
+            <span className="text-[10px] text-muted-foreground whitespace-nowrap">
+              {ingredient.unit} / kg
+            </span>
+          </div>
         ) : (
-          <span className="text-xs tabular-nums">{ingredient.unit_multiplier}</span>
+          <span className="text-xs tabular-nums">{ingredient.unit_multiplier} {ingredient.unit} / kg</span>
         )}
       </TableCell>
       <TableCell className="text-right tabular-nums text-sm">
@@ -634,6 +655,12 @@ function AddIngredientForm({ menuId }: { menuId: string }) {
   const [agriId, setAgriId] = useState<string | null>(null);
   const [agriName, setAgriName] = useState<string | null>(null);
 
+  const getMultiplierForUnit = (u: string) => {
+    if (u === "g") return 0.001;
+    if (u === "kg") return 1;
+    return 1;
+  };
+
   const addIng = useMutation({
     mutationFn: async () => {
       const insertData: any = {
@@ -641,6 +668,7 @@ function AddIngredientForm({ menuId }: { menuId: string }) {
         name,
         quantity: parseFloat(qty),
         unit,
+        unit_multiplier: getMultiplierForUnit(unit),
       };
       if (agriId) insertData.agribalyse_food_id = agriId;
 
