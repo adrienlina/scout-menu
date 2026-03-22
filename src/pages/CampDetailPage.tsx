@@ -153,6 +153,7 @@ export default function CampDetailPage() {
           </div>
           <div className="flex gap-2 flex-wrap">
             <CampShareDialog campId={camp.id} isOwner={camp.user_id === user?.id} />
+            <CreateShoppingListDialog camp={camp} />
             {shoppingLists && shoppingLists.length > 0 && (
               <div className="flex gap-1">
                 {shoppingLists.map((sl) => (
