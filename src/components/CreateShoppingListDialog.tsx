@@ -13,8 +13,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
 
-export function CreateShoppingListDialog({ camp }: { camp: Camp }) {
-  const [open, setOpen] = useState(false);
+export function CreateShoppingListDialog({ camp, open: controlledOpen, onOpenChange: controlledOnOpenChange }: { camp: Camp; open?: boolean; onOpenChange?: (open: boolean) => void }) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = controlledOpen ?? internalOpen;
+  const setOpen = controlledOnOpenChange ?? setInternalOpen;
   const [name, setName] = useState("Liste de courses");
   const [selectedMealIds, setSelectedMealIds] = useState<Set<string>>(new Set());
   const createList = useCreateShoppingList();
