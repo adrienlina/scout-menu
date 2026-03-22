@@ -81,6 +81,14 @@ export default function CampEmissionsPage() {
   const maxMealCO2 = Math.max(...sortedMeals.map((m) => m.co2), 0.01);
   const maxIngCO2 = Math.max(...ingredientEmissions.map((i) => i.co2), 0.01);
 
+  // Red (high) -> Orange (mid) -> Green (low) based on ratio to max
+  const getEmissionColor = (value: number, max: number) => {
+    const ratio = max > 0 ? value / max : 0;
+    if (ratio > 0.66) return "hsl(0, 75%, 50%)";     // red
+    if (ratio > 0.33) return "hsl(30, 85%, 50%)";    // orange
+    return "hsl(120, 55%, 42%)";                       // green
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
