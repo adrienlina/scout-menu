@@ -14,6 +14,7 @@ import ShoppingListPage from "./pages/ShoppingListPage";
 import StockPage from "./pages/StockPage";
 import MenuDetailPage from "./pages/MenuDetailPage";
 import AgribalysePage from "./pages/AgribalysePage";
+import CampEmissionsPage from "./pages/CampEmissionsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
