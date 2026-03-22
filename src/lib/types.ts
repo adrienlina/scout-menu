@@ -12,6 +12,8 @@ export type Menu = Tables<"menus"> & {
 
 export type CampDay = Tables<"camp_days">;
 
+export type CampShare = Tables<"camp_shares">;
+
 export type Camp = Tables<"camps"> & {
   camp_meals?: CampMeal[];
   camp_days?: CampDay[];

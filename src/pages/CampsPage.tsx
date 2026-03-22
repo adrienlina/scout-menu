@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useCamps, useCreateCamp, useDeleteCamp } from "@/hooks/useCamps";
+import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Plus, Tent, Trash2, Users, Calendar } from "lucide-react";
+import { Plus, Tent, Trash2, Users, Calendar, Share2 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
@@ -14,6 +16,7 @@ import { motion } from "framer-motion";
 
 export default function CampsPage() {
   const { data: camps, isLoading } = useCamps();
+  const { user } = useAuth();
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -51,7 +54,7 @@ export default function CampsPage() {
       ) : camps && camps.length > 0 ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {camps.map((camp, i) => (
-            <CampCard key={camp.id} camp={camp} index={i} />
+            <CampCard key={camp.id} camp={camp} index={i} isShared={camp.user_id !== user?.id} />
           ))}
         </div>
       ) : (
@@ -65,7 +68,7 @@ export default function CampsPage() {
   );
 }
 
-function CampCard({ camp, index }: { camp: any; index: number }) {
+function CampCard({ camp, index, isShared }: { camp: any; index: number; isShared: boolean }) {
   const deleteCamp = useDeleteCamp();
   const { toast } = useToast();
   const mealCount = camp.camp_meals?.length || 0;
@@ -80,21 +83,31 @@ function CampCard({ camp, index }: { camp: any; index: number }) {
         <Card className="group cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5">
           <CardHeader className="pb-2">
             <div className="flex items-start justify-between">
-              <CardTitle className="text-lg">{camp.name}</CardTitle>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  deleteCamp.mutate(camp.id, {
-                    onSuccess: () => toast({ title: "Camp supprimé" }),
-                  });
-                }}
-              >
-                <Trash2 className="h-4 w-4 text-destructive" />
-              </Button>
+              <div className="flex items-center gap-2">
+                <CardTitle className="text-lg">{camp.name}</CardTitle>
+                {isShared && (
+                  <Badge variant="secondary" className="gap-1 text-xs">
+                    <Share2 className="h-3 w-3" />
+                    Partagé
+                  </Badge>
+                )}
+              </div>
+              {!isShared && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    deleteCamp.mutate(camp.id, {
+                      onSuccess: () => toast({ title: "Camp supprimé" }),
+                    });
+                  }}
+                >
+                  <Trash2 className="h-4 w-4 text-destructive" />
+                </Button>
+              )}
             </div>
           </CardHeader>
           <CardContent className="space-y-2">

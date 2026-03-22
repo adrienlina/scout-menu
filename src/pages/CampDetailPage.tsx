@@ -10,8 +10,10 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ArrowLeft, Users, Download, X, Plus, GripVertical, Info, Package, ClipboardCheck, Leaf } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts, getMenuCO2 } from "@/lib/types";
 import { CreateShoppingListDialog } from "@/components/CreateShoppingListDialog";
+import { CampShareDialog } from "@/components/CampShareDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
+import { useAuth } from "@/hooks/useAuth";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useState } from "react";
@@ -29,6 +31,7 @@ export default function CampDetailPage() {
   const upsertCampDay = useUpsertCampDay();
   const moveMeal = useMoveMeal();
   const { data: shoppingLists } = useShoppingLists(campId!);
+  const { user } = useAuth();
   const { toast } = useToast();
 
   if (isLoading) {
@@ -149,6 +152,7 @@ export default function CampDetailPage() {
             </div>
           </div>
           <div className="flex gap-2 flex-wrap">
+            <CampShareDialog campId={camp.id} isOwner={camp.user_id === user?.id} />
             <CreateShoppingListDialog camp={camp} />
             {shoppingLists && shoppingLists.length > 0 && (
               <div className="flex gap-1">

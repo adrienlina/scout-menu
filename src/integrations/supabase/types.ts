@@ -229,6 +229,38 @@ export type Database = {
           },
         ]
       }
+      camp_shares: {
+        Row: {
+          camp_id: string
+          created_at: string
+          id: string
+          invited_email: string
+          shared_by_user_id: string
+        }
+        Insert: {
+          camp_id: string
+          created_at?: string
+          id?: string
+          invited_email: string
+          shared_by_user_id: string
+        }
+        Update: {
+          camp_id?: string
+          created_at?: string
+          id?: string
+          invited_email?: string
+          shared_by_user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "camp_shares_camp_id_fkey"
+            columns: ["camp_id"]
+            isOneToOne: false
+            referencedRelation: "camps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       camps: {
         Row: {
           created_at: string
@@ -472,7 +504,11 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_auth_email: { Args: { _user_id: string }; Returns: string }
+      has_camp_access: {
+        Args: { _camp_id: string; _user_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
