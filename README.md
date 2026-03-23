@@ -25,13 +25,10 @@ Follow these steps:
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
 git clone <YOUR_GIT_URL>
-
 # Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
-
 # Step 3: Install the necessary dependencies.
 npm i
-
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
@@ -46,25 +43,3 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
-
-# Task todo
-
-### Bilan carbone
-- [x] Importer Agribalyse
-- [x] Permettre d'associer un ingrédient à une entrée Agribalyse, et le multiplicateur 
-- [ ] Ajouter un test E2E
-- [ ] Améliorer les graphes de visualisation d'un camp
-- [ ] Ajouter un graphe "Total du camp"
-- [ ] Utiliser les familles d'ingrédient Agribalyse pour pouvoir regrouper les aliments
-- [ ] Faire l'import Agribalyse dans une commande dédiée, et pas dans le front.
-
-### Courses / Stock (commencé)
-- [ ] Permettre de rassembler les ingrédients de plusieurs menus, notamment dans le stock
-- [ ] Permettre d'indiquer la quantité de gâchis d'un repas dans un camp
-
-### Budget intendance (pas commencé)
-- [ ] Intégrer une base de données d'ingrédients ?
-- [ ] Trouver / mettre des ordres de grandeur de coûts par ingrédient
-- [ ] Afficher le coût approximatif d'un menu par portion
-- [ ] Afficher le coût approximatif d'un repas dans un camp (côut menu x nombre de portions)
-- 
