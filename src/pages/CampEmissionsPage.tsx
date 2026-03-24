@@ -96,16 +96,28 @@ export default function CampEmissionsPage() {
         <Button variant="ghost" size="icon" onClick={() => navigate(`/camps/${campId}`)}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
-            <Leaf className="h-6 w-6 text-emerald-500" />
-            Émissions CO₂ — {camp.name}
-          </h1>
-          <p className="text-muted-foreground text-sm">
-            Total estimé : <span className="font-semibold text-foreground">{totalCO2.toFixed(2)} kg CO₂</span>
-          </p>
-        </div>
+        <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
+          <Leaf className="h-6 w-6 text-emerald-500" />
+          Émissions CO₂ — {camp.name}
+        </h1>
       </div>
+
+      {/* Total emissions highlight */}
+      <Card className="border-emerald-200 bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/30 dark:to-green-950/30 dark:border-emerald-800">
+        <CardContent className="py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p className="text-sm text-muted-foreground font-medium">Émissions totales estimées</p>
+            <p className="text-3xl font-bold text-emerald-700 dark:text-emerald-400">{totalCO2.toFixed(1)} kg CO₂</p>
+          </div>
+          <div className="flex items-center gap-3 bg-background/60 rounded-lg px-4 py-3">
+            <Car className="h-6 w-6 text-muted-foreground shrink-0" />
+            <div className="text-center sm:text-left">
+              <p className="text-xs text-muted-foreground">Équivalent voiture thermique</p>
+              <p className="text-lg font-semibold">{equivalentKm.toFixed(0)} km</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* By meal */}
       <Card>
