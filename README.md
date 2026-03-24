@@ -1,45 +1,67 @@
-# Welcome to your Lovable project
+# Scout Menu
 
-## Project info
+Application web open source de planification des repas pour les intendant·e·s en camp scout.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Adresse actuelle : https://scout-menu.lovable.app/
 
-## How can I edit this code?
+## Fonctionnalités
 
-There are several ways of editing your application.
+- **Menus** — Créez, modifiez et partagez des menus avec leurs ingrédients (nom, quantité, unité). Filtrez par type de repas (petit-déjeuner, déjeuner/dîner, goûter) ou par propriétaire.
+- **Camps** — Planifiez les repas sur une grille par jour et type de repas, avec glisser-déposer. Gérez les participants par tranche d'âge (Oranges, Bleus, Rouges, Adultes) avec multiplicateurs de portions.
+- **Listes de courses** — Générez des listes par repas, par jour ou pour tout le camp. Cochez les articles en temps réel avec synchronisation multi-utilisateurs.
+- **Stock** — Suivez les quantités réellement utilisées repas par repas.
+- **Bilan carbone** — Associez vos ingrédients à la base de données Agribalyse et visualisez l'empreinte carbone de vos menus et de votre camp.
+- **Partage** — Partagez vos menus (privé/public) et vos camps avec d'autres utilisateurs par email. Exportez en CSV.
 
-**Use Lovable**
+## Stack technique
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) (bundler)
+- [Tailwind CSS](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/)
+- [Supabase](https://supabase.com/) (base de données, authentification, temps réel)
+- [TanStack Query](https://tanstack.com/query) (state serveur)
+- [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/) (tests)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Démarrage
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+**Prérequis** : Node.js 18+ et npm ([installer avec nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Cloner le dépôt
 git clone <YOUR_GIT_URL>
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-# Step 3: Install the necessary dependencies.
-npm i
-# Step 4: Start the development server with auto-reloading and an instant preview.
+cd scout-menu
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
 ```
 
+### Variables d'environnement
 
-## What technologies are used for this project?
+Créez un fichier `.env.local` à la racine avec vos clés Supabase :
 
-This project is built with:
+```
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Commandes utiles
+
+```sh
+npm run dev        # Serveur de développement (hot reload)
+npm run build      # Build de production
+npm run preview    # Prévisualiser le build
+npm test           # Lancer les tests
+npm run test:watch # Tests en mode watch
+npm run lint       # Linter ESLint
+```
+
+## Contribuer
+
+Scout Menu est en développement actif et cherche des contributeur·ice·s techniques et fonctionnel·le·s. Voir [contributing.md](contributing.md) pour plus d'informations.
+
+## Roadmap
+
+Voir [roadmap.md](roadmap.md) pour le détail des fonctionnalités en cours et à venir.
