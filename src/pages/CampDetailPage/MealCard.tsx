@@ -78,6 +78,12 @@ export function MealCard({
                 <span className="text-xs text-muted-foreground">{portionsWasted} portion{portionsWasted > 1 ? "s" : ""} gâchée{portionsWasted > 1 ? "s" : ""}</span>
               </div>
             )}
+            {portionsMissing > 0 && (
+              <div className="flex items-center gap-1 pl-5 pt-0.5">
+                <AlertTriangle className="h-3 w-3 text-amber-500/70" />
+                <span className="text-xs text-muted-foreground">{portionsMissing} portion{portionsMissing > 1 ? "s" : ""} manquante{portionsMissing > 1 ? "s" : ""}</span>
+              </div>
+            )}
           </div>
         )}
       </Draggable>
