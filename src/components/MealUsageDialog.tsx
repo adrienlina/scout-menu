@@ -63,7 +63,8 @@ export function MealUsageDialog({
     });
     setQuantities(initial);
     setPortionsWasted(currentPortionsWasted);
-  }, [open, campMealId, existingUsage, ingredients, participantCount, currentPortionsWasted]);
+    setPortionsMissing(currentPortionsMissing);
+  }, [open, campMealId, existingUsage, ingredients, participantCount, currentPortionsWasted, currentPortionsMissing]);
 
   const handleSave = () => {
     const items = ingredients.map((ing) => ({
