@@ -23,6 +23,7 @@ interface MealUsageDialogProps {
   menu: Menu;
   participantCount: number;
   currentPortionsWasted?: number;
+  currentPortionsMissing?: number;
 }
 
 export function MealUsageDialog({
