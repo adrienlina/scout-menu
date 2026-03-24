@@ -106,8 +106,7 @@ export default function MenuDetailPage() {
     return ingredients
       .filter(i => i.changement_climatique !== null && i.changement_climatique !== undefined)
       .map(i => {
-        const qtyKg = i.quantity * i.unit_multiplier;
-        return { name: i.name, co2: (i.changement_climatique! * qtyKg), unit: "kg CO₂ eq" };
+        return { name: i.name, co2: (i.changement_climatique! * i.quantity * i.unit_multiplier / 1000), unit: "kg CO₂ eq" };
       });
   }, [ingredients]);
 
