@@ -73,7 +73,7 @@ export function MealUsageDialog({
       unit: ing.unit,
     }));
 
-    updateWasted.mutate({ campMealId, portionsWasted });
+    updateWasted.mutate({ campMealId, portionsWasted, portionsMissing });
     logUsage.mutate(
       { campId, campMealId, items },
       {
