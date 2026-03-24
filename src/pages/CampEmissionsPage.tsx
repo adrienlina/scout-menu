@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useCamp } from "@/hooks/useCamps";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Leaf, ArrowUpDown } from "lucide-react";
+import { ArrowLeft, Leaf, ArrowUpDown, Car } from "lucide-react";
 import { MEAL_TYPE_ICONS, type MealType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { useMemo, useState } from "react";
