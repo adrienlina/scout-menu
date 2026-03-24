@@ -90,7 +90,7 @@ export function IngredientTableRow({
             min={0}
             step="0.001"
             allowDecimals
-            suffix={`${ingredient.unit} / kg`}
+            suffix={`g / ${ingredient.unit}`}
             className="w-32"
           />
         ) : (
