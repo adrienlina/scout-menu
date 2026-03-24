@@ -34,12 +34,14 @@ export function MealUsageDialog({
   menu,
   participantCount,
   currentPortionsWasted = 0,
+  currentPortionsMissing = 0,
 }: MealUsageDialogProps) {
   const logUsage = useLogUsage();
   const updateWasted = useUpdatePortionsWasted();
   const { data: existingUsage } = useIngredientUsage(campId);
   const { toast } = useToast();
   const [portionsWasted, setPortionsWasted] = useState(0);
+  const [portionsMissing, setPortionsMissing] = useState(0);
 
   const ingredients = menu.menu_ingredients || [];
 
