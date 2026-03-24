@@ -195,6 +195,7 @@ export type Database = {
           meal_date: string
           meal_type: string
           menu_id: string
+          portions_missing: number
           portions_wasted: number
         }
         Insert: {
@@ -204,6 +205,7 @@ export type Database = {
           meal_date: string
           meal_type: string
           menu_id: string
+          portions_missing?: number
           portions_wasted?: number
         }
         Update: {
@@ -213,6 +215,7 @@ export type Database = {
           meal_date?: string
           meal_type?: string
           menu_id?: string
+          portions_missing?: number
           portions_wasted?: number
         }
         Relationships: [

@@ -12,7 +12,7 @@ import { useLogUsage, useIngredientUsage } from "@/hooks/useStock";
 import { useUpdatePortionsWasted } from "@/hooks/useCamps";
 import { useToast } from "@/hooks/use-toast";
 import type { Menu } from "@/lib/types";
-import { Check, Trash2 } from "lucide-react";
+import { Check, Trash2, AlertTriangle } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 interface MealUsageDialogProps {
@@ -23,6 +23,7 @@ interface MealUsageDialogProps {
   menu: Menu;
   participantCount: number;
   currentPortionsWasted?: number;
+  currentPortionsMissing?: number;
 }
 
 export function MealUsageDialog({
@@ -33,12 +34,14 @@ export function MealUsageDialog({
   menu,
   participantCount,
   currentPortionsWasted = 0,
+  currentPortionsMissing = 0,
 }: MealUsageDialogProps) {
   const logUsage = useLogUsage();
   const updateWasted = useUpdatePortionsWasted();
   const { data: existingUsage } = useIngredientUsage(campId);
   const { toast } = useToast();
   const [portionsWasted, setPortionsWasted] = useState(0);
+  const [portionsMissing, setPortionsMissing] = useState(0);
 
   const ingredients = menu.menu_ingredients || [];
 
@@ -60,7 +63,8 @@ export function MealUsageDialog({
     });
     setQuantities(initial);
     setPortionsWasted(currentPortionsWasted);
-  }, [open, campMealId, existingUsage, ingredients, participantCount, currentPortionsWasted]);
+    setPortionsMissing(currentPortionsMissing);
+  }, [open, campMealId, existingUsage, ingredients, participantCount, currentPortionsWasted, currentPortionsMissing]);
 
   const handleSave = () => {
     const items = ingredients.map((ing) => ({
@@ -69,7 +73,7 @@ export function MealUsageDialog({
       unit: ing.unit,
     }));
 
-    updateWasted.mutate({ campMealId, portionsWasted });
+    updateWasted.mutate({ campMealId, portionsWasted, portionsMissing });
     logUsage.mutate(
       { campId, campMealId, items },
       {
@@ -142,22 +146,41 @@ export function MealUsageDialog({
           )}
         </div>
 
-        <div className="border-t pt-3">
-          <div className="flex items-center gap-2 mb-1.5">
-            <Trash2 className="h-4 w-4 text-destructive" />
-            <Label className="text-sm font-medium">Gâchis</Label>
+        <div className="border-t pt-3 space-y-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1.5">
+              <Trash2 className="h-4 w-4 text-destructive" />
+              <Label className="text-sm font-medium">Gâchis</Label>
+            </div>
+            <p className="text-xs text-muted-foreground mb-2">
+              Nombre de portions jetées après le repas
+            </p>
+            <NumberInput
+              value={portionsWasted}
+              onChange={setPortionsWasted}
+              min={0}
+              step="1"
+              suffix="portions"
+              className="w-32"
+            />
           </div>
-          <p className="text-xs text-muted-foreground mb-2">
-            Nombre de portions jetées après le repas
-          </p>
-          <NumberInput
-            value={portionsWasted}
-            onChange={setPortionsWasted}
-            min={0}
-            step="1"
-            suffix="portions"
-            className="w-32"
-          />
+          <div>
+            <div className="flex items-center gap-2 mb-1.5">
+              <AlertTriangle className="h-4 w-4 text-amber-500" />
+              <Label className="text-sm font-medium">Portions manquantes</Label>
+            </div>
+            <p className="text-xs text-muted-foreground mb-2">
+              Nombre de portions qu'il aurait fallu en plus
+            </p>
+            <NumberInput
+              value={portionsMissing}
+              onChange={setPortionsMissing}
+              min={0}
+              step="1"
+              suffix="portions"
+              className="w-32"
+            />
+          </div>
         </div>
 
         <DialogFooter className="gap-2">

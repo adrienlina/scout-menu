@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRemoveMeal } from "@/hooks/useCamps";
 import { Draggable } from "@hello-pangea/dnd";
-import { X, GripVertical, ClipboardCheck, Leaf, Trash2 } from "lucide-react";
+import { X, GripVertical, ClipboardCheck, Leaf, Trash2, AlertTriangle } from "lucide-react";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
 import { getMenuCO2, type CampMeal, type Menu } from "@/lib/types";
 
@@ -21,6 +21,7 @@ export function MealCard({
   const removeMeal = useRemoveMeal();
   const [usageOpen, setUsageOpen] = useState(false);
   const portionsWasted = (meal as any).portions_wasted ?? 0;
+  const portionsMissing = (meal as any).portions_missing ?? 0;
 
   return (
     <>
@@ -77,6 +78,12 @@ export function MealCard({
                 <span className="text-xs text-muted-foreground">{portionsWasted} portion{portionsWasted > 1 ? "s" : ""} gâchée{portionsWasted > 1 ? "s" : ""}</span>
               </div>
             )}
+            {portionsMissing > 0 && (
+              <div className="flex items-center gap-1 pl-5 pt-0.5">
+                <AlertTriangle className="h-3 w-3 text-amber-500/70" />
+                <span className="text-xs text-muted-foreground">{portionsMissing} portion{portionsMissing > 1 ? "s" : ""} manquante{portionsMissing > 1 ? "s" : ""}</span>
+              </div>
+            )}
           </div>
         )}
       </Draggable>
@@ -88,6 +95,7 @@ export function MealCard({
         menu={menu}
         participantCount={participantCount}
         currentPortionsWasted={portionsWasted}
+        currentPortionsMissing={portionsMissing}
       />
     </>
   );

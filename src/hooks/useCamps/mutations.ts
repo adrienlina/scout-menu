@@ -179,10 +179,10 @@ export function useUpdatePortionsWasted() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async ({ campMealId, portionsWasted }: { campMealId: string; portionsWasted: number }) => {
+    mutationFn: async ({ campMealId, portionsWasted, portionsMissing }: { campMealId: string; portionsWasted: number; portionsMissing: number }) => {
       const { error } = await supabase
         .from("camp_meals")
-        .update({ portions_wasted: portionsWasted } as any)
+        .update({ portions_wasted: portionsWasted, portions_missing: portionsMissing } as any)
         .eq("id", campMealId);
       if (error) throw error;
     },
