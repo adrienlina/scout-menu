@@ -12,7 +12,7 @@ import { useLogUsage, useIngredientUsage } from "@/hooks/useStock";
 import { useUpdatePortionsWasted } from "@/hooks/useCamps";
 import { useToast } from "@/hooks/use-toast";
 import type { Menu } from "@/lib/types";
-import { Check, Trash2 } from "lucide-react";
+import { Check, Trash2, AlertTriangle } from "lucide-react";
 import { Label } from "@/components/ui/label";
 
 interface MealUsageDialogProps {
