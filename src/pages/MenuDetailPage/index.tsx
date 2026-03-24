@@ -167,8 +167,8 @@ export default function MenuDetailPage() {
                             </span>
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs text-xs">
-                            <p>Facteur de conversion entre l'unité de l'ingrédient et le kg utilisé par Agribalyse.</p>
-                            <p className="mt-1">Exemples : pour des grammes → 0.001, pour des kg → 1, pour des litres → 1 (approximation eau).</p>
+                            <p>Nombre de grammes de produit par unité de l'ingrédient.</p>
+                            <p className="mt-1">Exemples : pour des grammes → 1, pour des kg → 1000, pour des litres → 1000 (approximation eau).</p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>

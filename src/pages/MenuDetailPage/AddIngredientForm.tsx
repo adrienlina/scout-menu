@@ -31,7 +31,7 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
         name,
         quantity: parseFloat(qty),
         unit,
-        unit_multiplier: getMultiplierForUnit(unit),
+        unit_multiplier: getRatioForUnit(unit),
       };
       if (agriId) insertData.agribalyse_food_id = agriId;
 

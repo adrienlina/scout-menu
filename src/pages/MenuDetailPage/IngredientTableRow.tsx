@@ -94,7 +94,7 @@ export function IngredientTableRow({
             className="w-32"
           />
         ) : (
-          <span className="text-xs tabular-nums">{ingredient.unit_multiplier} {ingredient.unit} / kg</span>
+          <span className="text-xs tabular-nums">{ingredient.unit_multiplier} g / {ingredient.unit}</span>
         )}
       </TableCell>
       <TableCell className="text-right tabular-nums text-sm">

@@ -63,8 +63,8 @@ export default function CampEmissionsPage() {
       menu.menu_ingredients.forEach((ing) => {
         const cc = ing.agribalyse_foods?.changement_climatique;
         if (!cc) return;
-        const kgProduct = ing.quantity * ing.unit_multiplier * participants;
-        const co2 = kgProduct * cc;
+        const kgProduct = ing.quantity * ing.unit_multiplier / 1000 * participants;
+        const co2 = cc * kgProduct;
         const existing = map.get(ing.name) || { name: ing.name, co2: 0, totalKg: 0 };
         existing.co2 += co2;
         existing.totalKg += kgProduct;
