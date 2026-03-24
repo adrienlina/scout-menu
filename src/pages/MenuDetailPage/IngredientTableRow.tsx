@@ -60,8 +60,7 @@ export function IngredientTableRow({
 
   let co2 = null;
   if (ingredient.changement_climatique !== null && ingredient.changement_climatique !== undefined) {
-    const qtyKg = ingredient.quantity * ingredient.unit_multiplier;
-    co2 = ingredient.changement_climatique * qtyKg;
+    co2 = ingredient.changement_climatique * ingredient.quantity * ingredient.unit_multiplier / 1000;
   }
 
   return (
