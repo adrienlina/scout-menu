@@ -174,3 +174,18 @@ export function useUpsertCampDay() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["camps"] }),
   });
 }
+
+export function useUpdatePortionsWasted() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async ({ campMealId, portionsWasted }: { campMealId: string; portionsWasted: number }) => {
+      const { error } = await supabase
+        .from("camp_meals")
+        .update({ portions_wasted: portionsWasted } as any)
+        .eq("id", campMealId);
+      if (error) throw error;
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["camps"] }),
+  });
+}

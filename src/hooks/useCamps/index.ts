@@ -7,4 +7,5 @@ export {
   useRemoveMeal,
   useMoveMeal,
   useUpsertCampDay,
+  useUpdatePortionsWasted,
 } from "./mutations";

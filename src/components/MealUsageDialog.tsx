@@ -9,9 +9,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { NumberInput } from "@/components/NumberInput";
 import { useLogUsage, useIngredientUsage } from "@/hooks/useStock";
+import { useUpdatePortionsWasted } from "@/hooks/useCamps";
 import { useToast } from "@/hooks/use-toast";
 import type { Menu } from "@/lib/types";
-import { Check } from "lucide-react";
+import { Check, Trash2 } from "lucide-react";
+import { Label } from "@/components/ui/label";
 
 interface MealUsageDialogProps {
   open: boolean;
@@ -20,6 +22,7 @@ interface MealUsageDialogProps {
   campMealId: string;
   menu: Menu;
   participantCount: number;
+  currentPortionsWasted?: number;
 }
 
 export function MealUsageDialog({
@@ -29,10 +32,13 @@ export function MealUsageDialog({
   campMealId,
   menu,
   participantCount,
+  currentPortionsWasted = 0,
 }: MealUsageDialogProps) {
   const logUsage = useLogUsage();
+  const updateWasted = useUpdatePortionsWasted();
   const { data: existingUsage } = useIngredientUsage(campId);
   const { toast } = useToast();
+  const [portionsWasted, setPortionsWasted] = useState(0);
 
   const ingredients = menu.menu_ingredients || [];
 
@@ -53,7 +59,8 @@ export function MealUsageDialog({
       }
     });
     setQuantities(initial);
-  }, [open, campMealId, existingUsage, ingredients, participantCount]);
+    setPortionsWasted(currentPortionsWasted);
+  }, [open, campMealId, existingUsage, ingredients, participantCount, currentPortionsWasted]);
 
   const handleSave = () => {
     const items = ingredients.map((ing) => ({
@@ -62,6 +69,7 @@ export function MealUsageDialog({
       unit: ing.unit,
     }));
 
+    updateWasted.mutate({ campMealId, portionsWasted });
     logUsage.mutate(
       { campId, campMealId, items },
       {
@@ -132,6 +140,24 @@ export function MealUsageDialog({
               Ce menu n'a pas d'ingrédients
             </p>
           )}
+        </div>
+
+        <div className="border-t pt-3">
+          <div className="flex items-center gap-2 mb-1.5">
+            <Trash2 className="h-4 w-4 text-destructive" />
+            <Label className="text-sm font-medium">Gâchis</Label>
+          </div>
+          <p className="text-xs text-muted-foreground mb-2">
+            Nombre de portions jetées après le repas
+          </p>
+          <NumberInput
+            value={portionsWasted}
+            onChange={setPortionsWasted}
+            min={0}
+            step="1"
+            suffix="portions"
+            className="w-32"
+          />
         </div>
 
         <DialogFooter className="gap-2">

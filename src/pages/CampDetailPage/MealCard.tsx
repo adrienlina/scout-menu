@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRemoveMeal } from "@/hooks/useCamps";
 import { Draggable } from "@hello-pangea/dnd";
-import { X, GripVertical, ClipboardCheck, Leaf } from "lucide-react";
+import { X, GripVertical, ClipboardCheck, Leaf, Trash2 } from "lucide-react";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
 import { getMenuCO2, type CampMeal, type Menu } from "@/lib/types";
 
@@ -20,6 +20,7 @@ export function MealCard({
 }) {
   const removeMeal = useRemoveMeal();
   const [usageOpen, setUsageOpen] = useState(false);
+  const portionsWasted = (meal as any).portions_wasted ?? 0;
 
   return (
     <>
@@ -70,6 +71,12 @@ export function MealCard({
                 </div>
               ) : null;
             })()}
+            {portionsWasted > 0 && (
+              <div className="flex items-center gap-1 pl-5 pt-0.5">
+                <Trash2 className="h-3 w-3 text-destructive/70" />
+                <span className="text-xs text-muted-foreground">{portionsWasted} portion{portionsWasted > 1 ? "s" : ""} gâchée{portionsWasted > 1 ? "s" : ""}</span>
+              </div>
+            )}
           </div>
         )}
       </Draggable>
@@ -80,6 +87,7 @@ export function MealCard({
         campMealId={meal.id}
         menu={menu}
         participantCount={participantCount}
+        currentPortionsWasted={portionsWasted}
       />
     </>
   );
