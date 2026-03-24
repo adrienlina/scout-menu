@@ -1,12 +1,23 @@
+import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { TableRow, TableCell } from "@/components/ui/table";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { NumberInput } from "@/components/NumberInput";
 import { AgribalyseSearch } from "./AgribalyseSearch";
 import type { IngredientRow } from "./types";
+
+const UNITS = ["g", "kg", "ml", "L", "pièce"];
+
+function getRatioForUnit(u: string) {
+  if (u === "g") return 1;
+  if (u === "kg") return 1000;
+  return 1000;
+}
 
 export function IngredientTableRow({
   ingredient,
@@ -19,16 +30,30 @@ export function IngredientTableRow({
 }) {
   const queryClient = useQueryClient();
   const { toast } = useToast();
+  const [localName, setLocalName] = useState(ingredient.name);
+
+  const invalidate = () => {
+    queryClient.invalidateQueries({ queryKey: ["menu-ingredients-detail", menuId] });
+    queryClient.invalidateQueries({ queryKey: ["menus"] });
+  };
 
   const deleteIng = useMutation({
     mutationFn: async () => {
       const { error } = await supabase.from("menu_ingredients").delete().eq("id", ingredient.id!);
       if (error) throw error;
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["menu-ingredients-detail", menuId] });
-      queryClient.invalidateQueries({ queryKey: ["menus"] });
+    onSuccess: invalidate,
+  });
+
+  const updateIngredient = useMutation({
+    mutationFn: async (fields: Record<string, any>) => {
+      const { error } = await supabase
+        .from("menu_ingredients")
+        .update(fields)
+        .eq("id", ingredient.id!);
+      if (error) throw error;
     },
+    onSuccess: invalidate,
   });
 
   const linkAgribalyse = useMutation({
@@ -40,7 +65,7 @@ export function IngredientTableRow({
       if (error) throw error;
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["menu-ingredients-detail", menuId] });
+      invalidate();
       toast({ title: "Aliment Agribalyse associé" });
     },
   });
@@ -53,10 +78,21 @@ export function IngredientTableRow({
         .eq("id", ingredient.id!);
       if (error) throw error;
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["menu-ingredients-detail", menuId] });
-    },
+    onSuccess: invalidate,
   });
+
+  const handleNameBlur = () => {
+    const trimmed = localName.trim();
+    if (trimmed && trimmed !== ingredient.name) {
+      updateIngredient.mutate({ name: trimmed });
+    } else {
+      setLocalName(ingredient.name);
+    }
+  };
+
+  const handleUnitChange = (newUnit: string) => {
+    updateIngredient.mutate({ unit: newUnit, unit_multiplier: getRatioForUnit(newUnit) });
+  };
 
   let co2 = null;
   if (ingredient.changement_climatique !== null && ingredient.changement_climatique !== undefined) {
@@ -65,9 +101,48 @@ export function IngredientTableRow({
 
   return (
     <TableRow>
-      <TableCell className="font-medium">{ingredient.name}</TableCell>
-      <TableCell>{ingredient.quantity}</TableCell>
-      <TableCell>{ingredient.unit}</TableCell>
+      <TableCell className="font-medium">
+        {isOwner ? (
+          <Input
+            value={localName}
+            onChange={(e) => setLocalName(e.target.value)}
+            onBlur={handleNameBlur}
+            className="h-7 text-xs"
+          />
+        ) : (
+          ingredient.name
+        )}
+      </TableCell>
+      <TableCell>
+        {isOwner ? (
+          <NumberInput
+            value={ingredient.quantity}
+            onChange={(val) => updateIngredient.mutate({ quantity: val })}
+            min={0}
+            step="0.1"
+            allowDecimals
+            className="w-20"
+          />
+        ) : (
+          ingredient.quantity
+        )}
+      </TableCell>
+      <TableCell>
+        {isOwner ? (
+          <Select value={ingredient.unit} onValueChange={handleUnitChange}>
+            <SelectTrigger className="h-7 text-xs w-20">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {UNITS.map((u) => (
+                <SelectItem key={u} value={u}>{u}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        ) : (
+          ingredient.unit
+        )}
+      </TableCell>
       <TableCell>
         {isOwner ? (
           <AgribalyseSearch
