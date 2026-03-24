@@ -142,6 +142,24 @@ export function MealUsageDialog({
           )}
         </div>
 
+        <div className="border-t pt-3">
+          <div className="flex items-center gap-2 mb-1.5">
+            <Trash2 className="h-4 w-4 text-destructive" />
+            <Label className="text-sm font-medium">Gâchis</Label>
+          </div>
+          <p className="text-xs text-muted-foreground mb-2">
+            Nombre de portions jetées après le repas
+          </p>
+          <NumberInput
+            value={portionsWasted}
+            onChange={setPortionsWasted}
+            min={0}
+            step="1"
+            suffix="portions"
+            className="w-32"
+          />
+        </div>
+
         <DialogFooter className="gap-2">
           <Button variant="outline" size="sm" onClick={handleReset}>
             Réinitialiser
