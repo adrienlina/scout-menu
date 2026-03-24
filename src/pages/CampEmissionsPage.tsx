@@ -2,7 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useCamp } from "@/hooks/useCamps";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Leaf, ArrowUpDown, Car } from "lucide-react";
+import { ArrowLeft, Leaf, ArrowUpDown, Car, Info } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { MEAL_TYPE_ICONS, type MealType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { useMemo, useState } from "react";
@@ -109,13 +110,29 @@ export default function CampEmissionsPage() {
             <p className="text-sm text-muted-foreground font-medium">Émissions totales estimées</p>
             <p className="text-3xl font-bold text-emerald-700 dark:text-emerald-400">{totalCO2.toFixed(1)} kg CO₂</p>
           </div>
-          <div className="flex items-center gap-3 bg-background/60 rounded-lg px-4 py-3">
-            <Car className="h-6 w-6 text-muted-foreground shrink-0" />
-            <div className="text-center sm:text-left">
-              <p className="text-xs text-muted-foreground">Équivalent voiture thermique</p>
-              <p className="text-lg font-semibold">{equivalentKm.toFixed(0)} km</p>
-            </div>
-          </div>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="flex items-center gap-3 bg-background/60 rounded-lg px-4 py-3 cursor-help">
+                  <Car className="h-6 w-6 text-muted-foreground shrink-0" />
+                  <div className="text-center sm:text-left">
+                    <p className="text-xs text-muted-foreground flex items-center gap-1">
+                      Équivalent voiture thermique
+                      <Info className="h-3 w-3" />
+                    </p>
+                    <p className="text-lg font-semibold">{equivalentKm.toFixed(0)} km</p>
+                  </div>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent side="bottom" className="max-w-xs text-left">
+                <p className="font-medium mb-1">Coefficient : 193 g CO₂/km</p>
+                <p className="text-xs text-muted-foreground">
+                  Émission moyenne d'une voiture thermique en France (source : ADEME).
+                  L'équivalence correspond à un trajet d'1 personne seule en voiture.
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </CardContent>
       </Card>
 
