@@ -146,22 +146,41 @@ export function MealUsageDialog({
           )}
         </div>
 
-        <div className="border-t pt-3">
-          <div className="flex items-center gap-2 mb-1.5">
-            <Trash2 className="h-4 w-4 text-destructive" />
-            <Label className="text-sm font-medium">Gâchis</Label>
+        <div className="border-t pt-3 space-y-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1.5">
+              <Trash2 className="h-4 w-4 text-destructive" />
+              <Label className="text-sm font-medium">Gâchis</Label>
+            </div>
+            <p className="text-xs text-muted-foreground mb-2">
+              Nombre de portions jetées après le repas
+            </p>
+            <NumberInput
+              value={portionsWasted}
+              onChange={setPortionsWasted}
+              min={0}
+              step="1"
+              suffix="portions"
+              className="w-32"
+            />
           </div>
-          <p className="text-xs text-muted-foreground mb-2">
-            Nombre de portions jetées après le repas
-          </p>
-          <NumberInput
-            value={portionsWasted}
-            onChange={setPortionsWasted}
-            min={0}
-            step="1"
-            suffix="portions"
-            className="w-32"
-          />
+          <div>
+            <div className="flex items-center gap-2 mb-1.5">
+              <AlertTriangle className="h-4 w-4 text-amber-500" />
+              <Label className="text-sm font-medium">Portions manquantes</Label>
+            </div>
+            <p className="text-xs text-muted-foreground mb-2">
+              Nombre de portions qu'il aurait fallu en plus
+            </p>
+            <NumberInput
+              value={portionsMissing}
+              onChange={setPortionsMissing}
+              min={0}
+              step="1"
+              suffix="portions"
+              className="w-32"
+            />
+          </div>
         </div>
 
         <DialogFooter className="gap-2">

@@ -95,6 +95,7 @@ export function MealCard({
         menu={menu}
         participantCount={participantCount}
         currentPortionsWasted={portionsWasted}
+        currentPortionsMissing={portionsMissing}
       />
     </>
   );
