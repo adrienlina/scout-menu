@@ -9,9 +9,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { NumberInput } from "@/components/NumberInput";
 import { useLogUsage, useIngredientUsage } from "@/hooks/useStock";
+import { useUpdatePortionsWasted } from "@/hooks/useCamps";
 import { useToast } from "@/hooks/use-toast";
 import type { Menu } from "@/lib/types";
-import { Check } from "lucide-react";
+import { Check, Trash2 } from "lucide-react";
+import { Label } from "@/components/ui/label";
 
 interface MealUsageDialogProps {
   open: boolean;
