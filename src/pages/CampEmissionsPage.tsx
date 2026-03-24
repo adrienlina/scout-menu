@@ -74,10 +74,11 @@ export default function CampEmissionsPage() {
   }, [camp, days]);
 
   const totalCO2 = useMemo(() => mealEmissions.reduce((s, m) => s + m.co2, 0), [mealEmissions]);
+  const KM_PER_KG_CO2 = 1 / 0.193; // ~5.18 km per kg CO₂ (voiture thermique moyenne française)
+  const equivalentKm = totalCO2 * KM_PER_KG_CO2;
 
   if (isLoading) return <div className="py-12 text-center text-muted-foreground">Chargement...</div>;
   if (!camp) return <div className="py-12 text-center text-muted-foreground">Camp introuvable</div>;
-
   const maxMealCO2 = Math.max(...sortedMeals.map((m) => m.co2), 0.01);
   const maxIngCO2 = Math.max(...ingredientEmissions.map((i) => i.co2), 0.01);
 
