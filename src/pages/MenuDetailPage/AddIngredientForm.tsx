@@ -18,10 +18,10 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
   const [agriId, setAgriId] = useState<string | null>(null);
   const [agriName, setAgriName] = useState<string | null>(null);
 
-  const getMultiplierForUnit = (u: string) => {
-    if (u === "g") return 0.001;
-    if (u === "kg") return 1;
-    return 1;
+  const getRatioForUnit = (u: string) => {
+    if (u === "g") return 1;
+    if (u === "kg") return 1000;
+    return 1000;
   };
 
   const addIng = useMutation({
