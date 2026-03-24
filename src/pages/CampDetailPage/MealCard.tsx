@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRemoveMeal } from "@/hooks/useCamps";
 import { Draggable } from "@hello-pangea/dnd";
-import { X, GripVertical, ClipboardCheck, Leaf, Trash2 } from "lucide-react";
+import { X, GripVertical, ClipboardCheck, Leaf, Trash2, AlertTriangle } from "lucide-react";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
 import { getMenuCO2, type CampMeal, type Menu } from "@/lib/types";
 
