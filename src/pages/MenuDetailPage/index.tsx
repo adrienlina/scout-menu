@@ -162,7 +162,7 @@ export default function MenuDetailPage() {
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <span className="flex items-center gap-1 cursor-help">
-                              Multiplicateur ingrédient → kg de produit
+                              Ratio g / unité produit
                               <Info className="h-3.5 w-3.5 text-muted-foreground" />
                             </span>
                           </TooltipTrigger>
