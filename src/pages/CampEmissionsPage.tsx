@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useCamp } from "@/hooks/useCamps";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Leaf, ArrowUpDown } from "lucide-react";
+import { ArrowLeft, Leaf, ArrowUpDown, Car } from "lucide-react";
 import { MEAL_TYPE_ICONS, type MealType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { useMemo, useState } from "react";
@@ -74,10 +74,11 @@ export default function CampEmissionsPage() {
   }, [camp, days]);
 
   const totalCO2 = useMemo(() => mealEmissions.reduce((s, m) => s + m.co2, 0), [mealEmissions]);
+  const KM_PER_KG_CO2 = 1 / 0.193; // ~5.18 km per kg CO₂ (voiture thermique moyenne française)
+  const equivalentKm = totalCO2 * KM_PER_KG_CO2;
 
   if (isLoading) return <div className="py-12 text-center text-muted-foreground">Chargement...</div>;
   if (!camp) return <div className="py-12 text-center text-muted-foreground">Camp introuvable</div>;
-
   const maxMealCO2 = Math.max(...sortedMeals.map((m) => m.co2), 0.01);
   const maxIngCO2 = Math.max(...ingredientEmissions.map((i) => i.co2), 0.01);
 
@@ -95,16 +96,28 @@ export default function CampEmissionsPage() {
         <Button variant="ghost" size="icon" onClick={() => navigate(`/camps/${campId}`)}>
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
-            <Leaf className="h-6 w-6 text-emerald-500" />
-            Émissions CO₂ — {camp.name}
-          </h1>
-          <p className="text-muted-foreground text-sm">
-            Total estimé : <span className="font-semibold text-foreground">{totalCO2.toFixed(2)} kg CO₂</span>
-          </p>
-        </div>
+        <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
+          <Leaf className="h-6 w-6 text-emerald-500" />
+          Émissions CO₂ — {camp.name}
+        </h1>
       </div>
+
+      {/* Total emissions highlight */}
+      <Card className="border-emerald-200 bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/30 dark:to-green-950/30 dark:border-emerald-800">
+        <CardContent className="py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-center sm:text-left">
+            <p className="text-sm text-muted-foreground font-medium">Émissions totales estimées</p>
+            <p className="text-3xl font-bold text-emerald-700 dark:text-emerald-400">{totalCO2.toFixed(1)} kg CO₂</p>
+          </div>
+          <div className="flex items-center gap-3 bg-background/60 rounded-lg px-4 py-3">
+            <Car className="h-6 w-6 text-muted-foreground shrink-0" />
+            <div className="text-center sm:text-left">
+              <p className="text-xs text-muted-foreground">Équivalent voiture thermique</p>
+              <p className="text-lg font-semibold">{equivalentKm.toFixed(0)} km</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* By meal */}
       <Card>
