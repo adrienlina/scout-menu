@@ -18,6 +18,7 @@
 - [ ] Pouvoir visualiser les menus publics sans avoir à créer de compte
 - [ ] Ajouter un niveau de difficulté (préparation, cuisson) ainsi que de temps
 - [ ] Importer une vingtaine de menus de base plus intéressants
+- [ ] Avoir le retour du nombre de portions gâchées / manquantes des repas qui ont utilisés le menu
 
 ## Camps
 ### v0 :white_check_mark:
@@ -30,31 +31,39 @@
 - [x] Exporter la grille de menus et les ingrédients en CSV
 
 ## Courses / Stock
-### v0 :construction:
+### v0 :white_check_mark:
 - [x] Créer des listes de courses (sélection par repas, par jour, ou toutes)
 - [x] Visualiser une liste de courses par ingrédient agrégé ou par jour/menu
 - [x] Cocher les articles d'une liste de courses en temps réel (synchronisation multi-utilisateurs)
 - [x] Suivre le stock : saisir les quantités réellement utilisées par repas
-- [ ] Permettre d'indiquer la quantité de gâchis d'un repas dans un camp
+- [x] Permettre d'indiquer la quantité de gâchis d'un repas dans un camp
+- [x] Permettre d'indiquer la quantité de portions manquantes d'un repas dans un camp
 ### v1 :bulb:
-- [ ] Permettre de rassembler les ingrédients de plusieurs menus, notamment dans le stock
+- [ ] Rassemble les ingrédients de plusieurs menus, notamment dans le stock
+
+### Traçabilité
+### v0 :bulb:
+- [ ] Prendre en photo et enregistrer les numéros de lots
+- [ ] Noter les numéros de lots
+- [ ] Indiquer qu'un repas a une portion témoin
+### v1 :bulb:
+- [ ] Faire tourner un OCR sur les numéros de lots pour les avoirs sous forme de liste
+- [ ] Recevoir un rappel 5 jour après la date d'un repas qui a un repas témoin
 
 ## Bilan carbone
-### v0 :construction:
+### v0 :white_check_mark:
 - [x] Importer & visualiser Agribalyse
 - [x] Permettre d'associer un ingrédient à une entrée Agribalyse, et le multiplicateur
 - [x] Afficher les émissions d'un menu
 - [x] Afficher les émissions d'un repas (pour un camp)
 - [x] Afficher les émissions d'un camp
-- [ ] Ajouter un test E2E
-- [ ] Ajouter un graphe "Total du camp"
+- [x] Ajouter un graphe "Total du camp"
 ### v1 :bulb:
 - [ ] Ajouter un "à propos" sur Agribalyse
 - [ ] Mettre les émissions d'un menu en perspective avec des menus similaires / de référence
 - [ ] Améliorer les graphes de visualisation d'un camp
 - [ ] Utiliser les familles d'ingrédient Agribalyse pour pouvoir regrouper les aliments
 - [ ] Faire l'import Agribalyse dans une commande dédiée, et pas dans le front.
-
 
 ## Budget
 ### v0 :bulb:
