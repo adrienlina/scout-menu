@@ -29,7 +29,7 @@ export function getMenuCO2(menu: Menu | undefined, participantCount: number): nu
   return menu.menu_ingredients.reduce((sum, ing) => {
     const cc = ing.agribalyse_foods?.changement_climatique;
     if (!cc) return sum;
-    return sum + ing.quantity * ing.unit_multiplier * cc * participantCount;
+    return sum + ing.quantity * cc * ing.unit_multiplier / 1000 * participantCount;
   }, 0);
 }
 

@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useMemo, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -106,8 +106,7 @@ export default function MenuDetailPage() {
     return ingredients
       .filter(i => i.changement_climatique !== null && i.changement_climatique !== undefined)
       .map(i => {
-        const qtyKg = i.quantity * i.unit_multiplier;
-        return { name: i.name, co2: (i.changement_climatique! * qtyKg), unit: "kg CO₂ eq" };
+        return { name: i.name, co2: (i.changement_climatique! * i.quantity * i.unit_multiplier / 1000), unit: "kg CO₂ eq" };
       });
   }, [ingredients]);
 
@@ -163,13 +162,13 @@ export default function MenuDetailPage() {
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <span className="flex items-center gap-1 cursor-help">
-                              Multiplicateur ingrédient → kg de produit
+                              Ratio g / unité produit
                               <Info className="h-3.5 w-3.5 text-muted-foreground" />
                             </span>
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs text-xs">
-                            <p>Facteur de conversion entre l'unité de l'ingrédient et le kg utilisé par Agribalyse.</p>
-                            <p className="mt-1">Exemples : pour des grammes → 0.001, pour des kg → 1, pour des litres → 1 (approximation eau).</p>
+                            <p>Nombre de grammes de produit par unité de l'ingrédient.</p>
+                            <p className="mt-1">Exemples : pour des grammes → 1, pour des kg → 1000, pour des litres → 1000 (approximation eau).</p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>

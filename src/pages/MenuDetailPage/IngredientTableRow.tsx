@@ -60,8 +60,7 @@ export function IngredientTableRow({
 
   let co2 = null;
   if (ingredient.changement_climatique !== null && ingredient.changement_climatique !== undefined) {
-    const qtyKg = ingredient.quantity * ingredient.unit_multiplier;
-    co2 = ingredient.changement_climatique * qtyKg;
+    co2 = ingredient.changement_climatique * ingredient.quantity * ingredient.unit_multiplier / 1000;
   }
 
   return (
@@ -91,11 +90,11 @@ export function IngredientTableRow({
             min={0}
             step="0.001"
             allowDecimals
-            suffix={`${ingredient.unit} / kg`}
+            suffix={`g / ${ingredient.unit}`}
             className="w-32"
           />
         ) : (
-          <span className="text-xs tabular-nums">{ingredient.unit_multiplier} {ingredient.unit} / kg</span>
+          <span className="text-xs tabular-nums">{ingredient.unit_multiplier} g / {ingredient.unit}</span>
         )}
       </TableCell>
       <TableCell className="text-right tabular-nums text-sm">

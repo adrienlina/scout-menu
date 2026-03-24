@@ -1,0 +1,1 @@
+UPDATE public.menu_ingredients SET unit_multiplier = unit_multiplier * 1000;

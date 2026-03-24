@@ -18,10 +18,10 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
   const [agriId, setAgriId] = useState<string | null>(null);
   const [agriName, setAgriName] = useState<string | null>(null);
 
-  const getMultiplierForUnit = (u: string) => {
-    if (u === "g") return 0.001;
-    if (u === "kg") return 1;
-    return 1;
+  const getRatioForUnit = (u: string) => {
+    if (u === "g") return 1;
+    if (u === "kg") return 1000;
+    return 1000;
   };
 
   const addIng = useMutation({
@@ -31,7 +31,7 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
         name,
         quantity: parseFloat(qty),
         unit,
-        unit_multiplier: getMultiplierForUnit(unit),
+        unit_multiplier: getRatioForUnit(unit),
       };
       if (agriId) insertData.agribalyse_food_id = agriId;
 
