@@ -1,0 +1,1 @@
+ALTER TABLE public.camp_meals ADD COLUMN portions_wasted numeric NOT NULL DEFAULT 0;
