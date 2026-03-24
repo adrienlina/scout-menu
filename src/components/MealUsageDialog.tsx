@@ -22,6 +22,7 @@ interface MealUsageDialogProps {
   campMealId: string;
   menu: Menu;
   participantCount: number;
+  currentPortionsWasted?: number;
 }
 
 export function MealUsageDialog({
