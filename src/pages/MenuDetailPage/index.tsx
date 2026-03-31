@@ -202,6 +202,9 @@ export default function MenuDetailPage() {
               )}
             </CardContent>
           </Card>
+
+          {/* Description */}
+          <MenuDescription menu={menu} isOwner={isOwner} />
         </div>
 
         {/* RIGHT: CO2 Summary */}
