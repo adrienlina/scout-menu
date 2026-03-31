@@ -113,8 +113,6 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
         )}
       </div>
 
-      {/* Description */}
-      <MenuDescription menu={menu} isOwner={isOwner} />
     </div>
   );
 }

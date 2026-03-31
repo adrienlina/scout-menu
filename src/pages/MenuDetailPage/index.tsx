@@ -11,6 +11,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { useToast } from "@/hooks/use-toast";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from "recharts";
 import { MenuHeader } from "./MenuHeader";
+import { MenuDescription } from "./MenuDescription";
 import { IngredientTableRow } from "./IngredientTableRow";
 import { AddIngredientForm } from "./AddIngredientForm";
 import type { IngredientRow } from "./types";
