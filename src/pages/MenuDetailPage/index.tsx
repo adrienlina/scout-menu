@@ -203,8 +203,14 @@ export default function MenuDetailPage() {
             </CardContent>
           </Card>
 
-          {/* Description */}
-          <MenuDescription menu={menu} isOwner={isOwner} />
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="h-px flex-1 bg-border" />
+              <h2 className="text-base font-semibold text-muted-foreground">Recette pas à pas</h2>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+            <MenuDescription menu={menu} isOwner={isOwner} />
+          </div>
         </div>
 
         {/* RIGHT: CO2 Summary */}
