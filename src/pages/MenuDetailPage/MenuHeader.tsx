@@ -125,24 +125,31 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
 
       {/* Description */}
       {isOwner && editingDesc ? (
-        <Input
+        <Textarea
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Ajouter une description…"
-          className="text-sm"
+          placeholder="Ajouter une description… (supporte les retours à la ligne)"
+          className="text-sm min-h-[80px]"
           autoFocus
-          onKeyDown={(e) => { if (e.key === "Enter") saveDescription(); if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); } }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); }
+            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) saveDescription();
+          }}
           onBlur={saveDescription}
         />
       ) : (
-        <p
+        <div
           className={`text-sm text-muted-foreground ${isOwner ? "cursor-pointer hover:text-foreground transition-colors" : ""}`}
           onClick={() => isOwner && setEditingDesc(true)}
           title={isOwner ? "Cliquer pour modifier" : undefined}
         >
-          {menu.description || (isOwner ? "Ajouter une description…" : "")}
+          {menu.description ? (
+            <p className="whitespace-pre-line">{menu.description}</p>
+          ) : (
+            isOwner && <p className="italic">Ajouter une description…</p>
+          )}
           {isOwner && <Pencil className="inline ml-1 h-3 w-3" />}
-        </p>
+        </div>
       )}
     </div>
   );
