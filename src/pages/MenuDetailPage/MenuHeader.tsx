@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Share2, Pencil } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
+import { MenuDescription } from "./MenuDescription";
 
 export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
   const queryClient = useQueryClient();
