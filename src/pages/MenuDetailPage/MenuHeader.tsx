@@ -114,26 +114,7 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
       </div>
 
       {/* Description */}
-      {isOwner && editingDesc ? (
-        <Input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Ajouter une description…"
-          className="text-sm"
-          autoFocus
-          onKeyDown={(e) => { if (e.key === "Enter") saveDescription(); if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); } }}
-          onBlur={saveDescription}
-        />
-      ) : (
-        <p
-          className={`text-sm text-muted-foreground ${isOwner ? "cursor-pointer hover:text-foreground transition-colors" : ""}`}
-          onClick={() => isOwner && setEditingDesc(true)}
-          title={isOwner ? "Cliquer pour modifier" : undefined}
-        >
-          {menu.description || (isOwner ? "Ajouter une description…" : "")}
-          {isOwner && <Pencil className="inline ml-1 h-3 w-3" />}
-        </p>
-      )}
+      <MenuDescription menu={menu} isOwner={isOwner} />
     </div>
   );
 }
