@@ -42,12 +42,6 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
     setEditingName(false);
   };
 
-  const saveDescription = () => {
-    if (description !== (menu.description || "")) {
-      updateField.mutate({ description: description.trim() || null });
-    }
-    setEditingDesc(false);
-  };
 
   const toggleShared = () => {
     updateField.mutate(
