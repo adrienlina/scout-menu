@@ -15,9 +15,7 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
   const queryClient = useQueryClient();
   const { toast } = useToast();
   const [editingName, setEditingName] = useState(false);
-  const [editingDesc, setEditingDesc] = useState(false);
   const [name, setName] = useState(menu.name);
-  const [description, setDescription] = useState(menu.description || "");
 
   useEffect(() => {
     setName(menu.name);
