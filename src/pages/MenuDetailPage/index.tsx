@@ -6,7 +6,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { ArrowLeft, Leaf, Info } from "lucide-react";
+import { ArrowLeft, Leaf, Info, Printer } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useToast } from "@/hooks/use-toast";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from "recharts";
@@ -134,12 +134,15 @@ export default function MenuDetailPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4">
-        <Button variant="ghost" size="icon" onClick={() => navigate("/menus")}>
+        <Button variant="ghost" size="icon" onClick={() => navigate("/menus")} className="no-print">
           <ArrowLeft className="h-4 w-4" />
         </Button>
         <div className="flex-1">
           <MenuHeader menu={menu} isOwner={isOwner} />
         </div>
+        <Button variant="outline" size="icon" onClick={() => window.print()} className="no-print" title="Imprimer">
+          <Printer className="h-4 w-4" />
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

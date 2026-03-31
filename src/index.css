@@ -113,3 +113,62 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* Print-friendly styles */
+@media print {
+  /* Hide navigation, buttons, and interactive elements */
+  header,
+  .no-print,
+  button:not(.print-keep),
+  [data-radix-popper-content-wrapper] {
+    display: none !important;
+  }
+
+  /* Reset background and colors for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+
+  /* Remove card styling, flatten layout */
+  .border,
+  [class*="shadow"] {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+
+  /* Full width layout */
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  main {
+    padding: 0.5rem !important;
+  }
+
+  /* Make grid single-column on print */
+  .lg\:col-span-2 {
+    grid-column: span 3 !important;
+  }
+
+  .grid.lg\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ensure table fits */
+  table {
+    font-size: 10pt;
+  }
+
+  /* Avoid page breaks inside cards */
+  .card, [class*="Card"] {
+    break-inside: avoid;
+  }
+
+  /* Show recharts but keep readable */
+  .recharts-wrapper {
+    break-inside: avoid;
+  }
+}
