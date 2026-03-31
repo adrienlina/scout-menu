@@ -1,23 +1,45 @@
 
 
-## Plan : Rendre le nom, la quantité et l'unité d'un ingrédient éditables inline
+## Plan : Rich text pour la description des menus (avec paste d'images)
 
-Actuellement, le nom, la quantité et l'unité d'un ingrédient sont affichés en texte statique dans le tableau. On va les rendre éditables directement dans la ligne pour le propriétaire du menu.
+### Approche
 
-### Modifications
+Tiptap + Supabase Storage. Le contenu HTML est stocké dans `menus.description` (colonne existante). Les images collées sont uploadées automatiquement dans un bucket Storage, et leur URL publique est insérée dans l'éditeur.
 
-**1. `src/pages/MenuDetailPage/IngredientTableRow.tsx`**
+### 1. Créer le bucket Storage
 
-- Ajouter une mutation `updateIngredient` qui met à jour `name`, `quantity` et `unit` dans `menu_ingredients`.
-- Pour le **nom** (ligne 68) : remplacer le texte statique par un `<Input>` éditable (si `isOwner`), avec un `onBlur` / debounce qui déclenche la mutation.
-- Pour la **quantité** (ligne 69) : remplacer par un `<NumberInput>` (le composant standard du projet), avec `onChange` qui sauvegarde.
-- Pour l'**unité** (ligne 70) : remplacer par un `<Select>` avec les mêmes options que dans `AddIngredientForm` (`g`, `kg`, `ml`, `L`, `pièce`). Au changement d'unité, mettre à jour automatiquement le `unit_multiplier` (comme dans `AddIngredientForm` : g→1, kg→1000, etc.) en même temps que l'unité.
-- Pour les non-propriétaires, garder l'affichage texte actuel.
+Migration SQL :
+- Créer un bucket `menu-images` (public)
+- RLS : authenticated users can INSERT, SELECT ; owners can DELETE
+
+### 2. Installer les dépendances
+
+`@tiptap/react`, `@tiptap/starter-kit`, `@tiptap/extension-image`, `@tiptap/extension-placeholder`
+
+### 3. Créer `src/components/RichTextEditor.tsx`
+
+- Wrapper Tiptap avec barre d'outils : H1, H2, H3, Gras, Italique, Image (par URL)
+- Props : `content`, `onChange`, `editable`, `placeholder`, `onImagePaste`
+- Gestion du paste d'images : intercepter l'événement `paste`, extraire les fichiers image du clipboard, appeler `onImagePaste(file)` qui retourne l'URL publique, puis insérer l'image dans l'éditeur
+- Styles avec Tailwind `prose prose-sm`
+
+### 4. Créer `src/pages/MenuDetailPage/MenuDescription.tsx`
+
+- Composant dédié avec logique de sauvegarde debounce (~1s)
+- Fonction `uploadImage(file)` : upload vers `menu-images/{menuId}/{uuid}.{ext}`, retourne l'URL publique
+- Passe `onImagePaste` au `RichTextEditor`
+- Mode lecture seule pour les non-propriétaires (rendu HTML avec `prose`)
+
+### 5. Modifier `src/pages/MenuDetailPage/MenuHeader.tsx`
+
+- Remplacer le bloc description (`editingDesc` + `<Input>` + `<p>`) par `<MenuDescription>`
+- Supprimer les états `editingDesc` et `description`
+- L'éditeur est toujours visible, `editable` selon `isOwner`
 
 ### Détails techniques
 
-- La mutation `updateIngredient` fera un `supabase.from("menu_ingredients").update({ name, quantity, unit, unit_multiplier }).eq("id", ingredient.id)`.
-- Le changement de nom utilise un état local + `onBlur` pour éviter de déclencher une requête à chaque frappe.
-- Le changement de quantité utilise `NumberInput` avec `onChange` (sauvegarde immédiate comme le multiplier existant).
-- Le changement d'unité via `Select` déclenche la mutation immédiatement et met aussi à jour le `unit_multiplier` automatiquement.
+- Upload : `supabase.storage.from('menu-images').upload(path, file)`
+- URL publique : `supabase.storage.from('menu-images').getPublicUrl(path)`
+- Les anciennes descriptions texte brut s'afficheront normalement (Tiptap les wrappe dans `<p>`)
+- Formats image acceptés au paste : PNG, JPEG, GIF, WebP
 
