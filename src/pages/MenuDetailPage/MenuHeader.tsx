@@ -19,8 +19,7 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
 
   useEffect(() => {
     setName(menu.name);
-    setDescription(menu.description || "");
-  }, [menu.name, menu.description]);
+  }, [menu.name]);
 
   const updateField = useMutation({
     mutationFn: async (fields: Record<string, any>) => {
