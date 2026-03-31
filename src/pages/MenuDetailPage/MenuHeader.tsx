@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Textarea } from "@/components/ui/textarea";
 import { Share2, Pencil } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
@@ -125,31 +124,24 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
 
       {/* Description */}
       {isOwner && editingDesc ? (
-        <Textarea
+        <Input
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="Ajouter une description… (supporte les retours à la ligne)"
-          className="text-sm min-h-[80px]"
+          placeholder="Ajouter une description…"
+          className="text-sm"
           autoFocus
-          onKeyDown={(e) => {
-            if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); }
-            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) saveDescription();
-          }}
+          onKeyDown={(e) => { if (e.key === "Enter") saveDescription(); if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); } }}
           onBlur={saveDescription}
         />
       ) : (
-        <div
+        <p
           className={`text-sm text-muted-foreground ${isOwner ? "cursor-pointer hover:text-foreground transition-colors" : ""}`}
           onClick={() => isOwner && setEditingDesc(true)}
           title={isOwner ? "Cliquer pour modifier" : undefined}
         >
-          {menu.description ? (
-            <p className="whitespace-pre-line">{menu.description}</p>
-          ) : (
-            isOwner && <p className="italic">Ajouter une description…</p>
-          )}
+          {menu.description || (isOwner ? "Ajouter une description…" : "")}
           {isOwner && <Pencil className="inline ml-1 h-3 w-3" />}
-        </div>
+        </p>
       )}
     </div>
   );
