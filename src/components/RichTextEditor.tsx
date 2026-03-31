@@ -96,7 +96,7 @@ export function RichTextEditor({
 
   if (!editable) {
     return (
-      <div className="prose prose-sm max-w-none text-foreground prose-headings:text-foreground prose-h1:text-xl prose-h1:font-bold prose-h2:text-lg prose-h2:font-semibold prose-h3:text-base prose-h3:font-semibold">
+      <div className="max-w-none text-foreground">
         <EditorContent editor={editor} />
       </div>
     );
@@ -171,7 +171,7 @@ export function RichTextEditor({
           <ImageIcon className="h-4 w-4" />
         </Button>
       </div>
-      <div className="px-3 py-2 min-h-[60px] prose prose-sm max-w-none text-foreground prose-headings:text-foreground prose-h1:text-xl prose-h1:font-bold prose-h2:text-lg prose-h2:font-semibold prose-h3:text-base prose-h3:font-semibold">
+      <div className="px-3 py-2 min-h-[60px] max-w-none text-foreground text-sm">
         <EditorContent editor={editor} />
       </div>
     </div>
