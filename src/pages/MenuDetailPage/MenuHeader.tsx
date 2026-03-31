@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
@@ -10,19 +9,17 @@ import { Switch } from "@/components/ui/switch";
 import { Share2, Pencil } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
+import { MenuDescription } from "./MenuDescription";
 
 export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
   const queryClient = useQueryClient();
   const { toast } = useToast();
   const [editingName, setEditingName] = useState(false);
-  const [editingDesc, setEditingDesc] = useState(false);
   const [name, setName] = useState(menu.name);
-  const [description, setDescription] = useState(menu.description || "");
 
   useEffect(() => {
     setName(menu.name);
-    setDescription(menu.description || "");
-  }, [menu.name, menu.description]);
+  }, [menu.name]);
 
   const updateField = useMutation({
     mutationFn: async (fields: Record<string, any>) => {
@@ -45,12 +42,6 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
     setEditingName(false);
   };
 
-  const saveDescription = () => {
-    if (description !== (menu.description || "")) {
-      updateField.mutate({ description: description.trim() || null });
-    }
-    setEditingDesc(false);
-  };
 
   const toggleShared = () => {
     updateField.mutate(
@@ -123,26 +114,7 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
       </div>
 
       {/* Description */}
-      {isOwner && editingDesc ? (
-        <Input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          placeholder="Ajouter une description…"
-          className="text-sm"
-          autoFocus
-          onKeyDown={(e) => { if (e.key === "Enter") saveDescription(); if (e.key === "Escape") { setDescription(menu.description || ""); setEditingDesc(false); } }}
-          onBlur={saveDescription}
-        />
-      ) : (
-        <p
-          className={`text-sm text-muted-foreground ${isOwner ? "cursor-pointer hover:text-foreground transition-colors" : ""}`}
-          onClick={() => isOwner && setEditingDesc(true)}
-          title={isOwner ? "Cliquer pour modifier" : undefined}
-        >
-          {menu.description || (isOwner ? "Ajouter une description…" : "")}
-          {isOwner && <Pencil className="inline ml-1 h-3 w-3" />}
-        </p>
-      )}
+      <MenuDescription menu={menu} isOwner={isOwner} />
     </div>
   );
 }
