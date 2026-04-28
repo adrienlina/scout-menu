@@ -12,6 +12,8 @@ import { Upload, Search, X, Info, Leaf, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
 import * as XLSX from "xlsx";
 import AgribalyseComparisonChart from "@/components/AgribalyseComparisonChart";
+import type { AgribalyseFood } from "@/lib/types";
+import type { TablesInsert } from "@/integrations/supabase/types";
 
 const IMPACT_COLUMNS = [
   { key: "score_unique_ef", label: "Score unique EF 3.1", unit: "mPt/kg", tooltip: "Score agrégé unique selon la méthode Environmental Footprint 3.1. Plus le score est élevé, plus l'impact environnemental global est important." },
@@ -80,7 +82,7 @@ export default function AgribalysePage() {
     queryKey: ["agribalyse_foods"],
     queryFn: async () => {
       // Fetch all records (may be more than 1000)
-      let allData: any[] = [];
+      let allData: AgribalyseFood[] = [];
       let from = 0;
       const pageSize = 1000;
       while (true) {
@@ -101,14 +103,14 @@ export default function AgribalysePage() {
 
   const filteredFoods = useMemo(() => {
     if (selectedFoods.size > 0 && !search.trim()) {
-      return foods.filter((f: any) => selectedFoods.has(f.id));
+      return foods.filter((f) => selectedFoods.has(f.id));
     }
     if (!search.trim()) return foods.slice(0, 50);
     const q = search.toLowerCase();
-    const results = foods.filter((f: any) => f.name.toLowerCase().includes(q));
+    const results = foods.filter((f) => f.name.toLowerCase().includes(q));
     // Put selected items first, then others
-    const selected = results.filter((f: any) => selectedFoods.has(f.id));
-    const others = results.filter((f: any) => !selectedFoods.has(f.id));
+    const selected = results.filter((f) => selectedFoods.has(f.id));
+    const others = results.filter((f) => !selectedFoods.has(f.id));
     return [...selected, ...others].slice(0, 50);
   }, [foods, search, selectedFoods]);
 
@@ -116,7 +118,7 @@ export default function AgribalysePage() {
     if (!search.trim()) return [];
     const q = search.toLowerCase();
     return foods
-      .filter((f: any) => f.name.toLowerCase().includes(q) && !selectedFoods.has(f.id))
+      .filter((f) => f.name.toLowerCase().includes(q) && !selectedFoods.has(f.id))
       .slice(0, 10);
   }, [foods, search, selectedFoods]);
 
@@ -152,7 +154,7 @@ export default function AgribalysePage() {
         return;
       }
       const sheet = workbook.Sheets[sheetName];
-      const json = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: null }) as any[][];
+      const json = XLSX.utils.sheet_to_json(sheet, { header: 1, defval: null }) as unknown[][];
 
       // Find header row (contains "Nom du Produit en Français")
       let headerIdx = -1;
@@ -163,7 +165,7 @@ export default function AgribalysePage() {
       for (let i = 0; i < Math.min(json.length, 15); i++) {
         const row = json[i];
         if (!row) continue;
-        const ni = row.findIndex((c: any) => typeof c === "string" && c.includes("Nom du Produit en Fran"));
+        const ni = row.findIndex((c) => typeof c === "string" && c.includes("Nom du Produit en Fran"));
         if (ni >= 0) {
           headerIdx = i;
           nameCol = ni;
@@ -210,7 +212,7 @@ export default function AgribalysePage() {
 
       const rows = json.slice(headerIdx + 1).filter((r) => r && r[nameCol]);
       const foods = rows.map((row) => {
-        const entry: any = {
+        const entry: TablesInsert<"agribalyse_foods"> = {
           name: String(row[nameCol]).trim(),
           is_bio: false,
           production_type: "conventionnel",
@@ -238,9 +240,10 @@ export default function AgribalysePage() {
 
       toast.success(`${inserted} aliments importés avec succès !`);
       refetch();
-    } catch (err: any) {
+    } catch (err) {
       console.error(err);
-      toast.error("Erreur lors de l'import : " + err.message);
+      const message = err instanceof Error ? err.message : String(err);
+      toast.error("Erreur lors de l'import : " + message);
     } finally {
       setImporting(false);
       e.target.value = "";
@@ -314,8 +317,8 @@ export default function AgribalysePage() {
                 <div className="flex flex-wrap gap-2">
                   <span className="text-sm text-muted-foreground self-center">Comparaison :</span>
                   {foods
-                    .filter((f: any) => selectedFoods.has(f.id))
-                    .map((f: any) => (
+                    .filter((f) => selectedFoods.has(f.id))
+                    .map((f) => (
                       <Badge key={f.id} variant="secondary" className="gap-1">
                         {f.name}
                         <button onClick={() => toggleFood(f.id)}>
@@ -332,7 +335,7 @@ export default function AgribalysePage() {
               {/* Search results to add to comparison */}
               {search.trim() && searchResults.length > 0 && selectedFoods.size > 0 && (
                 <div className="border rounded-md divide-y max-h-48 overflow-auto">
-                  {searchResults.map((f: any) => (
+                  {searchResults.map((f) => (
                     <button
                       key={f.id}
                       className="w-full text-left px-3 py-2 text-sm hover:bg-muted/50 transition-colors"
@@ -415,7 +418,7 @@ export default function AgribalysePage() {
                         </TableCell>
                       </TableRow>
                     ) : (
-                      filteredFoods.map((food: any) => (
+                      filteredFoods.map((food) => (
                         <TableRow
                           key={food.id}
                           className={selectedFoods.has(food.id) ? "bg-primary/5" : ""}
@@ -431,7 +434,7 @@ export default function AgribalysePage() {
                           </TableCell>
                           {selectedImpactCols.map((col) => (
                             <TableCell key={col.key} className="text-right tabular-nums">
-                              <span>{formatScientific(food[col.key])}</span>
+                              <span>{formatScientific(food[col.key] as number | null)}</span>
                               <span className="text-xs text-muted-foreground ml-1">{food[col.key] != null ? col.unit : ""}</span>
                             </TableCell>
                           ))}
@@ -453,7 +456,7 @@ export default function AgribalysePage() {
           {/* Comparison chart */}
           {selectedFoods.size >= 2 && (
             <AgribalyseComparisonChart
-              selectedFoods={foods.filter((f: any) => selectedFoods.has(f.id))}
+              selectedFoods={foods.filter((f) => selectedFoods.has(f.id))}
               selectedImpactCols={selectedImpactCols}
             />
           )}

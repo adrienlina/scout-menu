@@ -55,8 +55,9 @@ export function MenuDescription({ menu, isOwner }: MenuDescriptionProps) {
           .from("menu-images")
           .getPublicUrl(path);
         return data.publicUrl;
-      } catch (err: any) {
-        toast({ title: "Erreur d'upload", description: err.message, variant: "destructive" });
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        toast({ title: "Erreur d'upload", description: message, variant: "destructive" });
         return null;
       } finally {
         setUploading(false);

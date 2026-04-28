@@ -40,8 +40,9 @@ export default function MenuDetailPage() {
       queryClient.invalidateQueries({ queryKey: ["menus"] });
       navigate(`/menus/${data.id}`, { replace: true });
     },
-    onError: (err: any) => {
-      toast({ title: "Erreur", description: err.message, variant: "destructive" });
+    onError: (err) => {
+      const message = err instanceof Error ? err.message : String(err);
+      toast({ title: "Erreur", description: message, variant: "destructive" });
       navigate("/menus");
     },
   });
@@ -79,7 +80,7 @@ export default function MenuDetailPage() {
         .order("name");
       if (error) throw error;
 
-      const agriIds = (data || []).map((i: any) => i.agribalyse_food_id).filter(Boolean) as string[];
+      const agriIds = (data || []).map((i) => i.agribalyse_food_id).filter(Boolean) as string[];
       let agriMap: Record<string, { name: string; changement_climatique: number | null }> = {};
       if (agriIds.length > 0) {
         const { data: agriData } = await supabase
@@ -91,7 +92,7 @@ export default function MenuDetailPage() {
         }
       }
 
-      return (data || []).map((i: any) => ({
+      return (data || []).map((i) => ({
         ...i,
         agribalyse_name: i.agribalyse_food_id ? agriMap[i.agribalyse_food_id]?.name || null : null,
         changement_climatique: i.agribalyse_food_id ? agriMap[i.agribalyse_food_id]?.changement_climatique || null : null,

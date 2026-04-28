@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { BarChart3 } from "lucide-react";
+import type { AgribalyseFood } from "@/lib/types";
 
 interface ImpactColumn {
   key: string;
@@ -11,7 +12,7 @@ interface ImpactColumn {
 }
 
 interface AgribalyseComparisonChartProps {
-  selectedFoods: any[];
+  selectedFoods: AgribalyseFood[];
   selectedImpactCols: ImpactColumn[];
 }
 
@@ -40,7 +41,7 @@ export default function AgribalyseComparisonChart({
       const data = selectedFoods.map((food) => ({
         name: truncateName(food.name),
         fullName: food.name,
-        value: food[col.key] ?? null,
+        value: (food[col.key as keyof AgribalyseFood] as number | null) ?? null,
       }));
       return { col, data };
     });

@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { NumberInput } from "@/components/NumberInput";
 import { AgribalyseSearch } from "./AgribalyseSearch";
 import type { IngredientRow } from "./types";
+import type { TablesUpdate } from "@/integrations/supabase/types";
 
 const UNITS = ["g", "kg", "ml", "L", "pièce"];
 
@@ -46,7 +47,7 @@ export function IngredientTableRow({
   });
 
   const updateIngredient = useMutation({
-    mutationFn: async (fields: Record<string, any>) => {
+    mutationFn: async (fields: TablesUpdate<"menu_ingredients">) => {
       const { error } = await supabase
         .from("menu_ingredients")
         .update(fields)
@@ -60,7 +61,7 @@ export function IngredientTableRow({
     mutationFn: async (agriId: string | null) => {
       const { error } = await supabase
         .from("menu_ingredients")
-        .update({ agribalyse_food_id: agriId } as any)
+        .update({ agribalyse_food_id: agriId })
         .eq("id", ingredient.id!);
       if (error) throw error;
     },
@@ -74,7 +75,7 @@ export function IngredientTableRow({
     mutationFn: async (multiplier: number) => {
       const { error } = await supabase
         .from("menu_ingredients")
-        .update({ unit_multiplier: multiplier } as any)
+        .update({ unit_multiplier: multiplier })
         .eq("id", ingredient.id!);
       if (error) throw error;
     },
