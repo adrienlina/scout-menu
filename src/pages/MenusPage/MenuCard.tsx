@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Trash2, Share2 } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
+import { RichTextDisplay } from "@/components/ui/rich-text-display";
 import { motion } from "framer-motion";
 
 export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; index: number; canDelete: boolean }) {
@@ -81,7 +82,7 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
         </CardHeader>
         <CardContent>
           {menu.description && (
-            <p className="mb-3 text-sm text-muted-foreground">{menu.description}</p>
+            <RichTextDisplay content={menu.description} clamp className="mb-3" />
           )}
           {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
             <div className="space-y-1">

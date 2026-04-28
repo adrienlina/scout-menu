@@ -49,10 +49,14 @@ export default function MenuDetailPage() {
 
   useEffect(() => {
     if (isNew) {
+      if (!user) {
+        navigate("/auth", { replace: true });
+        return;
+      }
       createMenu.mutate();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isNew]);
+  }, [isNew, user]);
 
   // Fetch menu
   const { data: menu, isLoading: menuLoading } = useQuery({
@@ -101,7 +105,7 @@ export default function MenuDetailPage() {
     enabled: !!menuId && !isNew,
   });
 
-  const isOwner = menu?.user_id === user?.id;
+  const isOwner = !!user && menu?.user_id === user.id;
 
   // CO2 calculation
   const co2Data = useMemo(() => {
