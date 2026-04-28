@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { motion } from "framer-motion";
+import type { Camp } from "@/lib/types";
 
-export function CampCard({ camp, index, isShared }: { camp: any; index: number; isShared: boolean }) {
+export function CampCard({ camp, index, isShared }: { camp: Camp; index: number; isShared: boolean }) {
   const deleteCamp = useDeleteCamp();
   const { toast } = useToast();
   const mealCount = camp.camp_meals?.length || 0;

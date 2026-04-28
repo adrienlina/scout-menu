@@ -101,8 +101,8 @@ export function MealCard({
 }) {
   const removeMeal = useRemoveMeal();
   const [usageOpen, setUsageOpen] = useState(false);
-  const portionsWasted = (meal as any).portions_wasted ?? 0;
-  const portionsMissing = (meal as any).portions_missing ?? 0;
+  const portionsWasted = meal.portions_wasted ?? 0;
+  const portionsMissing = meal.portions_missing ?? 0;
 
   return (
     <>

@@ -88,7 +88,7 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
             <div className="space-y-1">
               <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Ingrédients par personne</p>
               <div className="flex flex-wrap gap-1">
-                {menu.menu_ingredients.map((ing: any) => (
+                {menu.menu_ingredients.map((ing) => (
                   <Badge key={ing.id} variant="outline" className="text-xs font-normal">
                     {ing.name} · {ing.quantity}{ing.unit}
                   </Badge>

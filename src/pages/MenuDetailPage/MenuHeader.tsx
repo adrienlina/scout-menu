@@ -11,10 +11,11 @@ import { Switch } from "@/components/ui/switch";
 import { Share2, Pencil, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type Menu } from "@/lib/types";
+import type { TablesUpdate } from "@/integrations/supabase/types";
 
 
-export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
+export function MenuHeader({ menu, isOwner }: { menu: Menu; isOwner: boolean }) {
   const queryClient = useQueryClient();
   const { toast } = useToast();
   const [editingName, setEditingName] = useState(false);
@@ -28,7 +29,7 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
   }, [menu.name, menu.description]);
 
   const updateField = useMutation({
-    mutationFn: async (fields: Record<string, any>) => {
+    mutationFn: async (fields: TablesUpdate<"menus">) => {
       const { error } = await supabase
         .from("menus")
         .update(fields)

@@ -29,15 +29,16 @@ export function MenuDescription({ menu, isOwner }: MenuDescriptionProps) {
     },
   });
 
+  const { mutate: mutateDescription } = updateDescription;
   const handleChange = useCallback(
     (html: string) => {
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(() => {
         const value = html === "<p></p>" || html === "" ? null : html;
-        updateDescription.mutate(value);
+        mutateDescription(value);
       }, 1000);
     },
-    [menu.id]
+    [mutateDescription]
   );
 
   const handleImagePaste = useCallback(
@@ -55,8 +56,9 @@ export function MenuDescription({ menu, isOwner }: MenuDescriptionProps) {
           .from("menu-images")
           .getPublicUrl(path);
         return data.publicUrl;
-      } catch (err: any) {
-        toast({ title: "Erreur d'upload", description: err.message, variant: "destructive" });
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        toast({ title: "Erreur d'upload", description: message, variant: "destructive" });
         return null;
       } finally {
         setUploading(false);
