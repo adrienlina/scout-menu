@@ -6,7 +6,8 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
-import { Share2, Pencil } from "lucide-react";
+import { Share2, Pencil, Copy } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
 
@@ -48,6 +49,12 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
       { is_shared: !menu.is_shared },
       { onSuccess: () => toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }) }
     );
+  };
+
+  const copyShareLink = async () => {
+    const url = `${window.location.origin}/menus/${menu.id}`;
+    await navigator.clipboard.writeText(url);
+    toast({ title: "Lien copié !", description: "Partagez-le avec qui vous voulez." });
   };
 
   return (
@@ -109,6 +116,12 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
               checked={menu.is_shared}
               onCheckedChange={toggleShared}
             />
+            {menu.is_shared && (
+              <Button variant="outline" size="sm" className="gap-1.5" onClick={copyShareLink}>
+                <Copy className="h-3.5 w-3.5" />
+                Copier le lien
+              </Button>
+            )}
           </div>
         )}
       </div>
