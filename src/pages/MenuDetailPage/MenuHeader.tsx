@@ -3,6 +3,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { RichTextEditor } from "@/components/ui/rich-text-editor";
+import { RichTextDisplay } from "@/components/ui/rich-text-display";
 import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
@@ -16,11 +18,14 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
   const queryClient = useQueryClient();
   const { toast } = useToast();
   const [editingName, setEditingName] = useState(false);
+  const [editingDesc, setEditingDesc] = useState(false);
   const [name, setName] = useState(menu.name);
+  const [description, setDescription] = useState(menu.description || "");
 
   useEffect(() => {
     setName(menu.name);
-  }, [menu.name]);
+    setDescription(menu.description || "");
+  }, [menu.name, menu.description]);
 
   const updateField = useMutation({
     mutationFn: async (fields: Record<string, any>) => {
@@ -43,6 +48,12 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
     setEditingName(false);
   };
 
+  const saveDescription = () => {
+    if (description !== (menu.description || "")) {
+      updateField.mutate({ description: description.trim() || null });
+    }
+    setEditingDesc(false);
+  };
 
   const toggleShared = () => {
     updateField.mutate(
@@ -126,6 +137,32 @@ export function MenuHeader({ menu, isOwner }: { menu: any; isOwner: boolean }) {
         )}
       </div>
 
+      {/* Description */}
+      {isOwner && editingDesc ? (
+        <RichTextEditor
+          value={description}
+          onChange={setDescription}
+          onBlur={saveDescription}
+          autoFocus
+        />
+      ) : (
+        <div
+          className={isOwner ? "cursor-pointer group" : ""}
+          onClick={() => isOwner && setEditingDesc(true)}
+          title={isOwner ? "Cliquer pour modifier" : undefined}
+        >
+          {menu.description ? (
+            <div className="flex items-start gap-1">
+              <RichTextDisplay content={menu.description} />
+              {isOwner && <Pencil className="shrink-0 mt-0.5 h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />}
+            </div>
+          ) : isOwner ? (
+            <p className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Ajouter une description… <Pencil className="inline ml-1 h-3 w-3" />
+            </p>
+          ) : null}
+        </div>
+      )}
     </div>
   );
 }
