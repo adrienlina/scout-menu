@@ -37,9 +37,9 @@ export default function MenusPage() {
           <h1 className="text-3xl font-bold tracking-tight">📚 Bibliothèque de menus</h1>
           <p className="text-muted-foreground">Explorez et créez vos menus pour le camp</p>
         </div>
-        <Button className="gap-2" onClick={() => navigate("/menus/new")}>
+        <Button className="gap-2" onClick={() => navigate(user ? "/menus/new" : "/auth")}>
           <Plus className="h-4 w-4" />
-          Nouveau menu
+          {user ? "Nouveau menu" : "Se connecter pour créer"}
         </Button>
       </div>
 
@@ -64,7 +64,9 @@ export default function MenusPage() {
       </div>
 
       <div className="flex gap-2 flex-wrap items-center">
-        {(["all", "mine", "standard", "others"] as const).map((f) => (
+        {(["all", "mine", "standard", "others"] as const)
+          .filter((f) => f !== "mine" || !!user)
+          .map((f) => (
           <Button
             key={f}
             variant={ownerFilter === f ? "default" : "outline"}
