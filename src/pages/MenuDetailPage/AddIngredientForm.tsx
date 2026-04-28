@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Plus } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { AgribalyseSearch } from "./AgribalyseSearch";
+import { resolveUnitMultiplier } from "./unitMultiplier";
 
 export function AddIngredientForm({ menuId }: { menuId: string }) {
   const queryClient = useQueryClient();
@@ -18,12 +19,6 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
   const [agriId, setAgriId] = useState<string | null>(null);
   const [agriName, setAgriName] = useState<string | null>(null);
 
-  const getRatioForUnit = (u: string) => {
-    if (u === "g") return 1;
-    if (u === "kg") return 1000;
-    return 1000;
-  };
-
   const addIng = useMutation({
     mutationFn: async () => {
       const insertData: any = {
@@ -31,7 +26,7 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
         name,
         quantity: parseFloat(qty),
         unit,
-        unit_multiplier: getRatioForUnit(unit),
+        unit_multiplier: await resolveUnitMultiplier(agriId, unit),
       };
       if (agriId) insertData.agribalyse_food_id = agriId;
 

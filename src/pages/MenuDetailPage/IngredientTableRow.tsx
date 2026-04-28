@@ -9,15 +9,10 @@ import { Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { NumberInput } from "@/components/NumberInput";
 import { AgribalyseSearch } from "./AgribalyseSearch";
+import { resolveUnitMultiplier } from "./unitMultiplier";
 import type { IngredientRow } from "./types";
 
 const UNITS = ["g", "kg", "ml", "L", "pièce"];
-
-function getRatioForUnit(u: string) {
-  if (u === "g") return 1;
-  if (u === "kg") return 1000;
-  return 1000;
-}
 
 export function IngredientTableRow({
   ingredient,
@@ -58,9 +53,13 @@ export function IngredientTableRow({
 
   const linkAgribalyse = useMutation({
     mutationFn: async (agriId: string | null) => {
+      const update: Record<string, any> = { agribalyse_food_id: agriId };
+      if (agriId) {
+        update.unit_multiplier = await resolveUnitMultiplier(agriId, ingredient.unit);
+      }
       const { error } = await supabase
         .from("menu_ingredients")
-        .update({ agribalyse_food_id: agriId } as any)
+        .update(update)
         .eq("id", ingredient.id!);
       if (error) throw error;
     },
@@ -90,8 +89,9 @@ export function IngredientTableRow({
     }
   };
 
-  const handleUnitChange = (newUnit: string) => {
-    updateIngredient.mutate({ unit: newUnit, unit_multiplier: getRatioForUnit(newUnit) });
+  const handleUnitChange = async (newUnit: string) => {
+    const multiplier = await resolveUnitMultiplier(ingredient.agribalyse_food_id, newUnit);
+    updateIngredient.mutate({ unit: newUnit, unit_multiplier: multiplier });
   };
 
   let co2 = null;

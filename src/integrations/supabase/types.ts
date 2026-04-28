@@ -98,6 +98,38 @@ export type Database = {
         }
         Relationships: []
       }
+      agribalyse_food_default_ratios: {
+        Row: {
+          agribalyse_food_id: string
+          created_at: string
+          grams_per_unit: number
+          id: string
+          unit: string
+        }
+        Insert: {
+          agribalyse_food_id: string
+          created_at?: string
+          grams_per_unit: number
+          id?: string
+          unit: string
+        }
+        Update: {
+          agribalyse_food_id?: string
+          created_at?: string
+          grams_per_unit?: number
+          id?: string
+          unit?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "agribalyse_food_default_ratios_agribalyse_food_id_fkey"
+            columns: ["agribalyse_food_id"]
+            isOneToOne: false
+            referencedRelation: "agribalyse_foods"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       camp_days: {
         Row: {
           camp_id: string

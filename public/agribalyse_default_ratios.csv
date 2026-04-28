@@ -1,0 +1,163 @@
+name_pattern;unit;grams_per_unit;note
+# Defaults for "Ratio g / unité produit" used to auto-fill unit_multiplier
+# when an ingredient is linked to an Agribalyse food.
+#
+# Format (semicolon-separated):
+#   name_pattern   : ILIKE pattern (case-insensitive) matched against agribalyse_foods.name
+#   unit           : one of g, kg, ml, L, pièce
+#   grams_per_unit : grams in one "unit"
+#   note           : free-form, ignored at import
+#
+# Sources: ANSES Ciqual portion data, INCA3 reference portions, standard culinary
+# weights (egg ~60g, apple ~150g, milk density 1.03, oil ~0.92, etc.).
+# Lines starting with # are ignored. The first matching pattern wins per (food, unit).
+#
+# --- Œufs ---
+%œuf%cru%;pièce;60;
+%œuf%dur%;pièce;55;
+%œuf%coque%;pièce;55;
+%œuf%entier%;pièce;55;
+%oeuf%;pièce;55;
+#
+# --- Laitages, portions ---
+%yaourt%;pièce;125;Pot standard
+%yogourt%;pièce;125;
+%fromage blanc%;pièce;100;Pot
+%petit suisse%;pièce;60;
+%faisselle%;pièce;100;
+%camembert%;pièce;250;Camembert entier
+%emmental%portion%;pièce;30;
+#
+# --- Pain & viennoiseries ---
+%baguette%;pièce;250;
+%pain de mie%tranche%;pièce;30;
+%pain%tranche%;pièce;30;
+%pain au chocolat%;pièce;70;
+%croissant%;pièce;60;
+%brioche%tranche%;pièce;40;
+%pita%;pièce;80;
+%tortilla%;pièce;40;
+%biscotte%;pièce;10;
+#
+# --- Fruits ---
+%pomme,%cru%;pièce;150;
+%pomme%fraîche%;pièce;150;
+%poire,%cru%;pièce;170;
+%banane,%cru%;pièce;120;
+%banane%;pièce;120;
+%orange,%cru%;pièce;130;
+%orange%;pièce;130;
+%clémentine%;pièce;80;
+%mandarine%;pièce;80;
+%citron,%cru%;pièce;100;
+%citron vert%;pièce;60;
+%pamplemousse%;pièce;250;
+%kiwi%;pièce;75;
+%abricot,%cru%;pièce;50;
+%pêche,%cru%;pièce;150;
+%nectarine%;pièce;150;
+%prune%;pièce;40;
+%cerise,%cru%;pièce;8;
+%fraise,%cru%;pièce;12;
+%framboise%;pièce;4;
+%mûre%;pièce;4;
+%myrtille%;pièce;1;
+%raisin%;pièce;5;Grain
+%ananas%;pièce;1500;Fruit entier
+%mangue%;pièce;350;
+%avocat%;pièce;200;
+%figue%;pièce;50;
+%datte%;pièce;8;
+%pruneau%;pièce;8;
+%noix%;pièce;5;
+%noisette%;pièce;1;
+%amande%;pièce;1;
+#
+# --- Légumes ---
+%tomate%cerise%;pièce;12;
+%tomate,%cru%;pièce;120;
+%tomate%;pièce;120;
+%carotte,%cru%;pièce;70;
+%oignon,%cru%;pièce;110;
+%oignon%;pièce;110;
+%échalote%;pièce;30;
+%ail%gousse%;pièce;5;
+%ail,%cru%;pièce;60;Tête entière
+%poireau%;pièce;200;
+%courgette%;pièce;200;
+%aubergine%;pièce;300;
+%concombre%;pièce;300;
+%poivron%;pièce;150;
+%champignon%paris%;pièce;18;
+%pomme de terre%;pièce;150;
+%patate douce%;pièce;200;
+%betterave%;pièce;100;
+%radis,%cru%;pièce;10;
+%navet%;pièce;100;
+%céleri-rave%;pièce;800;
+%chou-fleur%;pièce;800;
+%brocoli%;pièce;500;
+%chou,%vert%;pièce;1000;
+%chou%blanc%;pièce;1000;
+%endive%;pièce;100;
+%laitue%;pièce;300;
+%scarole%;pièce;300;
+%mâche%;pièce;100;
+%batavia%;pièce;300;
+%artichaut%;pièce;300;
+%asperge,%cru%;pièce;25;
+%maïs%épi%;pièce;250;
+%fenouil%;pièce;250;
+%potiron%;pièce;2000;
+%courge%butternut%;pièce;1500;
+#
+# --- Viandes & charcuterie ---
+%steak haché%;pièce;100;
+%escalope%poulet%;pièce;120;
+%cuisse%poulet%;pièce;200;
+%poulet%entier%;pièce;1500;
+%côte%porc%;pièce;150;
+%côtelette%;pièce;80;
+%saucisse%strasbourg%;pièce;35;
+%saucisse%merguez%;pièce;60;
+%merguez%;pièce;60;
+%saucisse%toulouse%;pièce;80;
+%chipolata%;pièce;50;
+%knack%;pièce;35;
+%tranche%jambon%;pièce;35;
+%jambon%tranche%;pièce;35;
+#
+# --- Poissons ---
+%filet%poisson%;pièce;130;
+%sardine%;pièce;25;
+%pavé%saumon%;pièce;130;
+%filet%saumon%;pièce;130;
+%filet%cabillaud%;pièce;130;
+#
+# --- Liquides non aqueux (densité ≠ 1) ---
+%huile%;L;920;Densité ~0.92
+%huile%;ml;0.92;
+%miel%;L;1420;Densité ~1.42
+%miel%;ml;1.42;
+%sirop%érable%;L;1320;
+%sirop%érable%;ml;1.32;
+%sirop%sucre%;L;1320;
+%sirop%sucre%;ml;1.32;
+%sirop%grenadine%;L;1280;
+%sirop%grenadine%;ml;1.28;
+%vinaigre%;L;1010;
+%vinaigre%;ml;1.01;
+%lait%;L;1030;Densité lait ~1.03
+%lait%;ml;1.03;
+%crème%liquide%;L;1010;
+%crème%liquide%;ml;1.01;
+%vin%rouge%;L;990;
+%vin%blanc%;L;990;
+%bière%;L;1000;
+%jus%fruit%;L;1040;
+%jus%fruit%;ml;1.04;
+%jus%orange%;L;1040;
+%jus%pomme%;L;1040;
+%bouillon%;L;1000;
+%soupe%;L;1030;
+%sauce%tomate%;L;1040;
