@@ -59,7 +59,7 @@ export function MenuHeader({ menu, isOwner }: { menu: Menu; isOwner: boolean }) 
   const toggleShared = () => {
     updateField.mutate(
       { is_shared: !menu.is_shared },
-      { onSuccess: () => toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }) }
+      { onSuccess: () => toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu rendu public !" }) }
     );
   };
 
@@ -121,7 +121,7 @@ export function MenuHeader({ menu, isOwner }: { menu: Menu; isOwner: boolean }) 
           <div className="flex items-center gap-2 ml-auto">
             <Share2 className={`h-4 w-4 ${menu.is_shared ? "text-primary" : "text-muted-foreground"}`} />
             <Label htmlFor="share-toggle" className="text-sm text-muted-foreground cursor-pointer">
-              {menu.is_shared ? "Partagé" : "Privé"}
+              {menu.is_shared ? "Public" : "Privé"}
             </Label>
             <Switch
               id="share-toggle"
