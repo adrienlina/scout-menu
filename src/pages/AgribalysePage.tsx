@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Upload, Search, X, Info, Leaf, BarChart3 } from "lucide-react";
+import { Upload, Search, X, Info, Leaf, BarChart3, Scale } from "lucide-react";
 import { toast } from "sonner";
 import * as XLSX from "xlsx";
 import AgribalyseComparisonChart from "@/components/AgribalyseComparisonChart";
@@ -77,6 +77,7 @@ export default function AgribalysePage() {
   const [selectedFoods, setSelectedFoods] = useState<Set<string>>(new Set());
   const [importing, setImporting] = useState(false);
   const [showImpactSelector, setShowImpactSelector] = useState(false);
+  const [importingRatios, setImportingRatios] = useState(false);
 
   const { data: foods = [], isLoading, refetch } = useQuery({
     queryKey: ["agribalyse_foods"],
@@ -250,6 +251,81 @@ export default function AgribalysePage() {
     }
   }, [refetch]);
 
+  const handleImportDefaultRatios = useCallback(async () => {
+    if (foods.length === 0) {
+      toast.warning("Importez d'abord la base Agribalyse");
+      return;
+    }
+    setImportingRatios(true);
+    try {
+      const res = await fetch("/agribalyse_default_ratios.csv");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const text = await res.text();
+      const lines = text.split(/\r?\n/);
+
+      type Row = { pattern: string; unit: string; grams: number };
+      const rows: Row[] = [];
+      for (const line of lines) {
+        const t = line.trim();
+        if (!t || t.startsWith("#")) continue;
+        if (t.toLowerCase().startsWith("name_pattern")) continue;
+        const parts = t.split(";");
+        if (parts.length < 3) continue;
+        const pattern = parts[0].trim();
+        const unit = parts[1].trim();
+        const grams = Number(parts[2].replace(",", "."));
+        if (!pattern || !unit || !Number.isFinite(grams) || grams <= 0) continue;
+        rows.push({ pattern, unit, grams });
+      }
+
+      const toRegex = (pattern: string) => {
+        const esc = pattern.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/%/g, ".*");
+        return new RegExp("^" + esc + "$", "i");
+      };
+
+      const seen = new Set<string>();
+      const ratios: { agribalyse_food_id: string; unit: string; grams_per_unit: number }[] = [];
+      for (const row of rows) {
+        const re = toRegex(row.pattern);
+        for (const f of foods) {
+          if (!re.test(f.name)) continue;
+          const key = `${f.id}|${row.unit}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          ratios.push({
+            agribalyse_food_id: f.id,
+            unit: row.unit,
+            grams_per_unit: row.grams,
+          });
+        }
+      }
+
+      if (ratios.length === 0) {
+        toast.warning("Aucune correspondance trouvée dans la base Agribalyse");
+        return;
+      }
+
+      const chunkSize = 500;
+      let upserted = 0;
+      for (let i = 0; i < ratios.length; i += chunkSize) {
+        const chunk = ratios.slice(i, i + chunkSize);
+        const { error } = await supabase
+          .from("agribalyse_food_default_ratios")
+          .upsert(chunk, { onConflict: "agribalyse_food_id,unit" });
+        if (error) {
+          toast.error(`Erreur lors de l'import (lot ${Math.floor(i / chunkSize) + 1}) : ${error.message}`);
+          return;
+        }
+        upserted += chunk.length;
+      }
+      toast.success(`${upserted} ratios par défaut importés (${rows.length} motifs)`);
+    } catch (err) {
+      toast.error("Erreur lors de l'import : " + (err instanceof Error ? err.message : String(err)));
+    } finally {
+      setImportingRatios(false);
+    }
+  }, [foods]);
+
   const selectedImpactCols = IMPACT_COLUMNS.filter((c) => selectedImpacts.includes(c.key));
 
   return (
@@ -264,26 +340,47 @@ export default function AgribalysePage() {
             Impacts environnementaux des aliments — Base Agribalyse 3.2
           </p>
         </div>
-        {foods.length === 0 && (
-          <div>
-            <input
-              type="file"
-              accept=".xlsx,.xls"
-              onChange={handleImport}
-              className="hidden"
-              id="agribalyse-import"
-              disabled={importing}
-            />
-            <label htmlFor="agribalyse-import">
-              <Button asChild variant="default" disabled={importing}>
-                <span className="cursor-pointer gap-2">
-                  <Upload className="h-4 w-4" />
-                  {importing ? "Import en cours…" : "Importer le fichier Excel"}
-                </span>
-              </Button>
-            </label>
-          </div>
-        )}
+        <div className="flex items-center gap-2">
+          {foods.length > 0 && (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  onClick={handleImportDefaultRatios}
+                  disabled={importingRatios}
+                  className="gap-2"
+                >
+                  <Scale className="h-4 w-4" />
+                  {importingRatios ? "Import en cours…" : "Importer les ratios par défaut"}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                Renseigne le ratio g / unité produit (par exemple 60 g / pièce pour un œuf)
+                pour les aliments correspondants. Les valeurs existantes sont mises à jour.
+              </TooltipContent>
+            </Tooltip>
+          )}
+          {foods.length === 0 && (
+            <div>
+              <input
+                type="file"
+                accept=".xlsx,.xls"
+                onChange={handleImport}
+                className="hidden"
+                id="agribalyse-import"
+                disabled={importing}
+              />
+              <label htmlFor="agribalyse-import">
+                <Button asChild variant="default" disabled={importing}>
+                  <span className="cursor-pointer gap-2">
+                    <Upload className="h-4 w-4" />
+                    {importing ? "Import en cours…" : "Importer le fichier Excel"}
+                  </span>
+                </Button>
+              </label>
+            </div>
+          )}
+        </div>
       </div>
 
       {foods.length > 0 && (
