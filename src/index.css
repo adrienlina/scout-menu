@@ -100,6 +100,27 @@
   }
 }
 
+/* Rich text editor / display prose styles */
+.rte-content .tiptap p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: hsl(var(--muted-foreground));
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+.rte-content .tiptap,
+.rte-display {
+  & h2 { @apply text-base font-semibold text-foreground mt-3 mb-1; }
+  & p { @apply mb-1.5 last:mb-0; }
+  & strong { @apply font-semibold text-foreground; }
+  & em { @apply italic; }
+  & ul { @apply list-disc pl-5 mb-1.5 space-y-0.5; }
+  & ol { @apply list-decimal pl-5 mb-1.5 space-y-0.5; }
+  & blockquote { @apply border-l-2 border-border pl-3 italic text-muted-foreground my-1.5; }
+  & code { @apply font-mono text-xs bg-muted px-1 py-0.5 rounded; }
+}
+
 @layer utilities {
   .gradient-forest {
     background: linear-gradient(135deg, hsl(var(--forest)), hsl(var(--forest-light)));

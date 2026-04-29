@@ -9,6 +9,7 @@ import { Plus } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { AgribalyseSearch } from "./AgribalyseSearch";
 import { resolveUnitMultiplier } from "./unitMultiplier";
+import type { TablesInsert } from "@/integrations/supabase/types";
 
 export function AddIngredientForm({ menuId }: { menuId: string }) {
   const queryClient = useQueryClient();
@@ -21,7 +22,7 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
 
   const addIng = useMutation({
     mutationFn: async () => {
-      const insertData: any = {
+      const insertData: TablesInsert<"menu_ingredients"> = {
         menu_id: menuId,
         name,
         quantity: parseFloat(qty),
