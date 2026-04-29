@@ -14,7 +14,7 @@ export default function MenusPage() {
   const { data: menus, isLoading } = useMenus();
   const { user } = useAuth();
   const [filterType, setFilterType] = useState<MealTypeFilter | "all">("all");
-  const [ownerFilter, setOwnerFilter] = useState<"all" | "mine" | "standard" | "others">("all");
+  const [ownerFilter, setOwnerFilter] = useState<"all" | "mine" | "others">("all");
   const [searchCreator, setSearchCreator] = useState("");
 
   const filtered = menus?.filter((m) => {
@@ -23,8 +23,7 @@ export default function MenusPage() {
       if (!types.includes(m.meal_type)) return false;
     }
     if (ownerFilter === "mine" && m.user_id !== user?.id) return false;
-    if (ownerFilter === "standard" && !m.is_default) return false;
-    if (ownerFilter === "others" && (m.user_id === user?.id || m.is_default)) return false;
+    if (ownerFilter === "others" && m.user_id === user?.id) return false;
     if (ownerFilter === "others" && searchCreator && m.creator_name && !m.creator_name.toLowerCase().includes(searchCreator.toLowerCase())) return false;
     if (ownerFilter === "others" && searchCreator && !m.creator_name) return false;
     return true;
@@ -64,7 +63,7 @@ export default function MenusPage() {
       </div>
 
       <div className="flex gap-2 flex-wrap items-center">
-        {(["all", "mine", "standard", "others"] as const)
+        {(["all", "mine", "others"] as const)
           .filter((f) => f !== "mine" || !!user)
           .map((f) => (
           <Button
@@ -75,7 +74,6 @@ export default function MenusPage() {
           >
             {f === "all" && "👥 Tous"}
             {f === "mine" && "🙋 Mes menus"}
-            {f === "standard" && "⭐ Standards"}
             {f === "others" && "🌍 Publics"}
           </Button>
         ))}

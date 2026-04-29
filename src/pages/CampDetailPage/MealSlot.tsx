@@ -83,7 +83,6 @@ export function MealSlot({
                   >
                     <p className="font-medium text-sm">{m.name}</p>
                     {m.description && <p className="text-xs text-muted-foreground">{m.description}</p>}
-                    {m.is_default && <Badge className="mt-1 text-xs gradient-campfire border-0 text-primary-foreground">Standard</Badge>}
                   </button>
                 ))}
                 {menus?.length === 0 && (

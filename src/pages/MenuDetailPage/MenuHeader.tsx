@@ -117,7 +117,7 @@ export function MenuHeader({ menu, isOwner }: { menu: Menu; isOwner: boolean }) 
         )}
 
         {/* Share toggle */}
-        {isOwner && !menu.is_default && (
+        {isOwner && (
           <div className="flex items-center gap-2 ml-auto">
             <Share2 className={`h-4 w-4 ${menu.is_shared ? "text-primary" : "text-muted-foreground"}`} />
             <Label htmlFor="share-toggle" className="text-sm text-muted-foreground cursor-pointer">
