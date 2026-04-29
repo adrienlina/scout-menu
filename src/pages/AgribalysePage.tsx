@@ -319,8 +319,8 @@ export default function AgribalysePage() {
         upserted += chunk.length;
       }
       toast.success(`${upserted} ratios par défaut importés (${rows.length} motifs)`);
-    } catch (err: any) {
-      toast.error("Erreur lors de l'import : " + err.message);
+    } catch (err) {
+      toast.error("Erreur lors de l'import : " + (err instanceof Error ? err.message : String(err)));
     } finally {
       setImportingRatios(false);
     }
