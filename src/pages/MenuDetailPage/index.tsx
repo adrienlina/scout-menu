@@ -159,9 +159,8 @@ export default function MenuDetailPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Ingrédient</TableHead>
-                    <TableHead className="w-20">Quantité</TableHead>
-                    <TableHead className="w-16">Unité</TableHead>
+                    <TableHead className="min-w-[260px]">Ingrédient</TableHead>
+                    <TableHead className="w-32">Quantité</TableHead>
                     <TableHead>Aliment Agribalyse</TableHead>
                     <TableHead className="w-44">
                       <TooltipProvider>
@@ -194,7 +193,7 @@ export default function MenuDetailPage() {
                   ))}
                   {ingredients.length === 0 && (
                     <TableRow>
-                      <TableCell colSpan={isOwner ? 7 : 6} className="text-center text-muted-foreground py-8">
+                      <TableCell colSpan={isOwner ? 6 : 5} className="text-center text-muted-foreground py-8">
                         Aucun ingrédient
                       </TableCell>
                     </TableRow>

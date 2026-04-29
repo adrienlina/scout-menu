@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, type ReactNode } from "react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
@@ -7,7 +7,8 @@ interface NumberInputProps {
   onChange: (value: number) => void;
   min?: number;
   step?: string;
-  suffix?: string;
+  suffix?: ReactNode;
+  suffixClassName?: string;
   className?: string;
   allowDecimals?: boolean;
 }
@@ -18,9 +19,11 @@ export function NumberInput({
   min,
   step,
   suffix,
+  suffixClassName,
   className,
   allowDecimals = false,
 }: NumberInputProps) {
+  const isStringSuffix = typeof suffix === "string";
   const [localValue, setLocalValue] = useState(String(value));
   const inputRef = useRef<HTMLInputElement>(null);
   const isEditing = useRef(false);
@@ -80,8 +83,14 @@ export function NumberInput({
         min={min}
         step={step}
       />
-      {suffix && (
-        <span className="absolute right-2 text-[10px] text-muted-foreground whitespace-nowrap pointer-events-none">
+      {suffix !== undefined && suffix !== null && suffix !== false && (
+        <span
+          className={cn(
+            "absolute right-2 text-[10px] text-muted-foreground whitespace-nowrap",
+            isStringSuffix && "pointer-events-none",
+            suffixClassName,
+          )}
+        >
           {suffix}
         </span>
       )}

@@ -4,8 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Plus } from "lucide-react";
+import { Select, SelectContent, SelectItem } from "@/components/ui/select";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { ChevronDown, Plus } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { AgribalyseSearch } from "./AgribalyseSearch";
 import { resolveUnitMultiplier } from "./unitMultiplier";
@@ -49,24 +50,36 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
     <div className="mt-4 border-t pt-4 space-y-3">
       <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Ajouter un ingrédient</p>
       <div className="flex flex-wrap gap-2 items-end">
-        <div className="flex-1 min-w-[120px]">
+        <div className="flex-1 min-w-[200px]">
           <Label className="text-xs">Nom</Label>
           <Input value={name} onChange={e => setName(e.target.value)} placeholder="Ex: Pâtes" className="h-8 text-sm" />
         </div>
-        <div className="w-20">
+        <div className="w-32">
           <Label className="text-xs">Quantité</Label>
-          <Input value={qty} onChange={e => setQty(e.target.value)} placeholder="100" type="number" step="0.1" className="h-8 text-sm" />
-        </div>
-        <div className="w-20">
-          <Label className="text-xs">Unité</Label>
-          <Select value={unit} onValueChange={setUnit}>
-            <SelectTrigger className="h-8 text-sm"><SelectValue /></SelectTrigger>
-            <SelectContent>
-              {["g", "kg", "ml", "L", "pièce"].map(u => (
-                <SelectItem key={u} value={u}>{u}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+          <div className="relative flex items-center">
+            <Input
+              value={qty}
+              onChange={e => setQty(e.target.value)}
+              placeholder="100"
+              type="number"
+              step="0.1"
+              className="h-8 text-sm pr-14"
+            />
+            <Select value={unit} onValueChange={setUnit}>
+              <SelectPrimitive.Trigger
+                className="absolute right-2 inline-flex items-center gap-0.5 rounded px-1 text-xs text-muted-foreground hover:text-foreground hover:underline focus:outline-none focus:ring-1 focus:ring-ring"
+                aria-label="Changer l'unité"
+              >
+                <SelectPrimitive.Value>{unit}</SelectPrimitive.Value>
+                <ChevronDown className="h-3 w-3 opacity-60" />
+              </SelectPrimitive.Trigger>
+              <SelectContent>
+                {["g", "kg", "ml", "L", "pièce"].map(u => (
+                  <SelectItem key={u} value={u}>{u}</SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
         <div className="min-w-[180px]">
           <Label className="text-xs">Aliment Agribalyse</Label>
