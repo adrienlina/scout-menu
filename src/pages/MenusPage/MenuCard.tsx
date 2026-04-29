@@ -47,14 +47,14 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
                   variant="ghost"
                   size="icon"
                   className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  title={menu.is_shared ? "Rendre privé" : "Partager"}
+                  title={menu.is_shared ? "Rendre privé" : "Rendre public"}
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleShared.mutate(
                       { menuId: menu.id, isShared: !menu.is_shared },
                       {
                         onSuccess: () =>
-                          toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }),
+                          toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu rendu public !" }),
                       }
                     );
                   }}
@@ -101,7 +101,7 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
           )}
           {menu.is_shared && isOwner && (
             <Badge variant="secondary" className="mt-2 text-xs gap-1">
-              <Share2 className="h-3 w-3" /> Partagé
+              <Share2 className="h-3 w-3" /> Public
             </Badge>
           )}
         </CardContent>

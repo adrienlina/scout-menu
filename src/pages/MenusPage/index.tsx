@@ -76,7 +76,7 @@ export default function MenusPage() {
             {f === "all" && "👥 Tous"}
             {f === "mine" && "🙋 Mes menus"}
             {f === "standard" && "⭐ Standards"}
-            {f === "others" && "🌍 Partagés"}
+            {f === "others" && "🌍 Publics"}
           </Button>
         ))}
         {ownerFilter === "others" && (
