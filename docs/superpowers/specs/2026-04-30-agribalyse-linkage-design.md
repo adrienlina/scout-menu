@@ -79,10 +79,12 @@ VALUES (v_menu_id, 'farine', 100, 'g',
 
 ## Unit Multiplier Logic
 
-Mirrors the app's `getRatioForUnit` function exactly:
+Two-tier lookup, matching the app's `resolveUnitMultiplier` pattern:
 
-| Unit | unit_multiplier |
-|------|----------------|
-| `g` | 1.0 |
-| `kg` | 1000.0 |
-| everything else (ml, pièce, pincée, etc.) | 1000.0 |
+1. **Per-food ILIKE match** — `scripts/data/agribalyse_default_ratios.csv` (163 rows, recovered from commit `1cbf7bb`). Each row is `name_pattern;unit;grams_per_unit`. The pattern is matched case-insensitively (SQL ILIKE `%` → Python `fnmatch`-style) against the matched Agribalyse food name. First matching row wins.
+
+2. **Fallback** — `getFallbackRatio`: `g→1`, `kg→1000`, all other units→`1000`.
+
+Example: ingredient "gousse d'ail" matched to Agribalyse "Ail, cru" with unit "pièce" → pattern `%ail%gousse%;pièce;5` → `unit_multiplier = 5`.
+
+The CSV is committed at `scripts/data/agribalyse_default_ratios.csv` for use by both the pipeline scripts and any future tooling.
