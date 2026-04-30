@@ -18,6 +18,7 @@ import anthropic
 
 DISHES_FILE = "scripts/output/dishes_with_ingredients.json"
 CSV_FILE = "scripts/data/agribalyse_synth.csv"
+XLSX_FILE = "scripts/data/agribalyse_food_products.xlsx"
 OUT_FILE = "scripts/output/ingredient_agribalyse_map.json"
 BATCH_SIZE = 20
 
@@ -50,9 +51,11 @@ def parse_batch_response(text: str, batch: list, valid_names: set = None) -> dic
     return result
 
 
-def load_agribalyse_names(csv_path: str) -> list:
+def load_agribalyse_names(path: str) -> list:
+    if path.endswith(".xlsx"):
+        return _load_names_xlsx(path)
     names = []
-    with open(csv_path, encoding="utf-8-sig") as fh:
+    with open(path, encoding="utf-8-sig") as fh:
         reader = csv.reader(fh, delimiter=";")
         headers = None
         for line in reader:
@@ -70,6 +73,22 @@ def load_agribalyse_names(csv_path: str) -> list:
     return names
 
 
+def _load_names_xlsx(path: str) -> list:
+    import openpyxl
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    ws = wb["Synthese"]
+    names = []
+    header_skipped = False
+    for row in ws.iter_rows(min_row=3):  # row 3 = header row (1-indexed)
+        if not header_skipped:
+            header_skipped = True
+            continue
+        val = row[4].value  # col 4 = Nom du Produit en Français
+        if val:
+            names.append(str(val).strip())
+    return names
+
+
 def build_system_prompt(agribalyse_names: list) -> str:
     names_list = "\n".join(agribalyse_names)
     return f"""Tu es un assistant expert en alimentation française et en base de données Agribalyse.
@@ -82,7 +101,8 @@ Règles:
 - Retourne null si aucun produit ne correspond raisonnablement
 - Préfère les produits "cru" aux produits préparés, sauf si l'ingrédient indique une préparation
 - Retourne le nom EXACTEMENT tel qu'il apparaît dans la liste ci-dessus
-- Réponds UNIQUEMENT avec un objet JSON: {{"ingredient": "nom agribalyse ou null"}}"""
+- Réponds UNIQUEMENT avec un objet JSON dont les clés sont les noms des ingrédients reçus.
+Exemple: si on te donne ["farine", "sel"], réponds {{"farine": "Farine de blé T55", "sel": null}}"""
 
 
 def match_batch(client: anthropic.Anthropic, system_prompt: str, batch: list, valid_names: set = None) -> dict:
@@ -102,9 +122,12 @@ def main():
     if not os.path.exists(DISHES_FILE):
         print(f"Error: {DISHES_FILE} not found.", file=sys.stderr)
         sys.exit(1)
-    if not os.path.exists(CSV_FILE):
-        print(f"Error: {CSV_FILE} not found.", file=sys.stderr)
-        print("Download Agribalyse 3.2 Synthèse CSV and save as scripts/data/agribalyse_synth.csv", file=sys.stderr)
+    if os.path.exists(CSV_FILE):
+        agri_path = CSV_FILE
+    elif os.path.exists(XLSX_FILE):
+        agri_path = XLSX_FILE
+    else:
+        print(f"Error: neither {CSV_FILE} nor {XLSX_FILE} found.", file=sys.stderr)
         sys.exit(1)
 
     dishes = json.load(open(DISHES_FILE, encoding="utf-8"))
@@ -115,9 +138,9 @@ def main():
     })
     print(f"Matching {len(unique_ingredients)} unique ingredients...")
 
-    agribalyse_names = load_agribalyse_names(CSV_FILE)
+    agribalyse_names = load_agribalyse_names(agri_path)
     valid_names = set(agribalyse_names)
-    print(f"Loaded {len(agribalyse_names)} Agribalyse food names from CSV.")
+    print(f"Loaded {len(agribalyse_names)} Agribalyse food names from {agri_path}.")
 
     system_prompt = build_system_prompt(agribalyse_names)
     client = anthropic.Anthropic()

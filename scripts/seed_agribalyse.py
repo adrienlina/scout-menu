@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Seed the agribalyse_foods table from the AGRIBALYSE 3.2 Synthèse CSV.
+"""Seed the agribalyse_foods table from the AGRIBALYSE 3.2 Synthèse CSV or XLSX.
 
-Download the CSV from: https://agribalyse.ademe.fr/app/downloads
-Save as: scripts/data/agribalyse_synth.csv
+CSV:  Save as scripts/data/agribalyse_synth.csv  (semicolon-delimited)
+XLSX: Save as scripts/data/agribalyse_food_products.xlsx  (from dataverse ID 641911)
 
 Usage:
-    python3 scripts/seed_agribalyse.py [path/to/agribalyse_synth.csv]
+    python3 scripts/seed_agribalyse.py [path/to/file.csv|file.xlsx]
 """
 
 import csv
@@ -14,7 +14,34 @@ import sys
 import uuid
 
 IN_FILE = "scripts/data/agribalyse_synth.csv"
+XLSX_FILE = "scripts/data/agribalyse_food_products.xlsx"
 OUT_FILE = "scripts/output/seed_agribalyse.sql"
+
+# Column indices for XLSX Synthese sheet (0-based, header row is row index 2)
+XLSX_COLS = {
+    "code": 0,
+    "name": 4,
+    "score_unique_ef": 12,
+    "changement_climatique": 13,
+    "ozone": 14,
+    "rayonnements_ionisants": 15,
+    "formation_ozone": 16,
+    "particules": 17,
+    "toxicite_cancerogene": 18,
+    "toxicite_non_cancerogene": 19,
+    "acidification": 20,
+    "eutrophisation_eaux_douces": 21,
+    "eutrophisation_marine": 22,
+    "eutrophisation_terrestre": 23,
+    "ecotoxicite_eau_douce": 24,
+    "utilisation_sol": 25,
+    "epuisement_eau": 26,
+    "epuisement_energie": 27,
+    "epuisement_mineraux": 28,
+    "cc_biogenique": 29,
+    "cc_fossile": 30,
+    "cc_affectation_sols": 31,
+}
 
 # Maps substrings in CSV column headers → DB column names
 IMPACT_COLS = {
@@ -162,16 +189,84 @@ def build_insert_sql(rows: list) -> str:
     return "\n".join(lines)
 
 
+def _float_or_none_v(v) -> float | None:
+    if v is None:
+        return None
+    try:
+        return float(v)
+    except (ValueError, TypeError):
+        return None
+
+
+def parse_agribalyse_xlsx(path: str) -> list:
+    try:
+        import openpyxl
+    except ImportError:
+        print("Error: openpyxl is required for XLSX parsing. Run: pip install openpyxl", file=sys.stderr)
+        sys.exit(1)
+
+    wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    ws = wb["Synthese"]
+    rows_out = []
+    header_skipped = False
+
+    for xlsx_row in ws.iter_rows(min_row=3):  # row 3 = header (1-indexed), skip rows 1-2
+        if not header_skipped:
+            header_skipped = True
+            continue  # skip the header row itself
+
+        vals = [cell.value for cell in xlsx_row]
+        if not vals or vals[0] is None:
+            continue
+
+        code = str(vals[0]).strip()
+        name = str(vals[XLSX_COLS["name"]]).strip() if vals[XLSX_COLS["name"]] is not None else ""
+        if not name:
+            continue
+
+        row_id = str(uuid.uuid5(_NS, f"agribalyse:{code}"))
+        record = {"id": row_id, "name": name, "is_bio": False, "production_type": None}
+
+        for db_col in [
+            "changement_climatique", "score_unique_ef", "acidification",
+            "cc_biogenique", "cc_fossile", "cc_affectation_sols",
+            "ecotoxicite_eau_douce", "epuisement_eau", "epuisement_energie",
+            "epuisement_mineraux", "eutrophisation_eaux_douces",
+            "eutrophisation_marine", "eutrophisation_terrestre",
+            "formation_ozone", "ozone", "particules", "rayonnements_ionisants",
+            "toxicite_cancerogene", "toxicite_non_cancerogene", "utilisation_sol",
+        ]:
+            record[db_col] = None
+
+        for db_col, col_idx in XLSX_COLS.items():
+            if db_col in ("code", "name"):
+                continue
+            if col_idx < len(vals):
+                record[db_col] = _float_or_none_v(vals[col_idx])
+
+        rows_out.append(record)
+
+    return rows_out
+
+
 def main():
-    path = sys.argv[1] if len(sys.argv) > 1 else IN_FILE
+    if len(sys.argv) > 1:
+        path = sys.argv[1]
+    elif os.path.exists(XLSX_FILE):
+        path = XLSX_FILE
+    else:
+        path = IN_FILE
+
     if not os.path.exists(path):
         print(f"Error: {path} not found.", file=sys.stderr)
-        print("Download from: https://agribalyse.ademe.fr/app/downloads", file=sys.stderr)
-        print("Save as: scripts/data/agribalyse_synth.csv", file=sys.stderr)
+        print(f"Expected: {XLSX_FILE} or {IN_FILE}", file=sys.stderr)
         sys.exit(1)
 
     print(f"Parsing {path}...")
-    rows = parse_agribalyse_csv(path)
+    if path.endswith(".xlsx"):
+        rows = parse_agribalyse_xlsx(path)
+    else:
+        rows = parse_agribalyse_csv(path)
     print(f"Parsed {len(rows)} rows.")
 
     os.makedirs("scripts/output", exist_ok=True)

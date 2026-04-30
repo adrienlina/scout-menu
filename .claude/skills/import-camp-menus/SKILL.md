@@ -53,6 +53,22 @@ print(f'{len(camps)} camps')
 
 Output: `scripts/output/raw_menus.json`
 
+### 2.5. Seed Agribalyse foods table (run once, idempotent)
+
+Reads `scripts/data/agribalyse_food_products.xlsx` (download from dataverse ID 641911 if missing):
+```bash
+curl -L -o scripts/data/agribalyse_food_products.xlsx \
+  "https://entrepot.recherche.data.gouv.fr/api/access/datafile/641911"
+```
+
+Then generate and import the seed SQL:
+```bash
+scripts/.venv/bin/python scripts/seed_agribalyse.py
+# → scripts/output/seed_agribalyse.sql
+```
+
+Paste into the Supabase SQL editor. Uses `ON CONFLICT DO NOTHING` — safe to re-run.
+
 ### 3. Split meal descriptions into dishes
 Uses Claude Sonnet. Deduplicates across all camps.
 
@@ -71,6 +87,17 @@ scripts/.venv/bin/python scripts/generate_ingredients.py
 
 Output: `scripts/output/dishes_with_ingredients.json`
 
+### 3.5. Match ingredients to Agribalyse entries
+
+Uses Claude Haiku (batches of 20) to match each unique ingredient name to the closest Agribalyse food. Reads `dishes_with_ingredients.json` and the Agribalyse XLSX.
+
+```bash
+scripts/.venv/bin/python scripts/match_agribalyse.py
+# → scripts/output/ingredient_agribalyse_map.json
+```
+
+~94% match rate. `null` entries mean no reasonable Agribalyse match found.
+
 ### 5. Generate SQL and import to Supabase
 Generates a SQL script that inserts `is_default=true` menus. Idempotent (skips existing dishes by name).
 
@@ -88,9 +115,16 @@ The final `SELECT COUNT(*)` at the end confirms how many default menus exist aft
 
 ### Previously imported batches
 
-| File | Dishes | Date |
-|------|--------|------|
-| `scripts/output/import_menus_1.sql` | 165 | 2026-04-30 |
+| File | Dishes | Agribalyse | Date |
+|------|--------|------------|------|
+| `scripts/output/import_menus_1.sql` | 165 | no | 2026-04-30 |
+| `scripts/output/import_menus_2.sql` | 165 | yes (377/402 ingredients linked) | 2026-04-30 |
+
+### Agribalyse seed batches
+
+| File | Rows | Date |
+|------|------|------|
+| `scripts/output/seed_agribalyse_1.sql` | 2458 | 2026-04-30 |
 
 ## Notes
 
@@ -106,3 +140,6 @@ The final `SELECT COUNT(*)` at the end confirms how many default menus exist aft
 | `scripts/output/raw_menus.json` | All camps → days → meals with raw descriptions |
 | `scripts/output/unique_dishes.json` | Deduplicated dish names with source descriptions |
 | `scripts/output/dishes_with_ingredients.json` | Final: dishes + per-person ingredients |
+| `scripts/output/ingredient_agribalyse_map.json` | Ingredient name → Agribalyse food name (or null) |
+| `scripts/output/seed_agribalyse.sql` | Latest Agribalyse seed SQL (version with suffix before committing) |
+| `scripts/data/agribalyse_food_products.xlsx` | Agribalyse 3.2 XLSX (not committed, download from dataverse) |
