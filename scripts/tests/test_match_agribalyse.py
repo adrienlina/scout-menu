@@ -52,3 +52,9 @@ def test_parse_batch_response_missing_keys_default_none():
     batch = ["farine", "sel"]
     result = parse_batch_response(response_text, batch)
     assert result.get("sel") is None
+
+def test_parse_batch_response_filters_invalid_names():
+    response_text = '{"farine": "Farine de blé T45"}'  # T45 not in valid set
+    valid = {"Farine de blé T55", "Huile d'olive"}
+    result = parse_batch_response(response_text, ["farine"], valid_names=valid)
+    assert result["farine"] is None  # hallucinated name filtered out

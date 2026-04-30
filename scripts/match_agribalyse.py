@@ -32,7 +32,7 @@ def build_batches(items: list, batch_size: int) -> list:
     return [items[i:i + batch_size] for i in range(0, len(items), batch_size)]
 
 
-def parse_batch_response(text: str, batch: list) -> dict:
+def parse_batch_response(text: str, batch: list, valid_names: set = None) -> dict:
     text = text.strip()
     if text.startswith("```"):
         text = re.sub(r"^```[a-z]*\n?", "", text)
@@ -42,7 +42,12 @@ def parse_batch_response(text: str, batch: list) -> dict:
     except json.JSONDecodeError:
         m = re.search(r"\{.*\}", text, re.DOTALL)
         data = json.loads(m.group(0)) if m else {}
-    return {ing: data.get(ing) for ing in batch}
+    if not isinstance(data, dict):
+        data = {}
+    result = {ing: data.get(ing) for ing in batch}
+    if valid_names is not None:
+        result = {k: (v if v in valid_names else None) for k, v in result.items()}
+    return result
 
 
 def load_agribalyse_names(csv_path: str) -> list:
@@ -80,7 +85,7 @@ Règles:
 - Réponds UNIQUEMENT avec un objet JSON: {{"ingredient": "nom agribalyse ou null"}}"""
 
 
-def match_batch(client: anthropic.Anthropic, system_prompt: str, batch: list) -> dict:
+def match_batch(client: anthropic.Anthropic, system_prompt: str, batch: list, valid_names: set = None) -> dict:
     user_msg = json.dumps(batch, ensure_ascii=False)
     response = client.messages.create(
         model="claude-haiku-4-5-20251001",
@@ -88,7 +93,9 @@ def match_batch(client: anthropic.Anthropic, system_prompt: str, batch: list) ->
         system=[{"type": "text", "text": system_prompt, "cache_control": {"type": "ephemeral"}}],
         messages=[{"role": "user", "content": f"Ingrédients: {user_msg}"}],
     )
-    return parse_batch_response(response.content[0].text, batch)
+    if response.stop_reason == "max_tokens":
+        print(f"  Warning: response truncated (max_tokens). Consider reducing BATCH_SIZE.", file=sys.stderr)
+    return parse_batch_response(response.content[0].text, batch, valid_names)
 
 
 def main():
@@ -109,6 +116,7 @@ def main():
     print(f"Matching {len(unique_ingredients)} unique ingredients...")
 
     agribalyse_names = load_agribalyse_names(CSV_FILE)
+    valid_names = set(agribalyse_names)
     print(f"Loaded {len(agribalyse_names)} Agribalyse food names from CSV.")
 
     system_prompt = build_system_prompt(agribalyse_names)
@@ -119,7 +127,7 @@ def main():
     for i, batch in enumerate(batches, 1):
         print(f"[{i}/{len(batches)}] Matching batch of {len(batch)}...")
         try:
-            matched = match_batch(client, system_prompt, batch)
+            matched = match_batch(client, system_prompt, batch, valid_names)
             result.update(matched)
             matched_count = sum(1 for v in matched.values() if v)
             print(f"  → {matched_count}/{len(batch)} matched")
