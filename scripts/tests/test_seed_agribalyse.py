@@ -35,6 +35,9 @@ def test_parse_agribalyse_csv_fields(tmp_path):
     assert r["is_bio"] is False
     assert r["production_type"] == "Conventionnel"
     assert len(r["id"]) == 36
+    from seed_agribalyse import IMPACT_COLS
+    for db_col in set(IMPACT_COLS.values()):
+        assert r[db_col] is not None, f"Expected non-NULL for {db_col}"
 
 def test_parse_agribalyse_csv_skips_comments(tmp_path):
     csv_with_comments = "# this is a comment\n" + SAMPLE_CSV

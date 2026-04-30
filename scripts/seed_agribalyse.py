@@ -9,7 +9,6 @@ Usage:
 """
 
 import csv
-import json
 import os
 import sys
 import uuid
@@ -32,7 +31,7 @@ IMPACT_COLS = {
     "cotoxicit": "ecotoxicite_eau_douce",
     "Utilisation du sol": "utilisation_sol",
     "puisement des ressources eau": "epuisement_eau",
-    "puisement des ressources nerg": "epuisement_energie",
+    "nergétiques": "epuisement_energie",
     "puisement des ressources min": "epuisement_mineraux",
     "missions biog": "cc_biogenique",
     "missions fossiles": "cc_fossile",
@@ -77,7 +76,8 @@ def parse_agribalyse_csv(path: str) -> list:
             if len(line) < 3:
                 continue
 
-            name_idx = find_col(headers, "Nom du Produit") or 1
+            _idx = find_col(headers, "Nom du Produit")
+            name_idx = _idx if _idx is not None else 1
             code = line[0].strip()
             name = line[name_idx].strip()
             if not name:
