@@ -83,13 +83,15 @@ def get_unit_multiplier(agribalyse_name, unit: str, ratio_rows: list) -> float:
 
 
 def main():
-    dishes = json.load(open(IN_FILE, encoding="utf-8"))
+    with open(IN_FILE, encoding="utf-8") as fh:
+        dishes = json.load(fh)
     to_import = [d for d in dishes if not d.get("error") or d.get("ingredients")]
     print(f"Generating SQL for {len(to_import)} dishes...")
 
     agribalyse_map = {}
     if os.path.exists(AGRIBALYSE_MAP_FILE):
-        agribalyse_map = json.load(open(AGRIBALYSE_MAP_FILE, encoding="utf-8"))
+        with open(AGRIBALYSE_MAP_FILE, encoding="utf-8") as fh:
+            agribalyse_map = json.load(fh)
         print(f"Loaded Agribalyse map: {sum(1 for v in agribalyse_map.values() if v)} matches")
 
     ratio_rows = []
@@ -102,6 +104,8 @@ def main():
         "-- Run in Supabase SQL editor (Dashboard → SQL Editor → New query)",
         "",
         "-- Clear existing default dishes (re-imported with Agribalyse linkage below)",
+        "-- NOTE: DELETE and DO block are separate statements. If the DO block fails mid-run,",
+        "-- re-run the full script to restore the deleted dishes.",
         "DELETE FROM public.menus WHERE is_default = true AND user_id IS NULL;",
         "",
         "DO $$",
