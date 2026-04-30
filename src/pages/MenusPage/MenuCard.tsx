@@ -96,9 +96,6 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
               </div>
             </div>
           )}
-          {menu.is_default && (
-            <Badge className="mt-2 gradient-campfire border-0 text-primary-foreground text-xs">Standard</Badge>
-          )}
           {menu.is_shared && isOwner && (
             <Badge variant="secondary" className="mt-2 text-xs gap-1">
               <Share2 className="h-3 w-3" /> Public

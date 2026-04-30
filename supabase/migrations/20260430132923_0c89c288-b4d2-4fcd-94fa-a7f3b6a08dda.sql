@@ -1,0 +1,1 @@
+DELETE FROM public.menus WHERE is_default = true;
