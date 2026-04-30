@@ -14,24 +14,6 @@
           }
         ]
       }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "mcp__github__create_pull_request",
-        "hooks": [
-          {
-            "type": "mcp_tool",
-            "server": "github",
-            "tool": "subscribe_pr_activity",
-            "input": {
-              "owner": "${tool_input.owner}",
-              "repo": "${tool_input.repo}",
-              "pullNumber": "${tool_response.number}"
-            },
-            "statusMessage": "Subscribing to PR activity for autofix…"
-          }
-        ]
-      }
     ]
   }
 }
