@@ -18,8 +18,6 @@ uv pip install anthropic supabase python-dotenv --python scripts/.venv
 
 # Required env vars in .env
 ANTHROPIC_API_KEY=...           # already set in shell
-VITE_SUPABASE_URL=...           # already in .env
-SUPABASE_SERVICE_ROLE_KEY=...   # Supabase Dashboard → Project Settings → API → service_role
 ```
 
 ## Pipeline Steps
@@ -81,10 +79,18 @@ scripts/.venv/bin/python scripts/generate_sql.py
 # → scripts/output/import_menus.sql
 ```
 
-Paste the contents of `import_menus.sql` into the **Supabase SQL editor**:
+Name the output file with an incrementing suffix before committing (e.g. `import_menus_2.sql`, `import_menus_3.sql`) so each batch is traceable.
+
+Paste the contents into the **Supabase SQL editor**:
 https://supabase.com/dashboard/project/yjbrzyjdapvfaknjltxm/sql/new
 
 The final `SELECT COUNT(*)` at the end confirms how many default menus exist after the import.
+
+### Previously imported batches
+
+| File | Dishes | Date |
+|------|--------|------|
+| `scripts/output/import_menus_1.sql` | 165 | 2026-04-30 |
 
 ## Notes
 
