@@ -45,7 +45,7 @@ def get_fallback_ratio(unit: str) -> float:
 
 def load_ratio_rows(path: str) -> list:
     rows = []
-    with open(path, encoding="utf-8") as fh:
+    with open(path, encoding="utf-8-sig") as fh:
         reader = csv.reader(fh, delimiter=";")
         for line in reader:
             if not line:

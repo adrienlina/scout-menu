@@ -1,4 +1,4 @@
-name_pattern;unit;grams_per_unit;note
+﻿name_pattern;unit;grams_per_unit;note
 # Defaults for "Ratio g / unité produit" used to auto-fill unit_multiplier
 # when an ingredient is linked to an Agribalyse food.
 #

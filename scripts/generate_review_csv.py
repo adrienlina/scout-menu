@@ -38,8 +38,8 @@ def main():
         ratio_rows = load_ratio_rows(RATIO_CSV_FILE)
 
     os.makedirs("scripts/output", exist_ok=True)
-    with open(OUT_FILE, "w", newline="", encoding="utf-8") as fh:
-        writer = csv.writer(fh)
+    with open(OUT_FILE, "w", newline="", encoding="utf-8-sig") as fh:
+        writer = csv.writer(fh, delimiter=";")
         writer.writerow(["dish_name", "meal_types", "ingredient_name", "quantity", "unit", "agribalyse_match", "unit_multiplier"])
 
         for dish in dishes:
