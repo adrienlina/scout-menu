@@ -40,6 +40,8 @@ def get_fallback_ratio(unit: str) -> float:
         return 1.0
     if unit == "kg":
         return 1000.0
+    if unit == "ml":
+        return 1.0
     return 1000.0
 
 

@@ -31,12 +31,16 @@
 # --- Pain & viennoiseries ---
 %baguette%;pièce;250;
 %pain de mie%tranche%;pièce;30;
+%pain de mie%;pièce;30;Pain de mie sans "tranche" dans nom Agribalyse
 %pain%tranche%;pièce;30;
+%pain%hamburger%hot dog%;pièce;80;Bun hamburger/hot dog
+%pain au lait%;pièce;35;
 %pain au chocolat%;pièce;70;
 %croissant%;pièce;60;
 %brioche%tranche%;pièce;40;
 %pita%;pièce;80;
 %tortilla%;pièce;40;
+%tortilla%;pièces;40;
 %biscotte%;pièce;10;
 #
 # --- Fruits ---
@@ -64,6 +68,7 @@
 %myrtille%;pièce;1;
 %raisin%;pièce;5;Grain
 %ananas%;pièce;1500;Fruit entier
+%melon%;pièce;1500;Melon entier
 %mangue%;pièce;350;
 %avocat%;pièce;200;
 %figue%;pièce;50;
@@ -118,6 +123,7 @@
 %poulet%entier%;pièce;1500;
 %côte%porc%;pièce;150;
 %côtelette%;pièce;80;
+%saucisse%francfort%;pièce;80;
 %saucisse%strasbourg%;pièce;35;
 %saucisse%merguez%;pièce;60;
 %merguez%;pièce;60;
@@ -152,12 +158,41 @@
 %crème%liquide%;L;1010;
 %crème%liquide%;ml;1.01;
 %vin%rouge%;L;990;
+%vin%rouge%;ml;0.99;
 %vin%blanc%;L;990;
+%vin%blanc%;ml;0.99;
 %bière%;L;1000;
+%bière%;ml;1.0;
 %jus%fruit%;L;1040;
 %jus%fruit%;ml;1.04;
 %jus%orange%;L;1040;
+%jus%orange%;ml;1.04;
 %jus%pomme%;L;1040;
+%jus%pomme%;ml;1.04;
 %bouillon%;L;1000;
+%bouillon%;ml;1.0;
 %soupe%;L;1030;
+%soupe%;ml;1.03;
 %sauce%tomate%;L;1040;
+%sauce%tomate%;ml;1.04;
+#
+# --- Unités culinaires ---
+%;cuillère à café;5;~5ml
+%;cuillère à soupe;15;~15ml
+%;gousse;5;Gousse d'ail ~5g
+%;gousses;5;Pluriel de gousse
+%;pincée;1;
+#
+# --- Pièces spéciales ---
+%barre%chocolat%;pièce;40;Barre chocolatée ~40g
+%bâtonnet%;pièce;60;Glace bâtonnet ~60g
+%bouillon%déshydraté%;pièce;10;Cube bouillon ~10g
+%laurier%;pièce;1;Feuille de laurier
+#
+# --- Variantes plurielles (pièce→pièces, tranche→tranche(s)) ---
+%pain de mie%;tranche(s);30;
+%;tranche(s);30;Tranche générique
+%;boîte (environ 200g);200;
+#
+# --- Fallbacks génériques (doivent rester en dernier) ---
+%;ml;1.0;Densité eau par défaut
