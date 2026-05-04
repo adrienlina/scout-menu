@@ -4,8 +4,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TableRow, TableCell } from "@/components/ui/table";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Trash2 } from "lucide-react";
+import { Select, SelectContent, SelectItem } from "@/components/ui/select";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { ChevronDown, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { NumberInput } from "@/components/NumberInput";
 import { AgribalyseSearch } from "./AgribalyseSearch";
@@ -122,26 +123,26 @@ export function IngredientTableRow({
             min={0}
             step="0.1"
             allowDecimals
-            className="w-20"
+            className="w-28 pr-14"
+            suffix={
+              <Select value={ingredient.unit} onValueChange={handleUnitChange}>
+                <SelectPrimitive.Trigger
+                  className="inline-flex items-center gap-0.5 rounded px-1 text-[10px] text-muted-foreground hover:text-foreground hover:underline focus:outline-none focus:ring-1 focus:ring-ring"
+                  aria-label="Changer l'unité"
+                >
+                  <SelectPrimitive.Value>{ingredient.unit}</SelectPrimitive.Value>
+                  <ChevronDown className="h-3 w-3 opacity-60" />
+                </SelectPrimitive.Trigger>
+                <SelectContent>
+                  {UNITS.map((u) => (
+                    <SelectItem key={u} value={u}>{u}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            }
           />
         ) : (
-          ingredient.quantity
-        )}
-      </TableCell>
-      <TableCell>
-        {isOwner ? (
-          <Select value={ingredient.unit} onValueChange={handleUnitChange}>
-            <SelectTrigger className="h-7 text-xs w-20">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {UNITS.map((u) => (
-                <SelectItem key={u} value={u}>{u}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        ) : (
-          ingredient.unit
+          <span className="tabular-nums">{ingredient.quantity} {ingredient.unit}</span>
         )}
       </TableCell>
       <TableCell>
