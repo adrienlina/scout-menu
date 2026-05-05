@@ -32,7 +32,7 @@ export default function Index() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="flex flex-col gap-3 sm:flex-row"
       >
-        <Link to={user ? "/menus" : "/auth"}>
+        <Link to="/menus">
           <Button size="lg" className="gap-2 px-8">
             <BookOpen className="h-5 w-5" />
             Voir les menus

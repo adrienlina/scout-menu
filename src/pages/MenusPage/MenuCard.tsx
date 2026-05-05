@@ -154,22 +154,8 @@ export function MenuCard({
         </div>
 
         <div className="flex items-center gap-1 flex-shrink-0">
-          {/* Bookmark — always visible */}
-          {user && (
-            <button
-              className={`w-8 h-8 grid place-items-center rounded-lg transition-colors ${isBookmarked ? "text-[#1F6B4A]" : "text-[#98A39C] hover:bg-[#EEF0EB] hover:text-[#11221C]"}`}
-              aria-label={isBookmarked ? "Retirer des favoris" : "Ajouter aux favoris"}
-              onClick={(e) => {
-                e.stopPropagation();
-                toggleBookmark.mutate({ menuId: menu.id, bookmarked: isBookmarked });
-              }}
-            >
-              {isBookmarked ? <BookmarkCheck className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
-            </button>
-          )}
-
-          {/* Owner actions — on hover */}
           <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            {/* Owner actions — on hover */}
             {isOwner && !menu.is_default && (
               <button
                 className="w-8 h-8 grid place-items-center rounded-lg text-[#6B7A72] hover:bg-[#EEF0EB] hover:text-[#11221C] transition-colors"
@@ -197,6 +183,22 @@ export function MenuCard({
               </button>
             )}
           </div>
+
+          {/* Bookmark — visible if bookmarked or on hover */}
+          {user && (
+            <button
+              className={`w-8 h-8 grid place-items-center rounded-lg transition-all ${
+                isBookmarked ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              } ${isBookmarked ? "text-[#1F6B4A]" : "text-[#6B7A72] hover:bg-[#EEF0EB] hover:text-[#11221C]"}`}
+              aria-label={isBookmarked ? "Retirer des favoris" : "Ajouter aux favoris"}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleBookmark.mutate({ menuId: menu.id, bookmarked: isBookmarked });
+              }}
+            >
+              {isBookmarked ? <BookmarkCheck className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
+            </button>
+          )}
 
           <button
             className="px-3 py-1.5 rounded-[8px] text-[13px] font-semibold bg-[#1F6B4A] text-white hover:bg-[#18563B] transition-colors"
@@ -269,6 +271,22 @@ export function MenuCard({
             </button>
           )}
         </div>
+
+        {/* Bookmark — visible if bookmarked or on hover */}
+        {user && (
+          <button
+            className={`w-8 h-8 grid place-items-center rounded-lg transition-all ${
+              isBookmarked ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+            } ${isBookmarked ? "text-[#1F6B4A]" : "text-[#6B7A72] hover:bg-[#EEF0EB] hover:text-[#11221C]"}`}
+            aria-label={isBookmarked ? "Retirer des favoris" : "Ajouter aux favoris"}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleBookmark.mutate({ menuId: menu.id, bookmarked: isBookmarked });
+            }}
+          >
+            {isBookmarked ? <BookmarkCheck className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
+          </button>
+        )}
       </div>
 
       {/* Description */}
