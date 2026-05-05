@@ -14,27 +14,6 @@ export type Database = {
   }
   public: {
     Tables: {
-      menu_bookmarks: {
-        Row: {
-          id: string
-          user_id: string
-          menu_id: string
-          created_at: string
-        }
-        Insert: {
-          id?: string
-          user_id: string
-          menu_id: string
-          created_at?: string
-        }
-        Update: {
-          id?: string
-          user_id?: string
-          menu_id?: string
-          created_at?: string
-        }
-        Relationships: []
-      }
       agribalyse_food_default_ratios: {
         Row: {
           agribalyse_food_id: string
