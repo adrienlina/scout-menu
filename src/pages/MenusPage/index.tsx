@@ -13,7 +13,7 @@ const SOURCE_FILTERS: { id: SourceFilter; label: string; icon: string }[] = [
   { id: "all", label: "Tous", icon: "" },
   { id: "mine", label: "Mes menus", icon: "📔" },
   { id: "favoris", label: "Favoris", icon: "🔖" },
-  { id: "shared", label: "Partagés", icon: "↗" },
+  { id: "shared", label: "Publics", icon: "↗" },
 ];
 
 const TYPE_FILTER_COLORS: Partial<Record<MealTypeFilter | "all", { accent: string; bg: string; fg: string }>> = {

@@ -67,7 +67,7 @@ const MEAL_META: Record<MealType, { accent: string; bg: string; fg: string; labe
 const OWNERSHIP_META = {
   mine: { label: "Le mien", color: "#0F766E", bg: "#0F766E18", border: "#0F766E40" },
   standard: { label: "Standard", color: "#B45309", bg: "#B4530918", border: "#B4530940" },
-  shared: { label: "Partagé", color: "#1D4ED8", bg: "#1D4ED818", border: "#1D4ED840" },
+  shared: { label: "Publics", color: "#1D4ED8", bg: "#1D4ED818", border: "#1D4ED840" },
 };
 
 function getOwnershipKey(menu: MenuWithProfile, userId?: string): keyof typeof OWNERSHIP_META | null {
