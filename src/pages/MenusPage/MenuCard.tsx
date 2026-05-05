@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useDeleteMenu, useToggleShared, type MenuWithProfile } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
-import { Trash2, Share2, Clock, Users, Bookmark, Leaf } from "lucide-react";
+import { Trash2, Share2, Clock, Users, Bookmark, BookmarkCheck, Leaf } from "lucide-react";
 import { type MealType, getMenuCO2 } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { RichTextDisplay } from "@/components/ui/rich-text-display";
+import { useToggleBookmark } from "@/hooks/useBookmarks";
 
 const MEAL_META: Record<MealType, { accent: string; bg: string; fg: string; label: string; icon: React.ReactNode }> = {
   "petit-dejeuner": {
@@ -83,11 +84,13 @@ export function MenuCard({
   index,
   canDelete,
   view = "grid",
+  isBookmarked = false,
 }: {
   menu: MenuWithProfile;
   index: number;
   canDelete: boolean;
   view?: "grid" | "list";
+  isBookmarked?: boolean;
 }) {
   const navigate = useNavigate();
   const deleteMenu = useDeleteMenu();
@@ -104,6 +107,7 @@ export function MenuCard({
   const visibleIngs = ings.slice(0, MAX_INGREDIENTS_GRID);
   const moreCount = ings.length - MAX_INGREDIENTS_GRID;
   const co2 = getMenuCO2(menu, 1);
+  const toggleBookmark = useToggleBookmark();
 
   if (view === "list") {
     return (
@@ -151,13 +155,18 @@ export function MenuCard({
 
         <div className="flex items-center gap-1 flex-shrink-0">
           {/* Bookmark — always visible */}
-          <button
-            className="w-8 h-8 grid place-items-center rounded-lg text-[#98A39C] hover:bg-[#EEF0EB] hover:text-[#11221C] transition-colors"
-            aria-label="Marquer"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Bookmark className="h-4 w-4" />
-          </button>
+          {user && (
+            <button
+              className={`w-8 h-8 grid place-items-center rounded-lg transition-colors ${isBookmarked ? "text-[#1F6B4A]" : "text-[#98A39C] hover:bg-[#EEF0EB] hover:text-[#11221C]"}`}
+              aria-label={isBookmarked ? "Retirer des favoris" : "Ajouter aux favoris"}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleBookmark.mutate({ menuId: menu.id, bookmarked: isBookmarked });
+              }}
+            >
+              {isBookmarked ? <BookmarkCheck className="h-4 w-4" /> : <Bookmark className="h-4 w-4" />}
+            </button>
+          )}
 
           {/* Owner actions — on hover */}
           <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">

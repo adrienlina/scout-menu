@@ -5,13 +5,14 @@ import { useAuth } from "@/hooks/useAuth";
 import { MENU_FILTER_TYPES, MEAL_FILTER_LABELS, type MealTypeFilter, resolveMealTypes } from "@/lib/types";
 import { MenuCard } from "./MenuCard";
 import { Search, X, LayoutGrid, List, Plus } from "lucide-react";
+import { useBookmarks } from "@/hooks/useBookmarks";
 
-type SourceFilter = "all" | "mine" | "standard" | "shared";
+type SourceFilter = "all" | "mine" | "favoris" | "shared";
 
 const SOURCE_FILTERS: { id: SourceFilter; label: string; icon: string }[] = [
   { id: "all", label: "Tous", icon: "" },
   { id: "mine", label: "Mes menus", icon: "📔" },
-  { id: "standard", label: "Standards", icon: "★" },
+  { id: "favoris", label: "Favoris", icon: "🔖" },
   { id: "shared", label: "Partagés", icon: "↗" },
 ];
 
@@ -25,6 +26,7 @@ export default function MenusPage() {
   const navigate = useNavigate();
   const { data: menus, isLoading } = useMenus();
   const { user } = useAuth();
+  const { data: bookmarks } = useBookmarks();
 
   const [query, setQuery] = useState("");
   const [typeFilter, setTypeFilter] = useState<MealTypeFilter | "all">("all");
@@ -44,7 +46,7 @@ export default function MenusPage() {
 
       // Source filter
       if (sourceFilter === "mine" && m.user_id !== user?.id) return false;
-      if (sourceFilter === "standard" && !m.is_default) return false;
+      if (sourceFilter === "favoris" && !bookmarks?.has(m.id)) return false;
       if (sourceFilter === "shared" && (m.user_id === user?.id || m.is_default)) return false;
 
       // Text search
@@ -67,7 +69,7 @@ export default function MenusPage() {
   ];
 
   const visibleSourceFilters = SOURCE_FILTERS.filter(
-    (f) => f.id !== "mine" || !!user
+    (f) => (f.id !== "mine" && f.id !== "favoris") || !!user
   );
 
   return (
@@ -251,6 +253,7 @@ export default function MenusPage() {
               index={i}
               canDelete={menu.user_id === user?.id}
               view="grid"
+              isBookmarked={bookmarks?.has(menu.id) ?? false}
             />
           ))}
         </div>
@@ -263,6 +266,7 @@ export default function MenusPage() {
               index={i}
               canDelete={menu.user_id === user?.id}
               view="list"
+              isBookmarked={bookmarks?.has(menu.id) ?? false}
             />
           ))}
         </div>
