@@ -104,7 +104,7 @@ vi.mock("@/hooks/useToggleBookmark", () => ({
 }));
 
 vi.mock("../MenuCard", () => ({
-  MenuCard: ({ menu, view }: any) => (
+  MenuCard: ({ menu, view }: { menu: { id: string; name: string }; view: string }) => (
     <div data-testid={`menu-card-${menu.id}`} className={`menu-card menu-card-${view}`}>
       {menu.name}
     </div>

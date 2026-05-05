@@ -86,9 +86,9 @@ export function AddIngredientForm({ menuId }: { menuId: string }) {
           <AgribalyseSearch
             currentId={agriId}
             currentName={agriName}
-            onSelect={(id) => {
+            onSelect={(id, name) => {
               setAgriId(id);
-              if (!id) setAgriName(null);
+              setAgriName(id ? name : null);
             }}
             searchHint={name}
           />

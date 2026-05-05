@@ -582,6 +582,15 @@ export type Database = {
         Args: { _camp_id: string; _user_id: string }
         Returns: boolean
       }
+      normalize_search_text: { Args: { input: string }; Returns: string }
+      search_agribalyse_foods: {
+        Args: { query: string }
+        Returns: Array<{
+          id: string
+          name: string
+          changement_climatique: number | null
+        }>
+      }
     }
     Enums: {
       [_ in never]: never
