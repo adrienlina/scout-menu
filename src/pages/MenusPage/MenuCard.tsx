@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Trash2, Share2 } from "lucide-react";
 import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
+import { RichTextDisplay } from "@/components/ui/rich-text-display";
 import { motion } from "framer-motion";
 
 export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; index: number; canDelete: boolean }) {
@@ -46,14 +47,14 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
                   variant="ghost"
                   size="icon"
                   className="h-8 w-8 opacity-0 group-hover:opacity-100 transition-opacity"
-                  title={menu.is_shared ? "Rendre privé" : "Partager"}
+                  title={menu.is_shared ? "Rendre privé" : "Rendre public"}
                   onClick={(e) => {
                     e.stopPropagation();
                     toggleShared.mutate(
                       { menuId: menu.id, isShared: !menu.is_shared },
                       {
                         onSuccess: () =>
-                          toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu partagé !" }),
+                          toast({ title: menu.is_shared ? "Menu rendu privé" : "Menu rendu public !" }),
                       }
                     );
                   }}
@@ -81,13 +82,13 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
         </CardHeader>
         <CardContent>
           {menu.description && (
-            <p className="mb-3 text-sm text-muted-foreground">{menu.description}</p>
+            <RichTextDisplay content={menu.description} clamp className="mb-3" />
           )}
           {menu.menu_ingredients && menu.menu_ingredients.length > 0 && (
             <div className="space-y-1">
               <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Ingrédients par personne</p>
               <div className="flex flex-wrap gap-1">
-                {menu.menu_ingredients.map((ing: any) => (
+                {menu.menu_ingredients.map((ing) => (
                   <Badge key={ing.id} variant="outline" className="text-xs font-normal">
                     {ing.name} · {ing.quantity}{ing.unit}
                   </Badge>
@@ -95,12 +96,9 @@ export function MenuCard({ menu, index, canDelete }: { menu: MenuWithProfile; in
               </div>
             </div>
           )}
-          {menu.is_default && (
-            <Badge className="mt-2 gradient-campfire border-0 text-primary-foreground text-xs">Standard</Badge>
-          )}
           {menu.is_shared && isOwner && (
             <Badge variant="secondary" className="mt-2 text-xs gap-1">
-              <Share2 className="h-3 w-3" /> Partagé
+              <Share2 className="h-3 w-3" /> Public
             </Badge>
           )}
         </CardContent>

@@ -29,8 +29,8 @@ export function CampShareDialog({ campId, isOwner }: { campId: string; isOwner: 
           setEmail("");
           toast({ title: "Utilisateur ajouté !" });
         },
-        onError: (err: any) => {
-          if (err?.message?.includes("duplicate")) {
+        onError: (err) => {
+          if (err instanceof Error && err.message.includes("duplicate")) {
             toast({ title: "Cet email est déjà invité", variant: "destructive" });
           } else {
             toast({ title: "Erreur lors de l'ajout", variant: "destructive" });

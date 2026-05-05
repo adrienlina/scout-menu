@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft } from "lucide-react";
-import { type Menu, getWeightedParticipants } from "@/lib/types";
+import { type Menu, type MealType, getWeightedParticipants } from "@/lib/types";
 import { useMemo } from "react";
 import { ByDayView } from "./ByDayView";
 import { ByIngredientView } from "./ByIngredientView";
@@ -39,7 +39,7 @@ export default function ShoppingListPage() {
       const menu = meal.menus as Menu | undefined;
       if (!menu?.menu_ingredients) return;
       const dayDate = meal.meal_date;
-      const campDay = camp.camp_days?.find((d: any) => d.day_date === dayDate);
+      const campDay = camp.camp_days?.find((d) => d.day_date === dayDate);
       const participants = getWeightedParticipants(campDay, camp.participant_count);
 
       menu.menu_ingredients.forEach((ing) => {
@@ -50,7 +50,7 @@ export default function ShoppingListPage() {
           unit: ing.unit,
           menuName: menu.name,
           date: dayDate,
-          mealType: meal.meal_type as any,
+          mealType: meal.meal_type as MealType,
         });
       });
     });

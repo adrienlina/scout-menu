@@ -11,8 +11,8 @@
 - [x] Ajouter/modifier/supprimer des ingrédients (nom, quantité, unité : g, kg, ml, L, pièce)
 - [x] Définir le type de repas (Petit-déjeuner, Déjeuner/Dîner, Goûter)
 - [x] Partager un menu (privé / public)
-- [x] Filtrer les menus par type de repas, propriétaire (mes menus, standards, partagés)
-- [x] Rechercher des menus partagés par nom de créateur
+- [x] Filtrer les menus par type de repas, propriétaire (mes menus, standards, publics)
+- [x] Rechercher des menus publics par nom de créateur
 ### v1 :bulb:
 - [ ] Rich-text editor pour le contenu du menu / la recette
 - [ ] Pouvoir visualiser les menus publics sans avoir à créer de compte

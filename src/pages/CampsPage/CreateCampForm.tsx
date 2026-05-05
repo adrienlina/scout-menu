@@ -24,8 +24,9 @@ export function CreateCampForm({ onSuccess }: { onSuccess: () => void }) {
       });
       toast({ title: "Camp créé !" });
       onSuccess();
-    } catch (err: any) {
-      toast({ title: "Erreur", description: err.message, variant: "destructive" });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      toast({ title: "Erreur", description: message, variant: "destructive" });
     }
   };
 

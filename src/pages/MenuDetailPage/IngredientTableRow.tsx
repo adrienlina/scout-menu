@@ -4,20 +4,17 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { TableRow, TableCell } from "@/components/ui/table";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Trash2 } from "lucide-react";
+import { Select, SelectContent, SelectItem } from "@/components/ui/select";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { ChevronDown, Trash2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { NumberInput } from "@/components/NumberInput";
 import { AgribalyseSearch } from "./AgribalyseSearch";
+import { resolveUnitMultiplier } from "./unitMultiplier";
 import type { IngredientRow } from "./types";
+import type { TablesUpdate } from "@/integrations/supabase/types";
 
 const UNITS = ["g", "kg", "ml", "L", "pièce"];
-
-function getRatioForUnit(u: string) {
-  if (u === "g") return 1;
-  if (u === "kg") return 1000;
-  return 1000;
-}
 
 export function IngredientTableRow({
   ingredient,
@@ -46,7 +43,7 @@ export function IngredientTableRow({
   });
 
   const updateIngredient = useMutation({
-    mutationFn: async (fields: Record<string, any>) => {
+    mutationFn: async (fields: TablesUpdate<"menu_ingredients">) => {
       const { error } = await supabase
         .from("menu_ingredients")
         .update(fields)
@@ -58,9 +55,13 @@ export function IngredientTableRow({
 
   const linkAgribalyse = useMutation({
     mutationFn: async (agriId: string | null) => {
+      const update: TablesUpdate<"menu_ingredients"> = { agribalyse_food_id: agriId };
+      if (agriId) {
+        update.unit_multiplier = await resolveUnitMultiplier(agriId, ingredient.unit);
+      }
       const { error } = await supabase
         .from("menu_ingredients")
-        .update({ agribalyse_food_id: agriId } as any)
+        .update(update)
         .eq("id", ingredient.id!);
       if (error) throw error;
     },
@@ -74,7 +75,7 @@ export function IngredientTableRow({
     mutationFn: async (multiplier: number) => {
       const { error } = await supabase
         .from("menu_ingredients")
-        .update({ unit_multiplier: multiplier } as any)
+        .update({ unit_multiplier: multiplier })
         .eq("id", ingredient.id!);
       if (error) throw error;
     },
@@ -90,8 +91,9 @@ export function IngredientTableRow({
     }
   };
 
-  const handleUnitChange = (newUnit: string) => {
-    updateIngredient.mutate({ unit: newUnit, unit_multiplier: getRatioForUnit(newUnit) });
+  const handleUnitChange = async (newUnit: string) => {
+    const multiplier = await resolveUnitMultiplier(ingredient.agribalyse_food_id, newUnit);
+    updateIngredient.mutate({ unit: newUnit, unit_multiplier: multiplier });
   };
 
   let co2 = null;
@@ -121,26 +123,26 @@ export function IngredientTableRow({
             min={0}
             step="0.1"
             allowDecimals
-            className="w-20"
+            className="w-28 pr-14"
+            suffix={
+              <Select value={ingredient.unit} onValueChange={handleUnitChange}>
+                <SelectPrimitive.Trigger
+                  className="inline-flex items-center gap-0.5 rounded px-1 text-[10px] text-muted-foreground hover:text-foreground hover:underline focus:outline-none focus:ring-1 focus:ring-ring"
+                  aria-label="Changer l'unité"
+                >
+                  <SelectPrimitive.Value>{ingredient.unit}</SelectPrimitive.Value>
+                  <ChevronDown className="h-3 w-3 opacity-60" />
+                </SelectPrimitive.Trigger>
+                <SelectContent>
+                  {UNITS.map((u) => (
+                    <SelectItem key={u} value={u}>{u}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            }
           />
         ) : (
-          ingredient.quantity
-        )}
-      </TableCell>
-      <TableCell>
-        {isOwner ? (
-          <Select value={ingredient.unit} onValueChange={handleUnitChange}>
-            <SelectTrigger className="h-7 text-xs w-20">
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent>
-              {UNITS.map((u) => (
-                <SelectItem key={u} value={u}>{u}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        ) : (
-          ingredient.unit
+          <span className="tabular-nums">{ingredient.quantity} {ingredient.unit}</span>
         )}
       </TableCell>
       <TableCell>

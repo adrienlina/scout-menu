@@ -3,8 +3,11 @@ import { useShoppingListChecks, useShoppingListMealIds } from "@/hooks/useShoppi
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown, TrendingUp } from "lucide-react";
-import { getWeightedParticipants, type Menu } from "@/lib/types";
+import { getWeightedParticipants, type Menu, type Camp, type CampMeal } from "@/lib/types";
+import type { Tables } from "@/integrations/supabase/types";
 import type { StockItem } from "./types";
+
+type CampIngredientUsage = Tables<"camp_ingredient_usage">;
 
 export function ShoppingListStock({
   listId,
@@ -14,8 +17,8 @@ export function ShoppingListStock({
 }: {
   listId: string;
   listName: string;
-  camp: any;
-  usage: any[];
+  camp: Camp;
+  usage: CampIngredientUsage[];
 }) {
   const { data: checks } = useShoppingListChecks(listId);
   const { data: mealIds } = useShoppingListMealIds(listId);
@@ -27,17 +30,17 @@ export function ShoppingListStock({
       checks.filter((c) => c.is_checked).map((c) => c.ingredient_key)
     );
 
-    const selectedMeals = camp.camp_meals.filter((m: any) => mealIds.includes(m.id));
+    const selectedMeals = camp.camp_meals.filter((m) => mealIds.includes(m.id));
 
     const purchasedMap = new Map<string, { name: string; unit: string; qty: number }>();
 
-    selectedMeals.forEach((meal: any) => {
+    selectedMeals.forEach((meal: CampMeal) => {
       const menu = meal.menus as Menu | undefined;
       if (!menu?.menu_ingredients) return;
-      const campDay = camp.camp_days?.find((d: any) => d.day_date === meal.meal_date);
+      const campDay = camp.camp_days?.find((d) => d.day_date === meal.meal_date);
       const participants = getWeightedParticipants(campDay, camp.participant_count);
 
-      menu.menu_ingredients.forEach((ing: any) => {
+      menu.menu_ingredients.forEach((ing) => {
         const key = `${meal.id}:${ing.id}`;
         if (!checkedKeys.has(key)) return;
         const aggKey = `${ing.name.toLowerCase()}:${ing.unit}`;

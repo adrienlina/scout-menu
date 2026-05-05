@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf } from "lucide-react";
+import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf, LogIn } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
@@ -41,10 +41,17 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
                 </Link>
               );
             })}
-            {user && (
+            {user ? (
               <Button variant="ghost" size="icon" onClick={signOut} className="ml-2">
                 <LogOut className="h-4 w-4" />
               </Button>
+            ) : (
+              <Link to="/auth" className="ml-2">
+                <Button variant="default" size="sm" className="gap-2">
+                  <LogIn className="h-4 w-4" />
+                  <span className="hidden sm:inline">Se connecter</span>
+                </Button>
+              </Link>
             )}
           </nav>
         </div>

@@ -93,17 +93,17 @@ export const AGE_GROUPS: AgeGroup[] = [
 /** Compute weighted participant count from age group counts on a camp day */
 export function getWeightedParticipants(day: CampDay | undefined, fallbackCount: number): number {
   if (!day) return fallbackCount;
-  const hasAgeGroups = (day as any).count_orange > 0 || (day as any).count_bleu > 0 || (day as any).count_rouge > 0 || (day as any).count_adulte > 0;
+  const hasAgeGroups = day.count_orange > 0 || day.count_bleu > 0 || day.count_rouge > 0 || day.count_adulte > 0;
   if (!hasAgeGroups) return day.participant_count ?? fallbackCount;
-  return AGE_GROUPS.reduce((sum, g) => sum + ((day as any)[g.key] ?? 0) * g.multiplier, 0);
+  return AGE_GROUPS.reduce((sum, g) => sum + (day[g.key] ?? 0) * g.multiplier, 0);
 }
 
 /** Get age group counts from a camp day */
 export function getAgeGroupCounts(day: CampDay | undefined): Record<string, number> {
   return {
-    count_orange: (day as any)?.count_orange ?? 0,
-    count_bleu: (day as any)?.count_bleu ?? 0,
-    count_rouge: (day as any)?.count_rouge ?? 0,
-    count_adulte: (day as any)?.count_adulte ?? 0,
+    count_orange: day?.count_orange ?? 0,
+    count_bleu: day?.count_bleu ?? 0,
+    count_rouge: day?.count_rouge ?? 0,
+    count_adulte: day?.count_adulte ?? 0,
   };
 }

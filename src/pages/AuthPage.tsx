@@ -27,8 +27,9 @@ export default function AuthPage() {
       } else {
         await signIn(email, password);
       }
-    } catch (err: any) {
-      toast({ title: "Erreur", description: err.message, variant: "destructive" });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      toast({ title: "Erreur", description: message, variant: "destructive" });
     } finally {
       setLoading(false);
     }

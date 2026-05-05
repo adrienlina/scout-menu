@@ -6,7 +6,7 @@ import { ArrowLeft, Leaf, ArrowUpDown, Car, Info } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { MEAL_TYPE_ICONS, type MealType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
 
@@ -21,10 +21,10 @@ export default function CampEmissionsPage() {
     return eachDayOfInterval({ start: parseISO(camp.start_date), end: parseISO(camp.end_date) });
   }, [camp]);
 
-  const getDayParticipants = (dateStr: string): number => {
+  const getDayParticipants = useCallback((dateStr: string): number => {
     const campDay = camp?.camp_days?.find((d) => d.day_date === dateStr);
     return getWeightedParticipants(campDay, camp?.participant_count ?? 0);
-  };
+  }, [camp]);
 
   // All meals with CO2 data
   const mealEmissions = useMemo(() => {
@@ -35,7 +35,7 @@ export default function CampEmissionsPage() {
       const co2 = getMenuCO2(menu, participants);
       return { meal, menu, co2, date: meal.meal_date, mealType: meal.meal_type as MealType };
     }).filter((m) => m.menu);
-  }, [camp, days]);
+  }, [camp, getDayParticipants]);
 
   // Sorted meals
   const sortedMeals = useMemo(() => {
@@ -72,7 +72,7 @@ export default function CampEmissionsPage() {
       });
     });
     return Array.from(map.values()).sort((a, b) => b.co2 - a.co2);
-  }, [camp, days]);
+  }, [camp, getDayParticipants]);
 
   const totalCO2 = useMemo(() => mealEmissions.reduce((s, m) => s + m.co2, 0), [mealEmissions]);
   const KM_PER_KG_CO2 = 1 / 0.193; // ~5.18 km per kg CO₂ (voiture thermique moyenne française)

@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "../useAuth";
+import type { TablesInsert } from "@/integrations/supabase/types";
 
 export function useCreateCamp() {
   const queryClient = useQueryClient();
@@ -158,7 +159,7 @@ export function useUpsertCampDay() {
       count_rouge?: number;
       count_adulte?: number;
     }) => {
-      const payload: any = { camp_id: campId, day_date: dayDate };
+      const payload: TablesInsert<"camp_days"> = { camp_id: campId, day_date: dayDate };
       if (participantCount !== undefined) payload.participant_count = participantCount;
       if (count_orange !== undefined) payload.count_orange = count_orange;
       if (count_bleu !== undefined) payload.count_bleu = count_bleu;
@@ -182,7 +183,7 @@ export function useUpdatePortionsWasted() {
     mutationFn: async ({ campMealId, portionsWasted, portionsMissing }: { campMealId: string; portionsWasted: number; portionsMissing: number }) => {
       const { error } = await supabase
         .from("camp_meals")
-        .update({ portions_wasted: portionsWasted, portions_missing: portionsMissing } as any)
+        .update({ portions_wasted: portionsWasted, portions_missing: portionsMissing })
         .eq("id", campMealId);
       if (error) throw error;
     },

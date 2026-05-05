@@ -44,7 +44,7 @@ export function useShoppingListMealIds(listId: string) {
         .select("camp_meal_id")
         .eq("shopping_list_id", listId);
       if (error) throw error;
-      return (data || []).map((d: any) => d.camp_meal_id as string);
+      return (data || []).map((d) => d.camp_meal_id as string);
     },
     enabled: !!listId,
   });

@@ -11,6 +11,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { useToast } from "@/hooks/use-toast";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip, ResponsiveContainer, Cell } from "recharts";
 import { MenuHeader } from "./MenuHeader";
+import { MenuDescription } from "./MenuDescription";
 import { IngredientTableRow } from "./IngredientTableRow";
 import { AddIngredientForm } from "./AddIngredientForm";
 import type { IngredientRow } from "./types";
@@ -39,18 +40,23 @@ export default function MenuDetailPage() {
       queryClient.invalidateQueries({ queryKey: ["menus"] });
       navigate(`/menus/${data.id}`, { replace: true });
     },
-    onError: (err: any) => {
-      toast({ title: "Erreur", description: err.message, variant: "destructive" });
+    onError: (err) => {
+      const message = err instanceof Error ? err.message : String(err);
+      toast({ title: "Erreur", description: message, variant: "destructive" });
       navigate("/menus");
     },
   });
 
   useEffect(() => {
     if (isNew) {
+      if (!user) {
+        navigate("/auth", { replace: true });
+        return;
+      }
       createMenu.mutate();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isNew]);
+  }, [isNew, user]);
 
   // Fetch menu
   const { data: menu, isLoading: menuLoading } = useQuery({
@@ -78,7 +84,7 @@ export default function MenuDetailPage() {
         .order("name");
       if (error) throw error;
 
-      const agriIds = (data || []).map((i: any) => i.agribalyse_food_id).filter(Boolean) as string[];
+      const agriIds = (data || []).map((i) => i.agribalyse_food_id).filter(Boolean) as string[];
       let agriMap: Record<string, { name: string; changement_climatique: number | null }> = {};
       if (agriIds.length > 0) {
         const { data: agriData } = await supabase
@@ -90,7 +96,7 @@ export default function MenuDetailPage() {
         }
       }
 
-      return (data || []).map((i: any) => ({
+      return (data || []).map((i) => ({
         ...i,
         agribalyse_name: i.agribalyse_food_id ? agriMap[i.agribalyse_food_id]?.name || null : null,
         changement_climatique: i.agribalyse_food_id ? agriMap[i.agribalyse_food_id]?.changement_climatique || null : null,
@@ -99,7 +105,7 @@ export default function MenuDetailPage() {
     enabled: !!menuId && !isNew,
   });
 
-  const isOwner = menu?.user_id === user?.id;
+  const isOwner = !!user && menu?.user_id === user.id;
 
   // CO2 calculation
   const co2Data = useMemo(() => {
@@ -153,9 +159,8 @@ export default function MenuDetailPage() {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Ingrédient</TableHead>
-                    <TableHead className="w-20">Quantité</TableHead>
-                    <TableHead className="w-16">Unité</TableHead>
+                    <TableHead className="min-w-[260px]">Ingrédient</TableHead>
+                    <TableHead className="w-32">Quantité</TableHead>
                     <TableHead>Aliment Agribalyse</TableHead>
                     <TableHead className="w-44">
                       <TooltipProvider>
@@ -188,7 +193,7 @@ export default function MenuDetailPage() {
                   ))}
                   {ingredients.length === 0 && (
                     <TableRow>
-                      <TableCell colSpan={isOwner ? 7 : 6} className="text-center text-muted-foreground py-8">
+                      <TableCell colSpan={isOwner ? 6 : 5} className="text-center text-muted-foreground py-8">
                         Aucun ingrédient
                       </TableCell>
                     </TableRow>
@@ -201,6 +206,15 @@ export default function MenuDetailPage() {
               )}
             </CardContent>
           </Card>
+
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="h-px flex-1 bg-border" />
+              <h2 className="text-base font-semibold text-muted-foreground">Recette pas à pas</h2>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+            <MenuDescription menu={menu} isOwner={isOwner} />
+          </div>
         </div>
 
         {/* RIGHT: CO2 Summary */}

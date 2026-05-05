@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Dialog,
   DialogContent,
@@ -43,7 +43,7 @@ export function MealUsageDialog({
   const [portionsWasted, setPortionsWasted] = useState(0);
   const [portionsMissing, setPortionsMissing] = useState(0);
 
-  const ingredients = menu.menu_ingredients || [];
+  const ingredients = useMemo(() => menu.menu_ingredients ?? [], [menu.menu_ingredients]);
 
   const [quantities, setQuantities] = useState<Record<string, string>>({});
 
