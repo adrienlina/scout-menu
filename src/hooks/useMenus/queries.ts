@@ -1,27 +1,26 @@
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "../useAuth";
-import type { Menu, MealTypeFilter } from "@/lib/types";
-import { resolveMealTypes } from "@/lib/types";
+import type { Menu, MealSlotType } from "@/lib/types";
 
 export type MenuWithProfile = Menu & {
   creator_name?: string | null;
 };
 
-export function useMenus(mealTypeFilter?: MealTypeFilter) {
+export function useMenus(slotFilter?: MealSlotType) {
   const { user } = useAuth();
 
   return useQuery({
-    queryKey: ["menus", mealTypeFilter, user?.id],
+    queryKey: ["menus", slotFilter, user?.id],
     queryFn: async () => {
       let query = supabase
         .from("menus")
         .select("*, menu_ingredients(*, agribalyse_foods(changement_climatique))")
         .order("name");
 
-      if (mealTypeFilter) {
-        const types = resolveMealTypes(mealTypeFilter);
-        query = query.in("meal_type", types);
+      if (slotFilter) {
+        // Include menus tagged for this specific slot AND menus tagged "all"
+        query = query.in("meal_type", [slotFilter, "all"]);
       }
 
       const { data, error } = await query;

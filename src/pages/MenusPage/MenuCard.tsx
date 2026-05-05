@@ -2,14 +2,14 @@ import { useNavigate } from "react-router-dom";
 import { useDeleteMenu, useToggleShared, type MenuWithProfile } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
 import { Trash2, Share2, Clock, Users, Bookmark, BookmarkCheck, Leaf } from "lucide-react";
-import { type MealType, getMenuCO2 } from "@/lib/types";
+import { type MealType, type MealSlotType, getMenuCO2 } from "@/lib/types";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { RichTextDisplay } from "@/components/ui/rich-text-display";
 import { useToggleBookmark } from "@/hooks/useBookmarks";
 
 const MEAL_META: Record<MealType, { accent: string; bg: string; fg: string; label: string; icon: React.ReactNode }> = {
-  "petit-dejeuner": {
+  breakfast: {
     accent: "#F59E0B",
     bg: "#FEF3C7",
     fg: "#92400E",
@@ -24,11 +24,11 @@ const MEAL_META: Record<MealType, { accent: string; bg: string; fg: string; labe
       </svg>
     ),
   },
-  dejeuner: {
+  meal: {
     accent: "#EA580C",
     bg: "#FED7AA",
     fg: "#9A3412",
-    label: "Déjeuner",
+    label: "Déjeuner / Dîner",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
         <path d="M3 11h18" /><path d="M12 11V3" />
@@ -36,19 +36,7 @@ const MEAL_META: Record<MealType, { accent: string; bg: string; fg: string; labe
       </svg>
     ),
   },
-  diner: {
-    accent: "#6366F1",
-    bg: "#E0E7FF",
-    fg: "#3730A3",
-    label: "Dîner",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
-        <path d="M3 11h18" /><path d="M12 11V3" />
-        <path d="M5 11a7 7 0 0 0 14 0" /><path d="M5 21h14" />
-      </svg>
-    ),
-  },
-  gouter: {
+  snack: {
     accent: "#DB2777",
     bg: "#FBCFE8",
     fg: "#9D174D",
@@ -59,6 +47,18 @@ const MEAL_META: Record<MealType, { accent: string; bg: string; fg: string; labe
         <path d="M5 13a7 7 0 0 1 14 0" />
         <path d="M9 8c0-1.5 1-2.5 1-4" />
         <path d="M13 8c0-1.5 1-2.5 1-4" />
+      </svg>
+    ),
+  },
+  all: {
+    accent: "#0EA5E9",
+    bg: "#E0F2FE",
+    fg: "#075985",
+    label: "Tous repas",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[18px] h-[18px]">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" />
       </svg>
     ),
   },
@@ -99,7 +99,7 @@ export function MenuCard({
   const { user } = useAuth();
   const isOwner = menu.user_id === user?.id;
 
-  const meta = MEAL_META[menu.meal_type as MealType] ?? MEAL_META.dejeuner;
+  const meta = MEAL_META[menu.meal_type as MealType] ?? MEAL_META.meal;
   const ownershipKey = getOwnershipKey(menu, user?.id);
   const own = ownershipKey ? OWNERSHIP_META[ownershipKey] : null;
 

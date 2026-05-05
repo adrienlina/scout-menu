@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMenus } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
-import { MENU_FILTER_TYPES, MEAL_FILTER_LABELS, type MealTypeFilter, resolveMealTypes } from "@/lib/types";
+import { MENU_FILTER_TYPES, MEAL_TYPE_LABELS, type MealSlotType } from "@/lib/types";
 import { MenuCard } from "./MenuCard";
 import { Search, X, LayoutGrid, List, Plus } from "lucide-react";
 import { useBookmarks } from "@/hooks/useBookmarks";
@@ -16,10 +16,10 @@ const SOURCE_FILTERS: { id: SourceFilter; label: string; icon: string }[] = [
   { id: "shared", label: "Publics", icon: "↗" },
 ];
 
-const TYPE_FILTER_COLORS: Partial<Record<MealTypeFilter | "all", { accent: string; bg: string; fg: string }>> = {
-  "petit-dejeuner": { accent: "#F59E0B", bg: "#FEF3C7", fg: "#92400E" },
-  "repas": { accent: "#EA580C", bg: "#FED7AA", fg: "#9A3412" },
-  "gouter": { accent: "#DB2777", bg: "#FBCFE8", fg: "#9D174D" },
+const TYPE_FILTER_COLORS: Partial<Record<MealSlotType | "all", { accent: string; bg: string; fg: string }>> = {
+  breakfast: { accent: "#F59E0B", bg: "#FEF3C7", fg: "#92400E" },
+  meal:      { accent: "#EA580C", bg: "#FED7AA", fg: "#9A3412" },
+  snack:     { accent: "#DB2777", bg: "#FBCFE8", fg: "#9D174D" },
 };
 
 export default function MenusPage() {
@@ -29,7 +29,7 @@ export default function MenusPage() {
   const { data: bookmarks } = useBookmarks();
 
   const [query, setQuery] = useState("");
-  const [typeFilter, setTypeFilter] = useState<MealTypeFilter | "all">("all");
+  const [typeFilter, setTypeFilter] = useState<MealSlotType | "all">("all");
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>("all");
   const [view, setView] = useState<"grid" | "list">("grid");
 
@@ -38,10 +38,9 @@ export default function MenusPage() {
     const q = query.trim().toLowerCase();
 
     return menus.filter((m) => {
-      // Type filter
+      // Type filter — also show "all" menus in every specific filter
       if (typeFilter !== "all") {
-        const types = resolveMealTypes(typeFilter);
-        if (!types.includes(m.meal_type as typeof types[number])) return false;
+        if (m.meal_type !== typeFilter && m.meal_type !== "all") return false;
       }
 
       // Source filter
@@ -63,9 +62,9 @@ export default function MenusPage() {
     });
   }, [menus, typeFilter, sourceFilter, query, user?.id]);
 
-  const typeFilters: Array<{ id: MealTypeFilter | "all"; label: string }> = [
+  const typeFilters: Array<{ id: MealSlotType | "all"; label: string }> = [
     { id: "all", label: "Tous" },
-    ...MENU_FILTER_TYPES.map((t) => ({ id: t, label: MEAL_FILTER_LABELS[t] ?? t })),
+    ...MENU_FILTER_TYPES.map((t) => ({ id: t, label: MEAL_TYPE_LABELS[t] })),
   ];
 
   const visibleSourceFilters = SOURCE_FILTERS.filter(

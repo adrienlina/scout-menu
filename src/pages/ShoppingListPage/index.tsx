@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft } from "lucide-react";
-import { type Menu, type MealType, getWeightedParticipants } from "@/lib/types";
+import { type Menu, type MealSlotType, getWeightedParticipants } from "@/lib/types";
 import { useMemo } from "react";
 import { ByDayView } from "./ByDayView";
 import { ByIngredientView } from "./ByIngredientView";
@@ -50,7 +50,7 @@ export default function ShoppingListPage() {
           unit: ing.unit,
           menuName: menu.name,
           date: dayDate,
-          mealType: meal.meal_type as MealType,
+          mealType: meal.meal_type as MealSlotType,
         });
       });
     });

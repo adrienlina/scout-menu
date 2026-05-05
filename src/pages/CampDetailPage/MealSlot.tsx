@@ -5,7 +5,7 @@ import { Droppable } from "@hello-pangea/dnd";
 import { Plus } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealType, type CampMeal, type Menu } from "@/lib/types";
+import { MEAL_TYPE_LABELS, MEAL_TYPE_ICONS, type MealSlotType, type CampMeal, type Menu } from "@/lib/types";
 import { MealCard } from "./MealCard";
 
 export function MealSlot({
@@ -17,13 +17,13 @@ export function MealSlot({
 }: {
   campId: string;
   date: string;
-  mealType: MealType;
+  mealType: MealSlotType;
   meals: CampMeal[];
   participantCount: number;
 }) {
   const assignMeal = useAssignMeal();
-  const menuFilter = (mealType === "dejeuner" || mealType === "diner") ? "repas" as const : mealType;
-  const { data: menus } = useMenus(menuFilter);
+  
+  const { data: menus } = useMenus(mealType);
   const [dialogOpen, setDialogOpen] = useState(false);
   const droppableId = `slot:${date}:${mealType}`;
 

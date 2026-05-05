@@ -33,46 +33,31 @@ export function getMenuCO2(menu: Menu | undefined, participantCount: number): nu
   }, 0);
 }
 
-export type MealType = "petit-dejeuner" | "dejeuner" | "gouter" | "diner";
+// "all" means the menu fits every meal slot (e.g. fruit, bread)
+export type MealType = "breakfast" | "meal" | "snack" | "all";
 
-// "repas" is a virtual type grouping dejeuner + diner for filtering/selection
-export type MealTypeFilter = MealType | "repas";
+// Concrete slot types used for camp day planning (excludes "all")
+export type MealSlotType = Exclude<MealType, "all">;
 
 export const MEAL_TYPE_LABELS: Record<MealType, string> = {
-  "petit-dejeuner": "Petit-déjeuner",
-  "dejeuner": "Déjeuner",
-  "gouter": "Goûter",
-  "diner": "Dîner",
+  breakfast: "Petit-déjeuner",
+  meal: "Déjeuner / Dîner",
+  snack: "Goûter",
+  all: "Tous repas",
 };
 
 export const MEAL_TYPE_ICONS: Record<MealType, string> = {
-  "petit-dejeuner": "☀️",
-  "dejeuner": "🍽️",
-  "gouter": "🍪",
-  "diner": "🌙",
+  breakfast: "☀️",
+  meal: "🍽️",
+  snack: "🍪",
+  all: "✨",
 };
 
-// Filter categories shown in the menus page (merged déjeuner+dîner)
-export const MEAL_FILTER_LABELS: Partial<Record<MealTypeFilter, string>> = {
-  "petit-dejeuner": "Petit-déjeuner",
-  "repas": "Repas (déj/dîner)",
-  "gouter": "Goûter",
-};
+// Slot types used in camp day planning and shopping list
+export const MEAL_SLOT_TYPES: MealSlotType[] = ["breakfast", "meal", "snack"];
 
-export const MEAL_FILTER_ICONS: Partial<Record<MealTypeFilter, string>> = {
-  "petit-dejeuner": "☀️",
-  "repas": "🍽️",
-  "gouter": "🍪",
-};
-
-// Resolve a filter type to actual DB meal types
-export function resolveMealTypes(filter: MealTypeFilter): MealType[] {
-  if (filter === "repas") return ["dejeuner", "diner"];
-  return [filter];
-}
-
-// Display filters for the menus page (excludes standalone dejeuner/diner)
-export const MENU_FILTER_TYPES: MealTypeFilter[] = ["petit-dejeuner", "repas", "gouter"];
+// Filter types shown in the menus page (includes all 3 slots; "all" menus appear in every filter)
+export const MENU_FILTER_TYPES: MealSlotType[] = ["breakfast", "meal", "snack"];
 
 // Age groups with multipliers
 export interface AgeGroup {
