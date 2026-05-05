@@ -159,7 +159,7 @@ export default function CampDetailPage() {
             </Button>
             <Button variant="outline" className="gap-2" onClick={handleExport}>
               <Download className="h-4 w-4" />
-              Exporter CSV
+              Export
             </Button>
           </div>
         </div>
