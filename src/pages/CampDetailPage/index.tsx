@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { ArrowLeft, Users, Download, Info, Package, Leaf } from "lucide-react";
-import { MEAL_TYPE_LABELS, type MealType, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts } from "@/lib/types";
+import { MEAL_TYPE_LABELS, MEAL_SLOT_TYPES, type MealSlotType, type Menu, AGE_GROUPS, getWeightedParticipants, getAgeGroupCounts } from "@/lib/types";
 import { ShoppingListDropdown } from "@/components/ShoppingListDropdown";
 import { CampShareDialog } from "@/components/CampShareDialog";
 import { useShoppingLists } from "@/hooks/useShoppingLists";
@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import { DragDropContext, type DropResult } from "@hello-pangea/dnd";
 import { MealSlot } from "./MealSlot";
 
-const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
+const MEAL_TYPES = MEAL_SLOT_TYPES;
 
 export default function CampDetailPage() {
   const { campId } = useParams<{ campId: string }>();
@@ -42,7 +42,7 @@ export default function CampDetailPage() {
     end: parseISO(camp.end_date),
   });
 
-  const getMealsForSlot = (date: string, mealType: MealType) => {
+  const getMealsForSlot = (date: string, mealType: MealSlotType) => {
     return camp.camp_meals?.filter(
       (m) => m.meal_date === date && m.meal_type === mealType
     ) || [];

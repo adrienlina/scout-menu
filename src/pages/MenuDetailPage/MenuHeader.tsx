@@ -105,9 +105,10 @@ export function MenuHeader({ menu, isOwner }: { menu: Menu; isOwner: boolean }) 
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="petit-dejeuner">☀️ Petit-déjeuner</SelectItem>
-              <SelectItem value="dejeuner">🍽️ Déjeuner/Dîner</SelectItem>
-              <SelectItem value="gouter">🍪 Goûter</SelectItem>
+              <SelectItem value="breakfast">☀️ Petit-déjeuner</SelectItem>
+              <SelectItem value="meal">🍽️ Déjeuner / Dîner</SelectItem>
+              <SelectItem value="snack">🍪 Goûter</SelectItem>
+              <SelectItem value="all">✨ Tous repas</SelectItem>
             </SelectContent>
           </Select>
         ) : (

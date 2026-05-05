@@ -30,7 +30,7 @@ export default function MenuDetailPage() {
       if (!user) throw new Error("Not authenticated");
       const { data, error } = await supabase
         .from("menus")
-        .insert({ name: "Nouveau menu", meal_type: "dejeuner", user_id: user.id })
+        .insert({ name: "Nouveau menu", meal_type: "meal", user_id: user.id })
         .select()
         .single();
       if (error) throw error;

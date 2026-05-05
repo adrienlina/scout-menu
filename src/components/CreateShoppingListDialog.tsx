@@ -5,13 +5,13 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { ShoppingCart } from "lucide-react";
 import { useCreateShoppingList } from "@/hooks/useShoppingLists";
-import { MEAL_TYPE_LABELS, type MealType, type Camp, type CampMeal, type Menu } from "@/lib/types";
+import { MEAL_TYPE_LABELS, MEAL_SLOT_TYPES, type MealSlotType, type Camp, type CampMeal, type Menu } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
-const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
+const MEAL_TYPES = MEAL_SLOT_TYPES;
 
 export function CreateShoppingListDialog({ camp, open: controlledOpen, onOpenChange: controlledOnOpenChange }: { camp: Camp; open?: boolean; onOpenChange?: (open: boolean) => void }) {
   const [internalOpen, setInternalOpen] = useState(false);
@@ -32,7 +32,7 @@ export function CreateShoppingListDialog({ camp, open: controlledOpen, onOpenCha
     [camp.start_date, camp.end_date]
   );
 
-  const getMealsForSlot = (date: string, mealType: MealType): CampMeal[] => {
+  const getMealsForSlot = (date: string, mealType: MealSlotType): CampMeal[] => {
     return camp.camp_meals?.filter((m) => m.meal_date === date && m.meal_type === mealType) || [];
   };
 

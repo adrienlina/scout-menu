@@ -3,13 +3,13 @@ import { useRemoveMeal } from "@/hooks/useCamps";
 import { Draggable } from "@hello-pangea/dnd";
 import { X, GripVertical, ClipboardCheck, Leaf, Trash2, AlertTriangle, Printer } from "lucide-react";
 import { MealUsageDialog } from "@/components/MealUsageDialog";
-import { getMenuCO2, MEAL_TYPE_LABELS, type CampMeal, type Menu, type MealType } from "@/lib/types";
+import { getMenuCO2, MEAL_TYPE_LABELS, type CampMeal, type Menu, type MealSlotType } from "@/lib/types";
 import { format, parseISO } from "date-fns";
 import { fr } from "date-fns/locale";
 
 function printMeal(meal: CampMeal, menu: Menu, participantCount: number) {
   const mealDate = format(parseISO(meal.meal_date), "EEEE d MMMM yyyy", { locale: fr });
-  const mealLabel = MEAL_TYPE_LABELS[meal.meal_type as MealType] ?? meal.meal_type;
+  const mealLabel = MEAL_TYPE_LABELS[meal.meal_type as MealSlotType] ?? meal.meal_type;
   const totalCO2 = getMenuCO2(menu, participantCount);
 
   const ingredientRows = (menu.menu_ingredients ?? []).map((ing) => {

@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Leaf, ArrowUpDown, Car, Info } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { MEAL_TYPE_ICONS, type MealType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
+import { MEAL_TYPE_ICONS, MEAL_SLOT_TYPES, type MealSlotType, type Menu, getWeightedParticipants, getMenuCO2 } from "@/lib/types";
 import { format, eachDayOfInterval, parseISO } from "date-fns";
 import { useCallback, useMemo, useState } from "react";
 
-const MEAL_TYPES: MealType[] = ["petit-dejeuner", "dejeuner", "gouter", "diner"];
+const MEAL_TYPES = MEAL_SLOT_TYPES;
 
 export default function CampEmissionsPage() {
   const { campId } = useParams<{ campId: string }>();
@@ -33,7 +33,7 @@ export default function CampEmissionsPage() {
       const menu = meal.menus as Menu | undefined;
       const participants = getDayParticipants(meal.meal_date);
       const co2 = getMenuCO2(menu, participants);
-      return { meal, menu, co2, date: meal.meal_date, mealType: meal.meal_type as MealType };
+      return { meal, menu, co2, date: meal.meal_date, mealType: meal.meal_type as MealSlotType };
     }).filter((m) => m.menu);
   }, [camp, getDayParticipants]);
 

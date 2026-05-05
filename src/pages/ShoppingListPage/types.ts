@@ -1,4 +1,4 @@
-import type { MealType } from "@/lib/types";
+import type { MealSlotType } from "@/lib/types";
 
 export interface IngredientItem {
   key: string;
@@ -7,5 +7,5 @@ export interface IngredientItem {
   unit: string;
   menuName: string;
   date: string;
-  mealType: MealType;
+  mealType: MealSlotType;
 }
