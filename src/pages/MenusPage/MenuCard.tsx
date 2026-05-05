@@ -154,7 +154,7 @@ export function MenuCard({
         </div>
 
         <div className="flex items-center gap-1 flex-shrink-0">
-          <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+          <div className="flex items-center gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
             {/* Owner actions — on hover */}
             {isOwner && !menu.is_default && (
               <button
@@ -188,7 +188,7 @@ export function MenuCard({
           {user && (
             <button
               className={`w-8 h-8 grid place-items-center rounded-lg transition-all ${
-                isBookmarked ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                isBookmarked ? "opacity-100" : "opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
               } ${isBookmarked ? "text-[#1F6B4A]" : "text-[#6B7A72] hover:bg-[#EEF0EB] hover:text-[#11221C]"}`}
               aria-label={isBookmarked ? "Retirer des favoris" : "Ajouter aux favoris"}
               onClick={(e) => {
@@ -243,7 +243,7 @@ export function MenuCard({
         </div>
 
         {/* Actions (hover) */}
-        <div className="flex items-center gap-1 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="flex items-center gap-1 flex-shrink-0 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
           {isOwner && !menu.is_default && (
             <button
               className="w-8 h-8 grid place-items-center rounded-lg text-[#6B7A72] hover:bg-[#EEF0EB] hover:text-[#11221C] transition-colors"
@@ -276,7 +276,7 @@ export function MenuCard({
         {user && (
           <button
             className={`w-8 h-8 grid place-items-center rounded-lg transition-all ${
-              isBookmarked ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              isBookmarked ? "opacity-100" : "opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
             } ${isBookmarked ? "text-[#1F6B4A]" : "text-[#6B7A72] hover:bg-[#EEF0EB] hover:text-[#11221C]"}`}
             aria-label={isBookmarked ? "Retirer des favoris" : "Ajouter aux favoris"}
             onClick={(e) => {
