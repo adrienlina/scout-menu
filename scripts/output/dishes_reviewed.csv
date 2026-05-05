@@ -1,0 +1,576 @@
+﻿dish_name;meal_types;ingredient_name;quantity;unit;agribalyse_match;unit_multiplier
+abricots;diner,gouter,dejeuner;abricots frais;150;g;Abricot, dénoyauté, cru;1
+ananas;diner;ananas frais;1;pièce;Ananas, pulpe, cru;1500
+bananes;gouter,dejeuner;banane;1;pièce;Banane, pulpe, crue;120
+bananes au chocolat;diner;banane;1;pièce;Banane, pulpe, crue;120
+bananes au chocolat;diner;chocolat noir ou au lait;50;g;Chocolat au lait, tablette;1
+bananes au chocolat;diner;beurre;10;g;Beurre à 82% MG, doux;1
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;tortilla maïs;2;pièce;Tortilla souple (à garnir), à base de maïs;40
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;thon en conserve;100;g;Thon, au naturel, appertisé, égoutté;1
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;tomates fraiches;150;g;Tomate, crue;1
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;haricots rouges en conserve;100;g;Haricot rouge, appertisé, égoutté;1
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;sauce tomate;100;ml;Tomate, coulis, appertisé (purée de tomates mi-réduite à 11%);1000
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;poivrons rouges frais;100;g;Poivron rouge, cru;1
+bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges);diner;oignon;50;g;Oignon, cru;1
+boulgour au poulet sauce curry;dejeuner;Boulgour;75;g;Boulgour de blé, cru;1
+boulgour au poulet sauce curry;dejeuner;Poulet (poitrine ou cuisse);150;g;Poulet, poitrine, viande et peau, cru;1
+boulgour au poulet sauce curry;dejeuner;Oignon;1;pièce;Oignon, cru;110
+boulgour au poulet sauce curry;dejeuner;Curry en poudre;1;cuillère à café;Curry, poudre;1000
+boulgour au poulet sauce curry;dejeuner;Crème fraîche ou lait de coco;100;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+boulgour au poulet sauce curry;dejeuner;Huile d'olive;1;cuillère à soupe;Huile d'olive vierge extra;1000
+bruschettas;dejeuner;pain blanc;2;tranche(s);Pain blanc maison (avec farine pour machine à pain);1000
+bruschettas;dejeuner;tomate;1;pièce;Tomate, crue;120
+bruschettas;dejeuner;ail;0.5;gousse;Ail, cru;1000
+bruschettas;dejeuner;huile d'olive;10;ml;Huile d'olive vierge extra;0.92
+bruschettas;dejeuner;vinaigre balsamique;5;ml;Vinaigre balsamique;1.01
+bruschettas;dejeuner;persil frais;5;g;Persil, frais;1
+burgers;diner;Pain à burger;1;pièce;Pain pour hamburger ou hot dog (bun), préemballé;1000
+burgers;diner;Steak haché (15% matière grasse);100;g;Bœuf, steak haché 15% MG, cru;1
+burgers;diner;Salade;30;g;Salade verte, crue, sans assaisonnement;1
+burgers;diner;Tomate;50;g;Tomate, crue;1
+burgers;diner;Oignon;20;g;Oignon, cru;1
+burgers;diner;Fromage à burger (type cheddar);20;g;Cheddar;1
+burgers;diner;Sauce ketchup;15;ml;Ketchup;1000
+burgers;diner;Sauce moutarde;10;ml;Sauce moutarde, préemballée;1000
+burgers;diner;Mayonnaise;15;ml;Mayonnaise (70% MG min.);1000
+bâtonnets de concombre et carottes avec sauce au yaourt;diner;Concombre;150;g;Concombre, pulpe et peau, cru;1
+bâtonnets de concombre et carottes avec sauce au yaourt;diner;Carotte;100;g;Carotte, crue;1
+bâtonnets de concombre et carottes avec sauce au yaourt;diner;Yaourt nature;100;ml;Yaourt, lait fermenté ou spécialité laitière, nature;1.03
+bâtonnets de concombre et carottes avec sauce au yaourt;diner;Citron;0.25;pièce;Citron, pulpe, cru;100
+bâtonnets de concombre et carottes avec sauce au yaourt;diner;Persil frais (optionnel);5;g;Persil, frais;1
+bâtonnets de concombres avec sauce;dejeuner;concombre;150;g;Concombre, pulpe et peau, cru;1
+bâtonnets de concombres avec sauce;dejeuner;crème fraîche;75;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+bâtonnets de concombres avec sauce;dejeuner;yaourt nature;75;ml;Yaourt, lait fermenté ou spécialité laitière, nature;1.03
+bâtonnets de concombres avec sauce;dejeuner;aneth frais (ou persil);5;g;Aneth, frais;1
+bâtonnets de concombres avec sauce;dejeuner;citron;0.25;pièce;Citron, pulpe, cru;100
+camembert;diner;camembert;1;pièce;Camembert, sans précision;250
+camembert braisé;diner;Camembert entier;0.25;pièce;Camembert, sans précision;250
+camembert braisé;diner;Vin blanc sec;100;ml;Vin blanc sec;1000
+camembert braisé;diner;Thym frais;2;g;Thym, frais;1
+camembert braisé;diner;Laurier;0.5;pièce;Laurier, feuille;1000
+camembert braisé;diner;Pain grillé ou baguette;50;g;Pain, baguette, courante;1
+carottes râpées;dejeuner,diner;carotte;150;g;Carotte, crue;1
+carottes râpées;dejeuner,diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+carottes râpées;dejeuner,diner;vinaigre blanc;10;ml;Vinaigre;1.01
+carottes sauce yaourt;diner;Carottes;150;g;Carotte, crue;1
+carottes sauce yaourt;diner;Yaourt nature;100;ml;Yaourt, lait fermenté ou spécialité laitière, nature;1.03
+carottes sauce yaourt;diner;Huile d'olive;5;ml;Huile d'olive vierge extra;0.92
+carottes sauce yaourt;diner;Persil frais (optionnel);5;g;Persil, frais;1
+carottes à croquer;dejeuner;carotte;1;pièce;Carotte, crue;70
+chili sin carne;diner;Oignons;100;g;Oignon, cru;1
+chili sin carne;diner;Ail;5;g;Ail, cru;1
+chili sin carne;diner;Poivrons rouges;100;g;Poivron rouge, cru;1
+chili sin carne;diner;Tomates concassées en boîte;200;ml;Tomate, pulpe, appertisée;1000
+chili sin carne;diner;Haricots rouges en boîte;150;g;Haricot rouge, appertisé, égoutté;1
+chili sin carne;diner;Lentilles corail;50;g;Lentille corail, cuite;1
+chili sin carne;diner;Bouillon de légumes;250;ml;Bouillon de légumes, déshydraté reconstitué;1000
+chili sin carne;diner;Poudre de chili;5;g;Poivre de Cayenne ou piment de Cayenne;1
+chili sin carne;diner;Cumin en poudre;2;g;Cumin, graine;1
+chili sin carne;diner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+chili végétarien;diner;Oignon;1;pièce;Oignon, cru;110
+chili végétarien;diner;Poivron rouge;1;pièce;Poivron rouge, cru;150
+chili végétarien;diner;Carotte;1;pièce;Carotte, crue;70
+chili végétarien;diner;Tomates concassées en boîte;200;g;Tomate, pulpe, appertisée;1
+chili végétarien;diner;Haricots rouges cuits (en boîte);150;g;Haricot rouge, appertisé, égoutté;1
+chili végétarien;diner;Pois chiches cuits (en boîte);100;g;Pois chiche, appertisé, égoutté;1
+chili végétarien;diner;Pâte de tomate;25;g;Tomate, double concentré, appertisé;1
+chili végétarien;diner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+chili végétarien;diner;Ail;1;pièce;Ail, cru;60
+chili végétarien;diner;Poudre de chili;5;g;Poivre de Cayenne ou piment de Cayenne;1
+chili végétarien;diner;Cumin moulu;2;g;Cumin, graine;1
+chips;dejeuner;chips;150;g;Pomme de terre, sans peau, crue;1
+chocolat;gouter;chocolat noir ou au lait;50;g;Chocolat au lait, tablette;1
+clémentine;gouter;clémentine;1;pièce;Clémentine, pulpe, crue;80
+compote;diner,dejeuner,gouter;pommes;250;g;Pomme, pulpe et peau, crue;1
+compote;diner,dejeuner,gouter;sucre;30;g;Sucre blanc;1
+compote;diner,dejeuner,gouter;jus de citron;5;ml;Jus de citron, pur jus;1000
+concombre;dejeuner;concombre;1;pièce;Concombre, pulpe et peau, cru;300
+concombre;dejeuner;huile d'olive;10;ml;Huile d'olive vierge extra;0.92
+concombre;dejeuner;vinaigre blanc;15;ml;Vinaigre;1.01
+concombre en vinaigrette;diner;concombre;200;g;Concombre, pulpe et peau, cru;1
+concombre en vinaigrette;diner;vinaigre blanc;30;ml;Vinaigre;1.01
+concombre en vinaigrette;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+concombre en vinaigrette;diner;échalote;20;g;Échalote, crue;1
+cordons bleus avec haricots verts;dejeuner;escalope de poulet;150;g;Poulet, filet, sans peau, cru;1
+cordons bleus avec haricots verts;dejeuner;jambon de Paris;30;g;Jambon cuit, de Paris, découenné dégraissé;1
+cordons bleus avec haricots verts;dejeuner;fromage (emmental ou gruyère);30;g;Emmental ou emmenthal;1
+cordons bleus avec haricots verts;dejeuner;farine;30;g;Farine de blé tendre ou froment T55 (pour pains);1
+cordons bleus avec haricots verts;dejeuner;œuf;1;pièce;Oeuf, cru;60
+cordons bleus avec haricots verts;dejeuner;chapelure;50;g;;1
+cordons bleus avec haricots verts;dejeuner;huile de cuisson;15;ml;;1000
+cordons bleus avec haricots verts;dejeuner;haricots verts frais;150;g;Haricot vert, cru;1
+cordons bleus avec haricots verts;dejeuner;beurre ou huile (pour les haricots);10;g;Beurre à 82% MG, doux;1
+couscous;diner;couscous;75;g;Couscous (semoule de blé dur roulée précuite à la vapeur), crue;1
+couscous;diner;bouillon cube (volaille ou légume);0.5;pièce;Bouillon de volaille, déshydraté reconstitué;1000
+couscous;diner;carotte;1;pièce;Carotte, crue;70
+couscous;diner;courgette;50;g;Courgette, pulpe et peau, crue;1
+couscous;diner;tomate;1;pièce;Tomate, crue;120
+couscous;diner;oignon;0.5;pièce;Oignon, cru;110
+couscous;diner;pois chiches (en boîte);75;g;Pois chiche, appertisé, égoutté;1
+couscous;diner;huile d'olive;10;ml;Huile d'olive vierge extra;0.92
+croque monsieur;diner;pain de mie;2;pièce;Pain de mie, courant;1000
+croque monsieur;diner;fromage (emmental ou similaire);40;g;Emmental ou emmenthal;1
+croque monsieur;diner;jambon de Paris;50;g;Jambon cuit, de Paris, découenné dégraissé;1
+croque monsieur;diner;beurre;15;g;Beurre à 82% MG, doux;1
+croziflette;diner;crozets (pâtes savoyardes);100;g;Pâtes sèches standard, crues;1
+croziflette;diner;reblochon;100;g;Reblochon;1
+croziflette;diner;pommes de terre;150;g;Pomme de terre, sans peau, crue;1
+croziflette;diner;oignons;50;g;Oignon, cru;1
+croziflette;diner;lardons ou bacon;50;g;Lardon nature, cru;1
+croziflette;diner;crème fraîche;50;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+céleri rémoulade;diner;céleri-rave;150;g;Céleri-rave, cru;1
+céleri rémoulade;diner;mayonnaise;50;g;Mayonnaise (70% MG min.);1
+céleri rémoulade;diner;moutarde;5;g;Moutarde;1
+céleri rémoulade;diner;jus de citron;10;ml;Jus de citron, pur jus;1000
+dahl de lentilles;diner;lentilles corail;80;g;Lentille corail, sèche;1
+dahl de lentilles;diner;oignon;1;pièce;Oignon, cru;110
+dahl de lentilles;diner;ail;2;gousses;Ail, cru;1000
+dahl de lentilles;diner;tomate;1;pièce;Tomate, crue;120
+dahl de lentilles;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+dahl de lentilles;diner;cumin en poudre;1;g;Cumin, graine;1
+dahl de lentilles;diner;curcuma en poudre;0.5;g;Curcuma, poudre;1
+dahl de lentilles;diner;coriandre fraîche (optionnel);5;g;Coriandre, fraiche;1
+fajitas;diner;tortillas blé;2;pièces;Tortilla souple (à garnir), à base de blé;1000
+fajitas;diner;poulet;100;g;Poulet, viande et peau, cru;1
+fajitas;diner;poivron rouge;0.5;pièce;Poivron rouge, cru;150
+fajitas;diner;poivron jaune;0.5;pièce;Poivron jaune, cru;150
+fajitas;diner;oignon;0.5;pièce;Oignon, cru;110
+fajitas;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+fajitas;diner;paprika;2;g;Paprika;1
+fajitas;diner;cumin;1;g;Cumin, graine;1
+fajitas;diner;ail;1;pièce;Ail, cru;60
+fajitas;diner;crème fraîche ou fromage râpé;30;g;Crème de lait, 30% MG, épaisse, rayon frais;1
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Viande hachée (bœuf ou poulet);150;g;Bœuf, steak haché 15% MG, cru;1
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Tortillas (blé ou maïs);2;pièce;Tortilla souple (à garnir), à base de blé;40
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Tomate;100;g;Tomate, crue;1
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Fromage râpé (emmental ou cheddar);40;g;Emmental ou emmenthal râpé;1
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Sauce césar;50;ml;Salade César au poulet (salade verte, fromage, croûtos, sauce);1000
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Oignon;50;g;Oignon, cru;1
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Poivron;75;g;Poivron, vert, jaune ou rouge, cru;1
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+fajitas viande hachée avec salade tomate, fromage râpé et sauce césar;dejeuner;Épices (cumin, paprika);2;g;Cumin, graine;1
+fajitas végétarien;dejeuner;tortillas de blé;2;pièces;Tortilla souple (à garnir), à base de blé;1000
+fajitas végétarien;dejeuner;poivron rouge;0.5;pièce;Poivron rouge, cru;150
+fajitas végétarien;dejeuner;poivron jaune;0.5;pièce;Poivron jaune, cru;150
+fajitas végétarien;dejeuner;oignon;0.5;pièce;Oignon, cru;110
+fajitas végétarien;dejeuner;champignons de Paris;100;g;Champignon, morille, crue;1
+fajitas végétarien;dejeuner;courgette;100;g;Courgette, pulpe et peau, crue;1
+fajitas végétarien;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+fajitas végétarien;dejeuner;cumin;1;g;Cumin, graine;1
+fajitas végétarien;dejeuner;paprika;1;g;Paprika;1
+fajitas végétarien;dejeuner;citron frais;0.25;pièce;Citron, pulpe, cru;100
+fajitas végétarien;dejeuner;crème fraîche ou fromage blanc;30;g;Crème de lait, 30% MG, épaisse, rayon frais;1
+fajitas végétarien;dejeuner;tomate;1;pièce;Tomate, crue;120
+fromage;dejeuner;fromage (camembert ou similaire);100;g;Camembert, sans précision;1
+fromage et pain;dejeuner;pain;100;g;Pain, baguette, courante;1
+fromage et pain;dejeuner;fromage (emmental ou cheddar);50;g;Emmental ou emmenthal;1
+gaspacho;diner;tomates;300;g;Tomate, crue;1
+gaspacho;diner;concombre;100;g;Concombre, pulpe et peau, cru;1
+gaspacho;diner;poivron rouge;50;g;Poivron rouge, cru;1
+gaspacho;diner;oignon;30;g;Oignon, cru;1
+gaspacho;diner;ail;5;g;Ail, cru;1
+gaspacho;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+gaspacho;diner;vinaigre blanc;10;ml;Vinaigre;1.01
+hot dog;dejeuner;pain à hot dog;1;pièce;Pain pour hamburger ou hot dog (bun), préemballé;1000
+hot dog;dejeuner;saucisse de Francfort;1;pièce;Saucisse de Francfort;1000
+hot dog;dejeuner;ketchup;15;ml;Ketchup;1000
+hot dog;dejeuner;moutarde;10;ml;Moutarde;1000
+hot dog;dejeuner;oignons (facultatif);30;g;Oignon, cru;1
+hot dog aux oignons grillés;diner;saucisse de Francfort;1;pièce;Saucisse de Francfort;1000
+hot dog aux oignons grillés;diner;pain à hot dog;1;pièce;Pain pour hamburger ou hot dog (bun), préemballé;1000
+hot dog aux oignons grillés;diner;oignon;50;g;Oignon, cru;1
+hot dog aux oignons grillés;diner;beurre ou huile;10;g;Beurre à 82% MG, doux;1
+hot dog aux oignons grillés;diner;moutarde;10;g;Moutarde;1
+jus;gouter;jus de fruit (orange, pomme ou raisin);250;ml;Jus multifruit, pur jus, standard;1.04
+melon;dejeuner,diner,gouter;melon;0.25;pièce;Melon cantaloup (par ex.: Charentais, de Cavaillon) pulpe, cru;1000
+mirabelles;gouter;mirabelles fraiches;250;g;;1
+nectarines;gouter,dejeuner;nectarine;1;pièce;Nectarine ou brugnon, pulpe et peau, crue;150
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Nouilles (oeuf ou blé);100;g;Pâtes sèches standard, crues;1
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Poivron rouge;0.5;pièce;Poivron rouge, cru;150
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Carotte;1;pièce;Carotte, crue;70
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Courgette;0.5;pièce;Courgette, pulpe et peau, crue;200
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Cacahuètes concassées;30;g;Cacahuète ou Arachide;1
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Sauce soja;30;ml;Sauce soja, préemballée;1000
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Huile de cuisson;15;ml;Huile de tournesol;0.92
+nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja);diner;Ail;1;pièce;Ail, cru;60
+omelette campagnarde;diner;œufs;2;pièce;Oeuf, cru;60
+omelette campagnarde;diner;pommes de terre;100;g;Pomme de terre, sans peau, crue;1
+omelette campagnarde;diner;lardons ou bacon;50;g;Lardon nature, cru;1
+omelette campagnarde;diner;oignon;50;g;Oignon, cru;1
+omelette campagnarde;diner;beurre ou huile;15;g;Beurre à 82% MG, doux;1
+pain beurre jambon;dejeuner;pain de mie ou baguette;0.33;pièce;Baguette;
+pain beurre jambon;dejeuner;beurre;10;g;Beurre à 82% MG, doux;1
+pain beurre jambon;dejeuner;jambon de Paris;30;g;Jambon cuit, de Paris, découenné dégraissé;1
+pastèque;gouter,dejeuner,diner;pastèque;400;g;Pastèque, pulpe, crue;1
+petit-déjeuner classique;petit-dejeuner;pain;50;g;Pain, baguette, courante;1
+petit-déjeuner classique;petit-dejeuner;beurre;10;g;Beurre à 82% MG, doux;1
+petit-déjeuner classique;petit-dejeuner;confiture;20;g;Confiture de fraise (extra ou classique);1
+petit-déjeuner classique;petit-dejeuner;lait;200;ml;Lait demi-écrémé, UHT;1.03
+petit-déjeuner classique;petit-dejeuner;chocolat en poudre;15;g;Cacao, non sucré, poudre soluble;1
+petit-déjeuner classique;petit-dejeuner;sucre;5;g;Sucre blanc;1
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;pain;100;g;Pain, baguette, courante;1
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;Saint-Moret (fromage frais);50;g;Spécialité fromagère non affinée environ 20% MG, type fromage en barquette à tartiner ou coque fromagère;1
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;jambon de Paris;50;g;Jambon cuit, de Paris, découenné dégraissé;1
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;saucisson sec;50;g;Saucisson sec;1
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;tomate;1;pièce;Tomate, crue;120
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;emmental;50;g;Emmental ou emmenthal;1
+pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips);dejeuner;chips;50;g;Chips de pommes de terre, standard;1
+pique-nique tiré du sac;dejeuner;pain;100;g;Pain, baguette, courante;1
+pique-nique tiré du sac;dejeuner;jambon;50;g;Jambon cuit, supérieur, découenné dégraissé;1
+pique-nique tiré du sac;dejeuner;fromage;50;g;Emmental ou emmenthal;1
+pique-nique tiré du sac;dejeuner;beurre;10;g;Beurre à 82% MG, doux;1
+pique-nique tiré du sac;dejeuner;tomate;1;pièce;Tomate, crue;120
+pique-nique tiré du sac;dejeuner;laitue;30;g;Laitue, crue;1
+pique-nique tiré du sac;dejeuner;pomme;1;pièce;Pomme, pulpe et peau, crue;150
+pique-nique tiré du sac;dejeuner;barre chocolatée;1;pièce;Barre chocolat au lait avec nougat;1000
+poires;diner;poire;1;pièce;Poire, pulpe et peau, crue;170
+poires au chocolat;diner;poire;1;pièce;Poire, pulpe et peau, crue;170
+poires au chocolat;diner;chocolat noir;50;g;Chocolat noir à moins de 70% de cacao, à croquer, tablette;1
+poires au chocolat;diner;beurre;10;g;Beurre à 82% MG, doux;1
+poires au chocolat;diner;sucre;15;g;Sucre blanc;1
+poisson pané avec petits pois;diner;Filet de poisson blanc (cabillaud, lieu ou similaire);150;g;Cabillaud, cru;1
+poisson pané avec petits pois;diner;Farine;30;g;Farine de blé tendre ou froment T55 (pour pains);1
+poisson pané avec petits pois;diner;Œuf;1;pièce;Oeuf, cru;60
+poisson pané avec petits pois;diner;Chapelure;40;g;;1
+poisson pané avec petits pois;diner;Petits pois surgelés;100;g;Petits pois, surgelés, crus;1
+poisson pané avec petits pois;diner;Huile de cuisson;15;ml;Huile de tournesol;0.92
+poisson pané avec riz;diner;filet de poisson (cabillaud, lieu ou surgelé);150;g;Cabillaud, cru;1
+poisson pané avec riz;diner;farine;30;g;Farine de blé tendre ou froment T55 (pour pains);1
+poisson pané avec riz;diner;œuf;1;pièce;Oeuf, cru;60
+poisson pané avec riz;diner;chapelure;40;g;;1
+poisson pané avec riz;diner;riz blanc;80;g;Riz blanc, cru;1
+poisson pané avec riz;diner;huile ou beurre pour la cuisson;15;ml;;1000
+pommes;dejeuner,gouter;pommes;1;pièce;Pomme, pulpe et peau, crue;150
+pommes de terre braisées à la crème et aux lardons;diner;pommes de terre;250;g;Pomme de terre, sans peau, crue;1
+pommes de terre braisées à la crème et aux lardons;diner;lardons fumés;50;g;Lardon fumé, cru;1
+pommes de terre braisées à la crème et aux lardons;diner;crème fraîche;100;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+pommes de terre braisées à la crème et aux lardons;diner;oignon;50;g;Oignon, cru;1
+pommes de terre braisées à la crème et aux lardons;diner;beurre;10;g;Beurre à 82% MG, doux;1
+pommes de terre braisées à la crème et aux lardons;diner;persil frais (optionnel);5;g;Persil, frais;1
+pommes de terre à la crème;diner;Pommes de terre;200;g;Pomme de terre, sans peau, crue;1
+pommes de terre à la crème;diner;Crème fraîche;100;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+pommes de terre à la crème;diner;Oignon;50;g;Oignon, cru;1
+pommes de terre à la crème;diner;Beurre;15;g;Beurre à 82% MG, doux;1
+pommes de terre à la crème;diner;Persil frais (facultatif);5;g;Persil, frais;1
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;poulet (blanc ou cuisse);150;g;Poulet, viande et peau, cru;1
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;riz blanc;75;g;Riz blanc, cru;1
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;lait de coco;100;ml;Lait de coco ou Crème de coco;1.03
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;ananas frais ou en conserve;80;g;Ananas, pulpe, cru;1
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;noix de cajou;30;g;Noix de cajou, grillée, salée;1
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;oignon;1;pièce;Oignon, cru;110
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;ail;1;gousse;Ail, cru;1000
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;curry en poudre;5;g;Curry, poudre;1
+poulet au curry avec riz, lait de coco, ananas et noix de cajou;diner;huile ou beurre;15;ml;;1000
+poulet aux champignons à la crème avec riz;dejeuner;poulet (escalope ou morceau);150;g;Poulet, escalope panée;1
+poulet aux champignons à la crème avec riz;dejeuner;champignons de Paris;100;g;Champignon, morille, crue;1
+poulet aux champignons à la crème avec riz;dejeuner;crème fraîche;100;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+poulet aux champignons à la crème avec riz;dejeuner;riz blanc;75;g;Riz blanc, cru;1
+poulet aux champignons à la crème avec riz;dejeuner;oignon;50;g;Oignon, cru;1
+poulet aux champignons à la crème avec riz;dejeuner;ail;5;g;Ail, cru;1
+poulet aux champignons à la crème avec riz;dejeuner;huile d'olive ou beurre;15;ml;;1000
+poulet aux champignons à la crème avec riz;dejeuner;bouillon de poule ou eau;200;ml;Bouillon de volaille, déshydraté reconstitué;1000
+poulet aux champignons à la crème avec riz;dejeuner;thym ou herbes de Provence;2;g;Herbes de Provence, séchées;1
+poulet curry avec riz;dejeuner,diner;poulet (blanc ou cuisses);150;g;Poulet, viande et peau, cru;1
+poulet curry avec riz;dejeuner,diner;riz blanc;75;g;Riz blanc, cru;1
+poulet curry avec riz;dejeuner,diner;oignon;50;g;Oignon, cru;1
+poulet curry avec riz;dejeuner,diner;curry en poudre;5;g;Curry, poudre;1
+poulet curry avec riz;dejeuner,diner;huile ou beurre;10;g;;1
+poulet curry coco avec riz;dejeuner;Poulet (filets ou cuisses);150;g;Poulet, cuisse, viande et peau, cru;1
+poulet curry coco avec riz;dejeuner;Riz blanc;100;g;Riz blanc, cru;1
+poulet curry coco avec riz;dejeuner;Oignon;0.5;pièce;Oignon, cru;110
+poulet curry coco avec riz;dejeuner;Ail;1;gousse;Ail, cru;1000
+poulet curry coco avec riz;dejeuner;Lait de coco;150;ml;Lait de coco ou Crème de coco;1.03
+poulet curry coco avec riz;dejeuner;Curry en poudre;5;g;Curry, poudre;1
+poulet curry coco avec riz;dejeuner;Tomate (frais ou concentré);50;g;Tomate, crue;1
+poulet curry coco avec riz;dejeuner;Huile de cuisine;10;ml;Huile de tournesol;0.92
+prunes;gouter;prunes fraîches;150;g;Prune, crue;1
+pâtes aux courgettes et à la tomate;diner;Pâtes sèches;80;g;Pâtes sèches standard, crues;1
+pâtes aux courgettes et à la tomate;diner;Courgette;150;g;Courgette, pulpe et peau, crue;1
+pâtes aux courgettes et à la tomate;diner;Tomate fraîche;150;g;Tomate, crue;1
+pâtes aux courgettes et à la tomate;diner;Oignon;50;g;Oignon, cru;1
+pâtes aux courgettes et à la tomate;diner;Ail;5;g;Ail, cru;1
+pâtes aux courgettes et à la tomate;diner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+pâtes aux courgettes et à la tomate;diner;Herbes de Provence;1;g;Herbes de Provence, séchées;1
+pâtes bolognaise;diner;pâtes (spaghetti ou penne);100;g;Pâtes sèches standard, crues;1
+pâtes bolognaise;diner;viande hachée (bœuf);150;g;Bœuf, steak haché 15% MG, cru;1
+pâtes bolognaise;diner;tomate concassée (boîte);200;ml;Tomate, pulpe, appertisée;1000
+pâtes bolognaise;diner;oignon;1;pièce;Oignon, cru;110
+pâtes bolognaise;diner;ail;1;gousse;Ail, cru;1000
+pâtes bolognaise;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+pâtes bolognaise;diner;herbes de Provence (optionnel);2;g;Herbes de Provence, séchées;1
+pâtes carbonara;diner;pâtes (spaghetti ou penne);100;g;Pâtes sèches standard, crues;1
+pâtes carbonara;diner;lard ou bacon;50;g;Filet de bacon;1
+pâtes carbonara;diner;œuf;1;pièce;Oeuf, cru;60
+pâtes carbonara;diner;fromage râpé (parmesan ou emmental);30;g;Emmental ou emmenthal râpé;1
+pâtes pesto;diner;pâtes;100;g;Pâtes sèches standard, crues;1
+pâtes pesto;diner;basilic frais;20;g;Basilic, frais;1
+pâtes pesto;diner;pignons de pin;15;g;Pignon de pin;1
+pâtes pesto;diner;parmesan râpé;25;g;Parmesan;1
+pâtes pesto;diner;ail;1;pièce;Ail, cru;60
+pâtes pesto;diner;huile d'olive;50;ml;Huile d'olive vierge extra;0.92
+pâtes pesto rosso;diner;pâtes (fusilli ou penne);80;g;Pâtes sèches standard, crues;1
+pâtes pesto rosso;diner;tomates cerises;100;g;Tomate cerise, crue;1
+pâtes pesto rosso;diner;tomates séchées;20;g;Tomate, séchée;1
+pâtes pesto rosso;diner;ail;1;pièce;Ail, cru;60
+pâtes pesto rosso;diner;parmesan râpé;20;g;Parmesan;1
+pâtes pesto rosso;diner;pignons de pin;15;g;Pignon de pin;1
+pâtes pesto rosso;diner;huile d'olive;30;ml;Huile d'olive vierge extra;0.92
+pêches;diner,gouter;pêche fraîche;1;pièce;Pêche, pulpe et peau, crue;150
+radis;dejeuner;radis frais;150;g;Radis rouge, cru;1
+raisins;dejeuner;raisins frais;150;g;Raisin, cru;1
+ratatouille;diner;aubergine;100;g;Aubergine, crue;1
+ratatouille;diner;courgette;100;g;Courgette, pulpe et peau, crue;1
+ratatouille;diner;poivron rouge;75;g;Poivron rouge, cru;1
+ratatouille;diner;tomate;100;g;Tomate, crue;1
+ratatouille;diner;oignon;50;g;Oignon, cru;1
+ratatouille;diner;ail;5;g;Ail, cru;1
+ratatouille;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+ratatouille;diner;herbes de Provence;1;g;Herbes de Provence, séchées;1
+risotto végétarien;diner;riz arborio;80;g;Riz blanc, cru;1
+risotto végétarien;diner;oignon;50;g;Oignon, cru;1
+risotto végétarien;diner;carotte;50;g;Carotte, crue;1
+risotto végétarien;diner;courgette;50;g;Courgette, pulpe et peau, crue;1
+risotto végétarien;diner;bouillon de légumes;250;ml;Bouillon de légumes, déshydraté reconstitué;1000
+risotto végétarien;diner;vin blanc sec;50;ml;Vin blanc sec;1000
+risotto végétarien;diner;beurre;15;g;Beurre à 82% MG, doux;1
+risotto végétarien;diner;fromage râpé (emmental);20;g;Emmental ou emmenthal râpé;1
+risotto végétarien;diner;huile d'olive;10;ml;Huile d'olive vierge extra;0.92
+riz et dahl de lentilles corail;dejeuner;riz blanc;75;g;Riz blanc, cru;1
+riz et dahl de lentilles corail;dejeuner;lentilles corail;50;g;Lentille corail, sèche;1
+riz et dahl de lentilles corail;dejeuner;oignon;1;pièce;Oignon, cru;110
+riz et dahl de lentilles corail;dejeuner;ail;1;gousse;Ail, cru;1000
+riz et dahl de lentilles corail;dejeuner;tomate;1;pièce;Tomate, crue;120
+riz et dahl de lentilles corail;dejeuner;curcuma;1;pincée;Curcuma, poudre;1000
+riz et dahl de lentilles corail;dejeuner;cumin en poudre;0.5;cuillère à café;Cumin, graine;1000
+riz et dahl de lentilles corail;dejeuner;huile ou beurre;10;ml;;1000
+riz et ratatouille;diner;riz blanc;75;g;Riz blanc, cru;1
+riz et ratatouille;diner;aubergine;100;g;Aubergine, crue;1
+riz et ratatouille;diner;courgette;100;g;Courgette, pulpe et peau, crue;1
+riz et ratatouille;diner;poivron rouge;75;g;Poivron rouge, cru;1
+riz et ratatouille;diner;tomate;100;g;Tomate, crue;1
+riz et ratatouille;diner;oignon;50;g;Oignon, cru;1
+riz et ratatouille;diner;ail;5;g;Ail, cru;1
+riz et ratatouille;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+rougail saucisses avec riz;diner;Saucisse;1;pièce;Saucisse de Toulouse, crue;80
+rougail saucisses avec riz;diner;Tomate;150;g;Tomate, crue;1
+rougail saucisses avec riz;diner;Oignon;50;g;Oignon, cru;1
+rougail saucisses avec riz;diner;Ail;5;g;Ail, cru;1
+rougail saucisses avec riz;diner;Piment ou poivron rouge;30;g;Poivron rouge, cru;1
+rougail saucisses avec riz;diner;Gingembre frais;5;g;Gingembre, racine crue;1
+rougail saucisses avec riz;diner;Huile;15;ml;Huile de tournesol;0.92
+rougail saucisses avec riz;diner;Riz blanc;60;g;Riz blanc, cru;1
+salade;diner;laitue ou salade verte;100;g;Laitue, crue;1
+salade;diner;tomate;1;pièce;Tomate, crue;120
+salade;diner;concombre;50;g;Concombre, pulpe et peau, cru;1
+salade;diner;carotte;50;g;Carotte, crue;1
+salade;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade;diner;vinaigre blanc;5;ml;Vinaigre;1.01
+salade concombres feta;diner;concombre;200;g;Concombre, pulpe et peau, cru;1
+salade concombres feta;diner;feta;50;g;Fromage type feta, au lait de vache;1
+salade concombres feta;diner;tomate;100;g;Tomate, crue;1
+salade concombres feta;diner;oignon rouge;30;g;Oignon, cru;1
+salade concombres feta;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade concombres feta;diner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade de blé;dejeuner;blé concassé ou grains de blé;75;g;Blé tendre entier ou froment, cru;1
+salade de blé;dejeuner;tomate;1;pièce;Tomate, crue;120
+salade de blé;dejeuner;concombre;0.25;pièce;Concombre, pulpe et peau, cru;300
+salade de blé;dejeuner;oignon rouge;0.25;pièce;Oignon, cru;110
+salade de blé;dejeuner;persil frais;10;g;Persil, frais;1
+salade de blé;dejeuner;menthe fraîche;5;g;Menthe, fraîche;1
+salade de blé;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de blé;dejeuner;jus de citron;15;ml;Jus de citron, pur jus;1000
+salade de concombre;diner;concombre;1;pièce;Concombre, pulpe et peau, cru;300
+salade de concombre;diner;oignon;0.25;pièce;Oignon, cru;110
+salade de concombre;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de concombre;diner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade de fruits;gouter;pomme;1;pièce;Pomme, pulpe et peau, crue;150
+salade de fruits;gouter;banane;1;pièce;Banane, pulpe, crue;120
+salade de fruits;gouter;orange;1;pièce;Orange, pulpe, crue;130
+salade de fruits;gouter;raisin;100;g;Raisin, cru;1
+salade de fruits;gouter;kiwi;1;pièce;Kiwi, pulpe et graines, cru;75
+salade de fruits;gouter;jus de citron;15;ml;Jus de citron, pur jus;1000
+salade de lentilles;dejeuner;lentilles corail ou vertes;75;g;Lentille corail, sèche;1
+salade de lentilles;dejeuner;tomate;100;g;Tomate, crue;1
+salade de lentilles;dejeuner;oignon rouge;30;g;Oignon, cru;1
+salade de lentilles;dejeuner;concombre;80;g;Concombre, pulpe et peau, cru;1
+salade de lentilles;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de lentilles;dejeuner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade de lentilles;dejeuner;citron (jus);30;ml;Jus de citron, pur jus;1000
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;lentilles corail cuites;100;g;Lentille corail, cuite;1
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;oignon rouge;0.5;pièce;Oignon, cru;110
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;concombre;150;g;Concombre, pulpe et peau, cru;1
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;tomate;1;pièce;Tomate, crue;120
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;fêta;50;g;Fromage type feta, au lait de vache;1
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;croutons;30;g;Croûtons nature, préemballés;1
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;lardons;40;g;Lardon nature, cru;1
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons;dejeuner;vinaigre;5;ml;Vinaigre;1.01
+salade de melon et pastèque;dejeuner;melon;200;g;Melon cantaloup (par ex.: Charentais, de Cavaillon) pulpe, cru;1
+salade de melon et pastèque;dejeuner;pastèque;200;g;Pastèque, pulpe, crue;1
+salade de melon et pastèque;dejeuner;jus de citron;15;ml;Jus de citron, pur jus;1000
+salade de melon et pastèque;dejeuner;miel;10;g;Miel;1
+salade de melon et pastèque;dejeuner;feuilles de menthe fraîche;3;g;Menthe, fraîche;1
+salade de perles (maïs, concombres, olives, poivrons);dejeuner;maïs en conserve (égoutté);100;g;Maïs doux, appertisé, égoutté;1
+salade de perles (maïs, concombres, olives, poivrons);dejeuner;concombre;100;g;Concombre, pulpe et peau, cru;1
+salade de perles (maïs, concombres, olives, poivrons);dejeuner;olives noires;50;g;;1
+salade de perles (maïs, concombres, olives, poivrons);dejeuner;poivron rouge;75;g;Poivron rouge, cru;1
+salade de perles (maïs, concombres, olives, poivrons);dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de perles (maïs, concombres, olives, poivrons);dejeuner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Pâtes;80;g;Pâtes sèches standard, crues;1
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Concombre;100;g;Concombre, pulpe et peau, cru;1
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Tomate;100;g;Tomate, crue;1
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Mozzarella;75;g;Mozzarella au lait de vache;1
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Maïs en conserve;75;g;Maïs doux, appertisé, égoutté;1
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de pâtes (concombre, mozzarella, tomate, maïs);dejeuner;Vinaigre blanc;10;ml;Vinaigre;1.01
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Fusilli (pâtes sèches);80;g;Pâtes sèches standard, crues;1
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Tomate cerise;100;g;Tomate cerise, crue;1
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Concombre;100;g;Concombre, pulpe et peau, cru;1
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Mozzarella fraîche;75;g;Mozzarella au lait de vache;1
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Thon à l'huile (conserve);60;g;Thon à l'huile, appertisé, égoutté;1
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Pesto;30;g;Sauce pesto, préemballée;1
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile);dejeuner;Vinaigre;10;ml;Vinaigre;1.01
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;pâtes (fusilli ou penne);100;g;Pâtes sèches standard, crues;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;tomates;150;g;Tomate, crue;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;maïs (en conserve ou surgelé);100;g;Maïs doux, appertisé, égoutté;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;mozzarella;75;g;Mozzarella au lait de vache;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;concombre;150;g;Concombre, pulpe et peau, cru;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;poivron;100;g;Poivron, vert, jaune ou rouge, cru;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;chou rouge;100;g;Chou rouge, cru;1
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge);dejeuner;vinaigre blanc ou jus de citron;10;ml;Vinaigre;1.01
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;riz cuit;150;g;Riz blanc, cuit, non salé;1
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;concombre;100;g;Concombre, pulpe et peau, cru;1
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;tomate;100;g;Tomate, crue;1
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;maïs en conserve;75;g;Maïs doux, appertisé, égoutté;1
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;mozzarella;75;g;Mozzarella au lait de vache;1
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de riz au concombre, mozzarella, tomate et maïs;dejeuner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade de riz au thon;dejeuner;riz;75;g;Riz blanc, cru;1
+salade de riz au thon;dejeuner;thon en conserve;100;g;Thon, au naturel, appertisé, égoutté;1
+salade de riz au thon;dejeuner;tomate;1;pièce;Tomate, crue;120
+salade de riz au thon;dejeuner;oignon;0.5;pièce;Oignon, cru;110
+salade de riz au thon;dejeuner;cornichon;30;g;;1
+salade de riz au thon;dejeuner;maïs en conserve;50;g;Maïs doux, appertisé, égoutté;1
+salade de riz au thon;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de riz au thon;dejeuner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade de tomate;dejeuner,diner;Tomates;200;g;Tomate, crue;1
+salade de tomate;dejeuner,diner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade de tomate;dejeuner,diner;Vinaigre;5;ml;Vinaigre;1.01
+salade de tomate;dejeuner,diner;Oignon rouge;20;g;Oignon, cru;1
+salade grecque;dejeuner;tomates;150;g;Tomate, crue;1
+salade grecque;dejeuner;concombre;100;g;Concombre, pulpe et peau, cru;1
+salade grecque;dejeuner;oignon rouge;30;g;Oignon, cru;1
+salade grecque;dejeuner;olives noires;50;g;;1
+salade grecque;dejeuner;fromage feta;60;g;Fromage type feta, au lait de vache;1
+salade grecque;dejeuner;huile d'olive;30;ml;Huile d'olive vierge extra;0.92
+salade grecque;dejeuner;vinaigre blanc;10;ml;Vinaigre;1.01
+salade tomates mozzarella;dejeuner;tomates;150;g;Tomate, crue;1
+salade tomates mozzarella;dejeuner;mozzarella;100;g;Mozzarella au lait de vache;1
+salade tomates mozzarella;dejeuner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade tomates mozzarella;dejeuner;vinaigre balsamique;5;ml;Vinaigre balsamique;1.01
+salade tomates mozzarella;dejeuner;basilic frais;5;g;Basilic, frais;1
+salade verte;dejeuner,diner;salade verte (laitue ou batavia);200;g;Laitue, crue;1
+salade verte;dejeuner,diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+salade verte;dejeuner,diner;vinaigre;5;ml;Vinaigre;1.01
+sandwich;dejeuner;pain de mie;2;tranche(s);Pain de mie, courant;1000
+sandwich;dejeuner;jambon;50;g;Jambon cuit, supérieur, découenné dégraissé;1
+sandwich;dejeuner;fromage;30;g;Emmental ou emmenthal;1
+sandwich;dejeuner;tomate;50;g;Tomate, crue;1
+sandwich;dejeuner;laitue;20;g;Laitue, crue;1
+sandwich;dejeuner;beurre ou mayonnaise;10;g;Beurre à 82% MG, doux;1
+sandwich fromage à tartiner salade tomate thon;dejeuner;pain de mie;2;tranche(s);Pain de mie, courant;1000
+sandwich fromage à tartiner salade tomate thon;dejeuner;fromage à tartiner;30;g;Spécialité fromagère non affinée environ 20% MG, type fromage en barquette à tartiner ou coque fromagère;1
+sandwich fromage à tartiner salade tomate thon;dejeuner;thon en conserve;50;g;Thon, au naturel, appertisé, égoutté;1
+sandwich fromage à tartiner salade tomate thon;dejeuner;tomate;1;pièce;Tomate, crue;120
+sandwich fromage à tartiner salade tomate thon;dejeuner;salade (laitue ou roquette);30;g;Laitue, crue;1
+sandwich fromage à tartiner salade tomate thon;dejeuner;mayonnaise;10;g;Mayonnaise (70% MG min.);1
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;pain pita;1;pièce;Pain pita;80
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;poulet (filet);100;g;Poulet, filet, sans peau, cru;1
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;épices kebab (mélange);3;g;;1
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;salade (laitue ou roquette);50;g;Laitue, crue;1
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;tomate;100;g;Tomate, crue;1
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;oignon;50;g;Oignon, cru;1
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;sauce blanche (yaourt/mayonnaise);30;ml;Sauce au yaourt;1000
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;sauce tomate ou harissa;20;ml;Harissa (sauce condimentaire);1000
+sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces);diner;huile d'olive;5;ml;Huile d'olive vierge extra;0.92
+saucisse purée;dejeuner;saucisse de Strasbourg ou saucisse fumée;1;pièce;Saucisse de Strasbourg ou Knack;35
+saucisse purée;dejeuner;pommes de terre;200;g;Pomme de terre, sans peau, crue;1
+saucisse purée;dejeuner;beurre;15;g;Beurre à 82% MG, doux;1
+saucisse purée;dejeuner;lait;50;ml;Lait demi-écrémé, UHT;1.03
+saucisses avec pommes de terre rissolées et courgettes;diner;saucisse;1;pièce;Saucisse de Toulouse, crue;80
+saucisses avec pommes de terre rissolées et courgettes;diner;pomme de terre;200;g;Pomme de terre, sans peau, crue;1
+saucisses avec pommes de terre rissolées et courgettes;diner;courgette;150;g;Courgette, pulpe et peau, crue;1
+saucisses avec pommes de terre rissolées et courgettes;diner;huile;15;ml;;1000
+soupe;diner;bouillon de légumes (cube ou poudre);1;pièce;Bouillon de légumes, déshydraté reconstitué;1000
+soupe;diner;carotte;0.5;pièce;Carotte, crue;70
+soupe;diner;pomme de terre;100;g;Pomme de terre, sans peau, crue;1
+soupe;diner;oignon;0.25;pièce;Oignon, cru;110
+spaghetti bolognaise;diner;spaghetti;100;g;Pâtes sèches standard, crues;1
+spaghetti bolognaise;diner;viande hachée de bœuf;150;g;Bœuf, steak haché 15% MG, cru;1
+spaghetti bolognaise;diner;tomate concassée en boîte;200;ml;Tomate, pulpe, appertisée;1000
+spaghetti bolognaise;diner;oignon;50;g;Oignon, cru;1
+spaghetti bolognaise;diner;ail;5;g;Ail, cru;1
+spaghetti bolognaise;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+taboulé;dejeuner;semoule fine;75;g;Semoule de blé dur, crue;1
+taboulé;dejeuner;tomate;1;pièce;Tomate, crue;120
+taboulé;dejeuner;concombre;0.25;pièce;Concombre, pulpe et peau, cru;300
+taboulé;dejeuner;oignon;0.5;pièce;Oignon, cru;110
+taboulé;dejeuner;persil frais;30;g;Persil, frais;1
+taboulé;dejeuner;menthe fraîche;15;g;Menthe, fraîche;1
+taboulé;dejeuner;huile d'olive;20;ml;Huile d'olive vierge extra;0.92
+taboulé;dejeuner;jus de citron;15;ml;Jus de citron, pur jus;1000
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Semoule de couscous;75;g;Couscous (semoule de blé dur roulée précuite à la vapeur), crue;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Tomates;150;g;Tomate, crue;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Oignon rouge;50;g;Oignon, cru;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Poivron rouge;100;g;Poivron rouge, cru;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Feta;60;g;Fromage type feta, au lait de vache;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Persil frais;15;g;Persil, frais;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Menthe fraîche;10;g;Menthe, fraîche;1
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+taboulé à la fêta, tomates, oignons, poivrons et herbes;dejeuner;Jus de citron;10;ml;Jus de citron, pur jus;1000
+tartines de houmous;dejeuner;pain de mie ou pain complet;2;tranche(s);Pain de mie, courant;1000
+tartines de houmous;dejeuner;houmous;50;g;Houmous;1
+tartines de houmous;dejeuner;tomate;50;g;Tomate, crue;1
+tartines de houmous;dejeuner;concombre;50;g;Concombre, pulpe et peau, cru;1
+tartines de houmous;dejeuner;oignon rouge;20;g;Oignon, cru;1
+tartines de houmous;dejeuner;persil frais;5;g;Persil, frais;1
+thon crème ciboulette;dejeuner;boîte de thon au naturel;1;boîte (environ 200g);Thon, au naturel, appertisé, égoutté;1000
+thon crème ciboulette;dejeuner;crème fraîche;100;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+thon crème ciboulette;dejeuner;ciboulette fraîche;10;g;Ciboule ou Ciboulette, fraîche;1
+thon crème ciboulette;dejeuner;jus de citron;5;ml;Jus de citron, pur jus;1000
+tomates;dejeuner;tomates;200;g;Tomate, crue;1
+tomates cerises;dejeuner;tomates cerises;150;g;Tomate cerise, crue;1
+tomates mozarella;diner;tomate;1;pièce;Tomate, crue;120
+tomates mozarella;diner;mozzarella;125;g;Mozzarella au lait de vache;1
+tomates mozarella;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+tomates mozarella;diner;vinaigre balsamique;10;ml;Vinaigre balsamique;1.01
+tomates mozarella;diner;basilic frais;5;g;Basilic, frais;1
+tortilla aux œufs et pommes de terre avec courgettes à la crème;diner;œufs;2;pièce;Oeuf, cru;60
+tortilla aux œufs et pommes de terre avec courgettes à la crème;diner;pommes de terre;150;g;Pomme de terre, sans peau, crue;1
+tortilla aux œufs et pommes de terre avec courgettes à la crème;diner;courgettes;100;g;Courgette, pulpe et peau, crue;1
+tortilla aux œufs et pommes de terre avec courgettes à la crème;diner;crème fraîche;50;ml;Crème de lait, 30% MG, épaisse, rayon frais;1.03
+tortilla aux œufs et pommes de terre avec courgettes à la crème;diner;oignon;30;g;Oignon, cru;1
+tortilla aux œufs et pommes de terre avec courgettes à la crème;diner;huile d'olive;15;ml;Huile d'olive vierge extra;0.92
+tzatziki;diner;yaourt nature;150;ml;Yaourt, lait fermenté ou spécialité laitière, nature;1.03
+tzatziki;diner;concombre;100;g;Concombre, pulpe et peau, cru;1
+tzatziki;diner;ail;1;pièce;Ail, cru;60
+tzatziki;diner;jus de citron;15;ml;Jus de citron, pur jus;1000
+tzatziki;diner;huile d'olive;5;ml;Huile d'olive vierge extra;0.92
+tzatziki;diner;aneth frais (ou herbes de Provence);2;g;Aneth, frais;1
+wok de nouilles aux légumes;diner;nouilles chinoises ou nouilles spaghetti;100;g;Pâtes sèches standard, crues;1
+wok de nouilles aux légumes;diner;carotte;1;pièce;Carotte, crue;70
+wok de nouilles aux légumes;diner;courgette;0.5;pièce;Courgette, pulpe et peau, crue;200
+wok de nouilles aux légumes;diner;poivron rouge ou jaune;0.5;pièce;Poivron rouge, cru;150
+wok de nouilles aux légumes;diner;oignon;0.5;pièce;Oignon, cru;110
+wok de nouilles aux légumes;diner;chou (chou blanc ou chou napa);50;g;Chou blanc, cru;1
+wok de nouilles aux légumes;diner;sauce soja;15;ml;Sauce soja, préemballée;1000
+wok de nouilles aux légumes;diner;huile végétale;15;ml;;1000
+wok de nouilles aux légumes;diner;ail;1;pièce;Ail, cru;60
+wraps jambon salade fromage tomate;dejeuner;tortilla (wrap);1;pièce;Tortilla souple (à garnir), à base de blé;40
+wraps jambon salade fromage tomate;dejeuner;jambon de Paris;50;g;Jambon cuit, de Paris, découenné dégraissé;1
+wraps jambon salade fromage tomate;dejeuner;fromage râpé (emmental ou cheddar);30;g;Emmental ou emmenthal râpé;1
+wraps jambon salade fromage tomate;dejeuner;salade verte (laitue ou roquette);30;g;Laitue, crue;1
+wraps jambon salade fromage tomate;dejeuner;tomate;1;pièce;Tomate, crue;120
+wraps jambon salade fromage tomate;dejeuner;sauce (mayonnaise ou moutarde);15;ml;Mayonnaise (70% MG min.);1000

@@ -1,0 +1,1695 @@
+[
+  {
+    "name": "abricots",
+    "meal_types": [
+      "diner",
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Soupe/fajitas/abricots",
+      "Pain au lait chocolat, abricots",
+      "Abricots et madeleine",
+      "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots",
+      "pains au lait / chocolat / abricots",
+      "brioche / chocolat / abricots",
+      "hot dog ; abricots"
+    ]
+  },
+  {
+    "name": "ananas",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+    ]
+  },
+  {
+    "name": "banane",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - cordons bleus + haricots verts - banane"
+    ]
+  },
+  {
+    "name": "banane au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+    ]
+  },
+  {
+    "name": "bananes",
+    "meal_types": [
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Bananes",
+      "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+    ]
+  },
+  {
+    "name": "bananes au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+    ]
+  },
+  {
+    "name": "bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges)",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges) / Dessert : compote"
+    ]
+  },
+  {
+    "name": "biscuits prince",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Prince"
+    ]
+  },
+  {
+    "name": "boulgour au poulet sauce curry",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+    ]
+  },
+  {
+    "name": "brioche",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brioche / chocolat / abricots"
+    ]
+  },
+  {
+    "name": "brioche au chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brioche au chocolat + fruit",
+      "Brioche au chocolat + pêche"
+    ]
+  },
+  {
+    "name": "brioche chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brioche chocolat + peche"
+    ]
+  },
+  {
+    "name": "brioche chocolat avec fruit",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brioche + chocolat + fruit"
+    ]
+  },
+  {
+    "name": "brioche chocolat avec raisins",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brioche chocolat + raisins"
+    ]
+  },
+  {
+    "name": "brioche et chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brioche et chocolat"
+    ]
+  },
+  {
+    "name": "brownie",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brownie + fruit",
+      "Brownie + sirop",
+      "Pêches et brownie"
+    ]
+  },
+  {
+    "name": "brownies",
+    "meal_types": [
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Brownies, fruit",
+      "Brownies",
+      "Brownies + Pastèque",
+      "brownies / pommes",
+      "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+    ]
+  },
+  {
+    "name": "bruschetta",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Bruschetta (pain de campagne, fromage frais, mozza, tomate), pastèque"
+    ]
+  },
+  {
+    "name": "bruschettas",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Bruschettas"
+    ]
+  },
+  {
+    "name": "burger",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "concombre - burger - pêche",
+      "Salade verte + Burger",
+      "Burgers (pain à burger, tomates, steak, ketchup, mayonnaise, salade, oignons rouges, cornichons) / Dessert : raisins"
+    ]
+  },
+  {
+    "name": "burger avec salade verte",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Gaspacho / Burger + salade verte/flamby"
+    ]
+  },
+  {
+    "name": "burgers",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tomates mozza / Burgers / glaces (mini magnum)"
+    ]
+  },
+  {
+    "name": "bâtonnets de concombre et carottes avec sauce au yaourt",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire"
+    ]
+  },
+  {
+    "name": "bâtonnets de concombres avec sauce",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+    ]
+  },
+  {
+    "name": "camembert",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+    ]
+  },
+  {
+    "name": "camembert braisé",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+    ]
+  },
+  {
+    "name": "carottes râpées",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit",
+      "carottes râpées - cordons bleus + haricots verts - banane",
+      "Carottes râpées, salade de blé, fruit",
+      "Pâtes pesto + carottes râpées"
+    ]
+  },
+  {
+    "name": "carottes sauce yaourt",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+    ]
+  },
+  {
+    "name": "carottes à croquer",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ]
+  },
+  {
+    "name": "chili sin carne",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Chili sin carne, flabby",
+      "Chili sin carne (haricots rouges, poivrons, maïs, sauce tomate) / Dessert : pastèque"
+    ]
+  },
+  {
+    "name": "chili végétarien",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "melon - chili végé - compote"
+    ]
+  },
+  {
+    "name": "chinois",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Fruits, chinois"
+    ]
+  },
+  {
+    "name": "chips",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise",
+      "pique nique (sandwich, chips, pommes)"
+    ]
+  },
+  {
+    "name": "chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "pains au lait / chocolat / abricots",
+      "brioche / chocolat / abricots",
+      "quatre quart / chocolat / pêches"
+    ]
+  },
+  {
+    "name": "clémentine",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Clémentine"
+    ]
+  },
+  {
+    "name": "cocu goûter",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cocu goûter 1"
+    ]
+  },
+  {
+    "name": "cocu goûter 3",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cocu goûter 3"
+    ]
+  },
+  {
+    "name": "compote",
+    "meal_types": [
+      "diner",
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes aux courgettes et à la tomate - compote",
+      "soupe - omelette campagnarde - compote",
+      "melon - wraps (jambon, salade, fromage, tomate) - compote",
+      "melon - chili végé - compote",
+      "salade verte - couscous - compote",
+      "melon - salade de riz (avec thon) - fromage - compote",
+      "soupe - pâtes à la carbonara - compote",
+      "Compotes, madeleines",
+      "Tzatziki, poissons pane, riz, ratatouille, compote",
+      "Salade de lentille, yaourt (option compote)",
+      "Bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges) / Dessert : compote"
+    ]
+  },
+  {
+    "name": "compotes et cigares",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+    ]
+  },
+  {
+    "name": "concombre",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "concombre - poulet curry + riz - fruit",
+      "concombre - burger - pêche"
+    ]
+  },
+  {
+    "name": "concombre en vinaigrette",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Concombre en vinaigrette"
+    ]
+  },
+  {
+    "name": "concours cuisine",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Concours Cuisine",
+      "Concours cuisine",
+      "concours cuisine"
+    ]
+  },
+  {
+    "name": "concours de cuisine",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Concours de cuisine"
+    ]
+  },
+  {
+    "name": "cookies",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cookies, fruit",
+      "Cookies + eau",
+      "Cookies + nectarines",
+      "Mirabelles et cookies",
+      "cookies / peches"
+    ]
+  },
+  {
+    "name": "cordons bleus avec haricots verts",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - cordons bleus + haricots verts - banane"
+    ]
+  },
+  {
+    "name": "couscous",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade verte - couscous - compote"
+    ]
+  },
+  {
+    "name": "croque monsieur",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade de tomate, Croque Mr"
+    ]
+  },
+  {
+    "name": "croziflette",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Croziflette, fruit"
+    ]
+  },
+  {
+    "name": "crème dessert",
+    "meal_types": [
+      "diner",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade - dahl de lentilles - crème dessert",
+      "tartines de houmous - salade grecque - crème dessert"
+    ]
+  },
+  {
+    "name": "céleri rémoulade",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "céleri - spaghetti bolognaise - yaourt aux fruits"
+    ]
+  },
+  {
+    "name": "dahl de lentilles",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade - dahl de lentilles - crème dessert"
+    ]
+  },
+  {
+    "name": "dégustation tuc",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+    ]
+  },
+  {
+    "name": "fajitas",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - fajitas - poires",
+      "Soupe/fajitas/abricots",
+      "Fajitas ( poivron, fromage râpé, sauce tomate, maïs, haricots rouges, oignon, concombre, tomates, crème fraiche ) / poires au chocolat"
+    ]
+  },
+  {
+    "name": "fajitas viande hachée avec salade tomate, fromage râpé et sauce césar",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Fajitas : viande hachée + salade tomate / fromage râpé, sauce césar"
+    ]
+  },
+  {
+    "name": "fajitas végétarien",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Fajitas VG, fruit"
+    ]
+  },
+  {
+    "name": "flabby",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Chili sin carne, flabby"
+    ]
+  },
+  {
+    "name": "flamby",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Pâtes bolognaise, flamby",
+      "Gaspacho / Burger + salade verte/flamby"
+    ]
+  },
+  {
+    "name": "fromage",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit",
+      "melon - salade de riz (avec thon) - fromage - compote"
+    ]
+  },
+  {
+    "name": "fromage et pain",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+    ]
+  },
+  {
+    "name": "fruit",
+    "meal_types": [
+      "dejeuner",
+      "gouter",
+      "diner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit",
+      "concombre - poulet curry + riz - fruit",
+      "marbré + fruit",
+      "quatre-quarts + fruit",
+      "brownie + fruit",
+      "brioche au chocolat + fruit",
+      "melon - sandwich - fruit",
+      "Cookies, fruit",
+      "Brownies, fruit",
+      "Fajitas VG, fruit",
+      "Croziflette, fruit",
+      "Carottes râpées, salade de blé, fruit",
+      "Fruit, chinois"
+    ]
+  },
+  {
+    "name": "fruits",
+    "meal_types": [
+      "gouter",
+      "diner"
+    ],
+    "source_descriptions": [
+      "Fruits, chinois",
+      "Pâtes carbonara, fruits"
+    ]
+  },
+  {
+    "name": "fruits au sirop",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de riz (concombre, mozza, tomate, maïs), fruits au sirop"
+    ]
+  },
+  {
+    "name": "gaspacho",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Gaspacho / Burger + salade verte/flamby",
+      "Gaspacchio, Hot dog + oignon grillés"
+    ]
+  },
+  {
+    "name": "glace",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (concombre, mozza, tomate, maïs), glace",
+      "Risotto VG, glace"
+    ]
+  },
+  {
+    "name": "glaces mini magnum",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tomates mozza / Burgers / glaces (mini magnum)"
+    ]
+  },
+  {
+    "name": "glaces ou bananes au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Riz et ratatouille (aubergines, courgettes, tomates) / Dessert : glaces ou bananes au chocolat (dépend s'il y a un congélateur)"
+    ]
+  },
+  {
+    "name": "goûter",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cocu goûter 2"
+    ]
+  },
+  {
+    "name": "gâteau prince",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Pomme et gâteau type Prince"
+    ]
+  },
+  {
+    "name": "gâteaux barre (quatre-quarts, marbré)",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Gâteaux barre (quatre quart, marbé)"
+    ]
+  },
+  {
+    "name": "gâteaux sablés",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "salade de fruits + gâteaux sablés"
+    ]
+  },
+  {
+    "name": "hot dog",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Hot Dog (option VG), pastèque",
+      "hot dog ; abricots"
+    ]
+  },
+  {
+    "name": "hot dog aux oignons grillés",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Gaspacchio, Hot dog + oignon grillés"
+    ]
+  },
+  {
+    "name": "jus",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Savane + jus"
+    ]
+  },
+  {
+    "name": "liégeois",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois"
+    ]
+  },
+  {
+    "name": "madeleine",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Abricots et madeleine",
+      "gouter dehors / madeleine prunes"
+    ]
+  },
+  {
+    "name": "madeleines",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "yaourt aux fruits + madeleines",
+      "Compotes, madeleines",
+      "Madeleines + Melon"
+    ]
+  },
+  {
+    "name": "madeleines pépites chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "madeleines pépites chocolat / pommes"
+    ]
+  },
+  {
+    "name": "marbré",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "marbré + fruit",
+      "Melon et marbré",
+      "marbré / pommes"
+    ]
+  },
+  {
+    "name": "melon",
+    "meal_types": [
+      "dejeuner",
+      "diner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "melon - wraps (jambon, salade, fromage, tomate) - compote",
+      "melon - chili végé - compote",
+      "melon - salade de riz (avec thon) - fromage - compote",
+      "melon - sandwich - fruit",
+      "Melon, pates pesto, pêches",
+      "Melon",
+      "Madeleines + Melon",
+      "Melon et marbré",
+      "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+    ]
+  },
+  {
+    "name": "mirabelles",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Mirabelles et cookies"
+    ]
+  },
+  {
+    "name": "mont blanc",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Poulet curry, riz (option VG), Mont Blanc",
+      "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+    ]
+  },
+  {
+    "name": "mousse au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - poisson pané + petits poids - mousse au chocolat"
+    ]
+  },
+  {
+    "name": "nectarines",
+    "meal_types": [
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Cookies + nectarines",
+      "Riz et dahl de lentilles corail (carottes, tomates, lait de coco, pois chiches, curry) / Dessert : nectarines"
+    ]
+  },
+  {
+    "name": "nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja)",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+    ]
+  },
+  {
+    "name": "omelette campagnarde",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - omelette campagnarde - compote"
+    ]
+  },
+  {
+    "name": "pain au lait chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Pain au lait chocolat, abricots"
+    ]
+  },
+  {
+    "name": "pain beurre jambon",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ]
+  },
+  {
+    "name": "pain chinois",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Fruit, chinois"
+    ]
+  },
+  {
+    "name": "pain fromages",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+    ]
+  },
+  {
+    "name": "pains au lait",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "pains au lait / chocolat / abricots"
+    ]
+  },
+  {
+    "name": "pastèque",
+    "meal_types": [
+      "gouter",
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "quatre-quarts + pastèque",
+      "salade verte - taboulé - pastèque",
+      "Bruschetta (pain de campagne, fromage frais, mozza, tomate), pastèque",
+      "Hot Dog (option VG), pastèque",
+      "Brownies + Pastèque",
+      "Chili sin carne (haricots rouges, poivrons, maïs, sauce tomate) / Dessert : pastèque",
+      "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+    ]
+  },
+  {
+    "name": "petit-déjeuner classique",
+    "meal_types": [
+      "petit-dejeuner"
+    ],
+    "source_descriptions": [
+      "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales",
+      "Boissons chaudes, tartines et jus de fruits",
+      "Boissons chaudes, céréales, jus de fruits",
+      "Boissons chaudes, brioche, jus de fruit",
+      "Boissons chaudes, tartines, jus de fruit",
+      "Boissons chaudes, céréales, jus de fruit",
+      "Boissons chaudes, brioche, jus de fruit v",
+      "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre",
+      "Lait, jus + banane chocolat, muesli",
+      "Lait / jus, chocolat, pain confiture",
+      "Lait / jus, chocolat, Muesli",
+      "Lait / jus, chocolat + brioche (fromage frais carré) / confiture",
+      "Lait / jus, chocolat, Brioche confiture /fromage",
+      "Pain, beurre et confiture",
+      "pain, confitures, beurre, miel, jus de fruits, lait, chocolat"
+    ]
+  },
+  {
+    "name": "petits lu",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Poire et petits Lu"
+    ]
+  },
+  {
+    "name": "pique-nique",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "pique-nique pour équipe pilote",
+      "Pique nique",
+      "Pique-nique"
+    ]
+  },
+  {
+    "name": "pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pique nique (2unités) : pain, st moret, jambon, saucisson, tomates, emmental, chips"
+    ]
+  },
+  {
+    "name": "pique-nique individuel",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "pique- nique individuel"
+    ]
+  },
+  {
+    "name": "pique-nique tiré du sac",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pique-nique tiré du sac"
+    ]
+  },
+  {
+    "name": "poire",
+    "meal_types": [
+      "diner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire",
+      "Poire et petits Lu"
+    ]
+  },
+  {
+    "name": "poires",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - fajitas - poires"
+    ]
+  },
+  {
+    "name": "poires au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Fajitas ( poivron, fromage râpé, sauce tomate, maïs, haricots rouges, oignon, concombre, tomates, crème fraiche ) / poires au chocolat"
+    ]
+  },
+  {
+    "name": "poisson pané avec petits pois",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - poisson pané + petits poids - mousse au chocolat"
+    ]
+  },
+  {
+    "name": "poisson pané avec riz",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, poissons pane, riz, ratatouille, compote"
+    ]
+  },
+  {
+    "name": "pomme",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Pomme et gâteau type Prince"
+    ]
+  },
+  {
+    "name": "pommes",
+    "meal_types": [
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Sandwichs (fromage à tartiner, salade, tomate, thon) / Dessert : pommes",
+      "brownies / pommes",
+      "marbré / pommes",
+      "pique nique (sandwich, chips, pommes)",
+      "madeleines pépites chocolat / pommes"
+    ]
+  },
+  {
+    "name": "pommes de terre braisées à la crème et aux lardons",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+    ]
+  },
+  {
+    "name": "pommes de terre à la crème",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+    ]
+  },
+  {
+    "name": "poulet au curry avec riz, lait de coco, ananas et noix de cajou",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire"
+    ]
+  },
+  {
+    "name": "poulet aux champignons à la crème avec riz",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits"
+    ]
+  },
+  {
+    "name": "poulet curry avec riz",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "concombre - poulet curry + riz - fruit",
+      "Poulet curry, riz (option VG), Mont Blanc"
+    ]
+  },
+  {
+    "name": "poulet curry coco avec riz",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Radis, poulet curry-coco + riz"
+    ]
+  },
+  {
+    "name": "prunes",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Quatre Quart, Prunes",
+      "gouter dehors / madeleine prunes"
+    ]
+  },
+  {
+    "name": "pâtes aux courgettes et à la tomate",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes aux courgettes et à la tomate - compote"
+    ]
+  },
+  {
+    "name": "pâtes bolognaise",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Pâtes bolognaise, flamby",
+      "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots"
+    ]
+  },
+  {
+    "name": "pâtes carbonara",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Pâtes carbonara, fruits"
+    ]
+  },
+  {
+    "name": "pâtes pesto",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Melon, pates pesto, pêches",
+      "Pâtes pesto + carottes râpées"
+    ]
+  },
+  {
+    "name": "pâtes pesto rosso",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+    ]
+  },
+  {
+    "name": "pâtes à la carbonara",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes à la carbonara - compote"
+    ]
+  },
+  {
+    "name": "pêche",
+    "meal_types": [
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "concombre - burger - pêche",
+      "Brioche chocolat + peche",
+      "Brioche au chocolat + pêche",
+      "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+    ]
+  },
+  {
+    "name": "pêches",
+    "meal_types": [
+      "diner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Melon, pates pesto, pêches",
+      "Pêches et brownie",
+      "cookies / peches",
+      "quatre quart / chocolat / pêches"
+    ]
+  },
+  {
+    "name": "pêches au sirop",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (tomates, maïs, mozza, concombre, poivron, choux rouge), pêches au sirop"
+    ]
+  },
+  {
+    "name": "quatre-quarts",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "quatre-quarts + pastèque",
+      "quatre-quarts + fruit",
+      "Quatre Quart, Prunes",
+      "quatre quart / chocolat / pêches"
+    ]
+  },
+  {
+    "name": "radis",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Radis, poulet curry-coco + riz"
+    ]
+  },
+  {
+    "name": "raisins",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Burgers (pain à burger, tomates, steak, ketchup, mayonnaise, salade, oignons rouges, cornichons) / Dessert : raisins"
+    ]
+  },
+  {
+    "name": "ratatouille",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, poissons pane, riz, ratatouille, compote"
+    ]
+  },
+  {
+    "name": "repas de trek",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Trek"
+    ]
+  },
+  {
+    "name": "repas trappeur",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Repas trappeur"
+    ]
+  },
+  {
+    "name": "risotto végétarien",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Risotto VG, glace"
+    ]
+  },
+  {
+    "name": "riz et dahl de lentilles corail",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Riz et dahl de lentilles corail (carottes, tomates, lait de coco, pois chiches, curry) / Dessert : nectarines"
+    ]
+  },
+  {
+    "name": "riz et ratatouille",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Riz et ratatouille (aubergines, courgettes, tomates) / Dessert : glaces ou bananes au chocolat (dépend s'il y a un congélateur)"
+    ]
+  },
+  {
+    "name": "rougail saucisses avec riz",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Concombre, rougail saucisses + riz"
+    ]
+  },
+  {
+    "name": "salade",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade - dahl de lentilles - crème dessert",
+      "Salade"
+    ]
+  },
+  {
+    "name": "salade concombres feta",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+    ]
+  },
+  {
+    "name": "salade de blé",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Carottes râpées, salade de blé, fruit"
+    ]
+  },
+  {
+    "name": "salade de concombre",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Concombre, rougail saucisses + riz"
+    ]
+  },
+  {
+    "name": "salade de fruits",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "salade de fruits + gâteaux sablés"
+    ]
+  },
+  {
+    "name": "salade de lentilles",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de lentille, yaourt (option compote)"
+    ]
+  },
+  {
+    "name": "salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+    ]
+  },
+  {
+    "name": "salade de melon et pastèque",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Taboulé (fêta, tomate, oignons, poivrons, herbes), salade de melon et pastèque"
+    ]
+  },
+  {
+    "name": "salade de perles (maïs, concombres, olives, poivrons)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+    ]
+  },
+  {
+    "name": "salade de pâtes (concombre, mozzarella, tomate, maïs)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (concombre, mozza, tomate, maïs), glace"
+    ]
+  },
+  {
+    "name": "salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+    ]
+  },
+  {
+    "name": "salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (tomates, maïs, mozza, concombre, poivron, choux rouge), pêches au sirop"
+    ]
+  },
+  {
+    "name": "salade de riz au concombre, mozzarella, tomate et maïs",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de riz (concombre, mozza, tomate, maïs), fruits au sirop"
+    ]
+  },
+  {
+    "name": "salade de riz au thon",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "melon - salade de riz (avec thon) - fromage - compote"
+    ]
+  },
+  {
+    "name": "salade de tomate",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade de tomate",
+      "Salade de tomate, Croque Mr"
+    ]
+  },
+  {
+    "name": "salade grecque",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tartines de houmous - salade grecque - crème dessert"
+    ]
+  },
+  {
+    "name": "salade tomates mozzarella",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+    ]
+  },
+  {
+    "name": "salade verte",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade verte - taboulé - pastèque",
+      "salade verte - couscous - compote",
+      "Salade verte",
+      "Salade verte + Burger",
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ]
+  },
+  {
+    "name": "sandwich",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "melon - sandwich - fruit",
+      "pique nique (sandwich, chips, pommes)"
+    ]
+  },
+  {
+    "name": "sandwich fromage à tartiner salade tomate thon",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Sandwichs (fromage à tartiner, salade, tomate, thon) / Dessert : pommes"
+    ]
+  },
+  {
+    "name": "sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces)",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+    ]
+  },
+  {
+    "name": "saucisse purée",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit"
+    ]
+  },
+  {
+    "name": "saucisses avec pommes de terre rissolées et courgettes",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois"
+    ]
+  },
+  {
+    "name": "savane",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Savane + jus"
+    ]
+  },
+  {
+    "name": "sirop",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brownie + sirop"
+    ]
+  },
+  {
+    "name": "soupe",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes aux courgettes et à la tomate - compote",
+      "soupe - omelette campagnarde - compote",
+      "soupe - poisson pané + petits poids - mousse au chocolat",
+      "soupe - fajitas - poires",
+      "soupe - pâtes à la carbonara - compote",
+      "Soupe/fajitas/abricots",
+      "Soupe",
+      "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots"
+    ]
+  },
+  {
+    "name": "spaghetti bolognaise",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "céleri - spaghetti bolognaise - yaourt aux fruits"
+    ]
+  },
+  {
+    "name": "taboulé",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade verte - taboulé - pastèque",
+      "Taboulé : tomate, feta, persil, concombre, raisin sec, oignons, semoule",
+      "Taboulé, semoule, poivron, concombre, tomate."
+    ]
+  },
+  {
+    "name": "taboulé à la fêta, tomates, oignons, poivrons et herbes",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Taboulé (fêta, tomate, oignons, poivrons, herbes), salade de melon et pastèque"
+    ]
+  },
+  {
+    "name": "tartines de houmous",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tartines de houmous - salade grecque - crème dessert"
+    ]
+  },
+  {
+    "name": "thon crème ciboulette",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Thon, crème, ciboulette"
+    ]
+  },
+  {
+    "name": "tomates",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits"
+    ]
+  },
+  {
+    "name": "tomates cerises",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ]
+  },
+  {
+    "name": "tomates mozarella",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tomates mozza / Burgers / glaces (mini magnum)"
+    ]
+  },
+  {
+    "name": "tortilla aux œufs et pommes de terre avec courgettes à la crème",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+    ]
+  },
+  {
+    "name": "tzatziki",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois",
+      "Tzatziki, poissons pane, riz, ratatouille, compote"
+    ]
+  },
+  {
+    "name": "wok de nouilles aux légumes",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Plat : Wok de nouilles aux légumes (œufs, poivrons, carottes, cacahuètes, sauce soja sucrée)"
+    ]
+  },
+  {
+    "name": "wraps jambon salade fromage tomate",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "melon - wraps (jambon, salade, fromage, tomate) - compote"
+    ]
+  },
+  {
+    "name": "yaourt",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de lentille, yaourt (option compote)"
+    ]
+  },
+  {
+    "name": "yaourt aux fruits",
+    "meal_types": [
+      "diner",
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "céleri - spaghetti bolognaise - yaourt aux fruits",
+      "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits",
+      "yaourt aux fruits + madeleines",
+      "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+    ]
+  }
+]

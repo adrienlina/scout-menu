@@ -1,0 +1,7565 @@
+[
+  {
+    "name": "abricots",
+    "meal_types": [
+      "diner",
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Soupe/fajitas/abricots",
+      "Pain au lait chocolat, abricots",
+      "Abricots et madeleine",
+      "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots",
+      "pains au lait / chocolat / abricots",
+      "brioche / chocolat / abricots",
+      "hot dog ; abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "abricots frais",
+        "quantity": 150.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "ananas",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+    ],
+    "ingredients": [
+      {
+        "name": "ananas frais",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "banane",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - cordons bleus + haricots verts - banane"
+    ],
+    "ingredients": [
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "banane au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chocolat noir ou au lait",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bananes",
+    "meal_types": [
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Bananes",
+      "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+    ],
+    "ingredients": [
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bananes au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chocolat noir ou au lait",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges)",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges) / Dessert : compote"
+    ],
+    "ingredients": [
+      {
+        "name": "tortilla maïs",
+        "quantity": 2.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "thon en conserve",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomates fraiches",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "haricots rouges en conserve",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "sauce tomate",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "poivrons rouges frais",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "biscuits prince",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Prince"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "chocolat noir ou au lait (fourrage)",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "boulgour au poulet sauce curry",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+    ],
+    "ingredients": [
+      {
+        "name": "Boulgour",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poulet (poitrine ou cuisse)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Eau ou bouillon de poule",
+        "quantity": 250.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Curry en poudre",
+        "quantity": 1.0,
+        "unit": "cuillère à café"
+      },
+      {
+        "name": "Crème fraîche ou lait de coco",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 1.0,
+        "unit": "cuillère à soupe"
+      },
+      {
+        "name": "Sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brioche",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brioche / chocolat / abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure boulangère fraîche",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait tiède",
+        "quantity": 50.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brioche au chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brioche au chocolat + fruit",
+      "Brioche au chocolat + pêche"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure boulangère sèche",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "chocolat noir ou pépites de chocolat",
+        "quantity": 40.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brioche chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brioche chocolat + peche"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure de boulanger (ou poudre à lever)",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "chocolat noir ou pépites de chocolat",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brioche chocolat avec fruit",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brioche + chocolat + fruit"
+    ],
+    "ingredients": [
+      {
+        "name": "Brioche nature (du commerce)",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Chocolat noir ou au lait",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brioche chocolat avec raisins",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brioche chocolat + raisins"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure boulangère sèche",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "chocolat noir ou pépites de chocolat",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "raisins secs",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brioche et chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brioche et chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "brioche",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chocolat noir ou au lait",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brownie",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "brownie + fruit",
+      "Brownie + sirop",
+      "Pêches et brownie"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "chocolat noir",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "poudre à lever (levure chimique)",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "brownies",
+    "meal_types": [
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Brownies, fruit",
+      "Brownies",
+      "Brownies + Pastèque",
+      "brownies / pommes",
+      "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "cacao en poudre",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bruschetta",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Bruschetta (pain de campagne, fromage frais, mozza, tomate), pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de baguette",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "basilic frais (ou sec)",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bruschettas",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Bruschettas"
+    ],
+    "ingredients": [
+      {
+        "name": "pain blanc",
+        "quantity": 2.0,
+        "unit": "tranche(s)"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "ail",
+        "quantity": 0.5,
+        "unit": "gousse"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre balsamique",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "persil frais",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "burger",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "concombre - burger - pêche",
+      "Salade verte + Burger",
+      "Burgers (pain à burger, tomates, steak, ketchup, mayonnaise, salade, oignons rouges, cornichons) / Dessert : raisins"
+    ],
+    "ingredients": [
+      {
+        "name": "pain à burger",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "steak haché",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage (emmental ou cheddar)",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "laitue",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "cornichon",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "sauce ketchup",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sauce mayonnaise",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre ou huile",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "burger avec salade verte",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Gaspacho / Burger + salade verte/flamby"
+    ],
+    "ingredients": [
+      {
+        "name": "pain à burger",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "steak haché (15-20% matière grasse)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "salade verte (laitue ou similaire)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage à burger (cheddar ou emmental)",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "ketchup",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "mayonnaise",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "burgers",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tomates mozza / Burgers / glaces (mini magnum)"
+    ],
+    "ingredients": [
+      {
+        "name": "Pain à burger",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Steak haché (15% matière grasse)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Salade",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tomate",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "Fromage à burger (type cheddar)",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sauce ketchup",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sauce moutarde",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Mayonnaise",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bâtonnets de concombre et carottes avec sauce au yaourt",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire"
+    ],
+    "ingredients": [
+      {
+        "name": "Concombre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Carotte",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Yaourt nature",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Citron",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "Sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "Persil frais (optionnel)",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "bâtonnets de concombres avec sauce",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+    ],
+    "ingredients": [
+      {
+        "name": "concombre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "yaourt nature",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "aneth frais (ou persil)",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "citron",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 0.5,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "camembert",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "camembert",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "camembert braisé",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "Camembert entier",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Vin blanc sec",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Échalote",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "Thym frais",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Laurier",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Pain grillé ou baguette",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "carottes râpées",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit",
+      "carottes râpées - cordons bleus + haricots verts - banane",
+      "Carottes râpées, salade de blé, fruit",
+      "Pâtes pesto + carottes râpées"
+    ],
+    "ingredients": [
+      {
+        "name": "carotte",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "carottes sauce yaourt",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "Carottes",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Yaourt nature",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Persil frais (optionnel)",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "carottes à croquer",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ],
+    "ingredients": [
+      {
+        "name": "carotte",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "chili sin carne",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Chili sin carne, flabby",
+      "Chili sin carne (haricots rouges, poivrons, maïs, sauce tomate) / Dessert : pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "Oignons",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivrons rouges",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tomates concassées en boîte",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Haricots rouges en boîte",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Haricots noirs en boîte",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Lentilles corail",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Bouillon de légumes",
+        "quantity": 250.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Poudre de chili",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Cumin en poudre",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "chili végétarien",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "melon - chili végé - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "Oignon",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Poivron rouge",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Carotte",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Tomates concassées en boîte",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "Haricots rouges cuits (en boîte)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Haricots noirs cuits (en boîte)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Pois chiches cuits (en boîte)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Pâte de tomate",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Poudre de chili",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Cumin moulu",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Eau",
+        "quantity": 200.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "chinois",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Fruits, chinois"
+    ],
+    "ingredients": [
+      {
+        "name": "riz",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "carotte",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "petit pois surgelés",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "sauce soja",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "huile de tournesol",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "chips",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise",
+      "pique nique (sandwich, chips, pommes)"
+    ],
+    "ingredients": [
+      {
+        "name": "pommes de terre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile de friture",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "pains au lait / chocolat / abricots",
+      "brioche / chocolat / abricots",
+      "quatre quart / chocolat / pêches"
+    ],
+    "ingredients": [
+      {
+        "name": "chocolat noir ou au lait",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sucre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "clémentine",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Clémentine"
+    ],
+    "ingredients": [
+      {
+        "name": "clémentine",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "cocu goûter",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cocu goûter 1"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 50.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "cocu goûter 3",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cocu goûter 3"
+    ],
+    "ingredients": [],
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "name": "compote",
+    "meal_types": [
+      "diner",
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes aux courgettes et à la tomate - compote",
+      "soupe - omelette campagnarde - compote",
+      "melon - wraps (jambon, salade, fromage, tomate) - compote",
+      "melon - chili végé - compote",
+      "salade verte - couscous - compote",
+      "melon - salade de riz (avec thon) - fromage - compote",
+      "soupe - pâtes à la carbonara - compote",
+      "Compotes, madeleines",
+      "Tzatziki, poissons pane, riz, ratatouille, compote",
+      "Salade de lentille, yaourt (option compote)",
+      "Bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges) / Dessert : compote"
+    ],
+    "ingredients": [
+      {
+        "name": "pommes",
+        "quantity": 250.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 5.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "compotes et cigares",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+    ],
+    "ingredients": [
+      {
+        "name": "pommes",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "feuilles de pâte brisée ou filo",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "compote de fruits (pomme ou fruits rouges)",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre cristallisé (pour enrobage)",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre fondu",
+        "quantity": 15.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "concombre",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "concombre - poulet curry + riz - fruit",
+      "concombre - burger - pêche"
+    ],
+    "ingredients": [
+      {
+        "name": "concombre",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "concombre en vinaigrette",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Concombre en vinaigrette"
+    ],
+    "ingredients": [
+      {
+        "name": "concombre",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "eau",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "échalote",
+        "quantity": 20.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "concours cuisine",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Concours Cuisine",
+      "Concours cuisine",
+      "concours cuisine"
+    ],
+    "ingredients": [],
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "name": "concours de cuisine",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Concours de cuisine"
+    ],
+    "ingredients": [],
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "name": "cookies",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cookies, fruit",
+      "Cookies + eau",
+      "Cookies + nectarines",
+      "Mirabelles et cookies",
+      "cookies / peches"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre roux",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "extrait de vanille",
+        "quantity": 2.0,
+        "unit": "ml"
+      },
+      {
+        "name": "pépites de chocolat",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "cordons bleus avec haricots verts",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - cordons bleus + haricots verts - banane"
+    ],
+    "ingredients": [
+      {
+        "name": "escalope de poulet",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "jambon de Paris",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage (emmental ou gruyère)",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "farine",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chapelure",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile de cuisson",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "haricots verts frais",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre ou huile (pour les haricots)",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "couscous",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade verte - couscous - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "couscous",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "bouillon cube (volaille ou légume)",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "carotte",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "courgette",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "pois chiches (en boîte)",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "croque monsieur",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade de tomate, Croque Mr"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de mie",
+        "quantity": 2.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "fromage (emmental ou similaire)",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "jambon de Paris",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "croziflette",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Croziflette, fruit"
+    ],
+    "ingredients": [
+      {
+        "name": "crozets (pâtes savoyardes)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "reblochon",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "pommes de terre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignons",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "lardons ou bacon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "crème dessert",
+    "meal_types": [
+      "diner",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade - dahl de lentilles - crème dessert",
+      "tartines de houmous - salade grecque - crème dessert"
+    ],
+    "ingredients": [
+      {
+        "name": "lait",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sucre",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "fécule de maïs (Maïzena)",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "cacao en poudre (pour saveur chocolat)",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "vanille en poudre ou extrait",
+        "quantity": 1.0,
+        "unit": "trait"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "céleri rémoulade",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "céleri - spaghetti bolognaise - yaourt aux fruits"
+    ],
+    "ingredients": [
+      {
+        "name": "céleri-rave",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "mayonnaise",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "moutarde",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "cornichons",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "câpres",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "dahl de lentilles",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade - dahl de lentilles - crème dessert"
+    ],
+    "ingredients": [
+      {
+        "name": "lentilles corail",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "ail",
+        "quantity": 2.0,
+        "unit": "gousses"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "eau",
+        "quantity": 300.0,
+        "unit": "ml"
+      },
+      {
+        "name": "cumin en poudre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "curcuma en poudre",
+        "quantity": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "piment ou poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "coriandre fraîche (optionnel)",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "dégustation tuc",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+    ],
+    "ingredients": [
+      {
+        "name": "Biscuits apéritifs Tuc",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fajitas",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - fajitas - poires",
+      "Soupe/fajitas/abricots",
+      "Fajitas ( poivron, fromage râpé, sauce tomate, maïs, haricots rouges, oignon, concombre, tomates, crème fraiche ) / poires au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "tortillas blé",
+        "quantity": 2.0,
+        "unit": "pièces"
+      },
+      {
+        "name": "poulet",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivron rouge",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "poivron jaune",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "paprika",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "cumin",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche ou fromage râpé",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fajitas viande hachée avec salade tomate, fromage râpé et sauce césar",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Fajitas : viande hachée + salade tomate / fromage râpé, sauce césar"
+    ],
+    "ingredients": [
+      {
+        "name": "Viande hachée (bœuf ou poulet)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tortillas (blé ou maïs)",
+        "quantity": 2.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Fromage râpé (emmental ou cheddar)",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sauce césar",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivron",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Épices (cumin, paprika)",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fajitas végétarien",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Fajitas VG, fruit"
+    ],
+    "ingredients": [
+      {
+        "name": "tortillas de blé",
+        "quantity": 2.0,
+        "unit": "pièces"
+      },
+      {
+        "name": "poivron rouge",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "poivron jaune",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "champignons de Paris",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "courgette",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "cumin",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "paprika",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "citron frais",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "crème fraîche ou fromage blanc",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "flabby",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Chili sin carne, flabby"
+    ],
+    "ingredients": [],
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "name": "flamby",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Pâtes bolognaise, flamby",
+      "Gaspacho / Burger + salade verte/flamby"
+    ],
+    "ingredients": [
+      {
+        "name": "Lait entier",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "Maïzena",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Cacao en poudre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "Vanille (extrait ou sucre vanillé)",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fromage",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit",
+      "melon - salade de riz (avec thon) - fromage - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "fromage (camembert ou similaire)",
+        "quantity": 100.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fromage et pain",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+    ],
+    "ingredients": [
+      {
+        "name": "pain",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage (emmental ou cheddar)",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fruit",
+    "meal_types": [
+      "dejeuner",
+      "gouter",
+      "diner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit",
+      "concombre - poulet curry + riz - fruit",
+      "marbré + fruit",
+      "quatre-quarts + fruit",
+      "brownie + fruit",
+      "brioche au chocolat + fruit",
+      "melon - sandwich - fruit",
+      "Cookies, fruit",
+      "Brownies, fruit",
+      "Fajitas VG, fruit",
+      "Croziflette, fruit",
+      "Carottes râpées, salade de blé, fruit",
+      "Fruit, chinois"
+    ],
+    "ingredients": [
+      {
+        "name": "pomme",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fruits",
+    "meal_types": [
+      "gouter",
+      "diner"
+    ],
+    "source_descriptions": [
+      "Fruits, chinois",
+      "Pâtes carbonara, fruits"
+    ],
+    "ingredients": [
+      {
+        "name": "pomme",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "orange",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "fruits au sirop",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de riz (concombre, mozza, tomate, maïs), fruits au sirop"
+    ],
+    "ingredients": [
+      {
+        "name": "fruits frais (pommes, poires, pêches)",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "gaspacho",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Gaspacho / Burger + salade verte/flamby",
+      "Gaspacchio, Hot dog + oignon grillés"
+    ],
+    "ingredients": [
+      {
+        "name": "tomates",
+        "quantity": 300.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivron rouge",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "eau",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "glace",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (concombre, mozza, tomate, maïs), glace",
+      "Risotto VG, glace"
+    ],
+    "ingredients": [
+      {
+        "name": "lait entier",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sucre en poudre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "jaune d'œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "vanille en poudre ou extrait",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "glaces mini magnum",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tomates mozza / Burgers / glaces (mini magnum)"
+    ],
+    "ingredients": [
+      {
+        "name": "Glace vanille",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Chocolat noir à pâtisserie",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile de noix de coco ou beurre de cacao",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Bâtonnet ou pique en bois",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "glaces ou bananes au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Riz et ratatouille (aubergines, courgettes, tomates) / Dessert : glaces ou bananes au chocolat (dépend s'il y a un congélateur)"
+    ],
+    "ingredients": [
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chocolat noir ou au lait",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre (optionnel)",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "goûter",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Cocu goûter 2"
+    ],
+    "ingredients": [
+      {
+        "name": "pain blanc ou beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "chocolat (tablette ou poudre)",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "fruit frais (pomme ou banane)",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "gâteau prince",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Pomme et gâteau type Prince"
+    ],
+    "ingredients": [
+      {
+        "name": "Farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Lait",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Levure chimique",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Chocolat en poudre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Vanille (sucre vanillé)",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "gâteaux barre (quatre-quarts, marbré)",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Gâteaux barre (quatre quart, marbé)"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "cacao en poudre (pour le marbré)",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "gâteaux sablés",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "salade de fruits + gâteaux sablés"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "hot dog",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Hot Dog (option VG), pastèque",
+      "hot dog ; abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "pain à hot dog",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "saucisse de Francfort",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "ketchup",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "moutarde",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "oignons (facultatif)",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "hot dog aux oignons grillés",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Gaspacchio, Hot dog + oignon grillés"
+    ],
+    "ingredients": [
+      {
+        "name": "saucisse de Francfort",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "pain à hot dog",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre ou huile",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "moutarde",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "jus",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Savane + jus"
+    ],
+    "ingredients": [
+      {
+        "name": "jus de fruit (orange, pomme ou raisin)",
+        "quantity": 250.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "liégeois",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois"
+    ],
+    "ingredients": [
+      {
+        "name": "Café fort chaud",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Crème fraîche ou chantilly",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "madeleine",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Abricots et madeleine",
+      "gouter dehors / madeleine prunes"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre fondu",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vanille (extrait ou sucre vanillé)",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "madeleines",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "yaourt aux fruits + madeleines",
+      "Compotes, madeleines",
+      "Madeleines + Melon"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre fondu",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "zeste de citron",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "madeleines pépites chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "madeleines pépites chocolat / pommes"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "beurre fondu",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "pépites de chocolat",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "marbré",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "marbré + fruit",
+      "Melon et marbré",
+      "marbré / pommes"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "levure chimique",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "cacao en poudre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "melon",
+    "meal_types": [
+      "dejeuner",
+      "diner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "melon - wraps (jambon, salade, fromage, tomate) - compote",
+      "melon - chili végé - compote",
+      "melon - salade de riz (avec thon) - fromage - compote",
+      "melon - sandwich - fruit",
+      "Melon, pates pesto, pêches",
+      "Melon",
+      "Madeleines + Melon",
+      "Melon et marbré",
+      "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+    ],
+    "ingredients": [
+      {
+        "name": "melon",
+        "quantity": 0.25,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "mirabelles",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Mirabelles et cookies"
+    ],
+    "ingredients": [
+      {
+        "name": "mirabelles fraiches",
+        "quantity": 250.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 10.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "mont blanc",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Poulet curry, riz (option VG), Mont Blanc",
+      "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+    ],
+    "ingredients": [
+      {
+        "name": "crème de marrons",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche épaisse",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "vanille (extrait ou sucre vanillé)",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "biscuit à la cuillère ou génoise",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "marrons glacés ou confits",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau (pour tremper les biscuits si besoin)",
+        "quantity": 30.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "mousse au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - poisson pané + petits poids - mousse au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "chocolat noir",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "sucre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "nectarines",
+    "meal_types": [
+      "gouter",
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Cookies + nectarines",
+      "Riz et dahl de lentilles corail (carottes, tomates, lait de coco, pois chiches, curry) / Dessert : nectarines"
+    ],
+    "ingredients": [
+      {
+        "name": "nectarine",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "nouilles sautées végétariennes (poivrons, carottes, cacahuètes, courgettes, sauce soja)",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+    ],
+    "ingredients": [
+      {
+        "name": "Nouilles (oeuf ou blé)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivron rouge",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "Carotte",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Courgette",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "Cacahuètes concassées",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sauce soja",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Huile de cuisson",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "omelette campagnarde",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - omelette campagnarde - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "œufs",
+        "quantity": 2.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "pommes de terre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "lardons ou bacon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre ou huile",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pain au lait chocolat",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Pain au lait chocolat, abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "Farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Lait",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Levure boulangère",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Chocolat noir ou pépites de chocolat",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pain beurre jambon",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de mie ou baguette",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "jambon de Paris",
+        "quantity": 30.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pain chinois",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Fruit, chinois"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure boulangère",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pain fromages",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "levure boulangère",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage râpé (emmental ou comté)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre ou huile d'olive",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pains au lait",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "pains au lait / chocolat / abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "farine",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 75.0,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "levure de boulanger",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf (pour dorure)",
+        "quantity": 0.25,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pastèque",
+    "meal_types": [
+      "gouter",
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "quatre-quarts + pastèque",
+      "salade verte - taboulé - pastèque",
+      "Bruschetta (pain de campagne, fromage frais, mozza, tomate), pastèque",
+      "Hot Dog (option VG), pastèque",
+      "Brownies + Pastèque",
+      "Chili sin carne (haricots rouges, poivrons, maïs, sauce tomate) / Dessert : pastèque",
+      "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "pastèque",
+        "quantity": 400.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "petit-déjeuner classique",
+    "meal_types": [
+      "petit-dejeuner"
+    ],
+    "source_descriptions": [
+      "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales",
+      "Boissons chaudes, tartines et jus de fruits",
+      "Boissons chaudes, céréales, jus de fruits",
+      "Boissons chaudes, brioche, jus de fruit",
+      "Boissons chaudes, tartines, jus de fruit",
+      "Boissons chaudes, céréales, jus de fruit",
+      "Boissons chaudes, brioche, jus de fruit v",
+      "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre",
+      "Lait, jus + banane chocolat, muesli",
+      "Lait / jus, chocolat, pain confiture",
+      "Lait / jus, chocolat, Muesli",
+      "Lait / jus, chocolat + brioche (fromage frais carré) / confiture",
+      "Lait / jus, chocolat, Brioche confiture /fromage",
+      "Pain, beurre et confiture",
+      "pain, confitures, beurre, miel, jus de fruits, lait, chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "pain",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "confiture",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "chocolat en poudre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "petits lu",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Poire et petits Lu"
+    ],
+    "ingredients": [
+      {
+        "name": "Farine",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "Œuf",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "Levure chimique",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sel",
+        "quantity": 0.5,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pique-nique",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "pique-nique pour équipe pilote",
+      "Pique nique",
+      "Pique-nique"
+    ],
+    "ingredients": [],
+    "error": "Expecting value: line 1 column 1 (char 0)"
+  },
+  {
+    "name": "pique-nique (pain, st moret, jambon, saucisson, tomates, emmental, chips)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pique nique (2unités) : pain, st moret, jambon, saucisson, tomates, emmental, chips"
+    ],
+    "ingredients": [
+      {
+        "name": "pain",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Saint-Moret (fromage frais)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "jambon de Paris",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "saucisson sec",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "emmental",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "chips",
+        "quantity": 50.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pique-nique individuel",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "pique- nique individuel"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de mie ou baguette",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "jambon de Paris",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage (emmental ou camembert)",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "laitue",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "pomme",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "yaourt nature",
+        "quantity": 125.0,
+        "unit": "ml"
+      },
+      {
+        "name": "biscuit sec ou gâteau",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "jus de fruit ou eau",
+        "quantity": 250.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pique-nique tiré du sac",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pique-nique tiré du sac"
+    ],
+    "ingredients": [
+      {
+        "name": "pain",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "jambon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "laitue",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "pomme",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "barre chocolatée",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "eau",
+        "quantity": 250.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poire",
+    "meal_types": [
+      "diner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire",
+      "Poire et petits Lu"
+    ],
+    "ingredients": [
+      {
+        "name": "poire",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poires",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - fajitas - poires"
+    ],
+    "ingredients": [
+      {
+        "name": "poire",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poires au chocolat",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Fajitas ( poivron, fromage râpé, sauce tomate, maïs, haricots rouges, oignon, concombre, tomates, crème fraiche ) / poires au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "poire",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chocolat noir",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sucre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poisson pané avec petits pois",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - poisson pané + petits poids - mousse au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "Filet de poisson blanc (cabillaud, lieu ou similaire)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Farine",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Chapelure",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "Petits pois surgelés",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile de cuisson",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poisson pané avec riz",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, poissons pane, riz, ratatouille, compote"
+    ],
+    "ingredients": [
+      {
+        "name": "filet de poisson (cabillaud, lieu ou surgelé)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "farine",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "chapelure",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "riz blanc",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau ou bouillon",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "huile ou beurre pour la cuisson",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pomme",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Pomme et gâteau type Prince"
+    ],
+    "ingredients": [
+      {
+        "name": "pomme",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pommes",
+    "meal_types": [
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Sandwichs (fromage à tartiner, salade, tomate, thon) / Dessert : pommes",
+      "brownies / pommes",
+      "marbré / pommes",
+      "pique nique (sandwich, chips, pommes)",
+      "madeleines pépites chocolat / pommes"
+    ],
+    "ingredients": [
+      {
+        "name": "pommes",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pommes de terre braisées à la crème et aux lardons",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "pommes de terre",
+        "quantity": 250.0,
+        "unit": "g"
+      },
+      {
+        "name": "lardons fumés",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "bouillon de poule",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "persil frais (optionnel)",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pommes de terre à la crème",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+    ],
+    "ingredients": [
+      {
+        "name": "Pommes de terre",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "Crème fraîche",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Persil frais (facultatif)",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poulet au curry avec riz, lait de coco, ananas et noix de cajou",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire"
+    ],
+    "ingredients": [
+      {
+        "name": "poulet (blanc ou cuisse)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "riz blanc",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait de coco",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "ananas frais ou en conserve",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "noix de cajou",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "gousse"
+      },
+      {
+        "name": "curry en poudre",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile ou beurre",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "eau",
+        "quantity": 200.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poulet aux champignons à la crème avec riz",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits"
+    ],
+    "ingredients": [
+      {
+        "name": "poulet (escalope ou morceau)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "champignons de Paris",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "riz blanc",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive ou beurre",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "bouillon de poule ou eau",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "thym ou herbes de Provence",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poulet curry avec riz",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "concombre - poulet curry + riz - fruit",
+      "Poulet curry, riz (option VG), Mont Blanc"
+    ],
+    "ingredients": [
+      {
+        "name": "poulet (blanc ou cuisses)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "riz blanc",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "curry en poudre",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile ou beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau ou bouillon de poule",
+        "quantity": 300.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 0.5,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "poulet curry coco avec riz",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Radis, poulet curry-coco + riz"
+    ],
+    "ingredients": [
+      {
+        "name": "Poulet (filets ou cuisses)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Riz blanc",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "Ail",
+        "quantity": 1.0,
+        "unit": "gousse"
+      },
+      {
+        "name": "Lait de coco",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Eau",
+        "quantity": 250.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Curry en poudre",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tomate (frais ou concentré)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile de cuisine",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "prunes",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Quatre Quart, Prunes",
+      "gouter dehors / madeleine prunes"
+    ],
+    "ingredients": [
+      {
+        "name": "prunes fraîches",
+        "quantity": 150.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pâtes aux courgettes et à la tomate",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes aux courgettes et à la tomate - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "Pâtes sèches",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "Courgette",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tomate fraîche",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Herbes de Provence",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pâtes bolognaise",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Pâtes bolognaise, flamby",
+      "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "pâtes (spaghetti ou penne)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "viande hachée (bœuf)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate concassée (boîte)",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "gousse"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "herbes de Provence (optionnel)",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pâtes carbonara",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Pâtes carbonara, fruits"
+    ],
+    "ingredients": [
+      {
+        "name": "pâtes (spaghetti ou penne)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "lard ou bacon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "fromage râpé (parmesan ou emmental)",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau pour la cuisson",
+        "quantity": 1000.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pâtes pesto",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Melon, pates pesto, pêches",
+      "Pâtes pesto + carottes râpées"
+    ],
+    "ingredients": [
+      {
+        "name": "pâtes",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "basilic frais",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "pignons de pin",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "parmesan râpé",
+        "quantity": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pâtes pesto rosso",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+    ],
+    "ingredients": [
+      {
+        "name": "pâtes (fusilli ou penne)",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomates cerises",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomates séchées",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "parmesan râpé",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "pignons de pin",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pâtes à la carbonara",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes à la carbonara - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "pâtes (spaghetti ou penne)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "lardons ou pancetta",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "fromage râpé (Parmesan ou Emmental)",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "eau",
+        "quantity": 1000.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pêche",
+    "meal_types": [
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "concombre - burger - pêche",
+      "Brioche chocolat + peche",
+      "Brioche au chocolat + pêche",
+      "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+    ],
+    "ingredients": [
+      {
+        "name": "pêche fraîche",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pêches",
+    "meal_types": [
+      "diner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Melon, pates pesto, pêches",
+      "Pêches et brownie",
+      "cookies / peches",
+      "quatre quart / chocolat / pêches"
+    ],
+    "ingredients": [
+      {
+        "name": "pêche fraîche",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "pêches au sirop",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (tomates, maïs, mozza, concombre, poivron, choux rouge), pêches au sirop"
+    ],
+    "ingredients": [
+      {
+        "name": "Pêche fraîche",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Eau",
+        "quantity": 250.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Jus de citron",
+        "quantity": 5.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "quatre-quarts",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "quatre-quarts + pastèque",
+      "quatre-quarts + fruit",
+      "Quatre Quart, Prunes",
+      "quatre quart / chocolat / pêches"
+    ],
+    "ingredients": [
+      {
+        "name": "Farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Levure chimique",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sel",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "radis",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Radis, poulet curry-coco + riz"
+    ],
+    "ingredients": [
+      {
+        "name": "radis frais",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "raisins",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Burgers (pain à burger, tomates, steak, ketchup, mayonnaise, salade, oignons rouges, cornichons) / Dessert : raisins"
+    ],
+    "ingredients": [
+      {
+        "name": "raisins frais",
+        "quantity": 150.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "ratatouille",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, poissons pane, riz, ratatouille, compote"
+    ],
+    "ingredients": [
+      {
+        "name": "aubergine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "courgette",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivron rouge",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "herbes de Provence",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "repas de trek",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Trek"
+    ],
+    "ingredients": [
+      {
+        "name": "riz",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "lentilles corail",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon déshydraté",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail en poudre",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "bouillon de poule (cube ou poudre)",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate déshydratée ou concentré de tomate",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "herbes de Provence",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 300.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "repas trappeur",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Repas trappeur"
+    ],
+    "ingredients": [
+      {
+        "name": "Steak haché",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Pomme de terre",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "risotto végétarien",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Risotto VG, glace"
+    ],
+    "ingredients": [
+      {
+        "name": "riz arborio",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "carotte",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "courgette",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "bouillon de légumes",
+        "quantity": 250.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vin blanc sec",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage râpé (emmental)",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "riz et dahl de lentilles corail",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Riz et dahl de lentilles corail (carottes, tomates, lait de coco, pois chiches, curry) / Dessert : nectarines"
+    ],
+    "ingredients": [
+      {
+        "name": "riz blanc",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "lentilles corail",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "gousse"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "curcuma",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "cumin en poudre",
+        "quantity": 0.5,
+        "unit": "cuillère à café"
+      },
+      {
+        "name": "huile ou beurre",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "eau",
+        "quantity": 350.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "pincée"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "riz et ratatouille",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Riz et ratatouille (aubergines, courgettes, tomates) / Dessert : glaces ou bananes au chocolat (dépend s'il y a un congélateur)"
+    ],
+    "ingredients": [
+      {
+        "name": "riz blanc",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "aubergine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "courgette",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivron rouge",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "eau",
+        "quantity": 400.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "rougail saucisses avec riz",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Concombre, rougail saucisses + riz"
+    ],
+    "ingredients": [
+      {
+        "name": "Saucisse",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Tomate",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Piment ou poivron rouge",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Gingembre frais",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Riz blanc",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "Eau",
+        "quantity": 150.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade - dahl de lentilles - crème dessert",
+      "Salade"
+    ],
+    "ingredients": [
+      {
+        "name": "laitue ou salade verte",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "concombre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "carotte",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 0.5,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade concombres feta",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+    ],
+    "ingredients": [
+      {
+        "name": "concombre",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "feta",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon rouge",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de blé",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Carottes râpées, salade de blé, fruit"
+    ],
+    "ingredients": [
+      {
+        "name": "blé concassé ou grains de blé",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "concombre",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon rouge",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "persil frais",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "menthe fraîche",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de concombre",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Concombre, rougail saucisses + riz"
+    ],
+    "ingredients": [
+      {
+        "name": "concombre",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de fruits",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "salade de fruits + gâteaux sablés"
+    ],
+    "ingredients": [
+      {
+        "name": "pomme",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "banane",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "orange",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "raisin",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "kiwi",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de lentilles",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de lentille, yaourt (option compote)"
+    ],
+    "ingredients": [
+      {
+        "name": "lentilles corail ou vertes",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon rouge",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "citron (jus)",
+        "quantity": 30.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de lentilles aux oignons, concombres, tomates, fêta, croutons et lardons",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+    ],
+    "ingredients": [
+      {
+        "name": "lentilles corail cuites",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon rouge",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "concombre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "fêta",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "croutons",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "lardons",
+        "quantity": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de melon et pastèque",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Taboulé (fêta, tomate, oignons, poivrons, herbes), salade de melon et pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "melon",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "pastèque",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "miel",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "feuilles de menthe fraîche",
+        "quantity": 3.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de perles (maïs, concombres, olives, poivrons)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+    ],
+    "ingredients": [
+      {
+        "name": "maïs en conserve (égoutté)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "olives noires",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivron rouge",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de pâtes (concombre, mozzarella, tomate, maïs)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (concombre, mozza, tomate, maïs), glace"
+    ],
+    "ingredients": [
+      {
+        "name": "Pâtes",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "Concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Mozzarella",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "Maïs en conserve",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de pâtes (fusilli, tomate cerise, pesto, concombre, mozzarella, thon à l'huile)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+    ],
+    "ingredients": [
+      {
+        "name": "Fusilli (pâtes sèches)",
+        "quantity": 80.0,
+        "unit": "g"
+      },
+      {
+        "name": "Tomate cerise",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Mozzarella fraîche",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "Thon à l'huile (conserve)",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "Pesto",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Vinaigre",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel et poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de pâtes (tomates, maïs, mozzarella, concombre, poivron, chou rouge)",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de pates (tomates, maïs, mozza, concombre, poivron, choux rouge), pêches au sirop"
+    ],
+    "ingredients": [
+      {
+        "name": "pâtes (fusilli ou penne)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomates",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "maïs (en conserve ou surgelé)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "mozzarella",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivron",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "chou rouge",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc ou jus de citron",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel et poivre",
+        "quantity": 1.0,
+        "unit": "pièce"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de riz au concombre, mozzarella, tomate et maïs",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de riz (concombre, mozza, tomate, maïs), fruits au sirop"
+    ],
+    "ingredients": [
+      {
+        "name": "riz cuit",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "maïs en conserve",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "mozzarella",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de riz au thon",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "melon - salade de riz (avec thon) - fromage - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "riz",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "thon en conserve",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "cornichon",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "maïs en conserve",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade de tomate",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "Salade de tomate",
+      "Salade de tomate, Croque Mr"
+    ],
+    "ingredients": [
+      {
+        "name": "Tomates",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Vinaigre",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon rouge",
+        "quantity": 20.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade grecque",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tartines de houmous - salade grecque - crème dessert"
+    ],
+    "ingredients": [
+      {
+        "name": "tomates",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon rouge",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "olives noires",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage feta",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre blanc",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade tomates mozzarella",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+    ],
+    "ingredients": [
+      {
+        "name": "tomates",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "mozzarella",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre balsamique",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "basilic frais",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "salade verte",
+    "meal_types": [
+      "dejeuner",
+      "diner"
+    ],
+    "source_descriptions": [
+      "salade verte - taboulé - pastèque",
+      "salade verte - couscous - compote",
+      "Salade verte",
+      "Salade verte + Burger",
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ],
+    "ingredients": [
+      {
+        "name": "salade verte (laitue ou batavia)",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "concombre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 0.5,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "sandwich",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "melon - sandwich - fruit",
+      "pique nique (sandwich, chips, pommes)"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de mie",
+        "quantity": 2.0,
+        "unit": "tranche(s)"
+      },
+      {
+        "name": "jambon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "laitue",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre ou mayonnaise",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "sandwich fromage à tartiner salade tomate thon",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Sandwichs (fromage à tartiner, salade, tomate, thon) / Dessert : pommes"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de mie",
+        "quantity": 2.0,
+        "unit": "tranche(s)"
+      },
+      {
+        "name": "fromage à tartiner",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "thon en conserve",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "salade (laitue ou roquette)",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "mayonnaise",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "sandwich kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces)",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "pain pita",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "poulet (filet)",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "épices kebab (mélange)",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "salade (laitue ou roquette)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sauce blanche (yaourt/mayonnaise)",
+        "quantity": 30.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sauce tomate ou harissa",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel et poivre",
+        "quantity": 1.0,
+        "unit": "pincée"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "saucisse purée",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "carottes râpées - saucisse purée - fromage - fruit"
+    ],
+    "ingredients": [
+      {
+        "name": "saucisse de Strasbourg ou saucisse fumée",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "pommes de terre",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "beurre",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "lait",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "saucisses avec pommes de terre rissolées et courgettes",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois"
+    ],
+    "ingredients": [
+      {
+        "name": "saucisse",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "pomme de terre",
+        "quantity": 200.0,
+        "unit": "g"
+      },
+      {
+        "name": "courgette",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "savane",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Savane + jus"
+    ],
+    "ingredients": [
+      {
+        "name": "Farine",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sucre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Beurre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Œuf",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "Levure chimique",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "Sel",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "Lait",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Vanille ou rhum (arôme)",
+        "quantity": 5.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "sirop",
+    "meal_types": [
+      "gouter"
+    ],
+    "source_descriptions": [
+      "Brownie + sirop"
+    ],
+    "ingredients": [
+      {
+        "name": "sucre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "jus de citron frais",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "soupe",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "soupe - pâtes aux courgettes et à la tomate - compote",
+      "soupe - omelette campagnarde - compote",
+      "soupe - poisson pané + petits poids - mousse au chocolat",
+      "soupe - fajitas - poires",
+      "soupe - pâtes à la carbonara - compote",
+      "Soupe/fajitas/abricots",
+      "Soupe",
+      "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots"
+    ],
+    "ingredients": [
+      {
+        "name": "eau",
+        "quantity": 500.0,
+        "unit": "ml"
+      },
+      {
+        "name": "bouillon de légumes (cube ou poudre)",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "carotte",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "pomme de terre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "spaghetti bolognaise",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "céleri - spaghetti bolognaise - yaourt aux fruits"
+    ],
+    "ingredients": [
+      {
+        "name": "spaghetti",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "viande hachée de bœuf",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate concassée en boîte",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "oignon",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau",
+        "quantity": 1000.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "taboulé",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "salade verte - taboulé - pastèque",
+      "Taboulé : tomate, feta, persil, concombre, raisin sec, oignons, semoule",
+      "Taboulé, semoule, poivron, concombre, tomate."
+    ],
+    "ingredients": [
+      {
+        "name": "semoule fine",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "eau chaude",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "concombre",
+        "quantity": 0.25,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "persil frais",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "menthe fraîche",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 20.0,
+        "unit": "ml"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 0.5,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "taboulé à la fêta, tomates, oignons, poivrons et herbes",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Taboulé (fêta, tomate, oignons, poivrons, herbes), salade de melon et pastèque"
+    ],
+    "ingredients": [
+      {
+        "name": "Semoule de couscous",
+        "quantity": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "Eau chaude",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Tomates",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "Oignon rouge",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivron rouge",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "Feta",
+        "quantity": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "Persil frais",
+        "quantity": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "Menthe fraîche",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "Huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Jus de citron",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "Sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "Poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "tartines de houmous",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tartines de houmous - salade grecque - crème dessert"
+    ],
+    "ingredients": [
+      {
+        "name": "pain de mie ou pain complet",
+        "quantity": 2.0,
+        "unit": "tranche(s)"
+      },
+      {
+        "name": "houmous",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "concombre",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "oignon rouge",
+        "quantity": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "persil frais",
+        "quantity": 5.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "thon crème ciboulette",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Thon, crème, ciboulette"
+    ],
+    "ingredients": [
+      {
+        "name": "boîte de thon au naturel",
+        "quantity": 1.0,
+        "unit": "boîte (environ 200g)"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 100.0,
+        "unit": "ml"
+      },
+      {
+        "name": "ciboulette fraîche",
+        "quantity": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 5.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "tomates",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits"
+    ],
+    "ingredients": [
+      {
+        "name": "tomates",
+        "quantity": 200.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "tomates cerises",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+    ],
+    "ingredients": [
+      {
+        "name": "tomates cerises",
+        "quantity": 150.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "tomates mozarella",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tomates mozza / Burgers / glaces (mini magnum)"
+    ],
+    "ingredients": [
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "mozzarella",
+        "quantity": 125.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "vinaigre balsamique",
+        "quantity": 10.0,
+        "unit": "ml"
+      },
+      {
+        "name": "basilic frais",
+        "quantity": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "tortilla aux œufs et pommes de terre avec courgettes à la crème",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+    ],
+    "ingredients": [
+      {
+        "name": "œufs",
+        "quantity": 2.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "pommes de terre",
+        "quantity": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "courgettes",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "crème fraîche",
+        "quantity": 50.0,
+        "unit": "ml"
+      },
+      {
+        "name": "oignon",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "tzatziki",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois",
+      "Tzatziki, poissons pane, riz, ratatouille, compote"
+    ],
+    "ingredients": [
+      {
+        "name": "yaourt nature",
+        "quantity": 150.0,
+        "unit": "ml"
+      },
+      {
+        "name": "concombre",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "jus de citron",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "huile d'olive",
+        "quantity": 5.0,
+        "unit": "ml"
+      },
+      {
+        "name": "sel",
+        "quantity": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "poivre",
+        "quantity": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "aneth frais (ou herbes de Provence)",
+        "quantity": 2.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "wok de nouilles aux légumes",
+    "meal_types": [
+      "diner"
+    ],
+    "source_descriptions": [
+      "Plat : Wok de nouilles aux légumes (œufs, poivrons, carottes, cacahuètes, sauce soja sucrée)"
+    ],
+    "ingredients": [
+      {
+        "name": "nouilles chinoises ou nouilles spaghetti",
+        "quantity": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "carotte",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "courgette",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "poivron rouge ou jaune",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "oignon",
+        "quantity": 0.5,
+        "unit": "pièce"
+      },
+      {
+        "name": "chou (chou blanc ou chou napa)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "sauce soja",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "huile végétale",
+        "quantity": 15.0,
+        "unit": "ml"
+      },
+      {
+        "name": "ail",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "eau",
+        "quantity": 100.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "wraps jambon salade fromage tomate",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "melon - wraps (jambon, salade, fromage, tomate) - compote"
+    ],
+    "ingredients": [
+      {
+        "name": "tortilla (wrap)",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "jambon de Paris",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "fromage râpé (emmental ou cheddar)",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "salade verte (laitue ou roquette)",
+        "quantity": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "tomate",
+        "quantity": 1.0,
+        "unit": "pièce"
+      },
+      {
+        "name": "sauce (mayonnaise ou moutarde)",
+        "quantity": 15.0,
+        "unit": "ml"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "yaourt",
+    "meal_types": [
+      "dejeuner"
+    ],
+    "source_descriptions": [
+      "Salade de lentille, yaourt (option compote)"
+    ],
+    "ingredients": [
+      {
+        "name": "lait entier",
+        "quantity": 200.0,
+        "unit": "ml"
+      },
+      {
+        "name": "yaourt nature (ferment)",
+        "quantity": 25.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  },
+  {
+    "name": "yaourt aux fruits",
+    "meal_types": [
+      "diner",
+      "dejeuner",
+      "gouter"
+    ],
+    "source_descriptions": [
+      "céleri - spaghetti bolognaise - yaourt aux fruits",
+      "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits",
+      "yaourt aux fruits + madeleines",
+      "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+    ],
+    "ingredients": [
+      {
+        "name": "yaourt nature",
+        "quantity": 125.0,
+        "unit": "g"
+      },
+      {
+        "name": "fruits frais (fraises, myrtilles ou pomme)",
+        "quantity": 50.0,
+        "unit": "g"
+      },
+      {
+        "name": "miel ou sucre",
+        "quantity": 10.0,
+        "unit": "g"
+      }
+    ],
+    "error": null
+  }
+]
