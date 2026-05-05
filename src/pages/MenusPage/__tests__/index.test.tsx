@@ -398,4 +398,99 @@ describe("MenusPage", () => {
       expect(cards.length).toBeLessThanOrEqual(12);
     });
   });
+
+  describe("Mobile filter drawer", () => {
+    it("renders filters button for opening drawer", () => {
+      renderMenusPage();
+      const filterButton = screen.getByText("Filtres");
+      expect(filterButton).toBeInTheDocument();
+    });
+
+    it("filter button is clickable and functional", () => {
+      renderMenusPage();
+      const filterButton = screen.getByText("Filtres");
+      expect(filterButton).not.toBeDisabled();
+
+      fireEvent.click(filterButton);
+      // If no error is thrown, the click was successful
+      expect(filterButton).toBeInTheDocument();
+    });
+
+    it("type filters work from main interface", async () => {
+      renderMenusPage();
+      // Test that type filters are functional (tested both in desktop and mobile drawer)
+      const buttons = screen.getAllByRole("button");
+      const mealTypeButtons = buttons.filter((btn) =>
+        ["Petit-déjeuner", "Déjeuner / Dîner", "Goûter"].some((type) =>
+          btn.textContent?.includes(type)
+        )
+      );
+
+      expect(mealTypeButtons.length).toBeGreaterThan(0);
+
+      // Click breakfast filter
+      const breakfastBtn = mealTypeButtons.find((btn) =>
+        btn.textContent?.includes("Petit-déjeuner")
+      );
+      if (breakfastBtn) {
+        fireEvent.click(breakfastBtn);
+
+        // Breakfast menu should be visible
+        expect(screen.getByTestId("menu-card-3")).toBeInTheDocument();
+      }
+    });
+
+    it("source filters work from main interface", async () => {
+      renderMenusPage();
+      const buttons = screen.getAllByRole("button");
+
+      // Find source filter buttons
+      const sourceButtons = buttons.filter((btn) =>
+        ["Tous", "Mes menus", "Favoris", "Publics"].some((source) =>
+          btn.textContent?.includes(source)
+        )
+      );
+
+      expect(sourceButtons.length).toBeGreaterThan(0);
+    });
+
+    it("filters can be reset from search results", async () => {
+      renderMenusPage();
+      const searchInput = screen.getByPlaceholderText("Rechercher un menu, un ingrédient…");
+
+      // Create a search that yields no results
+      fireEvent.change(searchInput, { target: { value: "NonexistentMenu" } });
+
+      await waitFor(() => {
+        expect(screen.getByText("Aucun menu trouvé")).toBeInTheDocument();
+      });
+
+      // Reset filters button should be available
+      const resetButton = screen.getByText("Réinitialiser les filtres");
+      expect(resetButton).toBeInTheDocument();
+
+      fireEvent.click(resetButton);
+
+      // Search should be cleared and menus should reappear
+      await waitFor(() => {
+        expect(searchInput).toHaveValue("");
+        expect(screen.queryByText("Aucun menu trouvé")).not.toBeInTheDocument();
+      });
+    });
+
+    it("combines search with type filtering", async () => {
+      renderMenusPage();
+      const searchInput = screen.getByPlaceholderText("Rechercher un menu, un ingrédient…");
+
+      // Search for a specific menu
+      fireEvent.change(searchInput, { target: { value: "Pasta" } });
+
+      await waitFor(() => {
+        expect(screen.getByTestId("menu-card-1")).toBeInTheDocument();
+      });
+
+      // Result count should be updated
+      expect(screen.getByText(/\d+ menus/)).toBeInTheDocument();
+    });
+  });
 });

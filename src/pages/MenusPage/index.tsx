@@ -4,8 +4,9 @@ import { useMenus } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
 import { MENU_FILTER_TYPES, MEAL_TYPE_LABELS, type MealSlotType } from "@/lib/types";
 import { MenuCard } from "./MenuCard";
-import { Search, X, LayoutGrid, List, Plus } from "lucide-react";
+import { Search, X, LayoutGrid, List, Plus, Sliders } from "lucide-react";
 import { useBookmarks } from "@/hooks/useBookmarks";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 type SourceFilter = "all" | "mine" | "favoris" | "shared";
 
@@ -35,6 +36,7 @@ export default function MenusPage() {
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>("all");
   const [view, setView] = useState<"grid" | "list">("grid");
   const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);
+  const [filterDrawerOpen, setFilterDrawerOpen] = useState(false);
 
   const allFiltered = useMemo(() => {
     if (!menus) return [];
@@ -85,7 +87,7 @@ export default function MenusPage() {
       {/* Page header */}
       <div className="flex items-end justify-between gap-4 mb-5">
         <div>
-          <h1 className="text-[30px] font-bold tracking-[-0.02em] text-[#11221C] flex items-center gap-3">
+          <h1 className="text-[22px] sm:text-[30px] font-bold tracking-[-0.02em] text-[#11221C] flex items-center gap-3">
             <span aria-hidden>📚</span>
             Bibliothèque de menus
           </h1>
@@ -137,17 +139,27 @@ export default function MenusPage() {
             </button>
           </div>
 
+          {/* Filters button (mobile only) */}
           <button
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] text-[14px] font-semibold bg-[#1F6B4A] text-white hover:bg-[#18563B] active:translate-y-px transition-all whitespace-nowrap"
+            className="sm:hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-[10px] text-[14px] font-semibold bg-white border border-[#E5E8E2] text-[#3B4A43] hover:border-[#98A39C] transition-all whitespace-nowrap"
+            onClick={() => setFilterDrawerOpen(true)}
+          >
+            <Sliders className="w-4 h-4" />
+            <span>Filtres</span>
+          </button>
+
+          <button
+            className="inline-flex items-center gap-2 sm:px-4 px-2.5 py-2.5 rounded-[10px] text-[14px] font-semibold bg-[#1F6B4A] text-white hover:bg-[#18563B] active:translate-y-px transition-all whitespace-nowrap"
             onClick={() => navigate(user ? "/menus/new" : "/auth")}
+            title={user ? "Nouveau menu" : "Se connecter"}
           >
             <Plus className="w-4 h-4" />
-            <span>{user ? "Nouveau menu" : "Se connecter"}</span>
+            <span className="hidden sm:inline">{user ? "Nouveau menu" : "Se connecter"}</span>
           </button>
         </div>
 
-        {/* Row 2: Filters + count */}
-        <div className="flex items-center gap-4 flex-wrap">
+        {/* Row 2: Filters + count (desktop only) */}
+        <div className="hidden sm:flex items-center gap-4 flex-wrap">
           {/* Type filter */}
           <div className="flex items-center gap-2.5 min-w-0">
             <span className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#98A39C] flex-shrink-0">Type</span>
@@ -303,6 +315,101 @@ export default function MenusPage() {
           )}
         </>
       )}
+
+      {/* Filter Drawer (mobile) */}
+      <Sheet open={filterDrawerOpen} onOpenChange={setFilterDrawerOpen}>
+        <SheetContent side="bottom" className="max-h-[80vh] overflow-y-auto">
+          <SheetHeader className="mb-6">
+            <SheetTitle>Filtres</SheetTitle>
+          </SheetHeader>
+
+          <div className="space-y-6">
+            {/* Type Filter */}
+            <div>
+              <h3 className="text-[12px] font-bold uppercase tracking-[0.06em] text-[#98A39C] mb-3">Type</h3>
+              <div className="flex flex-wrap gap-2">
+                {typeFilters.map((f) => {
+                  const active = typeFilter === f.id;
+                  const colors = TYPE_FILTER_COLORS[f.id];
+                  return (
+                    <button
+                      key={f.id}
+                      onClick={() => setTypeFilter(f.id)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-full text-[13px] font-medium transition-all ${
+                        active
+                          ? "border-transparent"
+                          : "border-[#E5E8E2] bg-white text-[#3B4A43] hover:border-[#98A39C]"
+                      }`}
+                      style={
+                        active && colors
+                          ? { background: colors.bg, color: colors.fg, borderColor: colors.bg }
+                          : active
+                          ? { background: "#11221C", color: "white", borderColor: "#11221C" }
+                          : undefined
+                      }
+                    >
+                      {f.id !== "all" && colors && (
+                        <span
+                          className="w-2 h-2 rounded-full flex-shrink-0"
+                          style={{ background: active ? colors.fg : colors.accent }}
+                        />
+                      )}
+                      {f.id === "all" && (
+                        <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: active ? "white" : "#98A39C" }} />
+                      )}
+                      {f.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Source Filter */}
+            <div>
+              <h3 className="text-[12px] font-bold uppercase tracking-[0.06em] text-[#98A39C] mb-3">Source</h3>
+              <div className="flex flex-wrap gap-2">
+                {visibleSourceFilters.map((f) => {
+                  const active = sourceFilter === f.id;
+                  return (
+                    <button
+                      key={f.id}
+                      onClick={() => setSourceFilter(f.id)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 border rounded-full text-[13px] font-medium transition-all ${
+                        active
+                          ? "bg-[#11221C] text-white border-[#11221C]"
+                          : "border-[#E5E8E2] bg-white text-[#3B4A43] hover:border-[#98A39C]"
+                      }`}
+                    >
+                      {f.icon && <span className={active ? "text-white" : ""}>{f.icon}</span>}
+                      {f.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Result count */}
+            <div className="pt-4 border-t border-[#E5E8E2] text-[14px] text-[#6B7A72]">
+              <strong className="text-[#11221C] font-bold">{filtered.length}</strong>
+              <span> / {allFiltered.length} menus</span>
+            </div>
+
+            {/* Reset button */}
+            {(query || typeFilter !== "all" || sourceFilter !== "all") && (
+              <button
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-[10px] text-[14px] font-semibold bg-white border border-[#E5E8E2] text-[#3B4A43] hover:border-[#98A39C] transition-colors"
+                onClick={() => {
+                  setQuery("");
+                  setTypeFilter("all");
+                  setSourceFilter("all");
+                }}
+              >
+                Réinitialiser les filtres
+              </button>
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }
