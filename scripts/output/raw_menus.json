@@ -1,0 +1,1286 @@
+[
+  {
+    "camp_name": "Camp n°18469",
+    "days": [
+      {
+        "date": "2025-07-13",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": ""
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "pique-nique pour équipe pilote"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "quatre-quarts + pastèque"
+          },
+          {
+            "meal_type": "diner",
+            "description": "soupe - pâtes aux courgettes et à la tomate - compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-14",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "carottes râpées - saucisse purée - fromage - fruit"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "brioche + chocolat + fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "salade - dahl de lentilles - crème dessert"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-15",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "concombre - poulet curry + riz - fruit"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "salade de fruits + gâteaux sablés"
+          },
+          {
+            "meal_type": "diner",
+            "description": "soupe - omelette campagnarde - compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-16",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "melon - wraps (jambon, salade, fromage, tomate) - compote"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "marbré + fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "céleri - spaghetti bolognaise - yaourt aux fruits"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-17",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "salade verte - taboulé - pastèque"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "quatre-quarts + fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "soupe - poisson pané + petits poids - mousse au chocolat"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-18",
+        "day_name": "Vendredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "tomates - poulet au champignons et à la crème + riz - yaourts aux fruits"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "brownie + fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "melon - chili végé - compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-19",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "carottes râpées - cordons bleus + haricots verts - banane"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "brioche au chocolat + fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "salade verte - couscous - compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-20",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "tartines de houmous - salade grecque - crème dessert"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "salade de fruits + gâteaux sablés"
+          },
+          {
+            "meal_type": "diner",
+            "description": "soupe - fajitas - poires"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-21",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "melon - salade de riz (avec thon) - fromage - compote"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "quatre-quarts + fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "soupe - pâtes à la carbonara - compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-22",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "concombre - burger - pêche"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "yaourt aux fruits + madeleines"
+          },
+          {
+            "meal_type": "diner",
+            "description": "repas trappeur : pommes de terre braisées (avec crème et lardons) + camembert braisé + banane au chocolat"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-23",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "lait, jus de fruit, café, thé, pain, beurre, confiture, céréales"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "melon - sandwich - fruit"
+          },
+          {
+            "meal_type": "gouter",
+            "description": ""
+          },
+          {
+            "meal_type": "diner",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "camp_name": "Camp n°19238",
+    "days": [
+      {
+        "date": "2025-07-12",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique nique"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Gâteaux barre (quatre quart, marbé)"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Melon, pates pesto, pêches"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-13",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, tartines et jus de fruits"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Salade de riz (concombre, mozza, tomate, maïs), fruits au sirop"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Compotes, madeleines"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Tzatziki, saucisses et pommes de terre rissolées, courgette, liégeois"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-14",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, céréales, jus de fruits"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Salade de pates (concombre, mozza, tomate, maïs), glace"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Fruits, chinois"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Chili sin carne, flabby"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-15",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, brioche, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Bruschetta (pain de campagne, fromage frais, mozza, tomate), pastèque"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Cookies, fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Poulet curry, riz (option VG), Mont Blanc"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-16",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, tartines, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Taboulé (fêta, tomate, oignons, poivrons, herbes), salade de melon et pastèque"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brioche et chocolat"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Pâtes carbonara, fruits"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-17",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, céréales, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Trek"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Trek"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Trek"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-18",
+        "day_name": "Vendredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Trek"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Trek"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brownies, fruit"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Cocu chef"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-19",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, brioche, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Fajitas VG, fruit"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Cocu goûter 1"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Tzatziki, poissons pane, riz, ratatouille, compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-20",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, tartines, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Salade de lentille, yaourt (option compote)"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Cocu goûter 2"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Croziflette, fruit"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-21",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, céréales, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Carottes râpées, salade de blé, fruit"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Cocu goûter 3"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Pâtes bolognaise, flamby"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-22",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, brioche, jus de fruit v"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Hot Dog (option VG), pastèque"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Fruit, chinois"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Risotto VG, glace"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-23",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, tartines, jus de fruit"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Salade de pates (tomates, maïs, mozza, concombre, poivron, choux rouge), pêches au sirop"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brownies"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Repas trappeur"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-24",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Boissons chaudes, céréales, jus de fruits"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique nique"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "X"
+          },
+          {
+            "meal_type": "diner",
+            "description": "X"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-25",
+        "day_name": "Vendredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "X"
+          },
+          {
+            "meal_type": "diner",
+            "description": "X"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-26",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "X"
+          },
+          {
+            "meal_type": "diner",
+            "description": "X"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-27",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "X"
+          },
+          {
+            "meal_type": "diner",
+            "description": "X"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-28",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "X"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "X"
+          },
+          {
+            "meal_type": "diner",
+            "description": "X"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "camp_name": "Camp n°19836",
+    "days": [
+      {
+        "date": "2025-07-07",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique-nique"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Cookies + eau"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Melon"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-08",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Taboulé : tomate, feta, persil, concombre, raisin sec, oignons, semoule"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brioche chocolat + peche"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Soupe/fajitas/abricots"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-09",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Bruschettas"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brownie + sirop"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Gaspacho / Burger + salade verte/flamby"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-10",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Concours Cuisine"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Clémentine"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Concombre en vinaigrette"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-11",
+        "day_name": "Vendredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique nique (2unités) : pain, st moret, jambon, saucisson, tomates, emmental, chips"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Bananes"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Soupe"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-12",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Salade de tomate"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Savane + jus"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Salade verte"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-13",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Thon, crème, ciboulette"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Prince"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Salade"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-14",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre, confiture, céréales, jus, lait, chocolat en poudre"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique-nique"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brioche au chocolat + pêche"
+          },
+          {
+            "meal_type": "diner",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "camp_name": "Camp n°19843",
+    "days": [
+      {
+        "date": "2025-07-05",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "N.A"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique-nique tiré du sac"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Quatre Quart, Prunes"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Salade de tomate, Croque Mr"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-06",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Lait, jus + banane chocolat, muesli"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Taboulé, semoule, poivron, concombre, tomate."
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Pain au lait chocolat, abricots"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Salade verte + Burger"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-07",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Lait / jus, chocolat, pain confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Radis, poulet curry-coco + riz"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Madeleines + Melon"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Pâtes pesto + carottes râpées"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-08",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Lait / jus, chocolat, Muesli"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Concours de cuisine"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brownies + Pastèque"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Concombre, rougail saucisses + riz"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-09",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Lait / jus, chocolat + brioche (fromage frais carré) / confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pai/beurre/jambon/salade verte + chips + carottes à croquer + tomates cerise"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Cookies + nectarines"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Gaspacchio, Hot dog + oignon grillés"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-10",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Lait / jus, chocolat, Brioche confiture /fromage"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Fajitas : viande hachée + salade tomate / fromage râpé, sauce césar"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Brioche chocolat + raisins"
+          },
+          {
+            "meal_type": "diner",
+            "description": "DÉPART"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "camp_name": "Camp n°20499",
+    "days": [
+      {
+        "date": "2025-08-23",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": ""
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Pique nique"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Pomme et gâteau type Prince"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Plat : Wok de nouilles aux légumes (œufs, poivrons, carottes, cacahuètes, sauce soja sucrée)"
+          }
+        ]
+      },
+      {
+        "date": "2025-08-24",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre et confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Salade tomates mozza & salade de perles (maïs, concombres, olives, poivrons) / Dessert : bananes"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Pêches et brownie"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Entrée :  bâtonnets de concombre et carottes + sauce au yaourt / Plat : riz et poulet au curry (avec lait de coco, ananas et noix de cajou) / Dessert : poire"
+          }
+        ]
+      },
+      {
+        "date": "2025-08-25",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre et confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Plat : barbecue: chipolatas, merguez, taboulé (tomates concombre), épis de maïs grillé et brochette de tomates cerises / Dessert : bar à yaourts"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Abricots et madeleine"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Bar à wraps (maïs, thon, tomates, haricots rouges, sauce tomate, poivrons rouges) / Dessert : compote"
+          }
+        ]
+      },
+      {
+        "date": "2025-08-26",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre et confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Riz et dahl de lentilles corail (carottes, tomates, lait de coco, pois chiches, curry) / Dessert : nectarines"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Melon et marbré"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Entrée : Soupe / Plat : pâtes bolognaise (viande hachée, sauce tomate) / Dessert : abricots"
+          }
+        ]
+      },
+      {
+        "date": "2025-08-27",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre et confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Sandwichs (fromage à tartiner, salade, tomate, thon) / Dessert : pommes"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Poire et petits Lu"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Chili sin carne (haricots rouges, poivrons, maïs, sauce tomate) / Dessert : pastèque"
+          }
+        ]
+      },
+      {
+        "date": "2025-08-28",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre et confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Concours cuisine"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Mirabelles et cookies"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Riz et ratatouille (aubergines, courgettes, tomates) / Dessert : glaces ou bananes au chocolat (dépend s'il y a un congélateur)"
+          }
+        ]
+      },
+      {
+        "date": "2025-08-29",
+        "day_name": "Vendredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Pain, beurre et confiture"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "Burgers (pain à burger, tomates, steak, ketchup, mayonnaise, salade, oignons rouges, cornichons) / Dessert : raisins"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "Départ"
+          },
+          {
+            "meal_type": "diner",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "camp_name": "Camp n°20737",
+    "days": [
+      {
+        "date": "2025-07-07",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": ""
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "pique- nique individuel"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "brownies / pommes"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Salade (concombres, feta) / Pâtes pesto rosso / Mont blanc"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-08",
+        "day_name": "Mardi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "pain, confitures, beurre, miel, jus de fruits, lait, chocolat"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "salade de lentilles (oignons, concombres, tomates, fêta, croutons, lardons)  / Fromage pain / Compotes-cigares"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "cookies / peches"
+          },
+          {
+            "meal_type": "diner",
+            "description": "carotte et sauce yaourt / Soirée Sandwich-Kebab (pain pita, poulet épicé, salade, tomate, oignon, sauces) / pastèque"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-09",
+        "day_name": "Mercredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Idem"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "dégustation TUC / Salades de pâtes (fusilli n3, tomate cerise, pesto, concombre, mozzarella, thon à l'huile) / pêche"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "pains au lait / chocolat / abricots"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Melon / tortilla (oeuf, pdt) + courgette creme / yaourts aux fruits (sans morceaux)"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-10",
+        "day_name": "Jeudi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Idem"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "concours cuisine"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "marbré / pommes"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Nouilles sautées végétariennes ( poivrons, carottes, cacahuètes, courgettes, sauce soja) / pain fromages / ananas"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-11",
+        "day_name": "Vendredi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Idem"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "bâtonnets concombres + sauce  /Boulgour Samuel - poulet sauce curry / Brownies"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "brioche / chocolat / abricots"
+          },
+          {
+            "meal_type": "diner",
+            "description": "trappeur : pommes de terres, crème / camemberts / bananes, chocolat"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-12",
+        "day_name": "Samedi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Idem"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "pique nique (sandwich, chips, pommes)"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "gouter dehors / madeleine prunes"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Fajitas ( poivron, fromage râpé, sauce tomate, maïs, haricots rouges, oignon, concombre, tomates, crème fraiche ) / poires au chocolat"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-13",
+        "day_name": "Dimanche",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Idem"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "morethon/ risotto vege (courgette+parmesan) / bar a yaourts (yaourt, confiture, miel, muesli, m&ms, pommes)"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "quatre quart / chocolat / pêches"
+          },
+          {
+            "meal_type": "diner",
+            "description": "Tomates mozza / Burgers / glaces (mini magnum)"
+          }
+        ]
+      },
+      {
+        "date": "2025-07-14",
+        "day_name": "Lundi",
+        "meals": [
+          {
+            "meal_type": "petit-dejeuner",
+            "description": "Idem"
+          },
+          {
+            "meal_type": "dejeuner",
+            "description": "hot dog ; abricots"
+          },
+          {
+            "meal_type": "gouter",
+            "description": "madeleines pépites chocolat / pommes"
+          },
+          {
+            "meal_type": "diner",
+            "description": ""
+          }
+        ]
+      }
+    ]
+  }
+]
