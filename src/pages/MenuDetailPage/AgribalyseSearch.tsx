@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
-import { Search, X } from "lucide-react";
+import { Check, Search, X } from "lucide-react";
 import {
   Command,
   CommandEmpty,
@@ -25,7 +25,7 @@ export function AgribalyseSearch({
 }: {
   currentId: string | null;
   currentName?: string | null;
-  onSelect: (id: string | null) => void;
+  onSelect: (id: string | null, name: string | null) => void;
   searchHint: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -35,11 +35,7 @@ export function AgribalyseSearch({
     queryKey: ["agribalyse-search", search],
     queryFn: async () => {
       if (!search || search.length < 2) return [];
-      const { data, error } = await supabase
-        .from("agribalyse_foods")
-        .select("id, name, changement_climatique")
-        .ilike("name", `%${search}%`)
-        .limit(20);
+      const { data, error } = await supabase.rpc("search_agribalyse_foods", { query: search });
       if (error) throw error;
       return data || [];
     },
@@ -78,7 +74,7 @@ export function AgribalyseSearch({
               <CommandGroup>
                 <CommandItem
                   onSelect={() => {
-                    onSelect(null);
+                    onSelect(null, null);
                     setOpen(false);
                   }}
                 >
@@ -93,11 +89,14 @@ export function AgribalyseSearch({
                   key={food.id}
                   value={food.id}
                   onSelect={() => {
-                    onSelect(food.id);
+                    onSelect(food.id, food.name);
                     setOpen(false);
                     setSearch("");
                   }}
                 >
+                  <Check
+                    className={`mr-2 h-3 w-3 flex-shrink-0 ${food.id === currentId ? "opacity-100" : "opacity-0"}`}
+                  />
                   <div className="flex flex-col">
                     <span className="text-xs">{food.name}</span>
                     {food.changement_climatique !== null && (
