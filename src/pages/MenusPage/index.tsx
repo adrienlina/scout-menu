@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMenus } from "@/hooks/useMenus";
 import { useAuth } from "@/hooks/useAuth";
@@ -22,6 +22,8 @@ const TYPE_FILTER_COLORS: Partial<Record<MealSlotType | "all", { accent: string;
   snack:     { accent: "#DB2777", bg: "#FBCFE8", fg: "#9D174D" },
 };
 
+const ITEMS_PER_PAGE = 12;
+
 export default function MenusPage() {
   const navigate = useNavigate();
   const { data: menus, isLoading } = useMenus();
@@ -32,8 +34,9 @@ export default function MenusPage() {
   const [typeFilter, setTypeFilter] = useState<MealSlotType | "all">("all");
   const [sourceFilter, setSourceFilter] = useState<SourceFilter>("all");
   const [view, setView] = useState<"grid" | "list">("grid");
+  const [displayCount, setDisplayCount] = useState(ITEMS_PER_PAGE);
 
-  const filtered = useMemo(() => {
+  const allFiltered = useMemo(() => {
     if (!menus) return [];
     const q = query.trim().toLowerCase();
 
@@ -60,7 +63,13 @@ export default function MenusPage() {
 
       return true;
     });
-  }, [menus, typeFilter, sourceFilter, query, user?.id]);
+  }, [menus, typeFilter, sourceFilter, query, user?.id, bookmarks]);
+
+  const filtered = useMemo(() => allFiltered.slice(0, displayCount), [allFiltered, displayCount]);
+
+  useEffect(() => {
+    setDisplayCount(ITEMS_PER_PAGE);
+  }, [typeFilter, sourceFilter, query]);
 
   const typeFilters: Array<{ id: MealSlotType | "all"; label: string }> = [
     { id: "all", label: "Tous" },
@@ -209,7 +218,7 @@ export default function MenusPage() {
           {/* Result count */}
           <div className="ml-auto text-[13px] text-[#6B7A72] whitespace-nowrap flex-shrink-0">
             <strong className="text-[#11221C] font-bold">{filtered.length}</strong>
-            <span> / {menus?.length ?? 0} menus</span>
+            <span> / {allFiltered.length} menus</span>
           </div>
         </div>
       </div>
@@ -244,31 +253,55 @@ export default function MenusPage() {
           )}
         </div>
       ) : view === "grid" ? (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((menu, i) => (
-            <MenuCard
-              key={menu.id}
-              menu={menu}
-              index={i}
-              canDelete={menu.user_id === user?.id}
-              view="grid"
-              isBookmarked={bookmarks?.has(menu.id) ?? false}
-            />
-          ))}
-        </div>
+        <>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {filtered.map((menu, i) => (
+              <MenuCard
+                key={menu.id}
+                menu={menu}
+                index={i}
+                canDelete={menu.user_id === user?.id}
+                view="grid"
+                isBookmarked={bookmarks?.has(menu.id) ?? false}
+              />
+            ))}
+          </div>
+          {filtered.length < allFiltered.length && (
+            <div className="flex justify-center pt-6">
+              <button
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[10px] text-[14px] font-semibold bg-[#1F6B4A] text-white hover:bg-[#18563B] active:translate-y-px transition-all"
+                onClick={() => setDisplayCount((prev) => prev + ITEMS_PER_PAGE)}
+              >
+                Charger plus
+              </button>
+            </div>
+          )}
+        </>
       ) : (
-        <div className="flex flex-col gap-2">
-          {filtered.map((menu, i) => (
-            <MenuCard
-              key={menu.id}
-              menu={menu}
-              index={i}
-              canDelete={menu.user_id === user?.id}
-              view="list"
-              isBookmarked={bookmarks?.has(menu.id) ?? false}
-            />
-          ))}
-        </div>
+        <>
+          <div className="flex flex-col gap-2">
+            {filtered.map((menu, i) => (
+              <MenuCard
+                key={menu.id}
+                menu={menu}
+                index={i}
+                canDelete={menu.user_id === user?.id}
+                view="list"
+                isBookmarked={bookmarks?.has(menu.id) ?? false}
+              />
+            ))}
+          </div>
+          {filtered.length < allFiltered.length && (
+            <div className="flex justify-center pt-4">
+              <button
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-[10px] text-[14px] font-semibold bg-[#1F6B4A] text-white hover:bg-[#18563B] active:translate-y-px transition-all"
+                onClick={() => setDisplayCount((prev) => prev + ITEMS_PER_PAGE)}
+              >
+                Charger plus
+              </button>
+            </div>
+          )}
+        </>
       )}
     </div>
   );
