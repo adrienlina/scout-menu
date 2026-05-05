@@ -226,6 +226,7 @@ export type Database = {
           id: string
           meal_date: string
           meal_type: string
+          meal_type_legacy: string | null
           menu_id: string
           portions_missing: number
           portions_wasted: number
@@ -236,6 +237,7 @@ export type Database = {
           id?: string
           meal_date: string
           meal_type: string
+          meal_type_legacy?: string | null
           menu_id: string
           portions_missing?: number
           portions_wasted?: number
@@ -246,6 +248,7 @@ export type Database = {
           id?: string
           meal_date?: string
           meal_type?: string
+          meal_type_legacy?: string | null
           menu_id?: string
           portions_missing?: number
           portions_wasted?: number
@@ -332,6 +335,35 @@ export type Database = {
         }
         Relationships: []
       }
+      menu_bookmarks: {
+        Row: {
+          created_at: string
+          id: string
+          menu_id: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          menu_id: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          menu_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "menu_bookmarks_menu_id_fkey"
+            columns: ["menu_id"]
+            isOneToOne: false
+            referencedRelation: "menus"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       menu_ingredients: {
         Row: {
           agribalyse_food_id: string | null
@@ -388,6 +420,7 @@ export type Database = {
           is_default: boolean
           is_shared: boolean
           meal_type: string
+          meal_type_legacy: string | null
           name: string
           updated_at: string
           user_id: string | null
@@ -399,6 +432,7 @@ export type Database = {
           is_default?: boolean
           is_shared?: boolean
           meal_type: string
+          meal_type_legacy?: string | null
           name: string
           updated_at?: string
           user_id?: string | null
@@ -410,6 +444,7 @@ export type Database = {
           is_default?: boolean
           is_shared?: boolean
           meal_type?: string
+          meal_type_legacy?: string | null
           name?: string
           updated_at?: string
           user_id?: string | null
