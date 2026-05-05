@@ -16,7 +16,7 @@ export function useMenus(mealTypeFilter?: MealTypeFilter) {
     queryFn: async () => {
       let query = supabase
         .from("menus")
-        .select("*, menu_ingredients(*)")
+        .select("*, menu_ingredients(*, agribalyse_foods(changement_climatique))")
         .order("name");
 
       if (mealTypeFilter) {
