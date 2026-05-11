@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf, LogIn } from "lucide-react";
+import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf, LogIn, Bug } from "lucide-react";
 import { motion } from "framer-motion";
+import { openBugReport } from "@/lib/sentry";
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
   const { user, signOut } = useAuth();
@@ -41,8 +42,18 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
                 </Link>
               );
             })}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={openBugReport}
+              className="ml-2"
+              aria-label="Signaler un bug"
+              title="Signaler un bug"
+            >
+              <Bug className="h-4 w-4" />
+            </Button>
             {user ? (
-              <Button variant="ghost" size="icon" onClick={signOut} className="ml-2">
+              <Button variant="ghost" size="icon" onClick={signOut}>
                 <LogOut className="h-4 w-4" />
               </Button>
             ) : (
