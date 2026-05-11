@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import { setSentryUser } from "@/lib/sentry";
 import type { User, Session } from "@supabase/supabase-js";
 
 interface AuthContextType {
@@ -22,12 +23,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
+      setSentryUser(session?.user ? { id: session.user.id, email: session.user.email ?? undefined } : null);
       setLoading(false);
     });
 
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
+      setSentryUser(session?.user ? { id: session.user.id, email: session.user.email ?? undefined } : null);
       setLoading(false);
     });
 
