@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf, LogIn, Bug } from "lucide-react";
+import { UtensilsCrossed, Tent, LogOut, BookOpen, Leaf, LogIn, Bug, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import { openBugReport } from "@/lib/sentry";
 
@@ -13,6 +13,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
     { to: "/menus", label: "Menus", icon: BookOpen },
     { to: "/camps", label: "Camps", icon: Tent },
     { to: "/agribalyse", label: "Agribalyse", icon: Leaf },
+    { to: "/stats", label: "Statistiques", icon: BarChart3 },
   ];
 
   return (

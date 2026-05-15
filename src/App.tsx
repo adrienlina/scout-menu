@@ -15,6 +15,7 @@ import StockPage from "./pages/StockPage";
 import MenuDetailPage from "./pages/MenuDetailPage";
 import AgribalysePage from "./pages/AgribalysePage";
 import CampEmissionsPage from "./pages/CampEmissionsPage";
+import StatsPage from "./pages/StatsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ function AppRoutes() {
       <Route path="/camps/:campId/emissions" element={<ProtectedRoute><AppLayout><CampEmissionsPage /></AppLayout></ProtectedRoute>} />
       <Route path="/camps/:campId/stock" element={<ProtectedRoute><AppLayout><StockPage /></AppLayout></ProtectedRoute>} />
       <Route path="/agribalyse" element={<AppLayout><AgribalysePage /></AppLayout>} />
+      <Route path="/stats" element={<AppLayout><StatsPage /></AppLayout>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
