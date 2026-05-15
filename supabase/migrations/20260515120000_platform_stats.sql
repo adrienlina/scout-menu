@@ -12,6 +12,18 @@ as $$
 declare
   result jsonb;
 begin
+  with menu_co2 as (
+    select
+      m.id,
+      m.meal_type,
+      sum(mi.quantity * af.changement_climatique * mi.unit_multiplier / 1000.0) as co2_per_portion
+    from public.menus m
+    join public.menu_ingredients mi on mi.menu_id = m.id
+    join public.agribalyse_foods af on af.id = mi.agribalyse_food_id
+    where af.changement_climatique is not null
+    group by m.id, m.meal_type
+    having sum(mi.quantity * af.changement_climatique * mi.unit_multiplier / 1000.0) > 0
+  )
   select jsonb_build_object(
     'total_users', (select count(*) from auth.users),
     'total_camps', (select count(*) from public.camps),
@@ -64,6 +76,19 @@ begin
         order by 2 desc
         limit 15
       ) sub
+    ), '[]'::jsonb),
+    'menus_with_co2_data', (select count(*) from menu_co2),
+    'avg_co2_per_portion', (
+      select coalesce(round(avg(co2_per_portion)::numeric, 3), 0) from menu_co2
+    ),
+    'avg_co2_per_portion_by_type', coalesce((
+      select jsonb_agg(jsonb_build_object(
+        'type', meal_type,
+        'avg_co2', round(avg(co2_per_portion)::numeric, 3),
+        'count', count(*)::bigint
+      ) order by avg(co2_per_portion) desc)
+      from menu_co2
+      group by meal_type
     ), '[]'::jsonb),
     'generated_at', now()
   )

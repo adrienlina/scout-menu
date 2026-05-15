@@ -26,6 +26,7 @@ import {
   Bookmark,
   TrendingUp,
   ShieldCheck,
+  Cloud,
 } from "lucide-react";
 import { MEAL_TYPE_LABELS, type MealType } from "@/lib/types";
 
@@ -50,6 +51,9 @@ type PlatformStats = {
   meals_by_type: { type: string; count: number }[];
   menus_by_type: { type: string; count: number }[];
   top_ingredients: { name: string; count: number }[];
+  menus_with_co2_data: number;
+  avg_co2_per_portion: number;
+  avg_co2_per_portion_by_type: { type: string; avg_co2: number; count: number }[];
   generated_at: string;
 };
 
@@ -111,6 +115,10 @@ export default function StatsPage() {
   });
 
   const nfFr = new Intl.NumberFormat("fr-FR");
+  const nfCo2 = new Intl.NumberFormat("fr-FR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 
   return (
     <div className="space-y-6">
@@ -193,6 +201,20 @@ export default function StatsPage() {
               icon={Leaf}
               label="Aliments Agribalyse"
               value={nfFr.format(data.total_agribalyse_foods)}
+            />
+            <StatCard
+              icon={Cloud}
+              label="CO₂ moyen par portion"
+              value={
+                data.menus_with_co2_data > 0
+                  ? `${nfCo2.format(data.avg_co2_per_portion)} kg`
+                  : "—"
+              }
+              hint={
+                data.menus_with_co2_data > 0
+                  ? `${nfFr.format(data.menus_with_co2_data)} menu(s) avec données`
+                  : "Aucune donnée Agribalyse associée"
+              }
             />
           </div>
 
@@ -308,6 +330,52 @@ export default function StatsPage() {
                       <Bar dataKey="count" fill="hsl(var(--accent))" radius={[4, 4, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
+                )}
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base flex items-center gap-2">
+                  <Cloud className="h-4 w-4 text-primary" />
+                  Émissions CO₂ moyennes par type de repas
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {data.avg_co2_per_portion_by_type.length === 0 ? (
+                  <p className="text-sm text-muted-foreground py-8 text-center">
+                    Aucun menu associé à la base Agribalyse.
+                  </p>
+                ) : (
+                  <>
+                    <ResponsiveContainer width="100%" height={260}>
+                      <BarChart
+                        data={data.avg_co2_per_portion_by_type.map((d) => ({
+                          ...d,
+                          label: formatMealType(d.type),
+                        }))}
+                        margin={{ top: 5, right: 10, left: 0, bottom: 5 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" className="opacity-30" />
+                        <XAxis dataKey="label" tick={{ fontSize: 11 }} />
+                        <YAxis
+                          tick={{ fontSize: 11 }}
+                          tickFormatter={(v) => nfCo2.format(v)}
+                        />
+                        <Tooltip
+                          formatter={(value: number, _name, payload) => [
+                            `${nfCo2.format(value)} kg CO₂eq`,
+                            `Moyenne / portion (${nfFr.format(payload?.payload?.count ?? 0)} menu(s))`,
+                          ]}
+                          contentStyle={{ fontSize: "12px", borderRadius: "8px" }}
+                        />
+                        <Bar dataKey="avg_co2" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+                      </BarChart>
+                    </ResponsiveContainer>
+                    <p className="text-xs text-muted-foreground mt-2">
+                      Estimation par portion (kg CO₂eq), basée sur les ingrédients reliés à Agribalyse.
+                    </p>
+                  </>
                 )}
               </CardContent>
             </Card>
