@@ -578,6 +578,7 @@ export type Database = {
     }
     Functions: {
       get_auth_email: { Args: { _user_id: string }; Returns: string }
+      get_platform_stats: { Args: Record<string, never>; Returns: Json }
       has_camp_access: {
         Args: { _camp_id: string; _user_id: string }
         Returns: boolean
